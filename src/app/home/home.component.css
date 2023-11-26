@@ -1,0 +1,21 @@
+.landing-image{
+   margin-right: 200px;
+    margin-top: 70px;
+    width: 1000px;
+}
+
+.section1{
+  
+    background-image: url(../..//assets/images/shape-12.svg);
+    background-color: rgb(244 247 250);
+}
+
+.valeur{
+    color: rgb(2, 115, 156);
+    margin-right: 10px;
+}
+.valeur-title{
+        font-size: 2.25rem;
+        line-height: 3.75rem;
+        color : rgb(2, 115, 156);
+}

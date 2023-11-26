@@ -1,0 +1,11 @@
+nav.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav.shadow-bottom {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+

@@ -1344,7 +1344,8 @@ h6 {
 }
 
 .qb {
-    margin-bottom: 1.875rem;
+    margin-bottom: 5px;
+    margin-top: 15px;
 }
 
 .rb {
@@ -2004,7 +2005,7 @@ h6 {
 
 .gh {
     --tw-bg-opacity: 1;
-    background-color: rgb(78 107 255 / var(--tw-bg-opacity));
+    background-color: rgb(78 107 190 / var(--tw-bg-opacity));
 }
 
 .hh\/20 {
@@ -3326,7 +3327,7 @@ h6 {
     }
 
     .pr {
-        font-size: 45px;
+        font-size: 27px;
         line-height: 55px;
     }
 }

@@ -7,17 +7,12 @@ async function fetchAndDisplayArticles() {
     );
     const data = await response.json();
 
-    // Get the containers for main articles and popular posts
+    // Get the container for main articles
     const articlesContainer = document.getElementById("articles-container");
-    const popularPostsContainer = document.getElementById(
-      "popular-posts-container"
-    );
 
-    // Ensure containers exist in the DOM
-    if (!articlesContainer || !popularPostsContainer) {
-      console.error(
-        "Containers 'articles-container' or 'popular-posts-container' are missing in the HTML."
-      );
+    // Ensure the container exists in the DOM
+    if (!articlesContainer) {
+      console.error("Container 'articles-container' is missing in the HTML.");
       return;
     }
 
@@ -79,85 +74,15 @@ async function fetchAndDisplayArticles() {
         // Append the article to the container
         articlesContainer.appendChild(articleElement);
       });
-
-      // Display popular posts (limit to top 3 articles)
-      const popularPostsList = document.createElement("ul");
-      popularPostsList.classList.add(
-        "popular-post-sidebar",
-        "position-relative"
-      );
-
-      data.data.slice(0, 3).forEach((article) => {
-        const listItem = document.createElement("li");
-        listItem.classList.add("d-flex", "align-items-center");
-
-        // Extract details for popular posts
-        const title = article?.Title || "Title not available";
-        const publishedDate = article?.publishedAt || "Date not available";
-        const documentId = article?.documentId || "unknown-document";
-
-        // Get the thumbnail image or use a placeholder
-        let imageUrl = "https://via.placeholder.com/600x600";
-        if (article?.media?.[0]?.formats) {
-          const mediaFormats = article.media[0].formats;
-          imageUrl = mediaFormats.thumbnail
-            ? `http://localhost:1337${mediaFormats.thumbnail.url}`
-            : `http://localhost:1337${article.media[0].url}`;
-        }
-
-        // Build the HTML for each popular post
-        listItem.innerHTML = `
-          <figure>
-            <a href="article.html?documentId=${documentId}">
-              <img src="${imageUrl}" alt="${title}" loading="lazy" />
-            </a>
-          </figure>
-          <div class="col media-body">
-            <a href="article.html?documentId=${documentId}" class="fw-600 fs-17 text-dark-gray d-inline-block mb-10px">${title}</a>
-            <div><a href="blog-grid.html" class="d-inline-block fs-15">${new Date(
-              publishedDate
-            ).toLocaleDateString()}</a></div>
-          </div>
-        `;
-
-        // Append the popular post to the list
-        popularPostsList.appendChild(listItem);
-      });
-
-      // Create and append the "Popular posts" section title
-      const popularPostsTitle = document.createElement("div");
-      popularPostsTitle.classList.add(
-        "fw-600",
-        "fs-19",
-        "lh-22",
-        "ls-minus-05px",
-        "text-dark-gray",
-        "border-bottom",
-        "border-color-dark-gray",
-        "border-2",
-        "d-block",
-        "mb-30px",
-        "pb-15px",
-        "position-relative"
-      );
-      popularPostsTitle.textContent = "Popular posts";
-
-      // Append the title and list of popular posts to the container
-      popularPostsContainer.appendChild(popularPostsTitle);
-      popularPostsContainer.appendChild(popularPostsList);
     } else {
       // If no articles are found, display a message
       articlesContainer.innerHTML = "<p>No articles found.</p>";
-      popularPostsContainer.innerHTML = "<p>No popular posts available.</p>";
     }
   } catch (error) {
     // Handle any errors during the fetch process
     console.error("Error fetching articles:", error);
     if (articlesContainer) {
       articlesContainer.innerHTML = "<p>Failed to load articles.</p>";
-    }
-    if (popularPostsContainer) {
-      popularPostsContainer.innerHTML = "<p>Failed to load popular posts.</p>";
     }
   }
 }

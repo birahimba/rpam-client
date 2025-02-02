@@ -173,6 +173,7 @@ a.header-button {
     list-style: none;
     padding: 0;
     margin: 0;
+  
 }
 
 .service-item {
@@ -273,10 +274,10 @@ header .navbar-nav .nav-link {
 }
 
 /* Ajustement pour écrans moyens */
-@media (min-width: 991px) {
+@media (min-width: 200px) {
     header {
         height: 70px;
-        padding: 0 15px; /* Padding réduit pour petits écrans */
+        padding: 0 8px; 
     }
 
         li {
@@ -295,7 +296,7 @@ header .navbar-nav .nav-link {
 @media (max-width: 576px) {
     header {
         height: 60px;
-        padding: 0 10px;
+        padding: 0 8px;
     }
 
     header .navbar-brand img {
@@ -448,3 +449,5 @@ footer .footer-logo img {
     padding: 10px;
     overflow-x: auto;
 }
+
+

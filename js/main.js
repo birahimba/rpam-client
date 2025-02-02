@@ -5,7 +5,7 @@
  Description: Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.
  Author: ThemeZaa - https://www.themezaa.com/
  Author ThemeForest URL: https://themeforest.net/user/themezaa
- Copyright(c) 2024 themezaa.com
+ Copyright(c) 2025 themezaa.com
  Version: 2.0
  
  ------------------------------------------------------- */
@@ -2271,23 +2271,7 @@
         expireDays = 30,
         cookieName = "crafto-promo-popup";
       if (getCookie(cookieName) != "shown") {
-        setTimeout(function () {
-          $.magnificPopup.open({
-            showCloseBtn: false,
-            items: {
-              src: "#subscribe-popup",
-            },
-            type: "inline",
-            mainClass: "my-mfp-zoom-in",
-            callbacks: {
-              close: function () {
-                if ($("#newsletter-off").is(":checked")) {
-                  setCookie(cookieName, "shown", expireDays);
-                }
-              },
-            },
-          });
-        }, delaySecond * 3500);
+        // do nothing
       }
     }
   }

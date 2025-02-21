@@ -721,7 +721,7 @@ footer ul li {
      left: 0;
      top: 0;
      font-size: 20px;
-     color: #007BFF;
+     color: var(--base-color);
      /* Couleur des sous-points */
  }
 
@@ -762,6 +762,36 @@ footer ul li {
 
   .objective-card:hover .objective-icon {
       color: white;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+      position: relative;
+      padding-bottom: 8px;
+      /* Espace pour la bande */
+      transition: color 0.3s ease-in-out;
+  }
+
+  .navbar-nav .nav-item .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      /* Épaisseur de la bande */
+      background-color: var(--base-color);
+      /* Couleur de la bande */
+      transition: width 0.3s ease-in-out;
+  }
+
+  .navbar-nav .nav-item .nav-link.active::after {
+      width: 100%;
+      /* Fait apparaître la bande sous l'élément actif */
+  }
+
+  .navbar-nav .nav-item .nav-link:hover::after {
+      width: 100%;
+      /* Effet hover fluide */
   }
 
   .objective-text {
@@ -842,17 +872,5 @@ footer ul li {
   }
   
 
-          .tooltip-inner {
-              background-color: #ffffff !important;
-              color: var(--base-color) !important;
-              border: 1px solid #ddd !important;
-              padding: 10px !important;
-              border-radius: 5px !important;
-              text-align: center !important;
-              box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
-          }
-    
-          .tooltip.show {
-              opacity: 1 !important;
-          }
+      
   

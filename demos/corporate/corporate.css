@@ -871,6 +871,227 @@ footer ul li {
       background-color: #FF9800;
   }
   
+.histoire-rpam-section {
+    background-color:#f8faf9;
+    /* Fond très léger */
+    padding: 80px 0;
+}
+
+.histoire-image {
+    background-image: url('../../images/font-texture.png');
+    /* Image de fond */
+    background-size: cover;
+    background-position: center right;
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.text-base-color {
+    color: var(--base-color);
+    
+}
+
+.fa-solid {
+    font-size: 18px;
+}
+
+@media (max-width: 991px) {
+    .histoire-image {
+        display: none;
+        
+    }
+}
+
+        .bullet-point {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            background-color: #FF9800;
+            /* Couleur orange */
+            border-radius: 50%;
+            margin-right: 10px;
+        }
 
       
-  
+  .challenges-section {
+        background-color: #f8f9fa; /* Fond clair pour lisibilité */
+        padding: 80px 0;
+    }
+
+    .challenges-image {
+        background-image: url('images/challenges.jpg'); /* Image de fond */
+        background-size: cover;
+        background-position: center right;
+        height: 300px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .text-base-color {
+        color: #007bff; /* Adapte cette couleur à celle de ton site */
+    }
+
+    .challenges-list {
+        list-style: none; /* Supprime les puces par défaut */
+        padding-left: 0;
+        color: #333;
+    }
+
+    .challenges-list li {
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+
+    .challenges-list li::before {
+        content: "•"; /* Ajout d'une puce stylisée */
+        color: #FF9800; /* Couleur de la puce */
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    @media (max-width: 991px) {
+        .challenges-image {
+            display: none; /* Cacher l'image sur mobile */
+        }
+    }
+
+
+.challenges-section {
+    background-color: #f8f9fa;
+    /* Fond clair pour lisibilité */
+    padding: 80px 0;
+}
+
+.text-base-color {
+    color: var(--base-color);
+    /* Adapte cette couleur à celle de ton site */
+}
+
+.challenges-list {
+    list-style: none;
+    padding-left: 0;
+    color: #333;
+}
+
+.challenges-list li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.challenges-list li::before {
+    content: "•";
+    color: #FF9800;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Superposition des images */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    /* Ajuste la taille du conteneur */
+    margin-left: auto;
+    /* Pour aligner à droite */
+}
+
+.main-image {
+    width: 100%;
+    border-radius: 10px;
+   
+}
+
+.overlay-image {
+    position: absolute;
+    width: 60%;
+    border-radius: 10px;
+    right: -20px;
+    /* Décalage sur l'axe horizontal */
+    bottom: -30px;
+    /* Décalage vers le bas */
+    
+    transform: rotate(-5deg);
+    /* Effet incliné */
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .image-wrapper {
+        display: none;
+    }
+}
+
+ .text-base-color {
+     color: var(--base-color);
+     /* Remplace par la couleur principale de ton site */
+ }
+
+ .fs-20 {
+     font-size: 1.25rem;
+ }
+
+ .fw-500 {
+     font-weight: 500;
+ }
+
+ .fw-700 {
+     font-weight: 700;
+ }
+
+ .text-dark {
+     color: #333;
+ }
+
+ .text-highlight {
+     color: #FF9800;
+     font-weight: 700;
+ }
+
+ .max-width-700 {
+     max-width: 700px;
+ }
+
+ .m-auto {
+     margin: auto;
+ }
+
+
+  .icon-circle {
+      width: 70px;
+      height: 70px;
+      background-color: #FF9800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      transition: all 0.3s ease;
+  }
+
+  .icon-circle i {
+      color: white;
+      font-size: 24px;
+  }
+
+  .value-item h4 {
+      font-size: 18px;
+      margin-top: 10px;
+  }
+
+  .value-item p {
+      font-size: 14px;
+      color: #666;
+  }
+
+  .value-item:hover .icon-circle {
+      transform: scale(1.1);
+  }

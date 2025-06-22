@@ -1,8 +1,11 @@
-// Function to fetch and display popular posts
+// ✅ Définis l'URL de ton backend Strapi déployé
+const API_BASE_URL = "https://rpam-back.onrender.com";
+
+// 🔥 Fonction pour afficher les articles populaires
 async function fetchAndDisplayPopularPosts() {
   try {
     const response = await fetch(
-      "http://localhost:1337/api/blogs?populate=*&sort=publishedAt:desc"
+      `${API_BASE_URL}/api/blogs?populate=*&sort=publishedAt:desc`
     );
     const data = await response.json();
     const popularPostsContainer = document.getElementById(
@@ -24,19 +27,20 @@ async function fetchAndDisplayPopularPosts() {
       );
 
       data.data.slice(0, 3).forEach((article) => {
+        const attr = article.attributes;
         const listItem = document.createElement("li");
         listItem.classList.add("d-flex", "align-items-center");
 
-        const title = article?.Title || "Title not available";
-        const publishedDate = article?.publishedAt || "Date not available";
-        const documentId = article?.documentId || "unknown-document";
+        const title = attr?.Title || "Title not available";
+        const publishedDate = attr?.publishedAt || "Date not available";
+        const documentId = attr?.documentId || "unknown-document";
 
         let imageUrl = "https://via.placeholder.com/600x600";
-        if (article?.media?.[0]?.formats) {
-          const mediaFormats = article.media[0].formats;
-          imageUrl = mediaFormats.thumbnail
-            ? `http://localhost:1337${mediaFormats.thumbnail.url}`
-            : `http://localhost:1337${article.media[0].url}`;
+        const media = attr?.media?.data?.[0]?.attributes;
+        if (media?.formats?.thumbnail?.url) {
+          imageUrl = `${API_BASE_URL}${media.formats.thumbnail.url}`;
+        } else if (media?.url) {
+          imageUrl = `${API_BASE_URL}${media.url}`;
         }
 
         listItem.innerHTML = `
@@ -89,10 +93,10 @@ async function fetchAndDisplayPopularPosts() {
   }
 }
 
-// Function to fetch and display thematiques in "Explore category"
+// 🔥 Fonction pour afficher les thematiques
 async function fetchAndDisplayThematiques() {
   try {
-    const response = await fetch("http://localhost:1337/api/thematiques");
+    const response = await fetch(`${API_BASE_URL}/api/thematiques`);
     const data = await response.json();
     const categoryListContainer = document.querySelector(
       ".category-list-sidebar"
@@ -105,12 +109,11 @@ async function fetchAndDisplayThematiques() {
       return;
     }
 
-    // Clear any existing content in the category list
     categoryListContainer.innerHTML = "";
 
     if (data.data && data.data.length > 0) {
       data.data.forEach((thematique) => {
-        const title = thematique?.Title || "Unknown Thematique";
+        const title = thematique?.attributes?.Title || "Unknown Thematique";
 
         const categoryItem = document.createElement("li");
         categoryItem.classList.add(
@@ -150,6 +153,5 @@ async function fetchAndDisplayThematiques() {
   }
 }
 
-// Call the functions to fetch and display popular posts and thematiques
 fetchAndDisplayPopularPosts();
 fetchAndDisplayThematiques();

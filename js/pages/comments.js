@@ -1,12 +1,14 @@
-// Function to get the documentId from the URL query string
+// ✅ Définir l'URL de base de l'API Strapi en ligne
+const API_BASE_URL = "https://rpam-back.onrender.com"; // Remplace par ton URL exacte
+
 function getDocumentIdFromUrl() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get("documentId");
 }
 
-// Function to handle the submission of the comment form
+// ✅ Gérer la soumission du formulaire de commentaire
 async function handleCommentFormSubmission(event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault();
 
   const documentId = getDocumentIdFromUrl();
   if (!documentId) {
@@ -14,21 +16,18 @@ async function handleCommentFormSubmission(event) {
     return;
   }
 
-  // Get form field values
   const name = document.querySelector("input[name='name']").value.trim();
   const email = document.querySelector("input[name='email']").value.trim();
   const comment = document
     .querySelector("textarea[name='comment']")
     .value.trim();
-  const publishedDate = new Date().toISOString(); // Current timestamp
+  const publishedDate = new Date().toISOString();
 
-  // Validate form fields
   if (!name || !email || !comment) {
     alert("Please fill out all required fields.");
     return;
   }
 
-  // Prepare the data for the API request
   const commentData = {
     data: {
       Name: name,
@@ -42,8 +41,7 @@ async function handleCommentFormSubmission(event) {
   };
 
   try {
-    // Send the comment to the API
-    const response = await fetch("http://localhost:1337/api/comments", {
+    const response = await fetch(`${API_BASE_URL}/api/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,12 +52,9 @@ async function handleCommentFormSubmission(event) {
     if (response.ok) {
       const result = await response.json();
       alert("Thank you! Your comment has been posted successfully.");
-      // Optionally clear the form fields after successful submission
       document.querySelector("input[name='name']").value = "";
       document.querySelector("input[name='email']").value = "";
       document.querySelector("textarea[name='comment']").value = "";
-
-      // Update the comments section dynamically (optional)
       updateCommentsSection(result.data);
     } else {
       const errorResponse = await response.json();
@@ -76,7 +71,7 @@ async function handleCommentFormSubmission(event) {
   }
 }
 
-// Function to dynamically update the comments section (optional)
+// ✅ Mise à jour dynamique de la section des commentaires
 function updateCommentsSection(newComment) {
   const commentsContainer = document.getElementById("comments-container");
   const { Name, email, comment, publishedDate } = newComment.attributes;
@@ -105,7 +100,7 @@ function updateCommentsSection(newComment) {
   commentsContainer.innerHTML += newCommentHTML;
 }
 
-// Attach the form submission event listener
+// ✅ Activer le gestionnaire d'événement sur le formulaire
 document
   .querySelector(".contact-form-style-02")
   .addEventListener("submit", handleCommentFormSubmission);

@@ -83,21 +83,42 @@ function updateCommentsSection(newComment) {
     minute: "2-digit",
   });
 
-  const newCommentHTML = `
-    <div class="d-block d-md-flex w-100 align-items-center align-items-md-start mb-4">
-      <div class="w-90px sm-w-65px sm-mb-10px">
-          <img src="https://via.placeholder.com/130x130" class="rounded-circle" alt="${Name}">
-      </div>
-      <div class="w-100 ps-30px last-paragraph-no-margin sm-ps-0">
-          <a href="#" class="text-dark-gray fw-600">${Name}</a>
-          <div class="fs-14 lh-24 mb-10px">${formattedDate}</div>
-          <p class="w-85 sm-w-100">${comment}</p>
-          <small class="text-muted">Email: ${email}</small>
-      </div>
-    </div>
-  `;
+  const wrapper = document.createElement("div");
+  wrapper.className =
+    "d-block d-md-flex w-100 align-items-center align-items-md-start mb-4";
 
-  commentsContainer.innerHTML += newCommentHTML;
+  const imageContainer = document.createElement("div");
+  imageContainer.className = "w-90px sm-w-65px sm-mb-10px";
+  const img = document.createElement("img");
+  img.src = "https://via.placeholder.com/130x130";
+  img.className = "rounded-circle";
+  img.alt = Name;
+  imageContainer.appendChild(img);
+
+  const textContainer = document.createElement("div");
+  textContainer.className = "w-100 ps-30px last-paragraph-no-margin sm-ps-0";
+
+  const nameLink = document.createElement("a");
+  nameLink.href = "#";
+  nameLink.className = "text-dark-gray fw-600";
+  nameLink.textContent = Name;
+
+  const dateDiv = document.createElement("div");
+  dateDiv.className = "fs-14 lh-24 mb-10px";
+  dateDiv.textContent = formattedDate;
+
+  const commentP = document.createElement("p");
+  commentP.className = "w-85 sm-w-100";
+  commentP.textContent = comment;
+
+  const emailSmall = document.createElement("small");
+  emailSmall.className = "text-muted";
+  emailSmall.textContent = `Email: ${email}`;
+
+  textContainer.append(nameLink, dateDiv, commentP, emailSmall);
+  wrapper.append(imageContainer, textContainer);
+
+  commentsContainer.appendChild(wrapper);
 }
 
 // ✅ Activer le gestionnaire d'événement sur le formulaire

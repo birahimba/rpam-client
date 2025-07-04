@@ -83,6 +83,7 @@ async function fetchAndDisplayArticleDetails() {
     const md = window.markdownit();
     const contentHTML = md.render(contentMarkdown);
     const formattedContentHTML = formatFirstLetter(contentHTML);
+    const sanitizedContentHTML = DOMPurify.sanitize(formattedContentHTML);
 
     const publishedDate = attr?.publishedAt
       ? new Date(attr.publishedAt).toLocaleDateString("en-US", {
@@ -93,6 +94,8 @@ async function fetchAndDisplayArticleDetails() {
       : "Date not available";
 
     const theme = attr?.theme?.data?.attributes?.Title || "Creative";
+    const sanitizedTitle = DOMPurify.sanitize(title);
+    const sanitizedTheme = DOMPurify.sanitize(theme);
 
     const media = attr?.media?.data?.[0]?.attributes;
     const documentImage =
@@ -109,11 +112,11 @@ async function fetchAndDisplayArticleDetails() {
         <div class="entry-meta mb-20px fs-15">
           <span><i class="text-dark-gray feather icon-feather-calendar"></i><a href="blog-grid.html">${publishedDate}</a></span>
           <span><i class="text-dark-gray feather icon-feather-user"></i><a href="blog-grid.html">RPAM</a></span>
-          <span><i class="text-dark-gray feather icon-feather-folder"></i><a href="blog-grid.html">${theme}</a></span>
+          <span><i class="text-dark-gray feather icon-feather-folder"></i><a href="blog-grid.html">${sanitizedTheme}</a></span>
         </div>
-        <h5 class="text-dark-gray fw-600 w-80 sm-w-100 mb-6">${title}</h5>
-        <img src="${imageUrl}" alt="${title}" class="w-100 border-radius-6px mb-7">
-        <div class="text-dark-gray">${formattedContentHTML}</div>
+        <h5 class="text-dark-gray fw-600 w-80 sm-w-100 mb-6">${sanitizedTitle}</h5>
+        <img src="${imageUrl}" alt="${sanitizedTitle}" class="w-100 border-radius-6px mb-7">
+        <div class="text-dark-gray">${sanitizedContentHTML}</div>
       </div>
     `;
   } catch (error) {

@@ -21,6 +21,11 @@ async function fetchAndDisplayArticles() {
 
         const title = article?.attributes?.Title || "Title not available";
         const content = article?.attributes?.content || "Content not available";
+        const sanitizedTitle = DOMPurify.sanitize(title);
+        const sanitizedContent = DOMPurify.sanitize(content);
+        const themeValue = article?.attributes?.theme?.data?.attributes?.Title ||
+          "Category";
+        const sanitizedTheme = DOMPurify.sanitize(themeValue);
         const publishedDate =
           article?.attributes?.publishedAt || "Date not available";
         const documentId = article?.id || "unknown-document";
@@ -39,14 +44,11 @@ async function fetchAndDisplayArticles() {
           <div class="card border-0 no-border-radius box-shadow-extra-large">
             <div class="blog-image">
               <a href="article.html?documentId=${documentId}">
-                <img src="${imageUrl}" alt="${title}" loading="lazy" />
+                <img src="${imageUrl}" alt="${sanitizedTitle}" loading="lazy" />
               </a>
               <div class="blog-categories">
                 <a href="blog-grid.html" class="categories-btn bg-white text-dark-gray text-dark-gray-hover text-uppercase alt-font fw-600">
-                  ${
-                    article?.attributes?.theme?.data?.attributes?.Title ||
-                    "Category"
-                  }
+                  ${sanitizedTheme}
                 </a>
               </div>
             </div>
@@ -59,8 +61,8 @@ async function fetchAndDisplayArticles() {
                   ).toLocaleDateString()}</a>
                 </span>
               </div>
-              <a href="article.html?documentId=${documentId}" class="text-dark-gray card-title mb-20px fw-600 fs-24 d-block">${title}</a>
-              <p class="text-medium-gray mb-20px">${content
+              <a href="article.html?documentId=${documentId}" class="text-dark-gray card-title mb-20px fw-600 fs-24 d-block">${sanitizedTitle}</a>
+              <p class="text-medium-gray mb-20px">${sanitizedContent
                 .replace(/\n/g, "<br>")
                 .slice(0, 150)}...</p>
               <a href="article.html?documentId=${documentId}" class="btn btn-link btn-large text-base-color fw-600">

@@ -32,6 +32,7 @@ async function fetchAndDisplayPopularPosts() {
         listItem.classList.add("d-flex", "align-items-center");
 
         const title = attr?.Title || "Title not available";
+        const sanitizedTitle = DOMPurify.sanitize(title);
         const publishedDate = attr?.publishedAt || "Date not available";
         const documentId = attr?.documentId || "unknown-document";
 
@@ -46,11 +47,11 @@ async function fetchAndDisplayPopularPosts() {
         listItem.innerHTML = `
           <figure>
             <a href="article.html?documentId=${documentId}">
-              <img src="${imageUrl}" alt="${title}" loading="lazy" />
+              <img src="${imageUrl}" alt="${sanitizedTitle}" loading="lazy" />
             </a>
           </figure>
           <div class="col media-body">
-            <a href="article.html?documentId=${documentId}" class="fw-600 fs-17 text-dark-gray d-inline-block mb-10px">${title}</a>
+            <a href="article.html?documentId=${documentId}" class="fw-600 fs-17 text-dark-gray d-inline-block mb-10px">${sanitizedTitle}</a>
             <div><a href="blog-grid.html" class="d-inline-block fs-15">${new Date(
               publishedDate
             ).toLocaleDateString()}</a></div>
@@ -114,6 +115,7 @@ async function fetchAndDisplayThematiques() {
     if (data.data && data.data.length > 0) {
       data.data.forEach((thematique) => {
         const title = thematique?.attributes?.Title || "Unknown Thematique";
+        const sanitizedTitle = DOMPurify.sanitize(title);
 
         const categoryItem = document.createElement("li");
         categoryItem.classList.add(
@@ -128,9 +130,9 @@ async function fetchAndDisplayThematiques() {
 
         categoryItem.innerHTML = `
           <div class="opacity-medium bg-gradient-dark-transparent"></div>
-          <a href="blog-grid.html?thematique=${title}" 
+          <a href="blog-grid.html?thematique=${sanitizedTitle}"
              class="d-flex align-items-center position-relative w-100 h-100">
-            <span class="text-white mb-0 fs-20 fw-500 fancy-text-style-4">${title}</span>
+            <span class="text-white mb-0 fs-20 fw-500 fancy-text-style-4">${sanitizedTitle}</span>
             <span class="btn text-white position-absolute">
               <i class="bi bi-arrow-right ms-0 fs-24"></i>
             </span>

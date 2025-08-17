@@ -195,30 +195,43 @@
                                                 </div>
 
                                                 <div class="form-group mb-15px">
-                                                    <select class="form-control border-radius-4px w-100" id="subject"
-                                                        name="subject" required>
-                                                        <option value="theme 1">Choisir un théme de message</option>
-                                                        <option value="theme 1">Thème 1</option>
-                                                        <option value="theme 2">Thème 2</option>
-                                                        <option value="theme 3">Thème 3</option>
-                                                    </select>
-                                                </div>
+                                                    <div class="form-group mb-15px">
+                                                        <select class="form-control border-radius-4px w-100"
+                                                            id="subject" name="subject" required>
+                                                            <option value="">Choisir un thème de message</option>
+                                                            <option value="orientation">Orientation professionnelle
+                                                            </option>
+                                                            <option value="competences">Développement de compétences
+                                                            </option>
+                                                            <option value="coaching">Coaching à la recherche d’emploi
+                                                            </option>
+                                                            <option value="autre">Autre</option>
+                                                        </select>
+                                                    </div>
 
-                                                <div class="form-group mb-15px">
-                                                    <textarea class="form-control border-radius-4px w-100" id="message"
-                                                        name="message" rows="4"
-                                                        placeholder="Souhaitez-vous ajouter un message ?"
-                                                        required></textarea>
-                                                </div>
+                                                    <!-- Champ texte masqué par défaut -->
+                                                    <div class="form-group mb-15px" id="other-subject-container"
+                                                        style="display: none;">
+                                                        <input class="form-control border-radius-4px w-100" type="text"
+                                                            id="other-subject" name="other_subject"
+                                                            placeholder="Précisez votre thème" />
+                                                    </div>
 
-                                                <input type="hidden" name="locale" value="fr-FR" />
-                                                <input type="hidden" name="localizations[]" value="localization1" />
-                                                <input type="hidden" name="localizations[]" value="localization2" />
+                                                    <div class="form-group mb-15px">
+                                                        <textarea class="form-control border-radius-4px w-100"
+                                                            id="message" name="message" rows="4"
+                                                            placeholder="Souhaitez-vous ajouter un message ?"
+                                                            required></textarea>
+                                                    </div>
 
-                                                <button type="submit"
-                                                    class="btn btn-medium btn-round-edge btn-dark-gray btn-box-shadow w-100">
-                                                    Valider la réservation
-                                                </button>
+                                                    <input type="hidden" name="locale" value="fr-FR" />
+                                                    <input type="hidden" name="localizations[]" value="localization1" />
+                                                    <input type="hidden" name="localizations[]" value="localization2" />
+
+                                                    <button type="submit"
+                                                        class="btn btn-medium btn-round-edge btn-dark-gray btn-box-shadow w-100">
+                                                        Valider la réservation
+                                                    </button>
                                             </form>
 
 
@@ -704,6 +717,66 @@
                 midClick: true
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const subjectSelect = document.getElementById("subject");
+            const otherSubjectContainer = document.getElementById("other-subject-container");
+            const otherSubjectInput = document.getElementById("other-subject");
+
+            subjectSelect.addEventListener("change", function () {
+                if (this.value === "autre") {
+                    otherSubjectContainer.style.display = "block";
+                    otherSubjectInput.setAttribute("required", "required");
+                } else {
+                    otherSubjectContainer.style.display = "none";
+                    otherSubjectInput.removeAttribute("required");
+                    otherSubjectInput.value = ""; // reset si on change d'avis
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const subjectSelect = document.getElementById("subject");
+            const otherSubjectContainer = document.getElementById("other-subject-container");
+            const otherSubjectInput = document.getElementById("other-subject");
+
+            subjectSelect.addEventListener("change", function () {
+                if (this.value === "autre") {
+                    otherSubjectContainer.style.display = "block";
+                    otherSubjectInput.setAttribute("required", "required");
+                } else {
+                    otherSubjectContainer.style.display = "none";
+                    otherSubjectInput.removeAttribute("required");
+                    otherSubjectInput.value = ""; // reset si on change d'avis
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("appointment-form");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // empêche soumission réelle pour la démo
+
+                // TODO: ici tu peux ajouter ton appel AJAX/Fetch vers le backend
+                // fetch('your-backend-endpoint.php', { method: 'POST', body: new FormData(form) })
+
+                // Fermer le popup courant
+                $.magnificPopup.close();
+
+                // Ouvrir le popup de confirmation après une petite pause
+                setTimeout(() => {
+                    $.magnificPopup.open({
+                        items: {
+                            src: '#confirmation-popup',
+                            type: 'inline'
+                        }
+                    });
+                }, 300);
+            });
+        });
+
+
     </script>
 
 </body>

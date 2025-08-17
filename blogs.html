@@ -195,11 +195,22 @@
                                                 <div class="form-group mb-15px">
                                                     <select class="form-control border-radius-4px w-100" id="subject"
                                                         name="subject" required>
-                                                        <option value="theme 1">Choisir un théme de message</option>
-                                                        <option value="theme 1">Thème 1</option>
-                                                        <option value="theme 2">Thème 2</option>
-                                                        <option value="theme 3">Thème 3</option>
+                                                        <option value="">Choisir un thème de message</option>
+                                                        <option value="orientation">Orientation professionnelle</option>
+                                                        <option value="competences">Développement de compétences
+                                                        </option>
+                                                        <option value="coaching">Coaching à la recherche d’emploi
+                                                        </option>
+                                                        <option value="autre">Autre</option>
                                                     </select>
+                                                </div>
+
+                                                <!-- Champ texte masqué par défaut -->
+                                                <div class="form-group mb-15px" id="other-subject-container"
+                                                    style="display: none;">
+                                                    <input class="form-control border-radius-4px w-100" type="text"
+                                                        id="other-subject" name="other_subject"
+                                                        placeholder="Précisez votre thème" />
                                                 </div>
 
                                                 <div class="form-group mb-15px">
@@ -217,6 +228,30 @@
                                                     class="btn btn-medium btn-round-edge btn-dark-gray btn-box-shadow w-100">
                                                     Valider la réservation
                                                 </button>
+
+                                                <!-- Popup Confirmation -->
+                                                <div id="confirmation-popup" class="mfp-hide confirmation-popup">
+                                                    <div class="container">
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-xl-7 col-md-9 bg-white">
+                                                                <div
+                                                                    class="row position-relative box-shadow-quadruple-large">
+                                                                    <div class="col-12 text-center p-6">
+
+                                                                        <div class="alert alert-success text-center fw-600 mb-0"
+                                                                            style="background:#98e7aa; color:rgb(1, 103, 13); border-radius:6px;">
+                                                                            Votre réservation a bien été enregistrée.
+                                                                            Merci !
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <button title="Close (Esc)" type="button"
+                                                                        class="mfp-close text-dark-gray"></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </form>
 
 
@@ -575,6 +610,49 @@
                 midClick: true
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const subjectSelect = document.getElementById("subject");
+            const otherSubjectContainer = document.getElementById("other-subject-container");
+            const otherSubjectInput = document.getElementById("other-subject");
+
+            subjectSelect.addEventListener("change", function () {
+                if (this.value === "autre") {
+                    otherSubjectContainer.style.display = "block";
+                    otherSubjectInput.setAttribute("required", "required");
+                } else {
+                    otherSubjectContainer.style.display = "none";
+                    otherSubjectInput.removeAttribute("required");
+                    otherSubjectInput.value = ""; // reset si on change d'avis
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("appointment-form");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // empêche soumission réelle pour la démo
+
+                // TODO: ici tu peux ajouter ton appel AJAX/Fetch vers le backend
+                // fetch('your-backend-endpoint.php', { method: 'POST', body: new FormData(form) })
+
+                // Fermer le popup courant
+                $.magnificPopup.close();
+
+                // Ouvrir le popup de confirmation après une petite pause
+                setTimeout(() => {
+                    $.magnificPopup.open({
+                        items: {
+                            src: '#confirmation-popup',
+                            type: 'inline'
+                        }
+                    });
+                }, 300);
+            });
+        });
+
+
     </script>
 
 </body>

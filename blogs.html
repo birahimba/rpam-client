@@ -413,12 +413,9 @@
                     </div>
 
                     <div class="col-xl-6 text-center text-xl-end">
-                        <a href="demo-accounting-contact.html"
-                            class="btn btn-extra-large btn-yellow left-icon btn-box-shadow btn-rounded text-transform-none d-inline-block align-middle me-15px xs-m-10px"><i
-                                class="feather icon-feather-mail"></i>Consultation gratuite</a>
-                        <a href="tel:12345678910"
-                            class="btn btn-extra-large btn-base-color left-icon btn-box-shadow btn-rounded d-inline-block align-middle xs-m-10px"><i
-                                class="feather icon-feather-phone-call"></i>+33 7 12 34 54 45</a>
+                        <a href="#subscribe-popup"
+                            class="btn text-white btn-extra-large bg-base-color left-icon btn-box-shadow btn-rounded text-transform-none d-inline-block align-middle me-15px xs-m-10px"><i
+                                class="feather text-white icon-feather-mail"></i>Consultation gratuite</a>
                     </div>
 
                 </div>
@@ -428,9 +425,9 @@
             <div class="row justify-content-center fs-17 fw-300 mt-5 mb-4 md-mt-45px md-mb-45px xs-mt-35px xs-mb-35px">
 
                 <div class="col-6 col-lg-3 order-sm-1 md-mb-40px xs-mb-30px last-paragraph-no-margin">
-                    <a href="demo-accounting.html" class="footer-logo mb-15px d-inline-block"><img
-                            src="images/logo-rpam.png" data-at2x="images/w-logo-rpam.png" alt></a>
-                    <p class="w-85 xl-w-95 sm-w-100">Lorem ipsum amet adipiscing elit à eiusmod tempor.</p>
+                    <a href="index.html" class="footer-logo mb-15px d-inline-block"><img src="images/w-logo-rpam.png"
+                            data-at2x="images/w-logo-rpam.png" alt></a>
+                    <p class="w-85 xl-w-95 sm-w-100"></p>
                     <div class="elements-social social-icon-style-02 mt-20px lg-mt-20px">
                         <ul class="small-icon light">
                             <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
@@ -449,18 +446,19 @@
                     <span class="fs-18 fw-400 d-block text-white mb-5px">À propos</span>
                     <ul>
                         <li><a href="about.html">Qui sommes-nous</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="blogs.html">Processus</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="guidance.html">Services</a></li>
+                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="news.html">Actualités</a></li>
+
                     </ul>
                 </div>
 
                 <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-4 order-lg-3">
                     <span class="fs-18 fw-400 d-block text-white mb-5px">Services</span>
                     <ul>
-                        <li><a href="guidance.html">GUIDANCE</a></li>
-                        <li><a href="up-training.html">Développement de Compétences (Up Training)</a></li>
-                        <li><a href="job-getting.html">Coaching à la recherche d’emploi (Job Getting)</a></li>
+                        <li><a href="guidance.html">Orientation Professionnelle</a></li>
+                        <li><a href="up-training.html">Développement de Compétences</a></li>
+                        <li><a href="job-getting.html">Coaching à la recherche d’emploi</a></li>
                         <li><a href="#">Consulting</a></li>
                     </ul>
                 </div>
@@ -468,30 +466,36 @@
                 <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-5 order-lg-4">
                     <span class="fs-18 fw-400 d-block text-white mb-5px">Contactez-nous</span>
                     <p class="mb-5px">Besoin d'aide ?</p>
-                    <a href="/cdn-cgi/l/email-protection#fa9293ba9e95979b9394d4999597"
-                        class="text-white lh-16 d-block mb-15px"><span class="__cf_email__"
-                            data-cfemail="452d2c05212a28242c2b6b262a28">[email&#160;protégé]</span></a>
-                    <p class="mb-5px">Service client ?</p>
-                    <a href="tel:12345678910" class="text-white lh-16 d-block">+1 234 567 8910</a>
+                    <a href="mailto:contact@rpam.fr" class="text-white lh-16 d-block mb-15px">
+                        contact@rpam.fr
+                    </a>
                 </div>
+
 
                 <div class="col-lg-3 col-sm-6 md-mb-40px xs-mb-0 order-sm-2 order-lg-5">
                     <span class="fs-18 fw-400 d-block text-white mb-5px">Abonnez-vous à la newsletter</span>
                     <p class="mb-20px">Entrez votre email et nous vous contacterons !</p>
                     <div class="d-inline-block w-100 newsletter-style-02 position-relative">
-                        <form action="email-templates/subscribe-newsletter.php" method="post" class="position-relative">
+                        <form action="email-templates/subscribe-newsletter.php" method="post"
+                            class="position-relative d-flex">
                             <input
                                 class="border-color-transparent-white-light bg-transparent border-radius-4px w-100 form-control lg-ps-15px required fs-16"
-                                type="email" name="email" placeholder="Entrez votre email" />
+                                type="email" name="email" placeholder="Entrez votre email" required />
+
+                            <!-- Bouton discret -->
+                            <button class="btn btn-sm bg-white text-dark ms-2 border-radius-4px" type="submit"
+                                aria-label="S'abonner">
+                                OK
+                            </button>
+
                             <input type="hidden" name="redirect" value>
-                            <button class="btn pe-20px submit" aria-label="submit"><i
-                                    class="bi bi-envelope icon-small text-white"></i></button>
                             <div
                                 class="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none">
                             </div>
                         </form>
                     </div>
                 </div>
+
 
             </div>
             <div class="row align-items-center fs-16 fw-300">
@@ -503,11 +507,27 @@
 
                 <div class="col-md-8 text-md-end order-1 order-md-2 text-center text-md-end sm-mb-10px">
                     <ul class="footer-navbar sm-lh-normal">
-                        <li><a href="#" class="nav-link">Politique de confidentialité</a></li>
-                        <li><a href="#" class="nav-link">Termes et conditions</a></li>
-                        <li><a href="#" class="nav-link">Droits d'auteur</a></li>
+                        <li>
+                            <a href="/docs/Politique_de_confidentialite_RPAM_v2.pdf" class="nav-link" target="_blank"
+                                rel="noopener" aria-label="Ouvrir la Politique de confidentialité (PDF)">
+                                Politique de confidentialité
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/docs/Termes_et_conditions_RPAM.pdf" class="nav-link" target="_blank"
+                                rel="noopener" aria-label="Ouvrir les Termes et conditions (PDF)">
+                                Termes et conditions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/docs/Droits_d_auteur_RPAM.pdf" class="nav-link" target="_blank" rel="noopener"
+                                aria-label="Ouvrir Droits d’auteur (PDF)">
+                                Droits d'auteur
+                            </a>
+                        </li>
                     </ul>
                 </div>
+
 
             </div>
         </div>

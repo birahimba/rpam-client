@@ -795,7 +795,7 @@ footer ul li {
 }
 
 .benefits-list li::before {
-    content: "âœ”";
+    content: ".";
     position: absolute;
     left: 0;
     top: 2px;
@@ -1143,7 +1143,7 @@ footer ul li {
 
 /* Overlay sombre UNIFORME sur toute l’image */
 .interactive-banner-style-08 figure::after {
-    content: "";
+    content: ".";
     position: absolute;
     inset: 0;
     /* top/right/bottom/left:0 */

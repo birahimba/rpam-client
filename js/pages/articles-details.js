@@ -1,5 +1,5 @@
 // ✅ Définis l'URL de ton backend Strapi en ligne
-const API_BASE_URL = "https://rpam-back.onrender.com"; // remplace par ton URL exacte
+const API_BASE_URL = "https://rpam-back.onrender.com";
 
 // Récupère le documentId depuis l'URL
 function getDocumentIdFromUrl() {

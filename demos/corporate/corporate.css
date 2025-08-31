@@ -717,7 +717,7 @@ footer ul li {
 }
 
 .highlighted-list ul li::before {
-    content: "â€¢";
+    content: ".";
     position: absolute;
     left: 0;
     top: 0;
@@ -881,7 +881,7 @@ footer ul li {
 }
 
 .challenges-list li::before {
-    content: "â€¢";
+    content: ".";
     color: #FF9800;
     font-size: 1.5rem;
     font-weight: bold;
@@ -1117,15 +1117,177 @@ footer ul li {
 
 .subtitle {
     margin-top: 6px;
-    opacity: .9;
+   
     color: white
 }
-
-.interactive-banner-style-08 {
-    position: relative
+/* Figure = cadre image + overlay */
+.interactive-banner-style-08 figure {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    /* indispensable pour arrondis */
+    isolation: isolate;
+    /* crée un contexte d'empilage propre */
 }
 
+/* Image plein cadre */
+.interactive-banner-style-08 figure>img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Optionnel pour un ratio constant sur toutes les vignettes: */
+    aspect-ratio: 4 / 3;
+    /* ajuste si besoin (ex: 1/1, 16/9) */
+}
+
+/* Overlay sombre UNIFORME sur toute l’image */
+.interactive-banner-style-08 figure::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* top/right/bottom/left:0 */
+    background: rgba(0, 0, 0, .45);
+    /* opacité uniforme */
+    z-index: 1;
+    /* sous le texte, au-dessus de l’image */
+    pointer-events: none;
+}
+
+/* Zone texte au-dessus de l’overlay */
+.interactive-banner-style-08 figure>figcaption {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    /* au-dessus de l’overlay */
+    padding: 14px;
+    /* garde p-14 si tu utilises utilitaires */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Titre + sous-titre */
+.interactive-banner-style-08 .title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    /* ~24px */
+    line-height: 1.2;
+}
+
+.interactive-banner-style-08 .subtitle {
+    margin-top: 6px;
+    color: rgba(255, 255, 255, .85);
+    font-size: 1rem;
+    /* ~16px */
+}
+
+/* Rendre toute la carte cliquable proprement */
 .interactive-banner-style-08 .stretched-link {
     position: absolute;
-    inset: 0
+    inset: 0;
+    z-index: 3;
+    /* au-dessus du texte/icône si nécessaire */
+}
+
+/* Effets optionnels */
+.interactive-banner-style-08 figure:hover::after {
+    background: rgba(0, 0, 0, .55);
+}
+
+.interactive-banner-style-08 figure:hover img {
+    transform: scale(1.03);
+    transition: transform .3s ease;
+}
+/* Section spacing */
+.section-padding {
+    padding: 64px 0;
+}
+
+/* Carte équipe sans ombre */
+.team-card {
+    background: #fff;
+    /* léger contour */
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Photo sans shadow */
+.team-photo {
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
+}
+
+.team-photo img {
+    width: 218px;
+    height: 218px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Corps */
+.team-body {
+    padding: 24px 24px 28px;
+}
+
+.team-name {
+    margin: 0 0 4px;
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: #005153;
+}
+
+.team-role {
+    margin: 0 0 16px;
+  
+    font-size: .95rem;
+    color: #005153;
+}
+
+.team-desc {
+    margin: 0 0 12px;
+    line-height: 1.6;
+}
+
+.team-skills {
+    margin: 0 0 14px;
+}
+
+.team-quote {
+    margin: 0;
+    padding: 12px 16px;
+    border-left: 4px solid var(--base-color);
+    background: var(--solitude-blue);
+    border-radius: 6px;
+    font-style: italic;
+}
+
+/* Réseau sociaux */
+.team-social a {
+    color: var(--base-color);
+    font-size: 1.5rem;
+    transition: color .2s ease;
+}
+
+.team-social a:hover {
+    color: var(--yellow);
+}
+
+@media (max-width:575.98px) {
+    .team-body {
+        padding: 20px;
+    }
+
+    .team-photo img {
+        width: 180px;
+        height: 180px;
+    }
 }

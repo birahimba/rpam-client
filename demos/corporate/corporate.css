@@ -108,12 +108,7 @@ header .navbar-brand img {
     max-height: 48px;
 }
 
-/* Smaller brand image for small screens */
-@media (max-width: 568px) {
-    header .navbar-brand img {
-        max-height: 36px;
-    }
-}
+
 
 /* Header icons */
 .header-icon .icon>a {
@@ -186,63 +181,125 @@ header .navbar-brand img {
     font-weight: 900;
 }
 
-/* Navigation responsive adjustments */
-@media (max-width: 1700px) {
-    .navbar .navbar-nav .nav-link {
-        padding-left: 19px;
-        padding-right: 19px;
+
+/* Base (mobile-first) */
+header .navbar-brand img {
+    max-height: 36px;
+}
+
+/* petit écran */
+.navbar .navbar-nav .nav-link {
+    padding-inline: 10px;
+}
+
+/* défaut */
+#map {
+    border-radius: 0;
+}
+
+.small-screen {
+    height: 300px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-bottom: 20px;
+}
+
+.histoire-image,
+.challenges-image,
+.image-wrapper {
+    display: none;
+}
+
+/* caché <992px */
+.objective-card {
+    flex: 1 1 100%;
+}
+
+.grid-container {
+    grid-template-columns: 1fr;
+}
+
+.accordion-style-06 .accordion-item {
+    padding: 15px;
+}
+
+footer .elements-social.social-icon-style-02 li {
+    margin: 0 15px 0 0;
+}
+
+footer .elements-social.social-icon-style-02 li:first-child {
+    margin-left: 0;
+}
+
+.team-body {
+    padding: 20px;
+}
+
+.team-photo img {
+    width: 180px;
+    height: 180px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
     }
 }
 
-@media (max-width: 1600px) {
-    .navbar .navbar-nav .nav-link {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
+/* ≥576px */
+@media (min-width: 576px) {
+    /* rien pour l’instant */
 }
 
-@media (max-width: 1350px) {
-    .navbar .navbar-nav .nav-link {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-
-@media (max-width: 1300px) {
-    .navbar .navbar-nav .nav-link {
-        padding-left: 9px;
-        padding-right: 9px;
-    }
-}
-
-@media (max-width: 1199px) {
-    .box-layout {
-        padding: 0;
-    }
-
-
-
-    .lg-border-radius-0px {
-        border-radius: 0 !important;
-    }
-
-    .navbar .navbar-nav .nav-link {
-        padding-left: 10px;
-        padding-right: 10px;
+/* ≥768px */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .accordion-style-06 .accordion-item {
         padding: 15px 50px 15px 35px;
     }
+
+    /* éléments masqués restent masqués jusqu'à 992px */
 }
 
-/* Mobile dropdown menu adjustments */
-@media (max-width: 991px) {
+/* ≥992px */
+@media (min-width: 992px) {
+
+    /* Afficher les images desktop seulement ≥992px */
+    .histoire-image,
+    .challenges-image,
+    .image-wrapper {
+        display: block;
+    }
+
+    /* Dropdown desktop: styles mobiles non appliqués au-delà */
+}
+
+@media (max-width: 575.98px) {
+    .header-with-topbar .btn.btn-base-color {
+        display: none !important;
+    }
+}
+
+/* Mobile dropdown (≤991.98px) */
+@media (max-width: 991.98px) {
     .navbar .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu {
         width: calc(100% + 30px) !important;
-        margin-left: -15px;
-        margin-right: -15px;
-        margin-bottom: 0;
+        margin: 0 -15px 0;
         padding: 10px 45px;
     }
 
@@ -261,54 +318,35 @@ header .navbar-brand img {
     [data-mobile-nav-style=modern] .navbar-modern-inner .navbar-nav .dropdown.dropdown-with-icon-style02 .dropdown-menu li a i {
         font-size: 26px;
     }
+}
 
-    /* Hide map border radius and small-screen height adjustments */
-    #map {
-        border-radius: 0;
+/* ≥1200px */
+@media (min-width: 1200px) {
+    .box-layout {
+        padding: 0;
     }
 
-    .small-screen {
-        height: 300px !important;
+    .lg-border-radius-0px {
+        border-radius: 0 !important;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .h1,
-    .h2,
-    .h3,
-    .h4,
-    .h5,
-    .h6 {
-        margin-bottom: 20px;
+    .navbar .navbar-nav .nav-link {
+        padding-inline: 12px;
     }
 }
 
-@media (max-width: 767px) {
-    footer .elements-social.social-icon-style-02 li {
-        margin: 0 15px 0 0;
+/* ≥1400px */
+@media (min-width: 1400px) {
+    .navbar .navbar-nav .nav-link {
+        padding-inline: 19px;
     }
+}
 
-    footer .elements-social.social-icon-style-02 li:first-child {
-        margin-left: 0;
-    }
-
-    .accordion-style-06 .accordion-item {
-        padding: 15px;
-    }
-
-    .histoire-image,
-    .challenges-image,
-    .image-wrapper {
-        display: none;
-    }
-
-    .objective-card {
-        flex: 1 1 100%;
-    }
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    background-color: #ffffff;  /* ou #f7f7f7 */
+    padding: 1rem;
+  }
 }
 
 /* ================================================================
@@ -365,11 +403,19 @@ h6,
     gap: 10px;
 }
 
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
+
+.navbar-toggler-line {
+    display: block;
+    width: 24px;
+    /* même largeur pour toutes */
+    height: 2px;
+    /* même épaisseur */
+    background-color: #000;
+    /* ou ta couleur */
+    margin: 4px 0;
+    /* même espacement */
 }
+
 
 /* Position helpers */
 .top-40 {
@@ -771,11 +817,7 @@ footer ul li {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .objective-card {
-        flex: 1 1 100%;
-    }
-}
+
 
 /* Benefits list */
 .benefits-list {
@@ -854,11 +896,7 @@ footer ul li {
     border-radius: 10px;
 }
 
-@media (max-width: 991px) {
-    .histoire-image {
-        display: none;
-    }
-}
+
 
 /* Challenges section */
 .challenges-section {
@@ -888,11 +926,7 @@ footer ul li {
     margin-right: 10px;
 }
 
-@media (max-width: 991px) {
-    .challenges-image {
-        display: none;
-    }
-}
+
 
 /* Image overlay wrapper */
 .image-wrapper {
@@ -916,11 +950,7 @@ footer ul li {
     transform: rotate(-5deg);
 }
 
-@media (max-width: 991px) {
-    .image-wrapper {
-        display: none;
-    }
-}
+
 
 /* Typography utilities */
 .text-base-color {
@@ -1109,11 +1139,7 @@ footer ul li {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .marquee-track {
-        animation: none;
-    }
-}
+
 
 .subtitle {
     margin-top: 6px;
@@ -1281,13 +1307,3 @@ footer ul li {
     color: var(--yellow);
 }
 
-@media (max-width:575.98px) {
-    .team-body {
-        padding: 20px;
-    }
-
-    .team-photo img {
-        width: 180px;
-        height: 180px;
-    }
-}

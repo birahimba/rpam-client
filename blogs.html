@@ -62,7 +62,6 @@
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg header-light bg-white responsive-sticky">
-
             <div class="container-fluid">
                 <!-- Logo -->
                 <div class="col-auto col-lg-2 me-lg-0 me-auto">
@@ -73,194 +72,119 @@
                     </a>
                 </div>
 
-                <!-- Menu -->
-                <div class="col-auto menu-order position-static">
-                    <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-line"></span>
-                        <span class="navbar-toggler-line"></span>
-                        <span class="navbar-toggler-line"></span>
-                        <span class="navbar-toggler-line"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav fw-600">
-                            <li class="nav-item">
-                                <a href="index.html" class="nav-link">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="about.html" class="nav-link">Qui sommes nous</a>
-                            </li>
-                            <li class="nav-item dropdown dropdown-with-icon-style02">
-                                <a href="#" class="nav-link">Nos Services</a>
-                                <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                <!-- Toggler mobile -->
+                <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                </button>
 
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li class="service-item">
-                                        <a href="guidance.html" class="tooltip"
-                                            data-tooltip="Développez votre connaissance de soi et vos compétences personnelles.">
-                                            <img src="images/demo-accounting-company-icon-04.svg"
-                                                alt="Icon Self-Knowledge">
-                                            Orientation Professionnelle (Guidance)
-                                        </a>
-                                    </li>
-                                    <li class="service-item">
-                                        <a href="up-training.html" class="tooltip"
-                                            data-tooltip="Formations avancées pour renforcer vos compétences professionnelles.">
-                                            <img src="images/demo-accounting-company-icon-05.svg"
-                                                alt="Icon Up-Training">
-                                            Développement de Compétences (Up Training)
-                                        </a>
-                                    </li>
-                                    <li class="service-item">
-                                        <a href="job-getting.html" class="tooltip"
-                                            data-tooltip="Assistance dans la recherche et l'obtention d'un emploi.">
-                                            <img src="images/demo-accounting-company-icon01.svg" alt="Icon Job Getting">
-                                            Coaching à la recherche d’emploi (Job Getting)
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-
-                            <li class="nav-item">
-                                <a href="blogs.html active" class="nav-link">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="news.html" class="nav-link">Actualités</a>
-                            </li>
-                        </ul>
-                    </div>
+                <!-- Menu desktop -->
+                <div class="navbar-collapse d-none d-lg-flex ms-4" id="navbarNavDesktop">
+                    <ul class="navbar-nav fw-600">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">Qui sommes nous</a>
+                        </li>
+                        <li class="nav-item dropdown dropdown-with-icon-style02">
+                            <a href="#" class="nav-link" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Nos Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li class="service-item">
+                                    <a href="guidance.html" class="tooltip">
+                                        <img src="images/demo-accounting-company-icon-04.svg" alt="">
+                                        Orientation Professionnelle (Guidance)
+                                    </a>
+                                </li>
+                                <li class="service-item">
+                                    <a href="up-training.html" class="tooltip">
+                                        <img src="images/demo-accounting-company-icon-05.svg" alt="">
+                                        Développement de Compétences (Up Training)
+                                    </a>
+                                </li>
+                                <li class="service-item">
+                                    <a href="job-getting.html" class="tooltip">
+                                        <img src="images/demo-accounting-company-icon01.svg" alt="">
+                                        Coaching à la recherche d’emploi (Job Getting)
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blogs.html" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="news.html" class="nav-link">Actualités</a>
+                        </li>
+                    </ul>
                 </div>
 
-
-                <!-- Call to Action   -->
-
+                <!-- Call to Action desktop -->
                 <a href="#subscribe-popup"
-                    class="btn btn-base-color btn-box-shadow text-transform-none btn-rounded btn-hover-animation-switch slide-up-animation">
+                    class="btn btn-base-color btn-box-shadow text-transform-none btn-rounded btn-hover-animation-switch slide-up-animation d-none d-lg-inline-flex ms-3">
                     Réserver un rendez-vous
                 </a>
-                <!-- start subscription popup -->
-                <div id="subscribe-popup" class="mfp-hide subscribe-popup">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-9 col-md-10 bg-white">
-                                <div class="row position-relative box-shadow-quadruple-large">
-                                    <div
-                                        class="col-lg-12 newsletter-popup p-8 pt-10 pb-10 lg-p-5 md-p-6 xs-p-8 position-relative">
-                                        <h4 class="d-inline-block alt-font ls-minus-1px fw-700 text-dark-gray mb-15px">
-                                            Prenez rendez-vous avec un agent</h4>
-                                        <p>Réservez dès maintenant pour échanger avec un de nos conseillers.</p>
-                                        <div class="d-inline-block w-100 newsletter-style-05 position-relative mb-20px">
-                                            <form id="appointment-form" action="your-backend-endpoint.php"
-                                                method="post">
-                                                <div class="form-group mb-15px">
-
-                                                    <input class="form-control  border-radius-4px w-100 required"
-                                                        type="text" id="name" name="name"
-                                                        placeholder="Entrez votre nom complet" required />
-                                                </div>
-
-
-                                                <div class="form-group mb-15px grid-container">
-                                                    <div class="grid-item">
-
-                                                        <input class="form-control border-radius-4px w-100 required"
-                                                            type="email" id="email" name="email"
-                                                            placeholder="Entrez votre adresse email" required />
-                                                    </div>
-
-                                                    <div class="grid-item">
-
-                                                        <input class="form-control border-radius-4px w-100 required"
-                                                            type="tel" id="phone" name="phone"
-                                                            placeholder="Entrez votre numéro de téléphone" required />
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group mb-15px">
-                                                    <label class="text-base-color" for="datetime">Date et heure du
-                                                        rendez-vous</label>
-                                                    <input class="form-control border-radius-4px w-100 required"
-                                                        type="datetime-local" id="datetime" name="datetime" required />
-                                                </div>
-
-                                                <div class="form-group mb-15px">
-                                                    <select class="form-control border-radius-4px w-100" id="subject"
-                                                        name="subject" required>
-                                                        <option value="">Choisir un thème de message</option>
-                                                        <option value="orientation">Orientation professionnelle
-                                                        </option>
-                                                        <option value="competences">Développement de compétences
-                                                        </option>
-                                                        <option value="coaching">Coaching à la recherche d’emploi
-                                                        </option>
-                                                        <option value="autre">Autre</option>
-                                                    </select>
-                                                </div>
-
-                                                <!-- Champ texte masqué par défaut -->
-                                                <div class="form-group mb-15px" id="other-subject-container"
-                                                    style="display: none;">
-                                                    <input class="form-control border-radius-4px w-100" type="text"
-                                                        id="other-subject" name="other_subject"
-                                                        placeholder="Précisez votre thème" />
-                                                </div>
-
-                                                <div class="form-group mb-15px">
-                                                    <textarea class="form-control border-radius-4px w-100" id="message"
-                                                        name="message" rows="4"
-                                                        placeholder="Souhaitez-vous ajouter un message ?"
-                                                        required></textarea>
-                                                </div>
-
-                                                <input type="hidden" name="locale" value="fr-FR" />
-                                                <input type="hidden" name="localizations[]" value="localization1" />
-                                                <input type="hidden" name="localizations[]" value="localization2" />
-
-                                                <button type="submit"
-                                                    class="btn btn-medium btn-round-edge btn-dark-gray btn-box-shadow w-100">
-                                                    Valider la réservation
-                                                </button>
-
-                                                <!-- Popup Confirmation -->
-                                                <div id="confirmation-popup" class="mfp-hide confirmation-popup">
-                                                    <div class="container">
-                                                        <div class="row justify-content-center">
-                                                            <div class="col-xl-7 col-md-9 bg-white">
-                                                                <div
-                                                                    class="row position-relative box-shadow-quadruple-large">
-                                                                    <div class="col-12 text-center p-6">
-
-                                                                        <div class="alert alert-success text-center fw-600 mb-0"
-                                                                            style="background:#98e7aa; color:rgb(1, 103, 13); border-radius:6px;">
-                                                                            Votre réservation a bien été
-                                                                            enregistrée.
-                                                                            Merci !
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <button title="Close (Esc)" type="button"
-                                                                        class="mfp-close text-dark-gray"></button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-
-
-                                        </div>
-
-                                    </div>
-                                    <button title="Close (Esc)" type="button" class="mfp-close text-dark-gray"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </nav>
+
+        <!-- Offcanvas mobile -->
+        <div class="offcanvas offcanvas-end offcanvas-mobile-nav" tabindex="-1" id="mobileNav"
+            aria-labelledby="mobileNavLabel">
+            <div class="offcanvas-header">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo-rpam.png" alt="RPAM" class="mobile-logo">
+                </a>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column">
+                <ul class="navbar-nav fw-600 nav-mobile">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Qui sommes nous</a></li>
+
+                    <!-- Services en accordéon -->
+                    <li class="nav-item">
+                        <button class="btn w-100 text-start nav-link-like" data-bs-toggle="collapse"
+                            data-bs-target="#mServices" aria-expanded="false">
+                            Nos Services <span class="chevron"></span>
+                        </button>
+                        <div id="mServices" class="collapse">
+                            <ul class="list-unstyled ps-3 mt-2 d-grid gap-2">
+                                <li><a href="guidance.html" class="nav-sub-link d-flex align-items-center gap-2">
+                                        <img src="images/demo-accounting-company-icon-04.svg" alt="" width="22"
+                                            height="22">
+                                        Orientation Professionnelle (Guidance)
+                                    </a></li>
+                                <li><a href="up-training.html" class="nav-sub-link d-flex align-items-center gap-2">
+                                        <img src="images/demo-accounting-company-icon-05.svg" alt="" width="22"
+                                            height="22">
+                                        Développement de Compétences (Up Training)
+                                    </a></li>
+                                <li><a href="job-getting.html" class="nav-sub-link d-flex align-items-center gap-2">
+                                        <img src="images/demo-accounting-company-icon01.svg" alt="" width="22"
+                                            height="22">
+                                        Coaching à la recherche d’emploi (Job Getting)
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"><a href="blogs.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="news.html" class="nav-link">Actualités</a></li>
+                </ul>
+
+                <div class="mt-auto pt-3 border-top">
+                    <a href="#subscribe-popup" class="btn btn-base-color btn-box-shadow btn-rounded w-100">
+                        Réserver un rendez-vous
+                    </a>
+                </div>
+            </div>
+        </div>
     </header><br>
 
     <!-- start page title -->

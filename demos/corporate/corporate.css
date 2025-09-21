@@ -1094,6 +1094,7 @@ footer ul li {
   }
 
   .slide-content h2 {
+    padding-top: 100px;
     font-size: 1.8rem; /* réduit la taille sur mobile */
   }
 

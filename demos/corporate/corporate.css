@@ -1101,6 +1101,13 @@ footer ul li {
   .slide-content p {
     font-size: 1rem; /* réduit la taille sur mobile */
   }
+
+  .interactive-banner-style-08 .title {
+    font-size: 2rem; /* augmente la taille sur mobile */
+  }
+  .interactive-banner-style-08 .subtitle {
+    font-size: 1.25rem; /* augmente aussi la sous-titre */
+  }
 }
 
 .slide-overlay {

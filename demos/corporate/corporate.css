@@ -64,8 +64,8 @@ a {
 /* ================================================================
   MOBILE MOBILE
 ================================================================= */
-/* Mobile ≤575.98px */
-@media (max-width: 575.98px) {
+/* Mobile ≤767px */
+@media (max-width: 767px) {
   .swiper-slide {
     padding-left: 15px;
     padding-right: 15px;
@@ -413,11 +413,6 @@ header .navbar-brand img {
   font-family: var(--primary-font);
   font-size: 16px;
   font-weight: 900;
-}
-
-/* Base (mobile-first) */
-header .navbar-brand img {
-  max-height: 36px;
 }
 
 /* petit écran */

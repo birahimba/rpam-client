@@ -229,7 +229,7 @@ a {
   .nav-mobile .nav-link,
   .nav-link-like {
     padding: 0.9rem 0.25rem;
-    font-size: 1.05rem;
+    font-size: 18px;
   }
   .nav-link-like {
     background: transparent;
@@ -241,12 +241,32 @@ a {
   .nav-sub-link {
     padding: 0.5rem 0;
   }
-  .navbar-toggler-line {
+  /* normaliser le bouton */
+  .navbar-toggler {
+    border: 0;
+    padding: 0;
+    width: 40px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /* espace régulier entre barres */
+    background: transparent;
+    line-height: 1;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* une seule définition, plus spécifique */
+  .navbar-toggler .navbar-toggler-line {
     display: block;
-    width: 22px;
+    width: 22px; /* une seule largeur */
     height: 2px;
     background: #1e3238;
-    margin: 4px 0;
+    border-radius: 1px;
+    margin: 0; /* pas de marges contradictoires */
   }
 
   /* séparateurs discrets */
@@ -522,18 +542,6 @@ h6,
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-}
-
-.navbar-toggler-line {
-  display: block;
-  width: 24px;
-  /* même largeur pour toutes */
-  height: 2px;
-  /* même épaisseur */
-  background-color: #000;
-  /* ou ta couleur */
-  margin: 4px 0;
-  /* même espacement */
 }
 
 /* Position helpers */

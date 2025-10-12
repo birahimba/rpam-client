@@ -2266,7 +2266,7 @@
      Subscribe popup on page load
      ====================================== */
   if (typeof $.fn.magnificPopup === "function") {
-    if ($("#subscribe-popup").length > 0) {
+    if ($("booking.html").length > 0) {
       let delaySecond = 1.5,
         expireDays = 30,
         cookieName = "crafto-promo-popup";

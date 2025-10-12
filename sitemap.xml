@@ -75,7 +75,7 @@
 
     <!-- Réservation -->
     <url>
-        <loc>https://www.rpam.fr/#subscribe-popup</loc>
+        <loc>https://www.rpam.fr/booking.html</loc>
         <lastmod>2025-10-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>

@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/responsive.min.css">
     <link rel="stylesheet" href="css/corporate.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 
@@ -197,87 +199,92 @@
     </section>
     <!-- End Page Title -->
 
-    <!-- About RPAM Section -->
-    <section id="about-rpam" class="border-bottom border-color-extra-medium-gray">
-        <div class="container overlap-gap-section">
-            <div class="row align-items-center justify-content-center mb-5 text-center text-md-start">
-                <div class="col-lg-6" data-anime='{"translateY": [30, 0], "opacity": [0,1], "duration": 600}'>
-                    <h5 class="text-dark-gray fw-700">RPAM, votre partenaire stratégique</h5>
-                    <p class="text-black">Nous nous engageons à être un levier essentiel pour favoriser votre
-                        insertion sur le marché de
-                        l’emploi et accélérer votre évolution professionnelle.</p>
+    <!-- About RPAM (Modern Hero) -->
+    <section id="about-rpam" class="py-5 border-bottom border-light bg-light">
+        <div class="container">
+            <div class="row align-items-center flex-column-reverse flex-lg-row text-center text-lg-start">
+                <!-- Text block -->
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h5 class="fw-bold text-dark">RPAM, votre <span class="text-base-color">partenaire
+                            stratégique</span>
+                    </h5>
+                    <p class="mt-3 text-dark">
+                        Nous sommes un levier clé pour accélérer votre insertion professionnelle et booster votre
+                        carrière.
+                    </p>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="images/logo-rpam.png" class="border-radius-6px w-100" alt="RPAM Mission">
+                <!-- Image block -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="images/logo-rpam.png" alt="Mission RPAM" class="img-fluid ">
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Histoire de RPAM -->
-    <section class="histoire-rpam-section py-5 position-relative">
+    <!-- Notre Histoire -->
+    <section class="py-5 position-relative bg-white border-bottom">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Texte à gauche -->
-                <div class="col-lg-6 text-left">
-                    <h5 class="text-base-color fw-700">Notre Histoire</h5>
-                    <p class="text-dark">
-                        Fort d'une expertise fondée sur plus de 5 ans de recherches approfondies sur les défis liés à
-                        l'insertion et à l'évolution professionnelle, nous avons identifié les principaux obstacles
-                        auxquels font face :
+                <!-- Texte -->
+                <div class="col-lg-6" data-aos="fade-up">
+                    <h5 class="fw-bold text-base-color">Notre Histoire</h5>
+                    <p class="text-dark mt-3">
+                        Depuis plus de 5 ans, nous analysons les défis liés à l'insertion et à l'évolution
+                        professionnelle :
                     </p>
-                    <ul class="list-unstyled mt-3">
-                        <li class="d-flex align-items-center mb-2">
-                            <span class="bullet-point"></span>
-                            <span class="text-dark">Les jeunes diplômés en quête d'une première expérience alignée à
-                                leurs
-                                aspirations.</span>
+                    <ul class="list-unstyled mt-4">
+                        <li class="d-flex align-items-start mb-2">
+                            <span class="me-2 text-primary fs-5">•</span>
+                            <span>Jeunes diplômés en quête d'une première expérience alignée à leurs aspirations.</span>
                         </li>
-                        <li class="d-flex align-items-center">
-                            <span class="bullet-point"></span>
-                            <span class="text-dark">Les salariés cherchant à redonner du sens à leur carrière ou à
-                                accélérer
-                                leur progression professionnelle.</span>
+                        <li class="d-flex align-items-start">
+                            <span class="me-2 text-primary fs-5">•</span>
+                            <span>Salariés en recherche de sens ou de progression dans leur carrière.</span>
                         </li>
                     </ul>
                 </div>
-
-                <!-- Image à droite -->
-                <div class="col-lg-6 d-none d-lg-block">
-                    <div class="histoire-image"></div>
+                <!-- Image -->
+                <div class="col-lg-6 d-none d-lg-block" data-aos="fade-left">
+                    <img src="images/font-texture.png" alt="Notre histoire" class="img-fluid ">
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
-    <!-- Challenges Section -->
-    <section class="challenges-section py-5 position-relative">
+    <!-- Challenges -->
+    <section class="py-5 bg-light position-relative">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Contenu texte à gauche -->
-                <div class="col-lg-6">
-                    <h4 class="text-base-color fw-700">Les défis que nous résolvons</h4>
-                    <p class="text-dark">
-                        Nous avons identifié les principaux obstacles auxquels font face de nombreux professionnels et
-                        jeunes diplômés dans leur parcours :
+                <!-- Texte -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h5 class="fw-bold text-base-color">Les défis que nous résolvons</h5>
+                    <p class="text-dark mt-3">
+                        Nous vous aidons à dépasser les freins majeurs rencontrés dans les parcours professionnels :
                     </p>
-                    <ul class="challenges-list mt-3">
-                        <li>Manque d'orientation et de clarté dans les projets professionnels.</li>
-                        <li>Difficultés à trouver un premier emploi qui reflète ses aspirations et son potentiel.</li>
-                        <li>Insuffisance de compétences significatives ou adaptées aux attentes du marché.</li>
-                        <li>Sentiment de stagnation ou d'isolement dans la carrière professionnelle.</li>
+                    <ul class="list-unstyled mt-4">
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i> Manque de clarté sur le projet
+                            professionnel.
+                        </li>
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i> Difficultés à décrocher un premier
+                            emploi.
+                        </li>
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i> Compétences inadaptées au marché.
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i> Stagnation ou isolement dans la
+                            carrière.
+                        </li>
                     </ul>
                 </div>
-
-                <!-- Bloc pour superposition des images -->
-                <div class="col-lg-6 d-none d-lg-block position-relative">
-                    <div class="image-wrapper">
-                        <img src="images/chall2.png" alt="Image principale" class="main-image">
-                        <img src="images/chall1.webp" alt="Image superposée" class="overlay-image">
+                <!-- Image double -->
+                <div class="col-lg-6 position-relative d-none d-lg-block" data-aos="zoom-in">
+                    <div class="position-relative">
+                        <img src="images/chall2.png" alt="Défis RPAM" class="img-fluid ">
+                        <img src="images/chall1.webp" alt="Superposition" class="position-absolute top-0 start-0 w-75"
+                            style="transform: translate(20%, 20%); z-index: -1;">
                     </div>
                 </div>
             </div>
@@ -310,7 +317,7 @@
                             <i class="fas fa-users"></i>
                         </div>
                         <h4 class="fw-600 text-dark">Esprit d’équipe</h4>
-                        <p class="fw-500 text-muted">Nous travaillons en synergie pour vous offrir un service de
+                        <p class="fw-500 text-dark">Nous travaillons en synergie pour vous offrir un service de
                             qualité.</p>
                     </div>
                 </div>
@@ -322,7 +329,7 @@
                             <i class="fas fa-ear-listen"></i>
                         </div>
                         <h4 class="fw-600 text-dark">Écoute</h4>
-                        <p class=" fw-500 text-muted">Nous collectons chaque besoin avec attention et professionnalisme.
+                        <p class=" fw-500 text-dark">Nous collectons chaque besoin avec attention et professionnalisme.
                         </p>
                     </div>
                 </div>
@@ -334,7 +341,7 @@
                             <i class="fas fa-handshake"></i>
                         </div>
                         <h4 class="fw-600 text-dark">Proximité</h4>
-                        <p class="text-muted">Nous vous accompagnons à chaque étape de votre objectif professionnel</p>
+                        <p class="text-dark">Nous vous accompagnons à chaque étape de votre objectif professionnel</p>
                     </div>
                 </div>
 
@@ -345,7 +352,7 @@
                             <i class="fas fa-balance-scale"></i>
                         </div>
                         <h4 class="fw-600 text-dark">Professionnalisme</h4>
-                        <p class="text-muted">Nous agissons chaque jour avec professionnalisme, portés par l’intégrité,
+                        <p class="text-dark">Nous agissons chaque jour avec professionnalisme, portés par l’intégrité,
                             la responsabilité et le souci de bien faire
                             pour ceux qui nous font confiance.</p>
                     </div>
@@ -366,7 +373,7 @@
                 <div class="col">
                     <article class="team-card h-100">
                         <div class="team-photo">
-                            <img src="images/profile.png" alt="Vianney NZOCHE" loading="lazy">
+                            <img src="images/vianey.png" alt="Vianney NZOCHE" loading="lazy">
                         </div>
                         <div class="team-body">
                             <h4 class="team-name text-dark-gray">Vianney NZOCHE</h4>
@@ -601,9 +608,13 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

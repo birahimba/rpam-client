@@ -1139,8 +1139,8 @@ footer ul li {
 
 /* Icon circle */
 .icon-circle {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   background-color: #ff9800;
   border-radius: 50%;
   display: flex;
@@ -1152,7 +1152,7 @@ footer ul li {
 
 .icon-circle i {
   color: white;
-  font-size: 24px;
+  font-size: 34px;
 }
 
 .value-item h4 {

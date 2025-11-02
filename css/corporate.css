@@ -1404,12 +1404,11 @@ footer ul li {
 }
 
 .team-photo img {
-  width: 240px; /* léger zoom */
-  height: 240px;
+  width: 210px; /* réduit légèrement la taille pour "reculer" */
+  height: 210px;
   object-fit: cover;
-  object-position: center top; /* remonte un peu le visage */
+  object-position: center 25%; /* remonte un peu le visage */
   border-radius: 50%;
-  transition: all 0.3s ease; /* optionnel, pour test fluide */
 }
 
 /* Corps */

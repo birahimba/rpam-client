@@ -1398,14 +1398,18 @@ footer ul li {
 .team-photo {
   display: flex;
   justify-content: center;
+  align-items: center; /* centre verticalement */
   padding-top: 24px;
+  overflow: hidden; /* évite qu’une partie déborde après le zoom */
 }
 
 .team-photo img {
-  width: 218px;
-  height: 218px;
+  width: 240px; /* léger zoom */
+  height: 240px;
   object-fit: cover;
+  object-position: center top; /* remonte un peu le visage */
   border-radius: 50%;
+  transition: all 0.3s ease; /* optionnel, pour test fluide */
 }
 
 /* Corps */

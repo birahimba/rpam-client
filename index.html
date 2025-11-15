@@ -1,108 +1,760 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html class="no-js" lang="fr">
 
 <head>
-    <meta charset="UTF-8">
+    <title>RPAM – Orientation professionnelle, coaching et développement de compétences– Orientation professionnelle,
+        coaching et développement de compétences</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance - RPAM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #1c1c1c;
-            color: white;
-        }
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="RPAM accompagne les professionnels et étudiants en France dans leur orientation professionnelle, le développement de compétences et le coaching à la recherche d’emploi. Accompagnement personnalisé et formations sur mesure.">
+    <meta property="og:title"
+        content="RPAM – Orientation professionnelle, coaching et développement de compétences à Paris">
+    <meta property="og:description"
+        content="Accompagnement personnalisé, formations sur mesure et coaching à la recherche d’emploi pour booster votre carrière.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.rpam.fr/">
+    <meta property="og:image" content="https://www.rpam.fr/images/og-rpam.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
-        .container {
-            text-align: center;
-            padding: 20px;
-        }
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-        .logo {
-            width: 300px;
-            /* Increased the width */
-            max-width: 90%;
-            /* Adjusted max-width */
-            margin-bottom: 20px;
-            animation: move 2s infinite alternate;
-        }
 
-        @keyframes move {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(-20px);
-            }
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.2em;
-            color: #ccc;
-        }
-
-        .contact {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #ccc;
-        }
-
-        .contact img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        @media (max-width: 600px) {
-            .logo {
-                width: 200px;
-                /* Increased the width for smaller screens */
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            .contact {
-                font-size: 1em;
-            }
-
-            .contact img {
-                width: 20px;
-                height: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/vendors.min.css">
+    <link rel="stylesheet" href="css/icon.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/responsive.min.css">
+    <link rel="stylesheet" href="css/corporate.css">
 </head>
 
-<body>
-    <div class="container">
-        <img src="images/w-logo-rpam.png" alt="RPAM Logo" class="logo">
-        <h1>Site en maintenance</h1>
-        <p>Nous serons de retour bientôt. Merci pour votre patience.</p>
-        <div class="contact">
-            <img src="images/email.png" alt="Email Icon">
-            <span>contact@rpam.fr</span>
+<body data-mobile-nav-style="classic" class="custom-cursor">
+    <header class="header-with-topbar">
+
+        <!-- Top Bar -->
+        <div class="header-top-bar top-bar-dark bg-base-color">
+            <div class="container-fluid">
+                <div class="row align-items-center m-0 h-45px xs-h-auto scrolling-text xs-pt-5px xs-pb-5px">
+                    <!-- Contact Information -->
+                    <div class="col-lg-6 col-md-7 text-center text-md-start xs-px-0">
+                        <div class="fs-15 text-white fw-500">
+                            <span>Nos experts vous accompagnent!
+                                <a href="contact.html"
+                                    class="text-white text-decoration-line-bottom fw-600 alt-font">Nous
+                                    contacter</a>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Phone and Location -->
+                    <div class="col-lg-6 col-md-5 text-end d-none d-md-flex">
+                        <div class="widget fs-15 fw-500 text-white me-35px lg-me-25px md-me-0">
+
+                        </div>
+                        <div class="widget fs-15 fw-500 text-white d-none d-lg-inline-block">
+                            <span>
+                                <i class="feather icon-feather-map-pin"></i>Paris, France
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- Navbar -->
+
+        <nav class="navbar navbar-expand-lg header-light bg-white responsive-sticky">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <div class="col-auto col-lg-2 me-lg-0 me-auto">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo-rpam.png" alt="Logo RPAM" class="default-logo">
+                        <img src="images/logo-rpam.png" alt="Alternate Logo" class="alt-logo">
+                        <img src="images/logo-rpam.png" alt="Mobile Logo" class="mobile-logo">
+                    </a>
+                </div>
+
+                <!-- Toggler mobile -->
+                <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span><br>
+                    <span class="navbar-toggler-line"></span>
+                </button>
+
+                <!-- Menu desktop -->
+                <div class="navbar-collapse d-none d-lg-flex ms-4" id="navbarNavDesktop">
+                    <ul class="navbar-nav fw-600">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">Qui sommes nous</a>
+                        </li>
+                        <li class="nav-item dropdown dropdown-with-icon-style02">
+                            <a href="#" class="nav-link" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Nos Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li class="service-item">
+                                    <a href="guidance.html" class="tooltip">
+                                        <img src="images/demo-accounting-company-icon-04.svg"
+                                            alt="Orientation professionnelle – RPAM">
+                                        Orientation Professionnelle (Guidance)
+                                    </a>
+                                </li>
+                                <li class="service-item">
+                                    <a href="up-training.html" class="tooltip">
+                                        <img src="images/demo-accounting-company-icon-05.svg"
+                                            alt="Orientation professionnelle – RPAM">
+                                        Développement de Compétences (Up Training)
+                                    </a>
+                                </li>
+                                <li class="service-item">
+                                    <a href="job-getting.html" class="tooltip">
+                                        <img src="images/demo-accounting-company-icon01.svg"
+                                            alt="Orientation professionnelle – RPAM">
+                                        Coaching à la recherche d’emploi (Job Getting)
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Actualités</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Call to Action desktop -->
+                <a href="booking.html"
+                    class="btn btn-base-color btn-box-shadow text-transform-none btn-rounded btn-hover-animation-switch slide-up-animation d-none d-lg-inline-flex ms-3">
+                    Réserver un rendez-vous
+                </a>
+
+            </div>
+        </nav>
+
+        <!-- Offcanvas mobile -->
+        <div class="offcanvas offcanvas-end offcanvas-mobile-nav" tabindex="-1" id="mobileNav"
+            aria-labelledby="mobileNavLabel">
+            <div class="offcanvas-header">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo-rpam.png" alt="RPAM" class="mobile-logo">
+                </a>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column">
+                <ul class="navbar-nav fw-600 nav-mobile">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Qui sommes nous</a></li>
+
+                    <!-- Services en accordéon -->
+                    <li class="nav-item">
+                        <button class="btn w-100 text-start nav-link-like" data-bs-toggle="collapse"
+                            data-bs-target="#mServices" aria-expanded="false">
+                            Nos Services <span class="chevron"></span>
+                        </button>
+                        <div id="mServices" class="collapse">
+                            <ul class="list-unstyled ps-3 mt-2 d-grid gap-2">
+                                <li><a href="guidance.html" class="nav-sub-link d-flex align-items-center gap-2">
+                                        <img src="images/demo-accounting-company-icon-04.svg"
+                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
+                                        Orientation Professionnelle (Guidance)
+                                    </a></li>
+                                <li><a href="up-training.html" class="nav-sub-link d-flex align-items-center gap-2">
+                                        <img src="images/demo-accounting-company-icon-05.svg"
+                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
+                                        Développement de Compétences (Up Training)
+                                    </a></li>
+                                <li><a href="job-getting.html" class="nav-sub-link d-flex align-items-center gap-2">
+                                        <img src="images/demo-accounting-company-icon01.svg"
+                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
+                                        Coaching à la recherche d’emploi (Job Getting)
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Actualités</a></li>
+                </ul>
+
+                <div class="mt-auto pt-3 border-top">
+                    <a href="booking.html" class="btn btn-base-color btn-box-shadow btn-rounded w-100">
+                        Réserver un rendez-vous
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <!-- start slider -->
+    <section id="slider" class="p-0 top-space-margin ">
+        <div class="demo-corporate-slider_wrapper fullscreen-container" data-alias="portfolio-viewer"
+            data-source="gallery" style="background-color:transparent;padding:0px;">
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide" style="background-image: url('images/slide1.jpg');">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h2>Transformez vos objectifs professionnels en réussites concrètes.</h2>
+                            <p class="fw-600">Un accompagnement personnalisé pour passer de la vision à l’action.</p>
+                            <a href="booking.html" class="cta-btn">Prendre rendez-vous <span class="arrow">→</span></a>
+
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide" style="background-image: url('images/slide2.jpg');">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h2>Développez et renforcez les compétences clés pour rester compétitif.</h2>
+                            <p class="fw-600">Des formations adaptées aux exigeances et à l'évolution du marché.</p>
+                            <a href="booking.html" class="cta-btn">Prendre rendez-vous <span class="arrow">→</span></a>
+
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide" style="background-image: url('images/slide3.jpg');">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h2>Trouvez rapidement l’emploi qui vous correspond.</h2>
+                            <p class="fw-600">Des outils performants pour optimiser votre recherche d'emploi.</p>
+                            <a href="booking.html" class="cta-btn">Prendre rendez-vous <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        </div>
+    </section>
+    <!-- end slider -->
+
+    <section class="pt-0 pb-0 bg-base-color shadow-lg">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-8 col-md-11 md-mb-60px sm-mb-40px">
+                    <div class="row mt-10 align-items-center">
+                        <!-- Content -->
+                        <div class="col-xl-12 col-lg-12 col-sm-12 ps-45px lg-ps-15px text-center text-sm-start last-paragraph-no-margin"
+                            data-anime='{
+                                "opacity": [0, 1],
+                                "delay": 100,
+                                "staggervalue": 250,
+                                "easing": "easeOutQuad"
+                             }'>
+                            <h5 class="fw-600 text-white text-center ls-minus-1px mb-15px">Réalisez vos objectifs
+                                professionnels ici et maintenant
+                            </h5>
+                            <p class="text-white text-center">
+                                Découvrez un <strong>accompagnement personnalisé</strong>, des <strong>formations sur
+                                    mesure</strong>, des <strong>outils
+                                    pratiques et innovants</strong> conçus pour vous aider à atteindre efficacement vos
+                                objectifs
+                                professionnels.
+                            </p>
+                            <a href="blogs.html"
+                                class="btn btn-link btn-hover-animation-switch btn-extra-large text-base-color text-transform-none fw-600 mt-15px">
+                                <span>
+                                    <span class="btn-text">Découvrir</span>
+                                    <span class="btn-icon">
+                                        <i class="feather icon-feather-arrow-right"></i>
+                                    </span>
+                                    <span class="btn-icon">
+                                        <i class="feather icon-feather-arrow-right"></i>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-very-light-gray overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center py-5  rounded-3">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h6 class="fw-bold text-base-color display-7 mb-3">
+                        Orientation professionnelle<br>
+                        Développement de compétences<br>
+                        Coaching à la recherche d’emploi
+                    </h6>
+                    <div class="border-top border-3 border-color-base-color w-25 mb-3"></div>
+                </div>
+                <div class="col-lg-6">
+                    <p class=" text-dark">
+                        Trois leviers puissants pour donner un nouvel élan à votre carrière.<br>
+                        Découvrez comment nous pouvons vous aider à clarifier votre projet,
+                        renforcer vos atouts et décrocher les opportunités qui vous correspondent.
+                    </p>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="row g-4">
+                <!-- Bloc 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="interactive-banner-style-08">
+                        <figure class="m-0 hover-box overflow-hidden position-relative border-radius-6px">
+                            <img src="images/self-know.png" alt="Guidance – Orientation professionnelle" />
+                            <figcaption>
+
+                                <div class="mt-auto w-100">
+                                    <div class="title">Guidance</div>
+                                    <div class="subtitle">Orientation professionnelle</div>
+                                </div>
+                                <a href="guidance.html" class="stretched-link"
+                                    aria-label="Guidance — Orientation professionnelle"></a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Bloc 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="interactive-banner-style-08">
+                        <figure class="m-0 hover-box overflow-hidden position-relative border-radius-6px">
+                            <img src="images/up-training.png" alt="UP Training – Développement de compétences" />
+                            <figcaption>
+
+                                <div class="mt-auto w-100">
+                                    <div class="title">UP Training</div>
+                                    <div class="subtitle">Développement de compétences</div>
+                                </div>
+                                <a href="up-training.html" class="stretched-link"
+                                    aria-label="UP Training — Développement de compétences"></a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Bloc 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="interactive-banner-style-08">
+                        <figure class="m-0 hover-box overflow-hidden position-relative border-radius-6px">
+                            <img src="images/job-getting.png" alt="Job Getting – Coaching à la recherche d’emploi" />
+                            <figcaption>
+                                <div class="mt-auto w-100">
+                                    <div class="title">Job Getting</div>
+                                    <div class="subtitle">Coaching à la recherche d’emploi</div>
+                                </div>
+                                <a href="job-getting.html" class="stretched-link"
+                                    aria-label="Job Getting — Coaching à la recherche d’emploi"></a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+    <section class="p-0 bg-base-color ">
+        <div class="container">
+            <div class="row align-items-center justify-content-center g-0">
+                <div class="col-auto d-flex align-items-center"
+                    data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <div class="fs-19 lh-28 last-paragraph-no-margin text-white pt-15px pb-15px">
+                        <p>Ne remettez pas vos défis professionnels à demain. <a href="booking.html"
+                                class="text-decoration-line-bottom fw-500 text-white">Contactez-nous maintenant. </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-very-light-gray pb-0" id="services">
+
+        <div class="container">
+            <div class="row mb-8 sm-mb-10">
+                <div class="col-12">
+
+                    <!-- Bloc 1 -->
+                    <div class="row align-items-center g-4 mb-5">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <img src="images/self-know.png" alt class="w-100 rounded-2">
+                        </div>
+                        <div class="col-md-6 text-center text-md-start ps-md-4">
+                            <h6 class="fw-700 text-dark-gray ls-minus-1px md-mb-20px">Orientation professionnelle
+                                <span class="text-base-color"> - Guidance</span>
+                            </h6>
+                            <p class="text-black mb-4">Nous vous guidons pour révéler vos atouts, clarifier vos
+                                objectifs
+                                professionnels et bâtir ensemble un plan d’action personnalisé pour booster votre
+                                employabilité.
+                            </p>
+                            <a href="guidance.html"
+                                class="btn btn-large btn-rounded with-rounded btn-white btn-box-shadow fw-600">
+                                En savoir plus
+                                <span class="bg-base-color text-white"><i
+                                        class="bi bi-arrow-right-short icon-extra-medium"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Bloc 2 -->
+                    <div class="row align-items-center g-4 mb-5">
+                        <div class="col-md-6 order-2 order-md-1 text-center text-md-start ps-md-4 mt-4 mt-md-0">
+                            <h6 class="fw-700 text-dark-gray ls-minus-1px md-mb-20px">Développement de Compétences <span
+                                    class="text-base-color">- Up
+                                    Training</span>
+                            </h6>
+                            <p class="text-black mb-4">Nous vous accompagnons dans l’acquisition des savoir-faire qui
+                                vous
+                                démarquent grâce à des formations sur mesure, ciblées et collaboratives.</p>
+                            <a href="up-training.html"
+                                class="btn btn-large btn-rounded with-rounded btn-white btn-box-shadow fw-600">
+                                En savoir plus
+                                <span class="bg-base-color text-white"><i
+                                        class="bi bi-arrow-right-short icon-extra-medium"></i></span>
+                            </a>
+                        </div>
+                        <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+                            <img src="images/up-training.png" alt class="w-100 rounded-2">
+                        </div>
+                    </div>
+
+                    <!-- Bloc 3 -->
+                    <div class="row align-items-center g-4 mb-5">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <img src="images/job-getting.png" alt class="w-100 rounded-2">
+                        </div>
+                        <div class="col-md-6 text-center text-md-start ps-md-4">
+                            <h6 class="fw-700 text-dark-gray ls-minus-1px md-mb-20px">Coaching à la recherche d'emploi
+                                <span class="text-base-color"> - Job
+                                    Getting</span>
+                            </h6>
+                            <p class="text-black mb-4">À vos côtés à chaque étape de votre recherche d’emploi, nous
+                                optimisons
+                                votre CV, vous préparons aux entretiens et vous aidons à décrocher le poste qui
+                                correspond à vos
+                                aspirations.</p>
+                            <a href="job-getting.html"
+                                class="btn btn-large btn-rounded with-rounded btn-white btn-box-shadow fw-600">
+                                En savoir plus
+                                <span class="bg-base-color text-white"><i
+                                        class="bi bi-arrow-right-short icon-extra-medium"></i></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+    <section class="bg-white pt-5 pb-5">
+        <div class="container">
+            <div class="row text-start text-md-center mb-4">
+                <div class="col-12">
+                    <h3 class="fw-bold text-base-color mb-2">Pourquoi nous choisir&nbsp;?</h3>
+                    <p class="text-muted fw-600 m-0">
+                        Nous vous offrons un accompagnement sur-mesure pour maximiser votre réussite.
+                    </p>
+                </div>
+            </div>
+            <div class="objectives-container">
+                <div class="objective-card">
+                    <i class="bi bi-person-check objective-icon"></i>
+                    <span class="objective-text"><span class="fw-bold">Accompagnement personnalisé</span> pour définir
+                        et clarifier votre projet
+                        professionnel.</span>
+                </div>
+                <div class="objective-card">
+                    <i class="bi bi-mortarboard objective-icon"></i>
+                    <span class="objective-text"><span class="fw-bold">Formations sur-mesure</span> pour développer vos
+                        compétences techniques et
+                        comportementales.</span>
+                </div>
+                <div class="objective-card">
+                    <i class="bi bi-people objective-icon"></i>
+                    <span class="objective-text"><span class="fw-bold">Un réseau dynamique</span> pour accéder à des
+                        mentors et experts du
+                        secteur.</span>
+                </div>
+                <div class="objective-card">
+                    <i class="bi bi-tools objective-icon"></i>
+                    <span class="objective-text"><span class="fw-bold">Outils pratiques</span>: test d’employabilité,
+                        simulations d’entretiens et plus encore</span>
+                </div>
+                <div class="objective-card">
+                    <i class="bi bi-globe objective-icon"></i>
+                    <span class="objective-text"><span class="fw-bold">Évolution professionnelle</span> en France avec
+                        une approche adaptée au marché
+                        local.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-3 pb-0">
+        <div class="container">
+            <div class="row justify-content-center mb-1">
+                <div class="col-xxl-4 col-lg-8 col-md-8 text-center"
+                    data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    <h3 class="text-base-color fw-700 pt-20px ls-minus-1px">Nos valeurs
+
+                    </h3>
+                    <p class="text-black">Nous nous engageons à offrir un service de qualité en mettant l’humain et
+                        l’excellence au cœur de
+                        notre mission.</p>
+
+                </div>
+            </div>
+            <div class="row g-4"> <!-- g-4 crée un espacement de 1.5rem -->
+                <div class="col-12">
+                    <ul class="blog-classic blog-wrapper grid-loading grid grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large"
+                        data-anime='{"el":"childs","translateY":[50,0],"opacity":[0,1],"duration":1200,"delay":0,"staggervalue":150,"easing":"easeOutQuad"}'>
+
+                        <li class="grid-sizer"></li>
+
+                        <li class="grid-item">
+                            <div class="card bg-transparent border-0 h-100">
+                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
+                                    <a href="demo-accounting-blog-single-creative.html"
+                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Esprit
+                                        d'équipe</a>
+                                    <p class="text-black">Notre équipe se mobilise dans un esprit de cohésion et de
+                                        confiance afin
+                                        de vous offrir un service de qualité.</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="grid-item">
+                            <div class="card bg-transparent border-0 h-100">
+                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
+                                    <a href="demo-accounting-blog-single-creative.html"
+                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Écoute</a>
+                                    <p class="text-black">Nous adoptons une posture de service et collectons avec
+                                        attention et
+                                        professionnalisme chacun de vos besoins.</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="grid-item">
+                            <div class="card bg-transparent border-0 h-100">
+                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
+                                    <a href="demo-accounting-blog-single-creative.html"
+                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Proximité</a>
+                                    <p class="text-black">Nous favorisons une approche agile. Durant toutes les phases
+                                        de l’objectif
+                                        à atteindre, nous sommes à vos côtés.</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="grid-item">
+                            <div class="card bg-transparent border-0 h-100">
+                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
+                                    <a href="demo-accounting-blog-single-creative.html"
+                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Professionnalisme</a>
+                                    <p class="text-black">Nous agissons avec intégrité, responsabilité, respect et
+                                        compétence dans
+                                        tous les aspects de votre projet.</p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer-dark bg-dark-gray pt-0 pb-2 lg-pb-35px">
+        <div
+            class="footer-top pt-50px pb-50px sm-pt-35px sm-pb-35px border-bottom border-1 border-color-transparent-white-light">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+
+                    <div class="col-xl-6 text-center text-xl-start lg-mb-30px sm-mb-20px">
+                        <h6 class="text-white mb-5px fw-500 ls-minus-1px">Boostez votre carrière profesionnelle.</h6>
+
+                    </div>
+
+                    <div class="col-xl-6 text-center text-xl-end">
+                        <a href="booking.html"
+                            class="btn text-white btn-extra-large bg-base-color left-icon btn-box-shadow btn-rounded text-transform-none d-inline-block align-middle me-15px xs-m-10px"><i
+                                class="feather text-white icon-feather-mail"></i>Consultation gratuite</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center fs-17 fw-300 mt-5 mb-4 md-mt-45px md-mb-45px xs-mt-35px xs-mb-35px">
+
+                <div class="col-6 col-lg-3 order-sm-1 md-mb-40px xs-mb-30px last-paragraph-no-margin">
+                    <a href="index.html" class="footer-logo mb-15px d-inline-block"><img src="images/w-logo-rpam.png"
+                            data-at2x="images/w-logo-rpam.png" alt></a>
+                    <p class="w-85 xl-w-95 sm-w-100"></p>
+                    <div class="elements-social social-icon-style-02 mt-20px lg-mt-20px">
+                        <ul class="small-icon light">
+                            <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
+                                        class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i
+                                        class="fa-brands fa-dribbble"></i></a></li>
+                            <li><a class="twitter" href="https://www.twitter.com" target="_blank"><i
+                                        class="fa-brands fa-twitter"></i></a></li>
+                            <li><a class="instagram" href="https://www.instagram.com" target="_blank"><i
+                                        class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
+                    <span class="fs-18 fw-400 d-block text-white mb-5px">À propos</span>
+                    <ul>
+                        <li><a href="about.html">Qui sommes-nous</a></li>
+                        <li><a href="guidance.html">Services</a></li>
+                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="news.html">Actualités</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-4 order-lg-3">
+                    <span class="fs-18 fw-400 d-block text-white mb-5px">Services</span>
+                    <ul>
+                        <li><a href="guidance.html">Orientation Professionnelle</a></li>
+                        <li><a href="up-training.html">Développement de Compétences</a></li>
+                        <li><a href="job-getting.html">Coaching à la recherche d’emploi</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-5 order-lg-4">
+                    <span class="fs-18 fw-400 d-block text-white mb-5px">Contactez-nous</span>
+                    <p class="mb-5px">Besoin d'aide ?</p>
+                    <a href="mailto:contact@rpam.fr" class="text-white lh-16 d-block mb-15px">
+                        contact@rpam.fr
+                    </a>
+                </div>
+
+
+                <div class="col-lg-3 col-sm-6 md-mb-40px xs-mb-0 order-sm-2 order-lg-5">
+                    <span class="fs-18 fw-400 d-block text-white mb-5px">Abonnez-vous à la newsletter</span>
+                    <p class="mb-20px">Entrez votre email et nous vous contacterons !</p>
+                    <div class="d-inline-block w-100 newsletter-style-02 position-relative">
+                        <form action="email-templates/subscribe-newsletter.php" method="post"
+                            class="position-relative d-flex">
+                            <input
+                                class="border-color-transparent-white-light bg-transparent border-radius-4px w-100 form-control lg-ps-15px required fs-16"
+                                type="email" name="email" placeholder="Entrez votre email" required />
+
+                            <!-- Bouton discret -->
+                            <button class="btn btn-sm bg-white text-dark ms-2 border-radius-4px" type="submit"
+                                aria-label="S'abonner">
+                                OK
+                            </button>
+
+                            <input type="hidden" name="redirect" value>
+                            <div
+                                class="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row align-items-center fs-16 fw-300">
+
+                <div class="col-md-4 last-paragraph-no-margin order-2 order-md-1 text-center text-md-start">
+                    <p>&COPY; Copyright 2025 <a href="index.html" target="_blank"
+                            class="text-decoration-line-bottom text-white">RPAM</a></p>
+                </div>
+
+                <div class="col-md-8 text-md-end order-1 order-md-2 text-center text-md-end sm-mb-10px">
+                    <ul class="footer-navbar sm-lh-normal">
+                        <li>
+                            <a href="/docs/Politique_de_confidentialite_RPAM_v2.pdf" class="nav-link" target="_blank"
+                                rel="noopener" aria-label="Ouvrir la Politique de confidentialité (PDF)">
+                                Politique de confidentialité
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/docs/Termes_et_conditions_RPAM.pdf" class="nav-link" target="_blank"
+                                rel="noopener" aria-label="Ouvrir les Termes et conditions (PDF)">
+                                Termes et conditions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/docs/Droits_d_auteur_RPAM.pdf" class="nav-link" target="_blank" rel="noopener"
+                                aria-label="Ouvrir Droits d’auteur (PDF)">
+                                Droits d'auteur
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+        </a>
     </div>
-</body>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/vendors.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            autoplay: { delay: 10000 }, // temps d'affichage de chaque slide
+            speed: 1500,               // durée de l'effet fondu
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+
 
 </html>

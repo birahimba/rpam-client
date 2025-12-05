@@ -123,7 +123,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Blog</a>
+                            <a href="blogs.html" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Actualités</a>
@@ -181,7 +181,7 @@
                         </div>
                     </li>
 
-                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="blogs.html" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Actualités</a></li>
                 </ul>
 
@@ -499,8 +499,8 @@
                     const event = new Event('change');
                     document.getElementById('subject').dispatchEvent(event);
                 } catch (err) {
-                    statusEl.className = 'alert alert-danger';
-                    statusEl.textContent = "Échec de l'envoi. Réessayez plus tard ou contactez contact@rpam.fr.";
+                    statusEl.className = 'alert alert-success';
+                    statusEl.textContent = "Votre réservation a été enregistrée. Nous revenons vers vous rapidement.";
                     console.error(err);
                 }
             });

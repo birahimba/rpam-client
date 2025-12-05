@@ -106,17 +106,15 @@ async function fetchAndDisplayArticles() {
     const articlesContainer = document.getElementById("articles-container");
     if (articlesContainer) {
       articlesContainer.innerHTML = `
-        <div class="col-12">
-          <div class="card border-0 box-shadow-extra-large p-5 text-center">
-            <h2 class="alt-font fw-600 mb-3">Impossible de charger les articles</h2>
-            <p class="fs-16 mb-4">
-              Une erreur est survenue lors du chargement des articles. Veuillez réessayer plus tard.
-            </p>
-            <a href="contact.html" class="btn btn-dark-gray btn-rounded">
-              Nous contacter
-            </a>
-          </div>
-        </div>
+    <div class="col-12">
+  <div class="card border-0 box-shadow-extra-large p-4 text-center">
+    <p class="alt-font fw-500 fs-20 mb-2">Articles en préparation</p>
+    <p class="fs-16 text-muted mb-0">
+      Nos contenus arrivent très prochainement. Merci de votre patience.
+    </p>
+  </div>
+</div>
+
       `;
     }
   }

@@ -1457,3 +1457,19 @@ footer ul li {
 .team-social a:hover {
   color: var(--yellow);
 }
+
+.consent-check {
+  display: flex;
+  align-items: flex-start; /* alignement sur le haut du texte */
+  gap: 10px; /* espace entre checkbox et texte */
+}
+
+.consent-check .form-check-input {
+  margin-top: 4px; /* ajuste l’alignement vertical du carré */
+  flex: 0 0 auto;
+}
+
+.consent-check .form-check-label {
+  margin: 0; /* évite les marges parasites */
+  line-height: 1.4;
+}

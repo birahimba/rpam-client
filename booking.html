@@ -20,8 +20,6 @@
     <link rel="icon" type="image/png" href="images/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 
@@ -227,85 +225,11 @@
             </div>
 
             <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-9">
-                    <form id="appointment-form" action="your-backend-endpoint.php" method="post"
-                        class="card border-0 shadow-sm p-4 p-md-5">
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <label for="name" class="form-label">Nom complet</label>
-                                <input class="form-control border-radius-4px" type="text" id="name" name="name"
-                                    placeholder="Votre nom et prénom" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input class="form-control border-radius-4px" type="email" id="email" name="email"
-                                    placeholder="vous@exemple.com" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="phone" class="form-label">Téléphone</label>
-                                <input class="form-control border-radius-4px" type="tel" id="phone" name="phone"
-                                    placeholder="+33 6 12 34 56 78" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="datetime" class="form-label">Date et heure souhaitées</label>
-                                <input class="form-control border-radius-4px" type="text" id="datetime" name="datetime"
-                                    placeholder="Choisir un créneau" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="subject" class="form-label">Sujet</label>
-                                <select class="form-select border-radius-4px" id="subject" name="subject" required>
-                                    <option value="">Choisir un thème</option>
-                                    <option value="orientation">Orientation professionnelle</option>
-                                    <option value="competences">Développement de compétences</option>
-                                    <option value="coaching">Coaching à la recherche d’emploi</option>
-                                    <option value="autre">Autre</option>
-                                </select>
-                            </div>
-
-                            <div class="col-12 d-none" id="other-subject-wrap">
-                                <label for="other-subject" class="form-label">Précisez le thème</label>
-                                <input class="form-control border-radius-4px" type="text" id="other-subject"
-                                    name="other_subject" placeholder="Votre thème">
-                            </div>
-
-                            <div class="col-12">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control border-radius-4px" id="message" name="message" rows="5"
-                                    placeholder="Quelques mots sur votre besoin" required></textarea>
-                            </div>
-
-                            <input type="hidden" name="locale" value="fr-FR">
-                            <input type="hidden" name="source" value="booking-page">
-
-                            <div class="col-12">
-                                <div class="form-check consent-check">
-                                    <input class="form-check-input" type="checkbox" id="consent" required>
-                                    <label class="form-check-label" for="consent">
-                                        J’accepte que RPAM me contacte. Voir la
-                                        <a href="/docs/Politique_de_confidentialite_RPAM_v2.pdf" target="_blank"
-                                            rel="noopener">
-                                            politique de confidentialité
-                                        </a>.
-                                    </label>
-                                </div>
-
-                            </div>
-
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-base-color btn-box-shadow btn-rounded w-100">
-                                    Valider la réservation
-                                </button>
-                            </div>
-
-                            <div class="col-12">
-                                <div id="form-status" class="alert d-none mt-3 mb-0" role="alert"></div>
-                            </div>
-                        </div>
-                    </form>
+                <div class="col-xl-10 col-lg-11">
+                    <div class="card border-0 shadow-sm p-3 p-md-4">
+                        <!-- Cal.com Inline Embed -->
+                        <div style="width:100%;height:100%;overflow:scroll" id="cal-booking-container"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -457,60 +381,56 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-
+    <!-- Cal.com Embed Script -->
     <script>
-        // Flatpickr datetime
-        flatpickr('#datetime', {
-            enableTime: true,
-            dateFormat: 'Y-m-d H:i',
-            minDate: 'today',
-            time_24hr: true
+        (function (C, A, L) {
+            let p = function (a, ar) {
+                a.q.push(ar);
+            };
+            let d = C.document;
+            C.Cal = C.Cal || function () {
+                let cal = C.Cal;
+                let ar = arguments;
+                if (!cal.loaded) {
+                    cal.ns = {};
+                    cal.q = cal.q || [];
+                    d.head.appendChild(d.createElement("script")).src = A;
+                    cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                    const api = function () {
+                        p(api, arguments);
+                    };
+                    const namespace = ar[1];
+                    api.q = api.q || [];
+                    typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+                    return;
+                }
+                p(cal, ar);
+            };
+        })(window, "https://app.cal.eu/embed/embed.js", "init");
+
+        Cal("init", { origin: "https://app.cal.eu" });
+
+        Cal("inline", {
+            elementOrSelector: "#cal-booking-container",
+            calLink: "rpamcontact",
+            config: {
+                layout: "month_view",
+                theme: "light"
+            }
         });
 
-        // Affichage du champ "Autre"
-        (function () {
-            const subject = document.getElementById('subject');
-            const wrap = document.getElementById('other-subject-wrap');
-            const other = document.getElementById('other-subject');
-            function toggle() {
-                const isOther = subject.value === 'autre';
-                wrap.classList.toggle('d-none', !isOther);
-                other.required = isOther;
-                if (!isOther) other.value = '';
-            }
-            subject.addEventListener('change', toggle);
-            toggle();
-        })();
-
-        // Soumission avec fetch + retour inline
-        (function () {
-            const form = document.getElementById('appointment-form');
-            const statusEl = document.getElementById('form-status');
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                statusEl.className = 'alert alert-info';
-                statusEl.textContent = 'Envoi en cours...';
-                statusEl.classList.remove('d-none');
-
-                try {
-                    const data = new FormData(form);
-                    const res = await fetch(form.action, { method: 'POST', body: data });
-                    if (!res.ok) throw new Error('HTTP ' + res.status);
-
-                    statusEl.className = 'alert alert-success';
-                    statusEl.textContent = 'Votre réservation a été enregistrée. Nous revenons vers vous rapidement.';
-                    form.reset();
-                    // Réinitialiser l’état "Autre"
-                    const event = new Event('change');
-                    document.getElementById('subject').dispatchEvent(event);
-                } catch (err) {
-                    statusEl.className = 'alert alert-success';
-                    statusEl.textContent = "Votre réservation a été enregistrée. Nous revenons vers vous rapidement.";
-                    console.error(err);
+        Cal("ui", {
+            theme: "light",
+            styles: {
+                branding: {
+                    brandColor: "#ff6838"
                 }
-            });
-        })();
+            },
+            hideEventTypeDetails: false,
+            layout: "month_view"
+        });
     </script>
 
 </body>

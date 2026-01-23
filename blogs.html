@@ -200,7 +200,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-12 col-xl-9 col-lg-9 text-center position-relative page-title-double-large">
                     <div class="d-flex flex-column justify-content-center extra-very-small-screen">
-                        <h1 class="text-base-color alt-font ls-minus-1px fw-700">Découvrez nos dernières inspirations
+                        <h1 class="text-dark-gray alt-font ls-minus-1px fw-700">Découvrez nos dernières inspirations
                         </h1>
                         <h2 class="text-dark-gray d-inline-block fw-400 ls-0px w-80 xs-w-100 mx-auto">Plongez dans nos
                             articles pour rester informé, inspiré et connecté à nos idées.</h2>
@@ -212,142 +212,212 @@
     <!-- end page title -->
 
 
-    <section class="pt-0 right-side-bar">
+    <section class="pt-0">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-8 blog-standard md-mb-50px sm-mb-40px">
-                    <!-- start blog item -->
-                    <div id="articles-container"></div>
-                    <!-- end blog item -->
-
-
+                <div class="col-12 col-lg-10">
+                    <!-- Hashnode Widget Container -->
+                    <div id="hashnode-blog-widget" class="hashnode-container">
+                        <!-- Le widget Hashnode sera injecté ici -->
+                    </div>
                 </div>
-                <!-- start sidebar -->
-                <!--aside class="col-12 col-xl-4 col-lg-4 col-md-7 ps-55px xl-ps-50px lg-ps-15px sidebar">
-                    <div id="popular-posts-container" class="mb-15 md-mb-50px xs-mb-35px"></div>
-
-                    <div class="mb-15 md-mb-50px xs-mb-35px">
-                        <div
-                            class="fw-600 fs-19 lh-22 ls-minus-05px text-dark-gray border-bottom border-color-dark-gray border-2 d-block mb-30px pb-15px position-relative">
-                            Thématiques</div>
-                        <ul class="category-list-sidebar position-relative">
-                            <li class="d-flex align-items-center h-80px cover-background ps-35px pe-35px"
-                                style="background-image: url('https://via.placeholder.com/600x144')">
-                                <div class="opacity-medium bg-gradient-dark-transparent"></div>
-                                <a href="blog-grid.html"
-                                    class="d-flex align-items-center position-relative w-100 h-100">
-                                    <span class="text-white mb-0 fs-20 fw-500 fancy-text-style-4">Fashion</span>
-                                    <span class="btn text-white position-absolute"><i
-                                            class="bi bi-arrow-right ms-0 fs-24"></i></span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="mb-17 md-mb-50px xs-mb-35px">
-                        <div class="bg-white box-shadow-extra-large p-14 xl-p-10 newsletter-style-05">
-                            <div
-                                class="fw-600 fs-19 lh-22 ls-minus-05px text-dark-gray border-bottom border-color-dark-gray border-2 d-block mb-20px pb-15px position-relative">
-                                Abonnez-vous à la newsletter</div>
-                            <p class="fs-15 lh-24">Inscrivez-vous gratuitement et soyez le premier à être informé des
-                                nouvelles mises à jour.</p>
-                            <form action="email-templates/subscribe-newsletter.php" method="post"
-                                class="position-relative">
-                                <input
-                                    class="w-100 fs-15 input-small form-control box-shadow-medium-bottom border-radius-0px text-center required mb-10px"
-                                    type="email" name="email" placeholder="Enter your email address" />
-                                <input type="hidden" name="redirect" value="">
-                                <button class="btn btn-small btn-dark-gray w-100 btn-box-shadow submit"
-                                    aria-label="submit now">Envoyer</button>
-                                <div class="d-flex fs-14 mt-10px">
-                                    <div class="d-inline-block"><i
-                                            class="line-icon-Handshake me-10px align-middle icon-very-medium"></i>Protége
-                                        votre vie privée</div>
-                                </div>
-                                <div
-                                    class="form-results border-radius-4px mt-10px lh-normal pt-10px pb-10px ps-15px pe-15px fs-16 w-100 text-center position-absolute z-index-1 d-none">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="mb-15 md-mb-50px xs-mb-35px elements-social social-icon-style-10">
-                        <div
-                            class="fw-600 fs-19 lh-22 ls-minus-05px text-dark-gray border-bottom border-color-dark-gray border-2 d-block mb-30px pb-15px position-relative">
-                            Restez connecté</div>
-                        <div class="row row-cols-2 row-cols-lg-2 justify-content-center align-items-center g-0">
-                            <div
-                                class="col border-bottom border-end border-color-extra-medium-gray ps-25px pe-25px xl-ps-15px xl-pe-15px lg-ps-10px lg-pe-10px pt-10px pb-10px">
-                                <a class="facebook text-dark-gray" href="https://www.facebook.com/" target="_blank">
-                                    <i class="fa-brands fa-facebook-f fs-18 me-10px"></i>
-                                    <span class="fw-500">Facebook</span>
-                                </a>
-                            </div>
-                            <div
-                                class="col border-bottom border-color-extra-medium-gray ps-25px pe-25px xl-ps-15px xl-pe-15px lg-ps-10px lg-pe-10px pt-10px pb-10px">
-                                <a class="dribbble text-dark-gray" href="http://www.twitter.com" target="_blank">
-                                    <i class="fa-brands fa-twitter fs-18 me-10px"></i>
-                                    <span class="fw-500">Twitter</span>
-                                </a>
-                            </div>
-                            <div
-                                class="col border-bottom border-end border-color-extra-medium-gray ps-25px pe-25px xl-ps-15px xl-pe-15px lg-ps-10px lg-pe-10px pt-10px pb-10px">
-                                <a class="twitter text-dark-gray" href="http://www.twitter.com" target="_blank">
-                                    <i class="fa-brands fa-youtube fs-18 me-10px"></i>
-                                    <span class="fw-500">Youtube</span>
-                                </a>
-                            </div>
-                            <div
-                                class="col border-bottom border-color-extra-medium-gray ps-25px pe-25px xl-ps-15px xl-pe-15px lg-ps-10px lg-pe-10px pt-10px pb-10px">
-                                <a class="youtube text-dark-gray" href="http://www.youtube.com" target="_blank">
-                                    <i class="fa-brands fa-instagram fs-18 me-10px"></i>
-                                    <span class="fw-500">Instagram</span>
-                                </a>
-                            </div>
-                            <div
-                                class="col border-bottom border-end border-color-extra-medium-gray ps-25px pe-25px xl-ps-15px xl-pe-15px lg-ps-10px lg-pe-10px pt-10px pb-10px">
-                                <a class="instagram text-dark-gray" href="http://www.instagram.com" target="_blank">
-                                    <i class="fa-brands fa-linkedin-in fs-18 me-10px"></i>
-                                    <span class="fw-500">Linkedin</span>
-                                </a>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <div class="mb-15 md-mb-50px xs-mb-35px">
-                        <div
-                            class="fw-600 fs-19 lh-22 ls-minus-05px text-dark-gray border-bottom border-color-dark-gray border-2 d-block mb-30px pb-15px position-relative">
-                            Tags cloud</div>
-                        <div class="tag-cloud">
-                            <a href="blog-grid.html">Development</a>
-                            <a href="blog-grid.html">Mountains</a>
-                            <a href="blog-grid.html">Lifestyle</a>
-                            <a href="blog-grid.html">Hotel</a>
-                            <a href="blog-grid.html">Event</a>
-                            <a href="blog-grid.html">Multimedia </a>
-                            <a href="blog-grid.html">Fashion</a>
-                        </div>
-                    </div>
-                    <div class="mb-15 md-mb-50px xs-mb-35px">
-                        <div
-                            class="fw-600 fs-19 lh-22 ls-minus-05px text-dark-gray border-bottom border-color-dark-gray border-2 d-block mb-30px pb-15px position-relative">
-                            Instagram</div>
-                        <ul class="instafeed-grid instafeed-wrapper grid grid-3col xl-grid-3col lg-grid-3col md-grid-3col sm-grid-3col xs-grid-3col gutter-medium"
-                            data-total="6">
-                            <li class="grid-item">
-                                <figure><a href="#" data-href="{{link}}" target="_blank"><img src="#"
-                                            data-src="{{image}}" class="insta-image"
-                                            alt="Orientation professionnelle – RPAM" /><span class="insta-icon"><i
-                                                class="fa-brands fa-instagram"></i>{{likes}}</span></a></figure>
-                            </li>
-                        </ul>
-                    </div>
-                </aside-->
-                <!-- end sidebar -->
             </div>
         </div>
     </section>
+
+    <style>
+        .hashnode-container {
+            min-height: 600px;
+            padding: 20px 0;
+        }
+
+        /* Blog post card styles - version simplifiée */
+        .blog-post-card {
+            margin-bottom: 25px;
+        }
+
+        .hover-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s ease;
+            border: 1px solid #e8e8e8;
+        }
+
+        .hover-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .blog-post-title a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #1a1a1a;
+            transition: color 0.2s ease;
+        }
+
+        .hover-text-base-color:hover {
+            color: var(--base-color, #0d6efd) !important;
+        }
+
+        .blog-post-excerpt {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #666;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-post-meta {
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            color: #999;
+        }
+
+        .blog-post-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .blog-post-meta i {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .blog-post-image {
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-post-tags {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .blog-post-tags span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            background: #f5f5f5;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #666;
+            transition: background 0.2s ease;
+        }
+
+        .blog-post-tags span:hover {
+            background: #e8e8e8;
+        }
+
+        .blog-reactions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .reaction-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #f8f9fa;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .reaction-btn:hover {
+            background: #fff0f0;
+            border-color: #ffcccb;
+            color: #ff6b6b;
+        }
+
+        .reaction-btn i {
+            font-size: 1rem;
+        }
+
+        .comment-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .comment-btn:hover {
+            color: var(--base-color, #0d6efd);
+        }
+
+        .btn-link.btn-hover-animation-switch {
+            padding: 8px 16px;
+            background: var(--base-color, #0d6efd);
+            color: white !important;
+            border-radius: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-link.btn-hover-animation-switch:hover {
+            opacity: 0.9;
+        }
+
+        .hover-card .p-4 {
+            padding: 25px !important;
+        }
+
+        @media (max-width: 768px) {
+            .blog-post-image {
+                height: 200px !important;
+            }
+
+            .blog-post-title a {
+                font-size: 1.25rem;
+            }
+
+            .hover-card .p-4 {
+                padding: 20px !important;
+            }
+
+            .blog-reactions {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Loading Animation */
+        .spinner-border {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-width: 3px;
+        }
+    </style>
 
 
     <footer class="footer-dark bg-dark-gray pt-0 pb-2 lg-pb-35px">
@@ -495,21 +565,217 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/pages/articles.js"></script>
-    <script type="text/javascript" src="js/pages/aside.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"> </script>
+        crossorigin="anonymous"></script>
 
-
+    <!-- Hashnode API Integration Script -->
     <script>
+        // Fonction de sécurité pour échapper le HTML et prévenir les attaques XSS
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Fonction pour valider les URLs d'images
+        function isValidImageUrl(url) {
+            if (!url) return false;
+            try {
+                const urlObj = new URL(url);
+                // Autoriser seulement HTTPS et domaines de confiance
+                if (urlObj.protocol !== 'https:') return false;
+                const allowedDomains = ['cdn.hashnode.com', 'hashnode.com', window.location.hostname];
+                return allowedDomains.some(domain => urlObj.hostname.endsWith(domain));
+            } catch {
+                return false;
+            }
+        }
+
+        // Configuration Hashnode
+        const HASHNODE_CONFIG = {
+            username: 'rpam',
+            host: 'rpam.hashnode.dev'
+        };
+
+        // Fonction pour récupérer les articles depuis l'API Hashnode
+        async function fetchHashnodePosts() {
+            const container = document.getElementById('hashnode-blog-widget');
+
+            // Afficher un loader
+            container.innerHTML = `
+                <div class="text-center py-5">
+                    <div class="spinner-border text-base-color" role="status">
+                        <span class="visually-hidden">Chargement...</span>
+                    </div>
+                    <p class="mt-3 text-muted">Chargement des articles...</p>
+                </div>
+            `;
+
+            try {
+                const query = `
+                    query Publication {
+                        publication(host: "${HASHNODE_CONFIG.host}") {
+                            posts(first: 20) {
+                                edges {
+                                    node {
+                                        id
+                                        title
+                                        brief
+                                        slug
+                                        coverImage {
+                                            url
+                                        }
+                                        publishedAt
+                                        url
+                                        readTimeInMinutes
+                                        reactionCount
+                                        responseCount
+                                        tags {
+                                            name
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                `;
+
+                const response = await fetch('https://gql.hashnode.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query })
+                });
+
+                const data = await response.json();
+                const posts = data.data?.publication?.posts?.edges || [];
+
+                if (posts.length === 0) {
+                    container.innerHTML = `
+                        <div class="alert alert-info text-center p-5" style="background-color: #f8f9fa; border-radius: 12px; border: 1px solid #e0e0e0;">
+                            <i class="feather icon-feather-book-open mb-3" style="font-size: 3rem; color: var(--base-color, #0d6efd);"></i>
+                            <h4 class="text-dark-gray mb-3">Aucun article publié pour le moment</h4>
+                            <p class="mb-4 text-muted">Publiez votre premier article sur Hashnode pour le voir apparaître ici.</p>
+                            <a href="https://hashnode.com/@${HASHNODE_CONFIG.username}" target="_blank" class="btn btn-base-color btn-rounded btn-medium">
+                                Aller sur Hashnode
+                            </a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Créer la grille d'articles avec sécurité XSS
+                const postsHTML = posts.map(({ node: post }) => {
+                    const date = new Date(post.publishedAt).toLocaleDateString('fr-FR', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    // Échapper les tags
+                    const tags = post.tags.slice(0, 3).map(tag => escapeHtml(tag.name)).join(', ');
+
+                    // Valider et sécuriser l'URL de l'image
+                    const rawCoverImage = post.coverImage?.url || 'images/default-blog-cover.jpg';
+                    const coverImage = isValidImageUrl(rawCoverImage) ? rawCoverImage : 'images/default-blog-cover.jpg';
+                    const sanitizedCoverUrl = coverImage.replace(/'/g, "\\'").replace(/"/g, '\\"');
+
+                    // Valider le slug
+                    if (!post.slug || !/^[a-zA-Z0-9-_]+$/.test(post.slug)) {
+                        return ''; // Ignorer les articles avec slugs invalides
+                    }
+
+                    return `
+                        <article class="blog-post-card">
+                            <div class="row g-0 hover-card">
+                                <div class="col-md-4">
+                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="d-block">
+                                        <div class="blog-post-image" style="background-image: url('${sanitizedCoverUrl}'); height: 260px; background-size: cover; background-position: center;"></div>
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <div class="blog-post-meta mb-2">
+                                            <span>
+                                                <i class="feather icon-feather-calendar"></i>${escapeHtml(date)}
+                                            </span>
+                                            ${post.readTimeInMinutes ? `
+                                                <span>
+                                                    <i class="feather icon-feather-clock"></i>${escapeHtml(post.readTimeInMinutes.toString())} min
+                                                </span>
+                                            ` : ''}
+                                        </div>
+                                        <h3 class="blog-post-title mb-2">
+                                            <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="text-decoration-none hover-text-base-color">
+                                                ${escapeHtml(post.title)}
+                                            </a>
+                                        </h3>
+                                        <p class="blog-post-excerpt mb-3">${escapeHtml(post.brief)}</p>
+                                        ${tags ? `
+                                            <div class="blog-post-tags mb-3">
+                                                <span>
+                                                    <i class="feather icon-feather-tag"></i>${tags}
+                                                </span>
+                                            </div>
+                                        ` : ''}
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="btn btn-link btn-hover-animation-switch">
+                                                <span class="btn-text">Lire</span>
+                                                <span class="btn-icon">
+                                                    <i class="feather icon-feather-arrow-right"></i>
+                                                </span>
+                                            </a>
+                                            <div class="blog-reactions" style="margin-top: 0; padding-top: 0; border-top: none;">
+                                                <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="reaction-btn">
+                                                    <i class="feather icon-feather-heart"></i>
+                                                    <span>${post.reactionCount || 0}</span>
+                                                </a>
+                                                ${post.responseCount ? `
+                                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}#comments" class="comment-btn">
+                                                        <i class="feather icon-feather-message-circle"></i>
+                                                        <span>${post.responseCount}</span>
+                                                    </a>
+                                                ` : ''}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+
+                container.innerHTML = postsHTML;
+
+            } catch (error) {
+                console.error('Erreur lors du chargement des articles:', error);
+                container.innerHTML = `
+                    <div class="alert alert-warning text-center p-5" style="background-color: #fff3cd; border-radius: 12px; border: 1px solid #ffc107;">
+                        <i class="feather icon-feather-alert-circle mb-3" style="font-size: 3rem; color: #ff6b6b;"></i>
+                        <h4 class="text-dark-gray mb-3">Erreur de chargement</h4>
+                        <p class="mb-4 text-muted">Impossible de charger les articles pour le moment. Veuillez réessayer plus tard.</p>
+                        <a href="https://${HASHNODE_CONFIG.host}" target="_blank" class="btn btn-base-color btn-rounded btn-medium">
+                            Visiter le blog directement
+                        </a>
+                    </div>
+                `;
+            }
+        }
+
+        // Charger les articles au chargement de la page
+        document.addEventListener('DOMContentLoaded', fetchHashnodePosts);
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener("click", function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute("href"));
                 if (target) {
                     window.scrollTo({
-                        top: target.offsetTop - 50, // Ajuste le décalage si besoin
+                        top: target.offsetTop - 50,
                         behavior: "smooth"
                     });
                 }

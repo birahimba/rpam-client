@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -Z 1920 --setProperty formatOptions 70:*)",
+      "Bash(du:*)",
+      "Bash(sips:*)",
+      "Bash(./apply-optimized-css.sh:*)",
+      "Bash(npm install:*)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm run dev:*)"
+    ]
+  }
+}

@@ -321,6 +321,10 @@
             background: #e8e8e8;
         }
 
+        .blog-post-tags .tag-link:hover {
+            color: var(--base-color, #005153) !important;
+        }
+
         .blog-reactions {
             display: flex;
             align-items: center;
@@ -639,6 +643,10 @@
         async function fetchHashnodePosts() {
             const container = document.getElementById('hashnode-blog-widget');
 
+            // Récupérer le tag filtré depuis l'URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const filterTag = urlParams.get('tag');
+
             // Afficher un loader
             container.innerHTML = `
                 <div class="text-center py-5">
@@ -687,7 +695,30 @@
                 });
 
                 const data = await response.json();
-                const posts = data.data?.publication?.posts?.edges || [];
+                let posts = data.data?.publication?.posts?.edges || [];
+
+                // Filtrer par tag si un tag est spécifié dans l'URL
+                if (filterTag) {
+                    posts = posts.filter(({ node: post }) =>
+                        post.tags && post.tags.some(tag =>
+                            tag.name.toLowerCase() === filterTag.toLowerCase()
+                        )
+                    );
+                }
+
+                if (posts.length === 0 && filterTag) {
+                    container.innerHTML = `
+                        <div class="alert alert-info text-center p-5" style="background-color: #f8f9fa; border-radius: 12px; border: 1px solid #e0e0e0;">
+                            <i class="feather icon-feather-search mb-3" style="font-size: 3rem; color: var(--base-color, #0d6efd);"></i>
+                            <h4 class="text-dark-gray mb-3">Aucun article trouvé pour "#${escapeHtml(filterTag)}"</h4>
+                            <p class="mb-4 text-muted">Aucun article ne correspond à ce hashtag.</p>
+                            <a href="blogs.html" class="btn btn-base-color btn-rounded btn-medium">
+                                Voir tous les articles
+                            </a>
+                        </div>
+                    `;
+                    return;
+                }
 
                 if (posts.length === 0) {
                     container.innerHTML = `
@@ -703,6 +734,23 @@
                     return;
                 }
 
+                // Afficher le badge de filtre actif
+                let filterBadgeHTML = '';
+                if (filterTag) {
+                    filterBadgeHTML = `
+                        <div class="filter-badge mb-4 p-3" style="background: #f0f7f7; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                            <span style="font-weight: 500; color: #333;">
+                                <i class="feather icon-feather-filter" style="margin-right: 8px;"></i>
+                                Filtré par : <strong style="color: var(--base-color, #005153);">#${escapeHtml(filterTag)}</strong>
+                                <span style="color: #666; margin-left: 5px;">(${posts.length} article${posts.length > 1 ? 's' : ''})</span>
+                            </span>
+                            <a href="blogs.html" class="btn btn-sm" style="background: white; border: 1px solid #ddd; border-radius: 20px; padding: 5px 15px; text-decoration: none; color: #666; font-size: 0.85rem;">
+                                <i class="feather icon-feather-x" style="margin-right: 5px;"></i>Effacer le filtre
+                            </a>
+                        </div>
+                    `;
+                }
+
                 // Créer la grille d'articles avec sécurité XSS
                 const postsHTML = posts.map(({ node: post }) => {
                     const date = new Date(post.publishedAt).toLocaleDateString('fr-FR', {
@@ -711,8 +759,10 @@
                         day: 'numeric'
                     });
 
-                    // Échapper les tags
-                    const tags = post.tags.slice(0, 3).map(tag => escapeHtml(tag.name)).join(', ');
+                    // Créer les tags cliquables
+                    const tagsHTML = post.tags.slice(0, 3).map(tag =>
+                        `<a href="blogs.html?tag=${encodeURIComponent(tag.name)}" class="tag-link" style="color: #666; text-decoration: none; transition: color 0.2s;">#${escapeHtml(tag.name)}</a>`
+                    ).join(' ');
 
                     // Valider et sécuriser l'URL de l'image
                     const rawCoverImage = post.coverImage?.url || 'images/default-blog-cover.jpg';
@@ -750,10 +800,10 @@
                                             </a>
                                         </h3>
                                         <p class="blog-post-excerpt text-black">${escapeHtml(post.brief)}</p>
-                                        ${tags ? `
+                                        ${tagsHTML ? `
                                             <div class="blog-post-tags">
                                                 <span>
-                                                    <i class="feather icon-feather-tag"></i>${tags}
+                                                    <i class="feather icon-feather-tag"></i>${tagsHTML}
                                                 </span>
                                             </div>
                                         ` : ''}
@@ -765,7 +815,7 @@
                     `;
                 }).join('');
 
-                container.innerHTML = postsHTML;
+                container.innerHTML = filterBadgeHTML + postsHTML;
 
             } catch (error) {
                 console.error('Erreur lors du chargement des articles:', error);

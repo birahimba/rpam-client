@@ -483,6 +483,7 @@
                 <div class="col-auto col-lg-2 me-lg-0 me-auto">
                     <a class="navbar-brand" href="/">
                         <img src="images/logo-rpam.png" alt="Logo RPAM" class="default-logo">
+                        <img src="images/logo-rpam.png" alt="Alternate Logo" class="alt-logo">
                     </a>
                 </div>
 
@@ -1376,7 +1377,7 @@
                 const query = `
                     query Publication {
                         publication(host: "${HASHNODE_CONFIG.host}") {
-                            posts(first: 20) {
+                            posts(first: 50) {
                                 edges {
                                     node {
                                         tags {
@@ -1415,15 +1416,15 @@
                     }
                 });
 
-                // Trier par popularité et prendre les 10 premiers
+                // Trier par popularité et prendre les 15 premiers
                 const sortedTags = Object.entries(tagCounts)
                     .sort((a, b) => b[1] - a[1])
-                    .slice(0, 10);
+                    .slice(0, 15);
 
                 if (sortedTags.length > 0) {
                     const tagsHTML = sortedTags.map(([tagName, count]) => {
                         return `
-                            <a href="blogs.html#tag-${tagName.toLowerCase()}" class="tag-item" title="${count} article${count > 1 ? 's' : ''}">
+                            <a href="blogs.html?tag=${encodeURIComponent(tagName)}" class="tag-item" title="${count} article${count > 1 ? 's' : ''}">
                                 #${tagName}
                             </a>
                         `;

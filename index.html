@@ -601,6 +601,301 @@
         </div>
     </section>
 
+    <!-- Section Article à la une -->
+    <section class="bg-very-light-gray pt-5 pb-5">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                    <h3 class="text-base-color fw-700 ls-minus-1px">Article à la une</h3>
+                    <p class="text-black">Découvrez nos dernières inspirations pour booster votre carrière</p>
+                </div>
+            </div>
+            <div id="featured-article-home" class="featured-article-container">
+                <!-- L'article mis en avant sera injecté ici -->
+                <div class="text-center py-5">
+                    <div class="spinner-border text-base-color" role="status">
+                        <span class="visually-hidden">Chargement...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="blogs.html" class="btn btn-base-color btn-rounded btn-box-shadow text-transform-none fw-600">
+                    Voir tous les articles <i class="feather icon-feather-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Featured Article Styles for Homepage */
+        .featured-article-container {
+            margin-bottom: 20px;
+        }
+
+        .featured-article {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 400px;
+        }
+
+        .featured-article .featured-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: transform 0.5s ease, opacity 0.3s ease;
+        }
+
+        .featured-article:hover .featured-image {
+            transform: scale(1.05);
+            opacity: 0.5;
+        }
+
+        .featured-article .featured-content {
+            position: relative;
+            z-index: 2;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 400px;
+            color: white;
+        }
+
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--base-color, #005153);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: fit-content;
+            margin-bottom: 20px;
+        }
+
+        .featured-article .featured-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .featured-article .featured-title a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .featured-article .featured-title a:hover {
+            opacity: 0.85;
+        }
+
+        .featured-article .featured-excerpt {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        .featured-article .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .featured-article .featured-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .featured-article .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--base-color, #005153);
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: fit-content;
+            margin-top: 20px;
+        }
+
+        .featured-article .read-more-btn:hover {
+            background: var(--base-color, #005153);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .featured-article {
+                min-height: 350px;
+            }
+
+            .featured-article .featured-content {
+                padding: 25px;
+                min-height: 350px;
+            }
+
+            .featured-article .featured-title {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+
+            .featured-article .featured-excerpt {
+                font-size: 1.05rem;
+                line-height: 1.6;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .featured-article .featured-meta {
+                font-size: 0.95rem;
+            }
+        }
+
+        .spinner-border {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-width: 3px;
+        }
+    </style>
+
+    <script>
+        // Script pour charger l'article à la une sur la page d'accueil
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fonction de sécurité pour échapper le HTML
+            function escapeHtml(text) {
+                if (!text) return '';
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            // Fonction pour valider les URLs d'images
+            function isValidImageUrl(url) {
+                if (!url) return false;
+                try {
+                    const urlObj = new URL(url);
+                    if (urlObj.protocol !== 'https:') return false;
+                    const allowedDomains = ['cdn.hashnode.com', 'hashnode.com', window.location.hostname];
+                    return allowedDomains.some(domain => urlObj.hostname.endsWith(domain));
+                } catch {
+                    return false;
+                }
+            }
+
+            async function loadFeaturedArticle() {
+                const container = document.getElementById('featured-article-home');
+
+                try {
+                    const query = `
+                        query Publication {
+                            publication(host: "rpam.hashnode.dev") {
+                                posts(first: 1) {
+                                    edges {
+                                        node {
+                                            title
+                                            brief
+                                            slug
+                                            coverImage {
+                                                url
+                                            }
+                                            publishedAt
+                                            readTimeInMinutes
+                                            reactionCount
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    `;
+
+                    const response = await fetch('https://gql.hashnode.com', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ query })
+                    });
+
+                    const data = await response.json();
+                    const post = data.data?.publication?.posts?.edges?.[0]?.node;
+
+                    if (!post) {
+                        container.innerHTML = `
+                            <div class="text-center py-4">
+                                <p class="text-muted mb-0">Aucun article disponible pour le moment.</p>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    const date = new Date(post.publishedAt).toLocaleDateString('fr-FR', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    const rawCoverImage = post.coverImage?.url || 'images/default-blog-cover.jpg';
+                    const coverImage = isValidImageUrl(rawCoverImage) ? rawCoverImage : 'images/default-blog-cover.jpg';
+
+                    container.innerHTML = `
+                        <article class="featured-article">
+                            <img src="${escapeHtml(coverImage)}" alt="${escapeHtml(post.title)}" class="featured-image" onerror="this.src='images/default-blog-cover.jpg'">
+                            <div class="featured-content">
+                                <span class="featured-badge">
+                                    <i class="feather icon-feather-star"></i> Article à la une
+                                </span>
+                                <h2 class="featured-title">
+                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
+                                </h2>
+                                <p class="featured-excerpt">${escapeHtml(post.brief)}</p>
+                                <div class="featured-meta">
+                                    <span><i class="feather icon-feather-calendar"></i> ${escapeHtml(date)}</span>
+                                    ${post.readTimeInMinutes ? `<span><i class="feather icon-feather-clock"></i> ${post.readTimeInMinutes} min de lecture</span>` : ''}
+                                    ${post.reactionCount ? `<span><i class="feather icon-feather-heart"></i> ${post.reactionCount} likes</span>` : ''}
+                                </div>
+                                <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="read-more-btn">
+                                    Lire l'article <i class="feather icon-feather-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    `;
+                } catch (error) {
+                    console.error('Erreur lors du chargement de l\'article:', error);
+                    container.innerHTML = `
+                        <div class="text-center py-4">
+                            <p class="text-muted mb-0">Impossible de charger l'article pour le moment.</p>
+                            <a href="blogs.html" class="btn btn-sm btn-outline-secondary mt-3">Voir le blog</a>
+                        </div>
+                    `;
+                }
+            }
+
+            loadFeaturedArticle();
+        });
+    </script>
+
     <footer class="footer-dark bg-dark-gray pt-0 pb-2 lg-pb-35px">
         <div
             class="footer-top pt-50px pb-50px sm-pt-35px sm-pb-35px border-bottom border-1 border-color-transparent-white-light">

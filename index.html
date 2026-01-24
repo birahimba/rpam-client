@@ -481,125 +481,381 @@
 
     </section>
 
-    <section class="bg-white pt-5 pb-5">
+    <section class="why-choose-section pt-5 pb-5">
         <div class="container">
-            <div class="row text-start text-md-center mb-4">
-                <div class="col-12">
-                    <h3 class="fw-bold text-base-color mb-2">Pourquoi nous choisir&nbsp;?</h3>
-                    <p class="text-muted fw-600 m-0">
-                        Nous vous offrons un accompagnement sur-mesure pour maximiser votre réussite.
-                    </p>
+            <div class="row align-items-center">
+                <!-- Colonne gauche : Titre -->
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="why-choose-header">
+                        <span class="section-badge">Nos atouts</span>
+                        <h3 class="fw-bold text-dark mb-3">Pourquoi nous choisir ?</h3>
+                        <p class="text-muted">Nous vous offrons un accompagnement sur-mesure pour maximiser votre réussite.</p>
+                        <a href="about.html" class="why-choose-link">
+                            En savoir plus <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="objectives-container">
-                <div class="objective-card">
-                    <i class="bi bi-person-check objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Accompagnement personnalisé</span> pour définir
-                        et clarifier votre projet
-                        professionnel.</span>
-                </div>
-                <div class="objective-card">
-                    <i class="bi bi-mortarboard objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Formations sur-mesure</span> pour développer vos
-                        compétences techniques et
-                        comportementales.</span>
-                </div>
-                <div class="objective-card">
-                    <i class="bi bi-people objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Un réseau dynamique</span> pour accéder à des
-                        mentors et experts du
-                        secteur.</span>
-                </div>
-                <div class="objective-card">
-                    <i class="bi bi-tools objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Outils pratiques</span>: test d’employabilité,
-                        simulations d’entretiens et plus encore</span>
-                </div>
-                <div class="objective-card">
-                    <i class="bi bi-globe objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Évolution professionnelle</span> en France avec
-                        une approche adaptée au marché
-                        local.</span>
+                <!-- Colonne droite : Liste des avantages -->
+                <div class="col-lg-8">
+                    <div class="why-choose-list">
+                        <div class="why-choose-item">
+                            <span class="item-number">01</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-person-check"></i></div>
+                                <div class="item-text">
+                                    <h6>Accompagnement personnalisé</h6>
+                                    <p>Pour définir et clarifier votre projet professionnel.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item">
+                            <span class="item-number">02</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-mortarboard"></i></div>
+                                <div class="item-text">
+                                    <h6>Formations sur-mesure</h6>
+                                    <p>Pour développer vos compétences techniques et comportementales.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item">
+                            <span class="item-number">03</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-people"></i></div>
+                                <div class="item-text">
+                                    <h6>Un réseau dynamique</h6>
+                                    <p>Pour accéder à des mentors et experts du secteur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item">
+                            <span class="item-number">04</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-tools"></i></div>
+                                <div class="item-text">
+                                    <h6>Outils pratiques</h6>
+                                    <p>Test d'employabilité, simulations d'entretiens et plus encore.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item">
+                            <span class="item-number">05</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-globe"></i></div>
+                                <div class="item-text">
+                                    <h6>Évolution professionnelle</h6>
+                                    <p>En France avec une approche adaptée au marché local.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="pt-3 pb-0">
+
+    <style>
+        /* Styles pour la section Pourquoi nous choisir */
+        .why-choose-section {
+            background: #fff;
+        }
+
+        .why-choose-header {
+            padding-right: 30px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .why-choose-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--base-color, #005153);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-link:hover {
+            gap: 12px;
+            color: #007a7c;
+        }
+
+        .why-choose-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .why-choose-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-item:hover {
+            background: white;
+            border-left-color: var(--base-color, #005153);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .item-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: rgba(0, 81, 83, 0.15);
+            min-width: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-item:hover .item-number {
+            color: var(--base-color, #005153);
+        }
+
+        .item-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .item-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-item:hover .item-icon {
+            background: var(--base-color, #005153);
+        }
+
+        .item-icon i {
+            font-size: 22px;
+            color: var(--base-color, #005153);
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-item:hover .item-icon i {
+            color: white;
+        }
+
+        .item-text h6 {
+            margin: 0 0 5px 0;
+            font-weight: 700;
+            color: #1a1a2e;
+            font-size: 1rem;
+        }
+
+        .item-text p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 991px) {
+            .why-choose-header {
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .why-choose-item {
+                padding: 15px 20px;
+            }
+
+            .item-number {
+                font-size: 1.4rem;
+                min-width: 40px;
+            }
+
+            .item-icon {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .item-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .why-choose-item {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+    <section class="values-section pt-5 pb-5">
         <div class="container">
-            <div class="row justify-content-center mb-1">
-                <div class="col-xxl-4 col-lg-8 col-md-8 text-center"
-                    data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <h3 class="text-base-color fw-700 pt-20px ls-minus-1px">Nos valeurs
-
-                    </h3>
-                    <p class="text-black">Nous nous engageons à offrir un service de qualité en mettant l’humain et
-                        l’excellence au cœur de
-                        notre mission.</p>
-
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h3 class="text-base-color fw-700 ls-minus-1px mb-3">Nos valeurs</h3>
+                    <p class="text-muted fs-18">Nous nous engageons à offrir un service de qualité en mettant l'humain et
+                        l'excellence au cœur de notre mission.</p>
                 </div>
             </div>
-            <div class="row g-4"> <!-- g-4 crée un espacement de 1.5rem -->
-                <div class="col-12">
-                    <ul class="blog-classic blog-wrapper grid-loading grid grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large"
-                        data-anime='{"el":"childs","translateY":[50,0],"opacity":[0,1],"duration":1200,"delay":0,"staggervalue":150,"easing":"easeOutQuad"}'>
-
-                        <li class="grid-sizer"></li>
-
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
-                                    <a href="demo-accounting-blog-single-creative.html"
-                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Esprit
-                                        d'équipe</a>
-                                    <p class="text-black">Notre équipe se mobilise dans un esprit de cohésion et de
-                                        confiance afin
-                                        de vous offrir un service de qualité.</p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
-                                    <a href="demo-accounting-blog-single-creative.html"
-                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Écoute</a>
-                                    <p class="text-black">Nous adoptons une posture de service et collectons avec
-                                        attention et
-                                        professionnalisme chacun de vos besoins.</p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
-                                    <a href="demo-accounting-blog-single-creative.html"
-                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Proximité</a>
-                                    <p class="text-black">Nous favorisons une approche agile. Durant toutes les phases
-                                        de l’objectif
-                                        à atteindre, nous sommes à vos côtés.</p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
-                                    <a href="demo-accounting-blog-single-creative.html"
-                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Professionnalisme</a>
-                                    <p class="text-black">Nous agissons avec intégrité, responsabilité, respect et
-                                        compétence dans
-                                        tous les aspects de votre projet.</p>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
+            <div class="row g-4">
+                <!-- Valeur 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h5 class="value-title">Esprit d'équipe</h5>
+                        <p class="value-description">Notre équipe se mobilise dans un esprit de cohésion et de confiance afin de vous offrir un service de qualité.</p>
+                        <div class="value-decoration"></div>
+                    </div>
+                </div>
+                <!-- Valeur 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-ear-fill"></i>
+                        </div>
+                        <h5 class="value-title">Écoute</h5>
+                        <p class="value-description">Nous adoptons une posture de service et collectons avec attention et professionnalisme chacun de vos besoins.</p>
+                        <div class="value-decoration"></div>
+                    </div>
+                </div>
+                <!-- Valeur 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+                        <h5 class="value-title">Proximité</h5>
+                        <p class="value-description">Nous favorisons une approche agile. Durant toutes les phases de l'objectif à atteindre, nous sommes à vos côtés.</p>
+                        <div class="value-decoration"></div>
+                    </div>
+                </div>
+                <!-- Valeur 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <h5 class="value-title">Professionnalisme</h5>
+                        <p class="value-description">Nous agissons avec intégrité, responsabilité, respect et compétence dans tous les aspects de votre projet.</p>
+                        <div class="value-decoration"></div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
+
+    <style>
+        /* Styles pour la section Nos valeurs */
+        .values-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px 25px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 81, 83, 0.15);
+        }
+
+        .value-card:hover .value-icon {
+            background: var(--base-color, #005153);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .value-card:hover .value-decoration {
+            transform: scale(1.5);
+            opacity: 0.1;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(0, 81, 83, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: all 0.4s ease;
+        }
+
+        .value-icon i {
+            font-size: 32px;
+            color: var(--base-color, #005153);
+            transition: all 0.4s ease;
+        }
+
+        .value-card:hover .value-icon i {
+            color: white;
+        }
+
+        .value-title {
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .value-description {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .value-decoration {
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: var(--base-color, #005153);
+            border-radius: 50%;
+            opacity: 0.05;
+            transition: all 0.5s ease;
+        }
+
+        @media (max-width: 991px) {
+            .value-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 
     <!-- Section Article à la une -->
     <section class="bg-very-light-gray pt-5 pb-5">

@@ -4,7 +4,7 @@
     <!-- Page d'accueil -->
     <url>
         <loc>https://www.rpam.fr/</loc>
-        <lastmod>2026-01-03</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -12,7 +12,7 @@
     <!-- Qui sommes-nous -->
     <url>
         <loc>https://www.rpam.fr/about</loc>
-        <lastmod>2026-01-03</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -20,7 +20,7 @@
     <!-- Orientation Professionnelle (Guidance) -->
     <url>
         <loc>https://www.rpam.fr/guidance</loc>
-        <lastmod>2026-01-03</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
@@ -28,7 +28,7 @@
     <!-- Développement de Compétences (Up Training) -->
     <url>
         <loc>https://www.rpam.fr/up-training</loc>
-        <lastmod>2026-01-03</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
@@ -36,7 +36,7 @@
     <!-- Coaching à la recherche d’emploi (Job Getting) -->
     <url>
         <loc>https://www.rpam.fr/job-getting</loc>
-        <lastmod>2026-01-03</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
@@ -44,7 +44,7 @@
     <!-- Blog (liste) -->
     <url>
         <loc>https://www.rpam.fr/blogs</loc>
-        <lastmod>2026-01-03</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -52,7 +52,7 @@
     <!-- Actualités -->
     <url>
         <loc>https://www.rpam.fr/news</loc>
-        <lastmod>2026-01-03</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -60,7 +60,7 @@
     <!-- Réservation -->
     <url>
         <loc>https://www.rpam.fr/booking</loc>
-        <lastmod>2026-01-03</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

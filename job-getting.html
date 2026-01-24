@@ -59,8 +59,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);
+            background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
         }
 
         .min-vh-50 {
@@ -77,7 +77,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             color: white;
             padding: 8px 18px;
             border-radius: 30px;
@@ -97,14 +97,14 @@
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
             margin-bottom: 20px;
         }
 
         .hero-description {
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             max-width: 500px;
             line-height: 1.7;
             margin-bottom: 30px;
@@ -127,12 +127,12 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-hero-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             color: var(--base-color, #005153);
         }
 
@@ -142,7 +142,7 @@
             gap: 8px;
             color: white;
             padding: 14px 28px;
-            border: 2px solid rgba(255,255,255,0.4);
+            border: 2px solid rgba(255, 255, 255, 0.4);
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
@@ -150,7 +150,7 @@
         }
 
         .btn-hero-secondary:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-color: white;
             color: white;
         }
@@ -169,7 +169,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             animation: float 3s ease-in-out infinite;
         }
 
@@ -203,8 +203,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
         /* Content Section */
@@ -223,7 +230,7 @@
             border-radius: 16px;
             padding: 25px;
             margin-bottom: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
         .sidebar-nav-header {
@@ -295,7 +302,7 @@
         .cta-icon-wrapper {
             width: 60px;
             height: 60px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -315,7 +322,7 @@
         }
 
         .sidebar-cta-card p {
-            color: rgba(255,255,255,0.85);
+            color: rgba(255, 255, 255, 0.85);
             font-size: 0.9rem;
             margin-bottom: 20px;
         }
@@ -336,7 +343,7 @@
 
         .sidebar-cta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             color: var(--base-color, #005153);
         }
 
@@ -345,7 +352,7 @@
             background: white;
             border-radius: 16px;
             padding: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
         .sidebar-related h6 {
@@ -434,7 +441,7 @@
             background: white;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             border-left: 4px solid transparent;
         }
@@ -442,7 +449,7 @@
         .situation-card:hover {
             border-left-color: var(--base-color, #005153);
             transform: translateX(5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .situation-icon {
@@ -491,7 +498,7 @@
             padding: 25px 20px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
 
@@ -573,7 +580,7 @@
             background: white;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
         }
 
         .timeline-content h5 {
@@ -604,7 +611,7 @@
             background: white;
             padding: 30px 25px;
             border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -669,7 +676,7 @@
             background: white;
             padding: 30px;
             border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
         .benefit-item {
@@ -751,7 +758,7 @@
         }
 
         .final-cta p {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             max-width: 500px;
             margin: 0 auto 10px;
         }
@@ -827,7 +834,8 @@
                 flex-direction: column;
             }
 
-            .btn-hero-primary, .btn-hero-secondary {
+            .btn-hero-primary,
+            .btn-hero-secondary {
                 width: 100%;
                 justify-content: center;
             }
@@ -1032,7 +1040,8 @@
                         <h1 class="hero-title">JOB GETTING</h1>
                         <p class="hero-subtitle">Coaching à la Recherche d'Emploi</p>
                         <p class="hero-description">
-                            Boostez votre candidature et décrochez des opportunités adaptées à votre projet professionnel.
+                            Boostez votre candidature et décrochez des opportunités adaptées à votre projet
+                            professionnel.
                         </p>
                         <div class="hero-actions">
                             <a href="booking.html" class="btn-hero-primary">
@@ -1146,8 +1155,10 @@
                             Coaching à la Recherche d'Emploi : Boostez Votre Candidature avec RPAM
                         </h2>
                         <p class="intro-text">
-                            Trouver un emploi peut être un parcours long et frustrant, surtout sans stratégie efficace. Chez <strong>RPAM</strong>, nous vous aidons
-                            à <strong>structurer votre recherche, valoriser votre profil et décrocher des opportunités adaptées</strong> à votre projet professionnel.
+                            Trouver un emploi peut être un parcours long et frustrant, surtout sans stratégie efficace.
+                            Chez <strong>RPAM</strong>, nous vous aidons
+                            à <strong>structurer votre recherche, valoriser votre profil et décrocher des opportunités
+                                adaptées</strong> à votre projet professionnel.
                         </p>
                     </div>
 
@@ -1166,7 +1177,8 @@
                                 <div class="situation-content">
                                     <h5>Manque de visibilité sur le marché de l'emploi</h5>
                                     <ul>
-                                        <li>Vous postulez sans succès et avez du mal à vous démarquer des autres candidats.</li>
+                                        <li>Vous postulez sans succès et avez du mal à vous démarquer des autres
+                                            candidats.</li>
                                         <li>Vous ne savez pas où chercher les offres adaptées à votre profil.</li>
                                         <li>Votre réseau professionnel est limité ou inexploité.</li>
                                     </ul>
@@ -1180,9 +1192,11 @@
                                 <div class="situation-content">
                                     <h5>Candidatures inefficaces et peu de retours</h5>
                                     <ul>
-                                        <li>Vos CV et lettres de motivation n'attirent pas l'attention des recruteurs.</li>
+                                        <li>Vos CV et lettres de motivation n'attirent pas l'attention des recruteurs.
+                                        </li>
                                         <li>Vous obtenez peu ou pas de réponses à vos candidatures.</li>
-                                        <li>Vos candidatures sont rejetées par les algorithmes des plateformes de recrutement.</li>
+                                        <li>Vos candidatures sont rejetées par les algorithmes des plateformes de
+                                            recrutement.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1210,7 +1224,8 @@
                                     <ul>
                                         <li>Votre recherche d'emploi dure depuis des mois sans résultat.</li>
                                         <li>Vous enchaînez les refus et cela impacte votre confiance et motivation.</li>
-                                        <li>Vous êtes prêt(e) à abandonner ou à accepter un poste qui ne vous correspond pas.</li>
+                                        <li>Vous êtes prêt(e) à abandonner ou à accepter un poste qui ne vous correspond
+                                            pas.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1288,7 +1303,8 @@
                                     <h5>Diagnostic et Stratégie Personnalisée</h5>
                                     <ul>
                                         <li>Analyse de votre parcours, compétences et objectifs professionnels.</li>
-                                        <li>Évaluation de vos forces et axes d'amélioration pour structurer votre recherche.</li>
+                                        <li>Évaluation de vos forces et axes d'amélioration pour structurer votre
+                                            recherche.</li>
                                         <li>Définition d'un plan d'action ciblé pour postuler plus efficacement.</li>
                                     </ul>
                                 </div>
@@ -1301,8 +1317,10 @@
                                 <div class="timeline-content">
                                     <h5>Optimisation de votre Candidature</h5>
                                     <ul>
-                                        <li>Création d'un CV percutant et optimisé pour les recruteurs et les algorithmes ATS.</li>
-                                        <li>Rédaction de lettres de motivation convaincantes, adaptées à chaque offre.</li>
+                                        <li>Création d'un CV percutant et optimisé pour les recruteurs et les
+                                            algorithmes ATS.</li>
+                                        <li>Rédaction de lettres de motivation convaincantes, adaptées à chaque offre.
+                                        </li>
                                         <li>Optimisation de votre profil LinkedIn pour maximiser votre visibilité.</li>
                                     </ul>
                                 </div>
@@ -1316,8 +1334,10 @@
                                     <h5>Préparation aux Entretiens</h5>
                                     <ul>
                                         <li>Techniques pour gérer le stress et gagner en assurance.</li>
-                                        <li>Mises en situation et simulations d'entretiens avec des feedbacks personnalisés.</li>
-                                        <li>Travail sur votre posture, votre discours et votre impact face aux recruteurs.</li>
+                                        <li>Mises en situation et simulations d'entretiens avec des feedbacks
+                                            personnalisés.</li>
+                                        <li>Travail sur votre posture, votre discours et votre impact face aux
+                                            recruteurs.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1329,9 +1349,11 @@
                                 <div class="timeline-content">
                                     <h5>Développement de votre Réseau et Opportunités Cachées</h5>
                                     <ul>
-                                        <li>Stratégies pour se connecter avec les bons contacts et développer son réseau.</li>
+                                        <li>Stratégies pour se connecter avec les bons contacts et développer son
+                                            réseau.</li>
                                         <li>Techniques de candidature spontanée et approche directe des recruteurs.</li>
-                                        <li>Utilisation des plateformes et outils de networking pour maximiser les chances d'embauche.</li>
+                                        <li>Utilisation des plateformes et outils de networking pour maximiser les
+                                            chances d'embauche.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1344,8 +1366,10 @@
                                     <h5>Négociation Salariale et Conditions de Travail</h5>
                                     <ul>
                                         <li>Comment évaluer sa valeur sur le marché de l'emploi ?</li>
-                                        <li>Méthodes de négociation efficaces pour obtenir un meilleur package salarial.</li>
-                                        <li>Simulation d'entretiens pour apprendre à défendre vos intérêts avec assurance.</li>
+                                        <li>Méthodes de négociation efficaces pour obtenir un meilleur package salarial.
+                                        </li>
+                                        <li>Simulation d'entretiens pour apprendre à défendre vos intérêts avec
+                                            assurance.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1449,26 +1473,8 @@
 
 
 
-    <footer class="footer-dark bg-dark-gray pt-0 pb-2 lg-pb-35px">
-        <div
-            class="footer-top pt-50px pb-50px sm-pt-35px sm-pb-35px border-bottom border-1 border-color-transparent-white-light">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
+    <footer class="footer-dark bg-dark-gray pt-2 pb-2 lg-pb-35px">
 
-                    <div class="col-xl-6 text-center text-xl-start lg-mb-30px sm-mb-20px">
-                        <h6 class="text-white mb-5px fw-500 ls-minus-1px">Boostez votre carrière profesionnelle.</h6>
-
-                    </div>
-
-                    <div class="col-xl-6 text-center text-xl-end">
-                        <a href="booking.html"
-                            class="btn text-white btn-extra-large bg-base-color left-icon btn-box-shadow btn-rounded text-transform-none d-inline-block align-middle me-15px xs-m-10px"><i
-                                class="feather text-white icon-feather-mail"></i>Consultation gratuite</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <div class="container">
             <div class="row justify-content-center fs-17 fw-300 mt-5 mb-4 md-mt-45px md-mb-45px xs-mt-35px xs-mb-35px">
 

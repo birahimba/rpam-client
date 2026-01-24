@@ -31,6 +31,832 @@
     <link rel="stylesheet" href="css/corporate.css">
     <link rel="canonical" href="https://www.rpam.fr/guidance" />
 
+    <style>
+        /* ===== GUIDANCE PAGE MODERN STYLES ===== */
+
+        /* Hero Section */
+        .guidance-hero {
+            position: relative;
+            background: linear-gradient(135deg, #005153 0%, #007a7c 50%, #00a5a8 100%);
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/self-know.jpg') center/cover;
+            opacity: 0.15;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+        }
+
+        .min-vh-50 {
+            min-height: 50vh;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 500px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--base-color, #005153);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            color: var(--base-color, #005153);
+        }
+
+        .btn-hero-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            padding: 14px 28px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            color: white;
+        }
+
+        /* Hero Visual - Floating Cards */
+        .hero-visual {
+            position: relative;
+            height: 350px;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-card i {
+            font-size: 24px;
+            color: var(--base-color, #005153);
+        }
+
+        .floating-card span {
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 0.95rem;
+        }
+
+        .floating-card.card-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-card.card-2 {
+            top: 50%;
+            right: 5%;
+            animation-delay: 1s;
+        }
+
+        .floating-card.card-3 {
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Content Section */
+        .guidance-content-section {
+            background: #f8f9fa;
+        }
+
+        /* Modern Sidebar */
+        .modern-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-nav-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-nav-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .sidebar-nav-header i {
+            font-size: 20px;
+            color: var(--base-color, #005153);
+        }
+
+        .sidebar-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav-list li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar-nav-list a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            color: #555;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-nav-list a:hover {
+            background: rgba(0, 81, 83, 0.08);
+            color: var(--base-color, #005153);
+            padding-left: 18px;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav-list a:hover .nav-dot {
+            background: var(--base-color, #005153);
+            transform: scale(1.3);
+        }
+
+        /* Sidebar CTA Card */
+        .sidebar-cta-card {
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            border-radius: 16px;
+            padding: 30px 25px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cta-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .cta-icon-wrapper i {
+            font-size: 28px;
+            color: white;
+        }
+
+        .sidebar-cta-card h6 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-cta-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--base-color, #005153);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: var(--base-color, #005153);
+        }
+
+        /* Sidebar Related */
+        .sidebar-related {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-related h6 {
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .related-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            color: #555;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+        }
+
+        .related-link:hover {
+            background: rgba(0, 81, 83, 0.1);
+            color: var(--base-color, #005153);
+        }
+
+        .related-link i {
+            font-size: 18px;
+        }
+
+        /* Content Intro */
+        .content-intro {
+            margin-bottom: 40px;
+        }
+
+        .section-main-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--base-color, #005153);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .section-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(0, 81, 83, 0.15);
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 0;
+        }
+
+        /* Situation Cards */
+        .situation-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .situation-card {
+            display: flex;
+            gap: 20px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .situation-card:hover {
+            border-left-color: var(--base-color, #005153);
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .situation-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 81, 83, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .situation-icon i {
+            font-size: 24px;
+            color: var(--base-color, #005153);
+        }
+
+        .situation-content h5 {
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .situation-content ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .situation-content li {
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Objectives Grid */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .objective-item {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .objective-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 81, 83, 0.15);
+        }
+
+        .objective-icon-modern {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .objective-icon-modern i {
+            font-size: 26px;
+            color: white;
+        }
+
+        .objective-item p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Methodology Timeline */
+        .methodology-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .methodology-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--base-color, #005153), #00a5a8);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 30px 40px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 81, 83, 0.3);
+        }
+
+        .timeline-marker span {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-content h6 {
+            font-weight: 700;
+            color: var(--base-color, #005153);
+            margin-bottom: 15px;
+        }
+
+        .timeline-content ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .timeline-content li {
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Formats Grid */
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .format-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .format-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 81, 83, 0.12);
+        }
+
+        .format-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(0, 81, 83, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .format-card:hover .format-icon {
+            background: var(--base-color, #005153);
+        }
+
+        .format-icon i {
+            font-size: 26px;
+            color: var(--base-color, #005153);
+            transition: all 0.3s ease;
+        }
+
+        .format-card:hover .format-icon i {
+            color: white;
+        }
+
+        .format-card h5 {
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .format-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .format-tag {
+            display: inline-block;
+            background: rgba(0, 81, 83, 0.1);
+            color: var(--base-color, #005153);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Benefits Modern */
+        .benefits-modern {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .benefit-item:first-child {
+            padding-top: 0;
+        }
+
+        .benefit-item i {
+            font-size: 22px;
+            color: #28a745;
+            flex-shrink: 0;
+        }
+
+        .benefit-item span {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 81, 83, 0.3) 0%, transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta .cta-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .final-cta .cta-icon i {
+            font-size: 36px;
+            color: white;
+        }
+
+        .final-cta h4 {
+            color: white;
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 500px;
+            margin: 0 auto 10px;
+        }
+
+        .cta-highlight {
+            color: #00d4aa !important;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 25px !important;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            color: white;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 81, 83, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 81, 83, 0.5);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .modern-sidebar {
+                position: static;
+                margin-top: 40px;
+            }
+
+            .formats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .methodology-timeline {
+                padding-left: 20px;
+            }
+
+            .methodology-timeline::before {
+                left: 15px;
+            }
+
+            .timeline-marker {
+                left: -7px;
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .btn-hero-primary,
+            .btn-hero-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .situation-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .situation-icon {
+                margin: 0 auto;
+            }
+
+            .final-cta {
+                padding: 35px 25px;
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -203,262 +1029,417 @@
         </div>
     </header>
 
-    <section class="top-space-margin page-title-big-typography cover-backgroundround-cursor bg-black-transparent-light"
-        style="background-image: url('images/banner.png'); background-size: cover; background-position: center;">
-        <div class="container">
-            <div class="row align-items-center">
+    <!-- Hero Section Moderne -->
+    <section class="guidance-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center min-vh-50">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <span class="hero-badge">
+                            <i class="bi bi-compass"></i> Nos Services
+                        </span>
+                        <h1 class="hero-title">GUIDANCE</h1>
+                        <p class="hero-subtitle">Orientation Professionnelle</p>
+                        <p class="hero-description">
+                            Clarifiez votre projet professionnel et construisez une carrière alignée avec vos
+                            aspirations.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="booking.html" class="btn-hero-primary">
+                                <i class="bi bi-calendar-check"></i> Prendre rendez-vous
+                            </a>
+                            <a href="#content-start" class="btn-hero-secondary">
+                                En savoir plus <i class="bi bi-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-visual">
+                        <div class="floating-card card-1">
+                            <i class="bi bi-bullseye"></i>
+                            <span>Objectifs clairs</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <span>Plan d'action</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="bi bi-person-check"></i>
+                            <span>Accompagnement</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-5 col-sm-8 position-relative page-title-extra-small"
-                data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;opacity&quot;: [0, 1], &quot;translateX&quot;: [-30, 0], &quot;duration&quot;: 800, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                <h1 class="mb-20px text-white text-shadow-medium"><span
-                        class="w-30px h-2px bg-yellow d-inline-block align-middle position-relative top-minus-2px me-10px"></span>Nos
-                    Services </h1>
-                <h2 class="text-white text-shadow-medium fw-700 ls-minus-2px mb-0">GUIDANCE</h2>
-            </div>
-        </div>
-        </div>
         </div>
     </section>
 
 
-    <section>
+    <section class="guidance-content-section pt-5 pb-5" id="content-start">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 pe-5 order-2 order-lg-1 lg-pe-3 md-pe-15px"
-                    data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <div class="bg-very-light-gray border-radius-6px p-45px lg-p-25px mb-25px">
-                        <span class="fs-20 ls-minus-05px alt-font text-black fw-600 mb-20px d-inline-block">
-                            Orientation & Développement Professionnel
-                        </span>
-                        <ul class="p-0 m-0 list-style-02">
-                            <li class="pb-10px mb-10px border-bottom border-color-transparent-dark">
-                                <a href="#projet-professionnel">Quand faire appel à ce service?</a>
-                                <i class="feather icon-feather-arrow-right ms-auto"></i>
-                            </li>
-                            <li class="pb-10px mb-10px border-bottom border-color-transparent-dark">
-                                <a href="#valorisation-competences">Nos Objectifs</a>
-                                <i class="feather icon-feather-arrow-right ms-auto"></i>
-                            </li>
-                            <li class="pb-10px mb-10px border-bottom border-color-transparent-dark">
-                                <a href="#plan-action">Notre Méthodologie</a>
-                                <i class="feather icon-feather-arrow-right ms-auto"></i>
-                            </li>
-                            <li class="pb-10px mb-10px border-bottom border-color-transparent-dark">
-                                <a href="#emploi-aligné">Formats Disponibles</a>
-                                <i class="feather icon-feather-arrow-right ms-auto"></i>
-                            </li>
-                            <li class="pb-10px mb-10px border-bottom border-color-transparent-dark">
-                                <a href="#reconversion">Les Bénéfices de Notre Accompagnement</a>
-                                <i class="feather icon-feather-arrow-right ms-auto"></i>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-dark-gray border-radius-6px ps-35px pb-25px pt-25px lg-ps-25px mb-25px">
-                        <div class="feature-box feature-box-left-icon-middle">
-                            <div
-                                class="feature-box-icon feature-box-icon-rounded w-65px h-65px me-20px lg-me-15px rounded-circle bg-yellow rounded-box">
-                                <i class="bi bi-calendar-check icon-extra-medium text-white"></i>
+                <!-- Sidebar Moderne -->
+                <div class="col-lg-4 order-2 order-lg-1">
+                    <div class="modern-sidebar">
+                        <!-- Navigation sticky -->
+                        <div class="sidebar-nav-card">
+                            <div class="sidebar-nav-header">
+                                <i class="bi bi-list-ul"></i>
+                                <span>Navigation rapide</span>
                             </div>
-                            <div class="feature-box-content last-paragraph-no-margin">
+                            <ul class="sidebar-nav-list">
+                                <li>
+                                    <a href="#projet-professionnel">
+                                        <span class="nav-dot"></span>
+                                        Quand faire appel à ce service?
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#valorisation-competences">
+                                        <span class="nav-dot"></span>
+                                        Nos Objectifs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#plan-action">
+                                        <span class="nav-dot"></span>
+                                        Notre Méthodologie
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#emploi-aligné">
+                                        <span class="nav-dot"></span>
+                                        Formats Disponibles
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#reconversion">
+                                        <span class="nav-dot"></span>
+                                        Les Bénéfices
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-                                <a href="booking.html" class="text-white fs-20 fw-500 lh-22">Réservez un
-                                    rendez-vous</a>
+                        <!-- CTA Card -->
+                        <div class="sidebar-cta-card">
+                            <div class="cta-icon-wrapper">
+                                <i class="bi bi-calendar-check"></i>
                             </div>
+                            <h6>Besoin d'accompagnement ?</h6>
+                            <p>Réservez une consultation gratuite avec nos experts.</p>
+                            <a href="booking.html" class="sidebar-cta-btn">
+                                Prendre rendez-vous <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <!-- Services liés -->
+                        <div class="sidebar-related">
+                            <h6>Autres services</h6>
+                            <a href="up-training.html" class="related-link">
+                                <i class="bi bi-mortarboard"></i>
+                                Up Training
+                            </a>
+                            <a href="job-getting.html" class="related-link">
+                                <i class="bi bi-briefcase"></i>
+                                Job Getting
+                            </a>
                         </div>
                     </div>
-
                 </div>
+
+                <!-- Contenu Principal -->
                 <div class="col-lg-8 order-1 order-lg-2 md-mb-50px">
-                    <h5 class="text-base-color fw-700 ls-minus-1px alt-font mb-20px d-block">Orientation Professionnelle
-                        : Trouvez Votre
-                        Voie avec RPAM</h5>
-                    <p class="text-black">L’<strong>orientation professionnelle</strong> est une étape clé pour bâtir
-                        une carrière
-                        alignée avec vos
-                        aspirations et le marché
-                        du travail. Chez <strong>RPAM</strong>, nous vous accompagnons pour <strong>clarifier votre
-                            projet
-                            professionnel,
-                            identifier vos
-                            compétences et construire un plan d’action concret.</strong></p>
+                    <!-- Introduction -->
+                    <div class="content-intro">
+                        <h2 class="section-main-title">
+                            Orientation Professionnelle : Trouvez Votre Voie avec RPAM
+                        </h2>
+                        <p class="intro-text">
+                            L'<strong>orientation professionnelle</strong> est une étape clé pour bâtir une carrière
+                            alignée avec vos aspirations et le marché du travail. Chez <strong>RPAM</strong>, nous vous
+                            accompagnons pour <strong>clarifier votre projet professionnel, identifier vos compétences
+                                et construire un plan d'action concret.</strong>
+                        </p>
+                    </div>
 
-                    <h6 id="projet-professionnel" class="text-black fw-600 mt-40px">Quand faire appel à ce service ?
-                    </h6>
-                    <ul class="highlighted-list">
-                        <li class="text-black"><strong>Manque de clarté sur votre avenir professionnel</strong></li>
-                        <ul>
-                            <li class="text-black">Vous ne savez pas quelle carrière choisir après vos études ou après
-                                une reconversion.
-                            </li>
-                            <li class="text-black">Vous hésitez entre plusieurs secteurs ou métiers et avez besoin de
-                                conseils
-                                personnalisés.</li>
-                            <li class="text-black">Vous souhaitez identifier un projet professionnel réaliste et
-                                motivant.</li>
-                        </ul>
-                        <li class="text-black"><strong>Difficulté à valoriser vos compétences sur le marché du
-                                travail</strong></li>
-                        <ul>
-                            <li class="text-black">Vous avez des diplômes ou des formations, mais vous ne savez pas
-                                comment les exploiter
-                                dans un contexte
-                                professionnel.</li>
-                            <li class="text-black">Vous avez peu ou pas d’expérience, ce qui vous empêche d’identifier
-                                votre valeur sur le
-                                marché.</li>
-                            <li class="text-black">Vous souhaitez traduire vos compétences académiques en compétences
-                                professionnelles
-                                recherchées par les
-                                recruteurs.</li>
-                        </ul>
-                        <li class="text-black"><strong>Sensation de stagnation ou de frustration dans votre
-                                carrière</strong></li>
-                        <ul>
-                            <li class="text-black">Vous avez le sentiment de ne pas évoluer dans votre poste actuel.
-                            </li>
-                            <li class="text-black">Vous ressentez une perte de motivation ou d’intérêt pour votre
-                                travail.</li>
-                            <li class="text-black">Vous envisagez une reconversion professionnelle, mais ne savez pas
-                                comment vous y
-                                prendre.</li>
-                        </ul>
-                        <li class="text-black"> <strong>Difficulté à trouver un emploi aligné avec vos
-                                ambitions</strong></li>
-                        <ul>
-                            <li class="text-black">Vous envoyez de nombreuses candidatures, mais ne décrochez pas
-                                d’opportunités adaptées.
-                            </li>
-                            <li class="text-black">Vous avez l’impression que votre profil ne correspond pas aux
-                                attentes du marché.</li>
-                            <li class="text-black">Vous souhaitez accéder à un emploi en accord avec vos valeurs, vos
-                                compétences et votre
-                                mode de vie.
-                            </li>
-                        </ul>
-                    </ul>
+                    <!-- Section Quand faire appel -->
+                    <div id="projet-professionnel" class="content-section">
+                        <div class="section-header">
+                            <span class="section-number">01</span>
+                            <h3 class="section-title">Quand faire appel à ce service ?</h3>
+                        </div>
 
-                    <h6 id="valorisation-competences" class="text-black fw-600 mt-40px">Nos Objectifs</h6>
+                        <div class="situation-cards">
+                            <div class="situation-card">
+                                <div class="situation-icon">
+                                    <i class="bi bi-question-circle"></i>
+                                </div>
+                                <div class="situation-content">
+                                    <h5>Manque de clarté sur votre avenir professionnel</h5>
+                                    <ul>
+                                        <li>Vous ne savez pas quelle carrière choisir après vos études ou après une
+                                            reconversion.</li>
+                                        <li>Vous hésitez entre plusieurs secteurs ou métiers et avez besoin de conseils
+                                            personnalisés.</li>
+                                        <li>Vous souhaitez identifier un projet professionnel réaliste et motivant.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                    <div class="objectives-container">
-                        <div class="objective-card">
-                            <i class="bi bi-bullseye objective-icon"></i>
-                            <span class="objective-text">Clarifier votre projet professionnel et définir des objectifs
-                                réalisables.</span>
-                        </div>
-                        <div class="objective-card">
-                            <i class="bi bi-lightbulb objective-icon"></i>
-                            <span class="objective-text">Aligner vos compétences, intérêts et valeurs avec les
-                                opportunités du
-                                marché.</span>
-                        </div>
-                        <div class="objective-card">
-                            <i class="bi bi-book objective-icon"></i>
-                            <span class="objective-text">Identifier les formations et expériences nécessaires pour
-                                atteindre votre
-                                but.</span>
-                        </div>
-                        <div class="objective-card">
-                            <i class="bi bi-list-check objective-icon"></i>
-                            <span class="objective-text">Structurer un plan d’action efficace et mesurable.</span>
-                        </div>
-                        <div class="objective-card">
-                            <i class="bi bi-rocket objective-icon"></i>
-                            <span class="objective-text">Vous donner les outils et la confiance pour avancer
-                                sereinement.</span>
+                            <div class="situation-card">
+                                <div class="situation-icon">
+                                    <i class="bi bi-gem"></i>
+                                </div>
+                                <div class="situation-content">
+                                    <h5>Difficulté à valoriser vos compétences</h5>
+                                    <ul>
+                                        <li>Vous avez des diplômes ou des formations, mais vous ne savez pas comment les
+                                            exploiter.</li>
+                                        <li>Vous avez peu ou pas d'expérience, ce qui vous empêche d'identifier votre
+                                            valeur sur le marché.</li>
+                                        <li>Vous souhaitez traduire vos compétences académiques en compétences
+                                            professionnelles.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="situation-card">
+                                <div class="situation-icon">
+                                    <i class="bi bi-battery-half"></i>
+                                </div>
+                                <div class="situation-content">
+                                    <h5>Sensation de stagnation ou de frustration</h5>
+                                    <ul>
+                                        <li>Vous avez le sentiment de ne pas évoluer dans votre poste actuel.</li>
+                                        <li>Vous ressentez une perte de motivation ou d'intérêt pour votre travail.</li>
+                                        <li>Vous envisagez une reconversion professionnelle, mais ne savez pas comment
+                                            vous y prendre.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="situation-card">
+                                <div class="situation-icon">
+                                    <i class="bi bi-search"></i>
+                                </div>
+                                <div class="situation-content">
+                                    <h5>Difficulté à trouver un emploi aligné avec vos ambitions</h5>
+                                    <ul>
+                                        <li>Vous envoyez de nombreuses candidatures, mais ne décrochez pas
+                                            d'opportunités adaptées.</li>
+                                        <li>Vous avez l'impression que votre profil ne correspond pas aux attentes du
+                                            marché.</li>
+                                        <li>Vous souhaitez accéder à un emploi en accord avec vos valeurs et votre mode
+                                            de vie.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <h6 id="plan-action" class="text-black fw-600 mt-40px">Notre Méthodologie</h6>
-                    <div class="step-container">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <strong>Analyse et Bilan Personnel</strong>
-                            <ul>
-                                <li>Évaluation de vos compétences, expériences et intérêts professionnels.</li>
-                                <li>Tests d’orientation pour mieux comprendre vos
-                                    préférences.</li>
-                                <li>Identification de vos valeurs et aspirations professionnelles.</li>
-                            </ul>
+                    <!-- Section Objectifs -->
+                    <div id="valorisation-competences" class="content-section">
+                        <div class="section-header">
+                            <span class="section-number">02</span>
+                            <h3 class="section-title">Nos Objectifs</h3>
+                        </div>
+
+                        <div class="objectives-grid">
+                            <div class="objective-item">
+                                <div class="objective-icon-modern">
+                                    <i class="bi bi-bullseye"></i>
+                                </div>
+                                <p>Clarifier votre projet professionnel et définir des objectifs réalisables.</p>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon-modern">
+                                    <i class="bi bi-lightbulb"></i>
+                                </div>
+                                <p>Aligner vos compétences, intérêts et valeurs avec les opportunités du marché.</p>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon-modern">
+                                    <i class="bi bi-book"></i>
+                                </div>
+                                <p>Identifier les formations et expériences nécessaires pour atteindre votre but.</p>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon-modern">
+                                    <i class="bi bi-list-check"></i>
+                                </div>
+                                <p>Structurer un plan d'action efficace et mesurable.</p>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon-modern">
+                                    <i class="bi bi-rocket"></i>
+                                </div>
+                                <p>Vous donner les outils et la confiance pour avancer sereinement.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="step-container">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <strong>Exploration des Possibilités</strong>
-                            <ul>
-                                <li>Analyse des secteurs porteurs et opportunités du marché.</li>
-                                <li>Recherche des métiers en adéquation avec vos compétences et aspirations.</li>
-                                <li>Identification des écarts de compétences et solutions pour les combler (formations,
-                                    certifications,
-                                    expériences).</li>
-                            </ul>
+                    <!-- Section Méthodologie -->
+                    <div id="plan-action" class="content-section">
+                        <div class="section-header">
+                            <span class="section-number">03</span>
+                            <h3 class="section-title">Notre Méthodologie</h3>
+                        </div>
+
+                        <div class="methodology-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <span>1</span>
+                                </div>
+                                <div class="timeline-content">
+                                    <h6>Analyse et Bilan Personnel</h6>
+                                    <ul>
+                                        <li>Évaluation de vos compétences, expériences et intérêts professionnels.</li>
+                                        <li>Tests d'orientation pour mieux comprendre vos préférences.</li>
+                                        <li>Identification de vos valeurs et aspirations professionnelles.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <span>2</span>
+                                </div>
+                                <div class="timeline-content">
+                                    <h6>Exploration des Possibilités</h6>
+                                    <ul>
+                                        <li>Analyse des secteurs porteurs et opportunités du marché.</li>
+                                        <li>Recherche des métiers en adéquation avec vos compétences et aspirations.
+                                        </li>
+                                        <li>Identification des écarts de compétences et solutions pour les combler.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <span>3</span>
+                                </div>
+                                <div class="timeline-content">
+                                    <h6>Construction de Votre Plan d'Action</h6>
+                                    <ul>
+                                        <li>Définition d'objectifs clairs et atteignables.</li>
+                                        <li>Élaboration d'une stratégie de développement professionnel sur le court,
+                                            moyen et long terme.</li>
+                                        <li>Conseils sur les formations complémentaires et expériences professionnelles
+                                            à acquérir.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <span>4</span>
+                                </div>
+                                <div class="timeline-content">
+                                    <h6>Mise en Pratique et Suivi Personnalisé</h6>
+                                    <ul>
+                                        <li>Coaching individuel pour structurer votre projet et renforcer votre
+                                            confiance.</li>
+                                        <li>Techniques de networking et conseils pour élargir vos opportunités.</li>
+                                        <li>Ajustements et accompagnement sur la durée pour assurer votre succès.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="step-container">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <strong>Construction de Votre Plan d’Action</strong>
-                            <ul>
-                                <li>Définition d’objectifs clairs et atteignables.</li>
-                                <li>Élaboration d’une stratégie de développement professionnel sur le court, moyen et
-                                    long terme.</li>
-                                <li>Conseils sur les formations complémentaires et expériences professionnelles à
-                                    acquérir.</li>
-                            </ul>
+                    <!-- Section Formats -->
+                    <div id="emploi-aligné" class="content-section">
+                        <div class="section-header">
+                            <span class="section-number">04</span>
+                            <h3 class="section-title">Formats Disponibles</h3>
+                        </div>
+
+                        <div class="formats-grid">
+                            <div class="format-card">
+                                <div class="format-icon">
+                                    <i class="bi bi-person-video3"></i>
+                                </div>
+                                <h5>Coaching Individuel</h5>
+                                <p>Accompagnement personnalisé en one-to-one avec un expert dédié.</p>
+                                <span class="format-tag">Personnalisé</span>
+                            </div>
+                            <div class="format-card">
+                                <div class="format-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h5>Ateliers Collectifs</h5>
+                                <p>Séances interactives en groupe pour échanger et apprendre ensemble.</p>
+                                <span class="format-tag">Interactif</span>
+                            </div>
+                            <div class="format-card">
+                                <div class="format-icon">
+                                    <i class="bi bi-journal-text"></i>
+                                </div>
+                                <h5>Ressources et Guides</h5>
+                                <p>Outils pratiques, fiches métiers, guides d'orientation, tests de compétences.</p>
+                                <span class="format-tag">Pratique</span>
+                            </div>
+                            <div class="format-card">
+                                <div class="format-icon">
+                                    <i class="bi bi-clipboard-check"></i>
+                                </div>
+                                <h5>Plan d'action structuré</h5>
+                                <p>Document personnalisé pour suivre votre évolution et vos objectifs.</p>
+                                <span class="format-tag">Sur mesure</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="step-container">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <strong>Mise en Pratique et Suivi Personnalisé</strong>
-                            <ul>
-                                <li>Coaching individuel pour structurer votre projet et renforcer votre confiance.</li>
-                                <li>Techniques de networking et conseils pour élargir vos opportunités.</li>
-                                <li>Ajustements et accompagnement sur la durée pour assurer votre succès.</li>
-                            </ul>
+                    <!-- Section Bénéfices -->
+                    <div id="reconversion" class="content-section">
+                        <div class="section-header">
+                            <span class="section-number">05</span>
+                            <h3 class="section-title">Les Bénéfices de Notre Accompagnement</h3>
+                        </div>
+
+                        <div class="benefits-modern">
+                            <div class="benefit-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Un projet professionnel clair et réaliste.</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Une meilleure confiance en soi et en ses choix.</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Une stratégie d'évolution alignée avec vos ambitions.</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Une meilleure compréhension du marché et de ses exigences.</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Un plan d'action concret pour réussir votre insertion ou reconversion.</span>
+                            </div>
                         </div>
                     </div>
 
-                    <h6 id="emploi-aligné" class="text-black fw-600 mt-40px">Formats Disponibles</h6>
-                    <div class="card-container">
-                        <div class="service-card">
-                            <strong>Coaching Individuel</strong>
-                            <p>Accompagnement personnalisé en one-to-one avec un expert.</p>
+                    <!-- CTA Final -->
+                    <div class="final-cta">
+                        <div class="cta-content">
+                            <div class="cta-icon">
+                                <i class="bi bi-rocket-takeoff"></i>
+                            </div>
+                            <h4>Prêt(e) à transformer votre carrière ?</h4>
+                            <p>Vous êtes perdu(e) dans votre parcours professionnel ? Vous souhaitez donner un nouveau
+                                souffle à votre carrière ?</p>
+                            <p class="cta-highlight">RPAM vous accompagne pas à pas !</p>
+                            <a href="booking.html" class="cta-button">
+                                <i class="bi bi-calendar-check"></i>
+                                Réservez votre consultation gratuite
+                            </a>
                         </div>
-                        <div class="service-card">
-                            <strong>Ateliers Collectifs</strong>
-                            <p>Séances interactives en groupe pour échanger et apprendre ensemble.</p>
-                        </div>
-                        <div class="service-card">
-                            <strong>Ressources et Guides</strong>
-                            <p>Outils pratiques, fiches métiers, guides d’orientation, tests de compétences.</p>
-                        </div>
-                        <div class="service-card">
-                            <strong>Plan d’action structuré</strong>
-                            <p>Document personnalisé pour suivre votre évolution et vos objectifs.</p>
-                        </div>
-                    </div>
-
-
-                    <h6 id="reconversion" class="text-black fw-600 mt-40px">Les Bénéfices de Notre Accompagnement</h6>
-
-                    <ul class="benefits-list">
-                        <li>Un projet professionnel clair et réaliste.</li>
-                        <li>Une meilleure confiance en soi et en ses choix.</li>
-                        <li>Une stratégie d’évolution alignée avec vos ambitions.</li>
-                        <li>Une meilleure compréhension du marché et de ses exigences.</li>
-                        <li>Un plan d’action concret pour réussir votre insertion ou reconversion.</li>
-                    </ul>
-
-                    <div class="cta-container">
-                        <p>Vous êtes perdu(e) dans votre parcours professionnel ? Vous souhaitez donner un nouveau
-                            souffle à votre carrière ?</p>
-                        <h5 class="text-base-color fw-700">RPAM vous accompagne pas à pas !</h5>
-                        <a href="booking.html" class="cta-btn">Réservez maintenant</a>
                     </div>
                 </div>
             </div>

@@ -681,6 +681,35 @@
             padding: 25px !important;
         }
 
+        .btn-read-article {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--base-color, #005153);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn-read-article:hover {
+            background: var(--yellow, #ecab23);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .btn-read-article i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-read-article:hover i {
+            transform: translateX(5px);
+        }
+
         @media (max-width: 768px) {
             .blog-post-image {
                 height: 200px !important;
@@ -1040,6 +1069,9 @@
                                             <span><i class="feather icon-feather-tag"></i>${tagsHTML}</span>
                                         </div>
                                     ` : ''}
+                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="btn-read-article">
+                                        Lire l'article <i class="feather icon-feather-arrow-right"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>

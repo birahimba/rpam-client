@@ -9,8 +9,7 @@
     <meta name="description"
         content="RPAM accompagne les professionnels et étudiants en France dans leur orientation professionnelle, le développement de compétences et le coaching à la recherche d'emploi. Accompagnement personnalisé et formations sur mesure.">
 
-    <meta property="og:title"
-        content="RPAM – Développement de Compétences (Up Training) à Paris">
+    <meta property="og:title" content="RPAM – Développement de Compétences (Up Training) à Paris">
     <meta property="og:description"
         content="Accompagnement personnalisé, formations sur mesure et coaching à la recherche d'emploi pour booster votre carrière.">
     <meta property="og:type" content="website">
@@ -28,6 +27,7 @@
     <link rel="stylesheet" href="css/icon.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/responsive.min.css">
+    <link rel="stylesheet" href="css/navbar-modern.css">
     <link rel="stylesheet" href="css/corporate.css">
     <link rel="canonical" href="https://www.rpam.fr/up-training" />
 
@@ -862,173 +862,162 @@
 
 <body data-mobile-nav-style="classic" class="custom-cursor">
 
-    <div class="cursor-page-inner">
-        <div class="circle-cursor circle-cursor-inner"></div>
-        <div class="circle-cursor circle-cursor-outer"></div>
-    </div>
 
+    <!-- Main Navbar -->
+    <nav class="navbar-modern" id="mainNavbar">
+        <div class="container-fluid">
+            <div class="navbar-container">
 
-    <header class="header-with-topbar">
-
-        <!-- Top Bar -->
-        <div class="header-top-bar top-bar-dark bg-base-color">
-            <div class="container-fluid">
-                <div class="row align-items-center m-0 h-45px xs-h-auto scrolling-text xs-pt-5px xs-pb-5px">
-                    <!-- Contact Information -->
-                    <div class="col-lg-6 col-md-7 text-center text-md-start xs-px-0">
-                        <div class="fs-15 text-white fw-500">
-                            <span>Nos experts vous accompagnent!
-                                <a href="booking.html"
-                                    class="text-white text-decoration-line-bottom fw-600 alt-font">Nous
-                                    contacter</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- Phone and Location -->
-                    <div class="col-lg-6 col-md-5 text-end d-none d-md-flex">
-                        <div class="widget fs-15 fw-500 text-white me-35px lg-me-25px md-me-0">
-                        </div>
-                        <div class="widget fs-15 fw-500 text-white d-none d-lg-inline-block">
-                            <span>
-                                <i class="feather icon-feather-map-pin"></i>Paris, France
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg header-light bg-white responsive-sticky">
-            <div class="container-fluid">
                 <!-- Logo -->
-                <div class="col-auto col-lg-2 me-lg-0 me-auto">
-                    <a class="navbar-brand" href="/">
-                        <img src="images/logo-rpam.png" alt="Logo RPAM" class="default-logo">
-                        <img src="images/logo-rpam.png" alt="Alternate Logo" class="alt-logo">
-                        <img src="images/logo-rpam.png" alt="Mobile Logo" class="mobile-logo">
+                <a href="index.html" class="navbar-logo">
+                    <img src="images/logo-rpam.png" alt="RPAM">
+                </a>
+
+                <!-- Navigation Desktop -->
+                <ul class="nav-menu-desktop">
+                    <li class="nav-item-modern">
+                        <a href="index.html" class="nav-link-modern active">Accueil</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="about.html" class="nav-link-modern">Qui sommes-nous</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="#" class="nav-link-modern">
+                            Nos Services
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <!-- Mega Menu -->
+                        <div class="mega-menu">
+                            <div class="mega-menu-grid">
+                                <a href="guidance.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon-04.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Orientation Professionnelle</h4>
+                                        <p>Guidance pour trouver votre voie et definir vos objectifs de carriere</p>
+                                    </div>
+                                </a>
+                                <a href="up-training.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon-05.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Developpement de Competences</h4>
+                                        <p>Up Training pour acquerir les skills demandes sur le marche</p>
+                                    </div>
+                                </a>
+                                <a href="job-getting.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon01.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Coaching Recherche d'Emploi</h4>
+                                        <p>Job Getting pour decrocher le poste de vos reves</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="blogs.html" class="nav-link-modern">Blog</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="news.html" class="nav-link-modern">Actualites</a>
+                    </li>
+                </ul>
+
+                <!-- CTA Button Desktop -->
+                <div class="navbar-cta">
+                    <a href="booking.html" class="btn-cta-modern">
+                        <i class="fas fa-calendar-alt"></i>
+                        Reserver un rendez-vous
                     </a>
                 </div>
 
-                <!-- Toggler mobile -->
-                <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Ouvrir le menu">
-                    <span class="navbar-toggler-line"></span>
-                    <span class="navbar-toggler-line"></span><br>
-                    <span class="navbar-toggler-line"></span>
-                </button>
+                <!-- Hamburger Menu Mobile -->
+                <div class="hamburger-modern" id="hamburgerBtn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-                <!-- Menu desktop -->
-                <div class="navbar-collapse d-none d-lg-flex ms-4" id="navbarNavDesktop">
-                    <ul class="navbar-nav fw-600">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/about" class="nav-link">Qui sommes nous</a>
-                        </li>
-                        <li class="nav-item dropdown dropdown-with-icon-style02">
-                            <a href="#" class="nav-link active" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Nos Services
+    <!-- Mobile Menu Fullscreen -->
+    <div class="mobile-menu-modern" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link active">Accueil</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="about.html" class="mobile-nav-link">Qui sommes-nous</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" id="servicesToggle">
+                    Nos Services
+                    <i class="fas fa-chevron-down arrow"></i>
+                </a>
+                <!-- Mobile Submenu -->
+                <div class="mobile-submenu" id="servicesSubmenu">
+                    <ul class="mobile-submenu-list">
+                        <li class="mobile-submenu-item">
+                            <a href="guidance.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon-04.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Orientation Professionnelle</h5>
+                                    <span>Guidance</span>
+                                </div>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li class="service-item">
-                                    <a href="/guidance" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon-04.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Orientation Professionnelle (Guidance)
-                                    </a>
-                                </li>
-                                <li class="service-item">
-                                    <a href="/up-training" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon-05.svg"
-                                            alt="Développement de Compétences – RPAM">
-                                        Développement de Compétences (Up Training)
-                                    </a>
-                                </li>
-                                <li class="service-item">
-                                    <a href="/job-getting" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon01.svg"
-                                            alt="Coaching à la recherche d'emploi – RPAM">
-                                        Coaching à la recherche d'emploi (Job Getting)
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="/blogs" class="nav-link">Blog</a>
+                        <li class="mobile-submenu-item">
+                            <a href="up-training.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon-05.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Developpement de Competences</h5>
+                                    <span>Up Training</span>
+                                </div>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/news" class="nav-link">Actualités</a>
+                        <li class="mobile-submenu-item">
+                            <a href="job-getting.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon01.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Coaching Recherche d'Emploi</h5>
+                                    <span>Job Getting</span>
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="blogs.html" class="mobile-nav-link">Blog</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="news.html" class="mobile-nav-link">Actualites</a>
+            </li>
+        </ul>
 
-                <!-- Call to Action desktop -->
-                <a href="/booking"
-                    class="btn btn-base-color btn-box-shadow text-transform-none btn-rounded btn-hover-animation-switch  d-none d-lg-inline-flex ms-3">
-                    Réserver un rendez-vous
+        <!-- Mobile CTA -->
+        <div class="mobile-cta">
+            <a href="booking.html" class="btn-cta-modern">
+                <i class="fas fa-calendar-alt"></i>
+                Reserver un rendez-vous
+            </a>
+            <div class="mobile-contact-info">
+                <a href="mailto:contact@rpam.fr">
+                    <i class="fas fa-envelope"></i>
+                    contact@rpam.fr
                 </a>
-            </div>
-        </nav>
-
-
-        <!-- Offcanvas mobile -->
-        <div class="offcanvas offcanvas-end offcanvas-mobile-nav" tabindex="-1" id="mobileNav"
-            aria-labelledby="mobileNavLabel">
-            <div class="offcanvas-header">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/logo-rpam.png" alt="RPAM" class="mobile-logo">
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Paris, France
                 </a>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
-            </div>
-
-            <div class="offcanvas-body d-flex flex-column">
-                <ul class="navbar-nav fw-600 nav-mobile">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">Qui sommes nous</a></li>
-
-                    <!-- Services en accordéon -->
-                    <li class="nav-item">
-                        <button class="btn w-100 text-start nav-link-like" data-bs-toggle="collapse"
-                            data-bs-target="#mServices" aria-expanded="false">
-                            Nos Services <span class="chevron"></span>
-                        </button>
-                        <div id="mServices" class="collapse">
-                            <ul class="list-unstyled ps-3 mt-2 d-grid gap-2">
-                                <li><a href="guidance.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon-04.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Orientation Professionnelle (Guidance)
-                                    </a></li>
-                                <li><a href="up-training.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon-05.svg"
-                                            alt="Développement de Compétences – RPAM" width="22" height="22">
-                                        Développement de Compétences (Up Training)
-                                    </a></li>
-                                <li><a href="job-getting.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon01.svg"
-                                            alt="Coaching à la recherche d'emploi – RPAM" width="22" height="22">
-                                        Coaching à la recherche d'emploi (Job Getting)
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item"><a href="blogs.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="news.html" class="nav-link">Actualités</a></li>
-                </ul>
-
-                <div class="mt-auto pt-3 border-top">
-                    <a href="booking.html" class="btn btn-base-color btn-box-shadow btn-rounded w-100">
-                        Réserver un rendez-vous
-                    </a>
-                </div>
             </div>
         </div>
-    </header>
-
+    </div>
     <!-- Hero Section Moderne -->
     <section class="uptraining-hero">
         <div class="hero-overlay"></div>
@@ -1043,7 +1032,8 @@
                         <h1 class="hero-title">UP TRAINING</h1>
                         <p class="hero-subtitle">Développement de Compétences</p>
                         <p class="hero-description">
-                            Renforcez vos compétences et restez compétitif sur le marché du travail avec un accompagnement personnalisé.
+                            Renforcez vos compétences et restez compétitif sur le marché du travail avec un
+                            accompagnement personnalisé.
                         </p>
                         <div class="hero-actions">
                             <a href="booking.html" class="btn-hero-primary">
@@ -1157,7 +1147,11 @@
                             Développement de Compétences : Évoluez et Restez Compétitif
                         </h2>
                         <p class="intro-text">
-                            Le marché du travail évolue constamment et les compétences d'aujourd'hui ne suffisent pas toujours pour demain. Que vous souhaitiez <strong>renforcer vos capacités</strong>, vous adapter aux nouvelles exigences professionnelles ou évoluer vers un nouveau poste, <strong>RPAM</strong> vous accompagne dans votre <strong>montée en compétences</strong> avec une approche ciblée et efficace.
+                            Le marché du travail évolue constamment et les compétences d'aujourd'hui ne suffisent pas
+                            toujours pour demain. Que vous souhaitiez <strong>renforcer vos capacités</strong>, vous
+                            adapter aux nouvelles exigences professionnelles ou évoluer vers un nouveau poste,
+                            <strong>RPAM</strong> vous accompagne dans votre <strong>montée en compétences</strong> avec
+                            une approche ciblée et efficace.
                         </p>
                     </div>
 
@@ -1176,9 +1170,12 @@
                                 <div class="situation-content">
                                     <h5>Manque de compétences techniques ou comportementales</h5>
                                     <ul>
-                                        <li>Vous avez l'impression que vos compétences actuelles sont insuffisantes pour évoluer dans votre carrière.</li>
-                                        <li>Vous voulez acquérir de nouvelles compétences techniques (logiciels, outils digitaux, méthodologies...).</li>
-                                        <li>Vous avez besoin de développer vos soft skills (communication, leadership, gestion du stress...).</li>
+                                        <li>Vous avez l'impression que vos compétences actuelles sont insuffisantes pour
+                                            évoluer dans votre carrière.</li>
+                                        <li>Vous voulez acquérir de nouvelles compétences techniques (logiciels, outils
+                                            digitaux, méthodologies...).</li>
+                                        <li>Vous avez besoin de développer vos soft skills (communication, leadership,
+                                            gestion du stress...).</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1190,9 +1187,12 @@
                                 <div class="situation-content">
                                     <h5>Stagnation professionnelle</h5>
                                     <ul>
-                                        <li>Vous occupez le même poste depuis plusieurs années et avez l'impression de ne plus progresser.</li>
-                                        <li>Vos compétences ne vous permettent pas d'accéder à des responsabilités plus élevées.</li>
-                                        <li>Vous souhaitez évoluer vers un nouveau rôle, mais vous manquez des qualifications nécessaires.</li>
+                                        <li>Vous occupez le même poste depuis plusieurs années et avez l'impression de
+                                            ne plus progresser.</li>
+                                        <li>Vos compétences ne vous permettent pas d'accéder à des responsabilités plus
+                                            élevées.</li>
+                                        <li>Vous souhaitez évoluer vers un nouveau rôle, mais vous manquez des
+                                            qualifications nécessaires.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1204,9 +1204,12 @@
                                 <div class="situation-content">
                                     <h5>Difficultés à s'adapter aux évolutions du marché</h5>
                                     <ul>
-                                        <li>Votre secteur évolue rapidement et vous avez du mal à suivre les nouvelles tendances.</li>
-                                        <li>Vous constatez que les recruteurs recherchent des compétences que vous ne maîtrisez pas encore.</li>
-                                        <li>Vous ressentez une insécurité professionnelle face aux mutations technologiques.</li>
+                                        <li>Votre secteur évolue rapidement et vous avez du mal à suivre les nouvelles
+                                            tendances.</li>
+                                        <li>Vous constatez que les recruteurs recherchent des compétences que vous ne
+                                            maîtrisez pas encore.</li>
+                                        <li>Vous ressentez une insécurité professionnelle face aux mutations
+                                            technologiques.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1218,9 +1221,12 @@
                                 <div class="situation-content">
                                     <h5>Transition professionnelle</h5>
                                     <ul>
-                                        <li>Vous voulez changer de métier ou de secteur, mais vous ne savez pas quelles compétences développer.</li>
-                                        <li>Vous avez besoin d'un plan structuré pour acquérir les compétences nécessaires à votre reconversion.</li>
-                                        <li>Vous souhaitez valoriser vos compétences transférables pour un nouvel emploi.</li>
+                                        <li>Vous voulez changer de métier ou de secteur, mais vous ne savez pas quelles
+                                            compétences développer.</li>
+                                        <li>Vous avez besoin d'un plan structuré pour acquérir les compétences
+                                            nécessaires à votre reconversion.</li>
+                                        <li>Vous souhaitez valoriser vos compétences transférables pour un nouvel
+                                            emploi.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1233,8 +1239,10 @@
                                     <h5>Difficultés à s'affirmer professionnellement</h5>
                                     <ul>
                                         <li>Vous manquez de confiance en vous pour exprimer vos idées en réunion.</li>
-                                        <li>Vous voulez améliorer votre capacité à négocier, gérer des conflits ou prendre la parole en public.</li>
-                                        <li>Vous souhaitez devenir un meilleur leader ou manager dans votre entreprise.</li>
+                                        <li>Vous voulez améliorer votre capacité à négocier, gérer des conflits ou
+                                            prendre la parole en public.</li>
+                                        <li>Vous souhaitez devenir un meilleur leader ou manager dans votre entreprise.
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -1298,8 +1306,10 @@
                                     <h6>Diagnostic et Bilan de Compétences</h6>
                                     <ul>
                                         <li>Analyse de vos compétences actuelles et identification des lacunes.</li>
-                                        <li>Définition d'un plan de formation adapté à vos objectifs professionnels.</li>
-                                        <li>Évaluation des opportunités d'évolution en fonction du marché du travail.</li>
+                                        <li>Définition d'un plan de formation adapté à vos objectifs professionnels.
+                                        </li>
+                                        <li>Évaluation des opportunités d'évolution en fonction du marché du travail.
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -1311,9 +1321,12 @@
                                 <div class="timeline-content">
                                     <h6>Formation et Acquisition de Nouvelles Compétences</h6>
                                     <ul>
-                                        <li>Formations sur les compétences techniques et numériques nécessaires à votre métier.</li>
-                                        <li>Ateliers pratiques pour développer des compétences comportementales clés (communication, gestion du stress, leadership...).</li>
-                                        <li>Accompagnement dans l'application immédiate des nouvelles compétences en entreprise.</li>
+                                        <li>Formations sur les compétences techniques et numériques nécessaires à votre
+                                            métier.</li>
+                                        <li>Ateliers pratiques pour développer des compétences comportementales clés
+                                            (communication, gestion du stress, leadership...).</li>
+                                        <li>Accompagnement dans l'application immédiate des nouvelles compétences en
+                                            entreprise.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1325,9 +1338,12 @@
                                 <div class="timeline-content">
                                     <h6>Développement du Leadership et des Soft Skills</h6>
                                     <ul>
-                                        <li>Coaching en prise de parole en public et gestion des interactions professionnelles.</li>
-                                        <li>Stratégies pour gagner en assurance et en impact dans vos interventions.</li>
-                                        <li>Formation à la gestion des conflits, négociation et management d'équipe.</li>
+                                        <li>Coaching en prise de parole en public et gestion des interactions
+                                            professionnelles.</li>
+                                        <li>Stratégies pour gagner en assurance et en impact dans vos interventions.
+                                        </li>
+                                        <li>Formation à la gestion des conflits, négociation et management d'équipe.
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -1340,8 +1356,10 @@
                                     <h6>Plan de Progression et Suivi</h6>
                                     <ul>
                                         <li>Élaboration d'un plan de montée en compétences à court et moyen terme.</li>
-                                        <li>Sessions de coaching et d'évaluation régulières pour mesurer vos progrès.</li>
-                                        <li>Accompagnement dans l'application concrète de vos nouvelles compétences sur le terrain.</li>
+                                        <li>Sessions de coaching et d'évaluation régulières pour mesurer vos progrès.
+                                        </li>
+                                        <li>Accompagnement dans l'application concrète de vos nouvelles compétences sur
+                                            le terrain.</li>
                                     </ul>
                                 </div>
                             </div>

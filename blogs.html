@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/corporate.css">
     <link rel="stylesheet" href="css/navbar-modern.css">
     <link rel="canonical" href="https://www.rpam.fr/blogs" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -190,72 +191,159 @@
         </div>
     </div>
 
-    <!-- start page title -->
-    <section class="pb-0 bg-very-light-gray ipad-top-space-margin md-pt-0">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-xl-9 col-lg-9 text-center position-relative page-title-double-large">
-                    <div class="d-flex flex-column justify-content-center extra-very-small-screen">
-                        <h3 class="text-dark-gray alt-font ls-minus-1px fw-700">Découvrez nos dernières inspirations
-                        </h3>
-                        <h2 class="text-dark-gray d-inline-block fw-400 ls-0px w-80 xs-w-100 mx-auto">Plongez dans nos
-                            articles pour rester informé, inspiré et connecté à nos idées.</h2>
-                    </div> <br>
+    <!-- Hero Section Blog -->
+    <section class="blog-hero-section">
+        <div class="blog-hero-bg"></div>
+        <div class="blog-hero-overlay"></div>
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <span class="blog-hero-badge" data-aos="fade-down" data-aos-duration="600">
+                        <i class="feather icon-feather-book-open"></i> Notre Blog
+                    </span>
+                    <h1 class="blog-hero-title" data-aos="fade-up" data-aos-duration="800">
+                        Découvrez nos dernières <span class="text-gradient">inspirations</span>
+                    </h1>
+                    <p class="blog-hero-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        Plongez dans nos articles pour rester informé, inspiré et connecté à nos idées sur l'orientation professionnelle, le développement de compétences et la recherche d'emploi.
+                    </p>
+                    <div class="blog-hero-stats" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div class="stat-item">
+                            <i class="feather icon-feather-file-text"></i>
+                            <span id="total-articles-count">--</span>
+                            <small>Articles</small>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <i class="feather icon-feather-tag"></i>
+                            <span id="total-tags-count">--</span>
+                            <small>Thématiques</small>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <i class="feather icon-feather-clock"></i>
+                            <span>5-10</span>
+                            <small>Min de lecture</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section> <br>
-    <!-- end page title -->
+        <!-- Decorative shapes -->
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+    </section>
+    <!-- end hero section -->
 
 
     <!-- Article mis en avant -->
-    <section class="pt-0 pb-0">
+    <section class="pt-0 pb-5" style="background: #f8f9fa;">
         <div class="container">
-            <div id="featured-article" class="featured-article-container">
+            <div id="featured-article" class="featured-article-container" data-aos="fade-up" data-aos-duration="800">
                 <!-- L'article mis en avant sera injecté ici -->
             </div>
         </div>
     </section>
 
-    <section class="pt-4">
+    <section class="pt-5 pb-5" style="background: #f8f9fa;">
         <div class="container">
             <div class="row">
                 <!-- Contenu principal -->
                 <div class="col-12 col-lg-8">
-                    <!-- Barre de tri -->
-                    <div class="sort-bar mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
-                        <span class="text-muted" id="articles-count">Chargement...</span>
-                        <div class="sort-buttons d-flex gap-2">
-                            <button class="sort-btn active" data-sort="recent">
-                                <i class="feather icon-feather-clock"></i> Plus récent
+                    <!-- Barre de tri modernisée -->
+                    <div class="sort-bar-modern" data-aos="fade-up" data-aos-duration="600">
+                        <div class="sort-bar-info">
+                            <i class="feather icon-feather-layers" style="color: var(--base-color, #005153);"></i>
+                            <span id="articles-count"><strong>--</strong> articles disponibles</span>
+                        </div>
+                        <div class="sort-buttons-modern">
+                            <button class="sort-btn-modern active" data-sort="recent">
+                                <i class="feather icon-feather-clock"></i> Récent
                             </button>
-                            <button class="sort-btn" data-sort="oldest">
-                                <i class="feather icon-feather-calendar"></i> Plus ancien
+                            <button class="sort-btn-modern" data-sort="oldest">
+                                <i class="feather icon-feather-calendar"></i> Ancien
                             </button>
-                            <button class="sort-btn" data-sort="popular">
-                                <i class="feather icon-feather-heart"></i> Populaire
+                            <button class="sort-btn-modern" data-sort="popular">
+                                <i class="feather icon-feather-trending-up"></i> Populaire
                             </button>
                         </div>
                     </div>
 
-                    <!-- Hashnode Widget Container -->
-                    <div id="hashnode-blog-widget" class="hashnode-container">
-                        <!-- Le widget Hashnode sera injecté ici -->
+                    <!-- Grille d'articles moderne -->
+                    <div id="hashnode-blog-widget" class="blog-grid-modern">
+                        <!-- Les articles seront injectés ici -->
+                        <div class="text-center py-5" style="grid-column: span 2;">
+                            <div class="spinner-border text-base-color" role="status">
+                                <span class="visually-hidden">Chargement...</span>
+                            </div>
+                            <p class="mt-3 text-muted">Chargement des articles...</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Sidebar -->
+                <!-- Sidebar enrichie -->
                 <aside class="col-12 col-lg-4">
-                    <div class="sidebar-sticky" style="position: sticky; top: 100px;">
-                        <!-- Hashtags populaires -->
-                        <div class="sidebar-widget">
-                            <h3 class="sidebar-title">Hashtags populaires</h3>
-                            <div id="popular-tags" class="tags-cloud">
+                    <div class="sidebar-modern">
+                        <!-- Articles populaires -->
+                        <div class="sidebar-card" data-aos="fade-left" data-aos-duration="600">
+                            <h3 class="sidebar-card-title">
+                                <i class="feather icon-feather-trending-up"></i> Articles populaires
+                            </h3>
+                            <div id="popular-articles">
                                 <div class="text-center py-3">
                                     <div class="spinner-border spinner-border-sm text-base-color" role="status">
                                         <span class="visually-hidden">Chargement...</span>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Newsletter -->
+                        <div class="sidebar-card newsletter-widget" data-aos="fade-left" data-aos-duration="600" data-aos-delay="100">
+                            <h3 class="sidebar-card-title">
+                                <i class="feather icon-feather-mail"></i> Newsletter
+                            </h3>
+                            <p>Recevez nos meilleurs conseils carrière directement dans votre boîte mail.</p>
+                            <form class="newsletter-form" action="email-templates/subscribe-newsletter.php" method="post">
+                                <input type="email" name="email" placeholder="Votre adresse email" required>
+                                <button type="submit">
+                                    <i class="feather icon-feather-send"></i> S'abonner
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Thématiques / Tags -->
+                        <div class="sidebar-card" data-aos="fade-left" data-aos-duration="600" data-aos-delay="200">
+                            <h3 class="sidebar-card-title">
+                                <i class="feather icon-feather-hash"></i> Thématiques
+                            </h3>
+                            <div id="popular-tags" class="tags-cloud-modern">
+                                <div class="text-center py-3 w-100">
+                                    <div class="spinner-border spinner-border-sm text-base-color" role="status">
+                                        <span class="visually-hidden">Chargement...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Suivez-nous -->
+                        <div class="sidebar-card" data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
+                            <h3 class="sidebar-card-title">
+                                <i class="feather icon-feather-users"></i> Suivez-nous
+                            </h3>
+                            <div class="social-links-grid">
+                                <a href="https://www.facebook.com/" target="_blank" class="social-link-item facebook" title="Facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.linkedin.com" target="_blank" class="social-link-item linkedin" title="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.twitter.com" target="_blank" class="social-link-item twitter" title="Twitter">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="https://www.instagram.com" target="_blank" class="social-link-item instagram" title="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -265,9 +353,698 @@
     </section>
 
     <style>
-        /* Featured Article Styles */
-        .featured-article-container {
+        /* ============================================
+           BLOG HERO SECTION
+        ============================================ */
+        .blog-hero-section {
+            position: relative;
+            padding: 180px 0 100px;
+            overflow: hidden;
+            min-height: 450px;
+        }
+
+        .blog-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #005153 0%, #003d3f 50%, #002a2c 100%);
+        }
+
+        .blog-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.03)"/></svg>') repeat;
+            background-size: 30px 30px;
+        }
+
+        .blog-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(236, 171, 35, 0.2);
+            border: 1px solid rgba(236, 171, 35, 0.4);
+            color: #ecab23;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+
+        .blog-hero-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
             margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .blog-hero-title .text-gradient {
+            background: linear-gradient(135deg, #ecab23 0%, #f7c665 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-hero-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .blog-hero-stats {
+            display: inline-flex;
+            align-items: center;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stat-item i {
+            font-size: 1.3rem;
+            color: #ecab23;
+            margin-bottom: 5px;
+        }
+
+        .stat-item span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .stat-item small {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .hero-shape-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(236, 171, 35, 0.15);
+            top: -100px;
+            right: -50px;
+        }
+
+        .hero-shape-2 {
+            width: 200px;
+            height: 200px;
+            background: rgba(236, 171, 35, 0.1);
+            bottom: -50px;
+            left: 10%;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero-section {
+                padding: 140px 0 60px;
+                min-height: auto;
+            }
+
+            .blog-hero-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+                padding: 20px 25px;
+            }
+
+            .stat-divider {
+                display: none;
+            }
+
+            .stat-item {
+                flex: 1;
+                min-width: 80px;
+            }
+        }
+
+        /* ============================================
+           MODERN BLOG GRID
+        ============================================ */
+        .blog-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .blog-card-modern {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #f0f0f0;
+        }
+
+        .blog-card-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 81, 83, 0.12);
+        }
+
+        .blog-card-modern.large {
+            grid-column: span 2;
+        }
+
+        .blog-card-modern.large .blog-card-inner {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .blog-card-modern.large .blog-card-image {
+            height: 100%;
+            min-height: 350px;
+        }
+
+        .blog-card-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card-modern:hover .blog-card-image img {
+            transform: scale(1.08);
+        }
+
+        .blog-card-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .blog-card-reading-time {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-card-content {
+            padding: 25px;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .blog-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-card-meta i {
+            font-size: 0.9rem;
+            color: var(--base-color, #005153);
+        }
+
+        .blog-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+
+        .blog-card-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .blog-card-title a:hover {
+            color: var(--base-color, #005153);
+        }
+
+        .blog-card-modern.large .blog-card-title {
+            font-size: 1.6rem;
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .blog-card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .blog-card-tag {
+            background: #f5f5f5;
+            color: #666;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .blog-card-tag:hover {
+            background: var(--base-color, #005153);
+            color: white;
+        }
+
+        .blog-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--base-color, #005153);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .blog-card-link:hover {
+            color: #ecab23;
+            gap: 10px;
+        }
+
+        .blog-card-link i {
+            transition: transform 0.3s;
+        }
+
+        .blog-card-link:hover i {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 991px) {
+            .blog-grid-modern {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card-modern.large {
+                grid-column: span 1;
+            }
+
+            .blog-card-modern.large .blog-card-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card-modern.large .blog-card-image {
+                min-height: 250px;
+            }
+        }
+
+        /* ============================================
+           ENHANCED SIDEBAR
+        ============================================ */
+        .sidebar-modern {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f0f0f0;
+        }
+
+        .sidebar-card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--base-color, #005153);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-card-title i {
+            color: #ecab23;
+        }
+
+        /* Popular articles widget */
+        .popular-article-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #f5f5f5;
+            transition: all 0.3s;
+        }
+
+        .popular-article-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .popular-article-item:hover {
+            padding-left: 5px;
+        }
+
+        .popular-article-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #e8e8e8;
+            line-height: 1;
+            min-width: 30px;
+            transition: color 0.3s;
+        }
+
+        .popular-article-item:hover .popular-article-number {
+            color: #ecab23;
+        }
+
+        .popular-article-content h6 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.4;
+            transition: color 0.2s;
+        }
+
+        .popular-article-content h6 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .popular-article-item:hover .popular-article-content h6 {
+            color: var(--base-color, #005153);
+        }
+
+        .popular-article-content small {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* Newsletter widget */
+        .newsletter-widget {
+            background: linear-gradient(135deg, #005153 0%, #003d3f 100%);
+            border: none;
+        }
+
+        .newsletter-widget .sidebar-card-title {
+            color: white;
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-widget .sidebar-card-title i {
+            color: #ecab23;
+        }
+
+        .newsletter-widget p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .newsletter-form input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #ecab23;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .newsletter-form button {
+            background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%);
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(236, 171, 35, 0.4);
+        }
+
+        /* Social links widget */
+        .social-links-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .social-link-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: #f5f5f5;
+            color: #666;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-link-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .social-link-item.facebook:hover {
+            background: #1877f2;
+            color: white;
+        }
+
+        .social-link-item.linkedin:hover {
+            background: #0077b5;
+            color: white;
+        }
+
+        .social-link-item.twitter:hover {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .social-link-item.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+        }
+
+        /* Tags cloud enhanced */
+        .tags-cloud-modern {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-cloud-item {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #f5f5f5;
+            color: #555;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .tag-cloud-item:hover {
+            background: var(--base-color, #005153);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .tag-cloud-item .tag-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.1);
+            color: inherit;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-left: 6px;
+        }
+
+        /* ============================================
+           SORT BAR ENHANCED
+        ============================================ */
+        .sort-bar-modern {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .sort-bar-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .sort-bar-info strong {
+            color: var(--base-color, #005153);
+        }
+
+        .sort-buttons-modern {
+            display: flex;
+            gap: 8px;
+        }
+
+        .sort-btn-modern {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            background: #f8f9fa;
+            border: 1px solid #e8e8e8;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .sort-btn-modern:hover {
+            border-color: var(--base-color, #005153);
+            color: var(--base-color, #005153);
+        }
+
+        .sort-btn-modern.active {
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            border-color: transparent;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .sort-bar-modern {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .sort-buttons-modern {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .sort-btn-modern {
+                flex: 1;
+                justify-content: center;
+                min-width: 100px;
+            }
+        }
+
+        /* ============================================
+           FEATURED ARTICLE ENHANCED
+        ============================================ */
+        .featured-article-container {
+            margin-bottom: 0;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
         }
 
         .featured-article {
@@ -383,93 +1160,6 @@
             transform: translateX(5px);
         }
 
-        /* Sort Bar Styles */
-        .sort-bar {
-            padding: 15px 20px;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #e8e8e8;
-        }
-
-        .sort-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            border: 1px solid #e0e0e0;
-            background: white;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #666;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .sort-btn:hover {
-            border-color: var(--base-color, #005153);
-            color: var(--base-color, #005153);
-        }
-
-        .sort-btn.active {
-            background: var(--base-color, #005153);
-            border-color: var(--base-color, #005153);
-            color: white;
-        }
-
-        .sort-btn i {
-            font-size: 0.9rem;
-        }
-
-        /* Sidebar Styles */
-        .sidebar-widget {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            margin-bottom: 30px;
-        }
-
-        .sidebar-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--base-color, #005153);
-        }
-
-        .tags-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag-item {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #f0f0f0;
-            color: #333;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .tag-item:hover {
-            background: var(--base-color, #005153);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 991px) {
-            .sidebar-sticky {
-                position: relative !important;
-                top: 0 !important;
-                margin-top: 40px;
-            }
-        }
 
         @media (max-width: 768px) {
             .featured-article {
@@ -511,241 +1201,70 @@
             }
         }
 
-        .hashnode-container {
-            min-height: 400px;
-            padding: 20px 0;
-        }
-
-        /* Blog post card styles - version simplifiée */
-        .blog-post-card {
-            margin-bottom: 25px;
-        }
-
-        .hover-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-            transition: box-shadow 0.2s ease;
-            border: 1px solid #e8e8e8;
-        }
-
-        .hover-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .blog-post-title a {
-            font-size: 1.5rem;
-            font-weight: 700;
-            line-height: 1.3;
-            color: #1a1a1a;
-            transition: color 0.2s ease;
-        }
-
-        .hover-text-base-color:hover {
-            color: var(--base-color, #0d6efd) !important;
-        }
-
-        .blog-post-excerpt {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #666;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .blog-post-meta {
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            color: #999;
-        }
-
-        .blog-post-meta span {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .blog-post-meta i {
-            font-size: 13px;
-            color: #999;
-        }
-
-        .blog-post-image {
-            position: relative;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .blog-post-tags {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        .blog-post-tags span {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 5px 12px;
-            background: #f5f5f5;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #666;
-            transition: background 0.2s ease;
-        }
-
-        .blog-post-tags span:hover {
-            background: #e8e8e8;
-        }
-
-        .blog-post-tags .tag-link:hover {
-            color: var(--base-color, #005153) !important;
-        }
-
-        .blog-reactions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .reaction-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            border-radius: 20px;
-            background: #f8f9fa;
-            color: #666;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            border: 1px solid #e0e0e0;
-        }
-
-        .reaction-btn:hover {
-            background: #fff0f0;
-            border-color: #ffcccb;
-            color: #ff6b6b;
-        }
-
-        .reaction-btn i {
-            font-size: 1rem;
-        }
-
-        .comment-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #666;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .comment-btn:hover {
-            color: var(--base-color, #0d6efd);
-        }
-
-        .btn-link.btn-hover-animation-switch {
-            padding: 8px 16px;
-            background: var(--base-color, #0d6efd);
-            color: white !important;
-            border-radius: 20px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: opacity 0.2s ease;
-            font-size: 0.9rem;
-        }
-
-        .btn-link.btn-hover-animation-switch:hover {
-            opacity: 0.9;
-        }
-
-        .hover-card .p-4 {
-            padding: 25px !important;
-        }
-
-        .btn-read-article {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--base-color, #005153);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-top: 15px;
-        }
-
-        .btn-read-article:hover {
-            background: var(--yellow, #ecab23);
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .btn-read-article i {
-            transition: transform 0.3s ease;
-        }
-
-        .btn-read-article:hover i {
-            transform: translateX(5px);
-        }
-
-        @media (max-width: 768px) {
-            .blog-post-image {
-                height: 200px !important;
-            }
-
-            .blog-post-title a {
-                font-size: 1.35rem;
-            }
-
-            .blog-post-excerpt {
-                font-size: 1.05rem;
-                line-height: 1.7;
-            }
-
-            .blog-post-meta {
-                font-size: 0.95rem;
-            }
-
-            .blog-post-tags span {
-                font-size: 0.9rem;
-            }
-
-            .hover-card .p-4 {
-                padding: 20px !important;
-            }
-
-            .blog-reactions {
-                flex-wrap: wrap;
-            }
-        }
 
         /* Loading Animation */
         .spinner-border {
             width: 2.5rem;
             height: 2.5rem;
             border-width: 3px;
+        }
+
+        .text-base-color {
+            color: var(--base-color, #005153) !important;
+        }
+
+        /* Filter Badge */
+        .filter-badge-modern {
+            background: linear-gradient(135deg, rgba(0, 81, 83, 0.08) 0%, rgba(0, 81, 83, 0.04) 100%);
+            border: 1px solid rgba(0, 81, 83, 0.15);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-badge-modern .filter-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .filter-badge-modern .filter-info i {
+            color: var(--base-color, #005153);
+        }
+
+        .filter-badge-modern .filter-tag {
+            background: var(--base-color, #005153);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+
+        .filter-badge-modern .clear-filter {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .filter-badge-modern .clear-filter:hover {
+            border-color: #ff6b6b;
+            color: #ff6b6b;
         }
 
         /* Bouton WhatsApp flottant */
@@ -917,6 +1436,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Hashnode API Integration Script -->
     <script>
@@ -1006,71 +1526,80 @@
             `;
         }
 
-        // Fonction pour afficher les articles (sans le premier si featured)
+        // Fonction pour afficher les articles avec le nouveau design
         function displayPosts(posts, skipFirst = false) {
             const container = document.getElementById('hashnode-blog-widget');
             const countElement = document.getElementById('articles-count');
 
             const displayPosts = skipFirst ? posts.slice(1) : posts;
 
-            countElement.textContent = `${displayPosts.length} article${displayPosts.length > 1 ? 's' : ''}`;
+            // Mise à jour du compteur
+            countElement.innerHTML = `<strong>${displayPosts.length}</strong> articles disponibles`;
+
+            // Mise à jour des stats du hero
+            const totalArticlesElement = document.getElementById('total-articles-count');
+            if (totalArticlesElement) {
+                totalArticlesElement.textContent = posts.length;
+            }
 
             if (displayPosts.length === 0) {
                 container.innerHTML = `
-                    <div class="alert alert-info text-center p-4" style="background-color: #f8f9fa; border-radius: 12px;">
+                    <div class="text-center p-5" style="grid-column: span 2; background: white; border-radius: 16px;">
+                        <i class="feather icon-feather-inbox" style="font-size: 3rem; color: #ddd; margin-bottom: 15px;"></i>
                         <p class="mb-0 text-muted">Aucun autre article disponible.</p>
                     </div>
                 `;
                 return;
             }
 
-            const postsHTML = displayPosts.map(({ node: post }) => {
+            const postsHTML = displayPosts.map(({ node: post }, index) => {
                 const date = new Date(post.publishedAt).toLocaleDateString('fr-FR', {
                     year: 'numeric',
-                    month: 'long',
+                    month: 'short',
                     day: 'numeric'
                 });
 
-                const tagsHTML = post.tags.slice(0, 3).map(tag =>
-                    `<a href="blogs.html?tag=${encodeURIComponent(tag.name)}" class="tag-link" style="color: #666; text-decoration: none; transition: color 0.2s;">#${escapeHtml(tag.name)}</a>`
-                ).join(' ');
+                const tagsHTML = post.tags.slice(0, 2).map(tag =>
+                    `<a href="blogs.html?tag=${encodeURIComponent(tag.name)}" class="blog-card-tag">#${escapeHtml(tag.name)}</a>`
+                ).join('');
 
                 const rawCoverImage = post.coverImage?.url || 'images/default-blog-cover.jpg';
                 const coverImage = isValidImageUrl(rawCoverImage) ? rawCoverImage : 'images/default-blog-cover.jpg';
-                const sanitizedCoverUrl = coverImage.replace(/'/g, "\\'").replace(/"/g, '\\"');
 
                 if (!post.slug || !/^[a-zA-Z0-9-_]+$/.test(post.slug)) {
                     return '';
                 }
 
+                // Premier article en grand format
+                const isLarge = index === 0 && !skipFirst;
+                const cardClass = isLarge ? 'blog-card-modern large' : 'blog-card-modern';
+                const aosDelay = Math.min(index * 100, 400);
+
                 return `
-                    <article class="blog-post-card">
-                        <div class="row g-0 hover-card">
-                            <div class="">
-                                <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="d-block">
-                                    <div class="blog-post-image" style="background-image: url('${sanitizedCoverUrl}'); height: 280px; background-size: cover; background-position: center;"></div>
+                    <article class="${cardClass}" data-aos="fade-up" data-aos-duration="600" data-aos-delay="${aosDelay}">
+                        <div class="blog-card-inner">
+                            <div class="blog-card-image">
+                                <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">
+                                    <img src="${escapeHtml(coverImage)}" alt="${escapeHtml(post.title)}" onerror="this.src='images/default-blog-cover.jpg'" loading="lazy">
                                 </a>
+                                ${post.tags && post.tags[0] ? `<span class="blog-card-category">${escapeHtml(post.tags[0].name)}</span>` : ''}
+                                ${post.readTimeInMinutes ? `<span class="blog-card-reading-time"><i class="feather icon-feather-clock"></i> ${post.readTimeInMinutes} min</span>` : ''}
                             </div>
-                            <div class="">
-                                <div class="p-4">
-                                    <div class="blog-post-meta">
-                                        <span><i class="feather icon-feather-calendar"></i>${escapeHtml(date)}</span>
-                                        ${post.readTimeInMinutes ? `<span><i class="feather icon-feather-clock"></i>${post.readTimeInMinutes} min</span>` : ''}
-                                        ${post.reactionCount ? `<span><i class="feather icon-feather-heart"></i>${post.reactionCount}</span>` : ''}
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span><i class="feather icon-feather-calendar"></i> ${escapeHtml(date)}</span>
+                                    ${post.reactionCount ? `<span><i class="feather icon-feather-heart"></i> ${post.reactionCount}</span>` : ''}
+                                </div>
+                                <h3 class="blog-card-title">
+                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
+                                </h3>
+                                <p class="blog-card-excerpt">${escapeHtml(post.brief)}</p>
+                                <div class="blog-card-footer">
+                                    <div class="blog-card-tags">
+                                        ${tagsHTML}
                                     </div>
-                                    <h3 class="blog-post-title">
-                                        <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="text-decoration-none hover-text-base-color">
-                                            ${escapeHtml(post.title)}
-                                        </a>
-                                    </h3>
-                                    <p class="blog-post-excerpt text-black">${escapeHtml(post.brief)}</p>
-                                    ${tagsHTML ? `
-                                        <div class="blog-post-tags">
-                                            <span><i class="feather icon-feather-tag"></i>${tagsHTML}</span>
-                                        </div>
-                                    ` : ''}
-                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="btn-read-article">
-                                        Lire l'article <i class="feather icon-feather-arrow-right"></i>
+                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="blog-card-link">
+                                        Lire <i class="feather icon-feather-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1080,6 +1609,45 @@
             }).join('');
 
             container.innerHTML = postsHTML;
+
+            // Réinitialiser AOS pour les nouveaux éléments
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        }
+
+        // Fonction pour afficher les articles populaires dans la sidebar
+        function displayPopularArticles(posts) {
+            const container = document.getElementById('popular-articles');
+
+            // Trier par popularité et prendre les 5 premiers
+            const popularPosts = [...posts]
+                .sort((a, b) => (b.node.reactionCount || 0) - (a.node.reactionCount || 0))
+                .slice(0, 5);
+
+            if (popularPosts.length === 0) {
+                container.innerHTML = '<p class="text-muted mb-0 text-center">Aucun article populaire</p>';
+                return;
+            }
+
+            const html = popularPosts.map(({ node: post }, index) => {
+                const date = new Date(post.publishedAt).toLocaleDateString('fr-FR', {
+                    day: 'numeric',
+                    month: 'short'
+                });
+
+                return `
+                    <div class="popular-article-item">
+                        <span class="popular-article-number">0${index + 1}</span>
+                        <div class="popular-article-content">
+                            <h6><a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title.length > 50 ? post.title.substring(0, 50) + '...' : post.title)}</a></h6>
+                            <small><i class="feather icon-feather-calendar"></i> ${escapeHtml(date)} ${post.reactionCount ? `· <i class="feather icon-feather-heart"></i> ${post.reactionCount}` : ''}</small>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            container.innerHTML = html;
         }
 
         // Fonction pour charger les tags populaires
@@ -1126,12 +1694,18 @@
                     .sort((a, b) => b[1] - a[1])
                     .slice(0, 15);
 
+                // Mise à jour du compteur de tags dans le hero
+                const totalTagsElement = document.getElementById('total-tags-count');
+                if (totalTagsElement) {
+                    totalTagsElement.textContent = sortedTags.length;
+                }
+
                 if (sortedTags.length > 0) {
                     container.innerHTML = sortedTags.map(([tagName, count]) =>
-                        `<a href="blogs.html?tag=${encodeURIComponent(tagName)}" class="tag-item" title="${count} article${count > 1 ? 's' : ''}">#${escapeHtml(tagName)}</a>`
+                        `<a href="blogs.html?tag=${encodeURIComponent(tagName)}" class="tag-cloud-item">#${escapeHtml(tagName)}<span class="tag-count">${count}</span></a>`
                     ).join('');
                 } else {
-                    container.innerHTML = '<p class="text-muted text-center mb-0">Aucun hashtag disponible</p>';
+                    container.innerHTML = '<p class="text-muted text-center mb-0">Aucune thématique disponible</p>';
                 }
             } catch (error) {
                 console.error('Erreur lors du chargement des hashtags:', error);
@@ -1238,25 +1812,27 @@
                 // Afficher le badge de filtre si actif
                 if (filterTag) {
                     const filterBadge = document.createElement('div');
-                    filterBadge.className = 'filter-badge mb-4 p-3';
-                    filterBadge.style.cssText = 'background: #f0f7f7; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;';
+                    filterBadge.className = 'filter-badge-modern';
+                    filterBadge.setAttribute('data-aos', 'fade-up');
                     filterBadge.innerHTML = `
-                        <span style="font-weight: 500; color: #333;">
-                            <i class="feather icon-feather-filter" style="margin-right: 8px;"></i>
-                            Filtré par : <strong style="color: var(--base-color, #005153);">#${escapeHtml(filterTag)}</strong>
-                            <span style="color: #666; margin-left: 5px;">(${posts.length} article${posts.length > 1 ? 's' : ''})</span>
-                        </span>
-                        <a href="blogs.html" class="btn btn-sm" style="background: white; border: 1px solid #ddd; border-radius: 20px; padding: 5px 15px; text-decoration: none; color: #666; font-size: 0.85rem;">
-                            <i class="feather icon-feather-x" style="margin-right: 5px;"></i>Effacer le filtre
+                        <div class="filter-info">
+                            <i class="feather icon-feather-filter"></i>
+                            <span>Filtré par : <span class="filter-tag">#${escapeHtml(filterTag)}</span></span>
+                            <small style="color: #888;">(${posts.length} article${posts.length > 1 ? 's' : ''})</small>
+                        </div>
+                        <a href="blogs.html" class="clear-filter">
+                            <i class="feather icon-feather-x"></i> Effacer
                         </a>
                     `;
                     container.parentNode.insertBefore(filterBadge, container);
                     displayPosts(sortPosts(posts, currentSort), false);
+                    displayPopularArticles(posts);
                 } else {
                     // Afficher l'article mis en avant (le premier/plus récent)
                     const sortedPosts = sortPosts(posts, 'recent');
                     displayFeaturedArticle(sortedPosts[0]?.node);
                     displayPosts(sortPosts(posts, currentSort), true);
+                    displayPopularArticles(posts);
                 }
 
             } catch (error) {
@@ -1275,7 +1851,7 @@
 
         // Gestion du tri des articles
         function initSortButtons() {
-            const sortButtons = document.querySelectorAll('.sort-btn');
+            const sortButtons = document.querySelectorAll('.sort-btn-modern');
             const urlParams = new URLSearchParams(window.location.search);
             const filterTag = urlParams.get('tag');
 
@@ -1297,6 +1873,14 @@
 
         // Charger au chargement de la page
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialiser AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true,
+                offset: 50
+            });
+
             fetchHashnodePosts();
             loadPopularTags();
             initSortButtons();

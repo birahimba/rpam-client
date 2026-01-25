@@ -208,53 +208,377 @@
     </div>
 
     <!-- start slider -->
-    <section id="slider" class="p-0 top-space-margin ">
-        <div class="demo-corporate-slider_wrapper fullscreen-container" data-alias="portfolio-viewer"
-            data-source="gallery" style="background-color:transparent;padding:0px;">
-
-            <div class="swiper">
-                <div class="swiper-wrapper">
-
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide" style="background-image: url('images/slide1.jpg');">
-                        <div class="slide-overlay"></div>
-                        <div class="slide-content">
-                            <h2>Transformez vos objectifs professionnels en réussites concrètes.</h2>
-                            <p class="fw-600">Un accompagnement personnalisé pour passer de la vision à l’action.</p>
-                            <a href="booking.html" class="cta-btn">Prendre rendez-vous <span class="arrow">→</span></a>
-
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide" style="background-image: url('images/slide2.jpg');">
-                        <div class="slide-overlay"></div>
-                        <div class="slide-content">
-                            <h2>Développez et renforcez les compétences clés pour rester compétitif.</h2>
-                            <p class="fw-600">Des formations adaptées aux exigeances et à l'évolution du marché.</p>
-                            <a href="booking.html" class="cta-btn">Prendre rendez-vous <span class="arrow">→</span></a>
-
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide" style="background-image: url('images/slide3.jpg');">
-                        <div class="slide-overlay"></div>
-                        <div class="slide-content">
-                            <h2>Trouvez rapidement l’emploi qui vous correspond.</h2>
-                            <p class="fw-600">Des outils performants pour optimiser votre recherche d'emploi.</p>
-                            <a href="booking.html" class="cta-btn">Prendre rendez-vous <span class="arrow">→</span></a>
+    <section id="slider" class="hero-slider-section">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('images/slide1.jpg');"></div>
+                    <div class="slide-overlay-dark"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-tag">Accompagnement personnalisé</span>
+                            <h1 class="hero-title">Transformez vos objectifs professionnels en réussites concrètes.</h1>
+                            <p class="hero-subtitle">Un accompagnement personnalisé pour passer de la vision à l'action.</p>
+                            <div class="hero-buttons">
+                                <a href="booking.html" class="hero-btn-primary">
+                                    Prendre rendez-vous
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                                <a href="about.html" class="hero-btn-secondary">En savoir plus</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('images/slide2.jpg');"></div>
+                    <div class="slide-overlay-dark"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-tag">Développement de compétences</span>
+                            <h1 class="hero-title">Développez les compétences clés pour rester compétitif.</h1>
+                            <p class="hero-subtitle">Des formations adaptées aux exigences et à l'évolution du marché.</p>
+                            <div class="hero-buttons">
+                                <a href="booking.html" class="hero-btn-primary">
+                                    Prendre rendez-vous
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                                <a href="up-training.html" class="hero-btn-secondary">Nos formations</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('images/slide3.jpg');"></div>
+                    <div class="slide-overlay-dark"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-tag">Coaching emploi</span>
+                            <h1 class="hero-title">Trouvez rapidement l'emploi qui vous correspond.</h1>
+                            <p class="hero-subtitle">Des outils performants pour optimiser votre recherche d'emploi.</p>
+                            <div class="hero-buttons">
+                                <a href="booking.html" class="hero-btn-primary">
+                                    Prendre rendez-vous
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                                <a href="job-getting.html" class="hero-btn-secondary">Job Getting</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-        </div>
-
+            <!-- Navigation -->
+            <div class="hero-navigation">
+                <div class="swiper-pagination hero-pagination"></div>
+                <div class="hero-nav-buttons">
+                    <button class="hero-nav-btn hero-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button class="hero-nav-btn hero-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
+
+    <style>
+        /* Hero Slider Styles */
+        .hero-slider-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            max-height: 900px;
+            overflow: hidden;
+        }
+
+        .hero-swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-swiper .swiper-slide {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1);
+            transition: transform 8s ease-out;
+        }
+
+        .swiper-slide-active .slide-bg {
+            transform: scale(1.1);
+        }
+
+        .slide-overlay-dark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 30, 30, 0.9) 0%, rgba(0, 50, 50, 0.7) 50%, rgba(0, 81, 83, 0.5) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 700px;
+            padding: 120px 0 80px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(236, 171, 35, 0.2);
+            border: 1px solid rgba(236, 171, 35, 0.4);
+            border-radius: 30px;
+            color: #ecab23;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 35px;
+            max-width: 550px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .hero-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(236, 171, 35, 0.4);
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(236, 171, 35, 0.5);
+            color: #fff;
+        }
+
+        .hero-btn-primary svg {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-btn-primary:hover svg {
+            transform: translateX(5px);
+        }
+
+        .hero-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            background: transparent;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+            color: #fff;
+        }
+
+        /* Navigation */
+        .hero-navigation {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+
+        .hero-pagination {
+            position: relative !important;
+            bottom: auto !important;
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero-pagination .swiper-pagination-bullet {
+            width: 40px;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .hero-pagination .swiper-pagination-bullet-active {
+            width: 60px;
+            background: #ecab23;
+        }
+
+        .hero-nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero-nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .hero-nav-btn:hover {
+            background: #ecab23;
+            border-color: #ecab23;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero-slider-section {
+                height: 85vh;
+                min-height: 550px;
+            }
+
+            .hero-content {
+                padding: 100px 0 60px;
+            }
+
+            .hero-navigation {
+                bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider-section {
+                height: 100vh;
+                min-height: 500px;
+                max-height: none;
+            }
+
+            .hero-content {
+                padding: 100px 15px 80px;
+            }
+
+            .hero-tag {
+                font-size: 0.75rem;
+                padding: 6px 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-btn-primary,
+            .hero-btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 28px;
+            }
+
+            .hero-navigation {
+                bottom: 20px;
+                padding: 0 20px;
+            }
+
+            .hero-nav-buttons {
+                display: none;
+            }
+
+            .hero-pagination .swiper-pagination-bullet {
+                width: 30px;
+            }
+
+            .hero-pagination .swiper-pagination-bullet-active {
+                width: 45px;
+            }
+        }
+    </style>
     <!-- end slider -->
 
     <!-- Section Objectifs - Modern Design -->
@@ -1648,15 +1972,19 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script defer>
         document.addEventListener('DOMContentLoaded', function () {
-            const swiper = new Swiper('.swiper', {
+            const swiper = new Swiper('.hero-swiper', {
                 loop: true,
                 effect: 'fade',
                 fadeEffect: { crossFade: true },
-                autoplay: { delay: 10000 },
-                speed: 1500,
+                autoplay: { delay: 8000, disableOnInteraction: false },
+                speed: 1200,
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.hero-pagination',
                     clickable: true,
+                },
+                navigation: {
+                    nextEl: '.hero-next',
+                    prevEl: '.hero-prev',
                 },
             });
 

@@ -474,7 +474,7 @@
                 <!-- Navigation Desktop -->
                 <ul class="nav-menu-desktop">
                     <li class="nav-item-modern">
-                        <a href="index.html" class="nav-link-modern active">Accueil</a>
+                        <a href="index.html" class="nav-link-modern">Accueil</a>
                     </li>
                     <li class="nav-item-modern">
                         <a href="about.html" class="nav-link-modern">Qui sommes-nous</a>
@@ -518,7 +518,7 @@
                         </div>
                     </li>
                     <li class="nav-item-modern">
-                        <a href="blogs.html" class="nav-link-modern">Blog</a>
+                        <a href="blogs.html" class="nav-link-modern active">Blog</a>
                     </li>
                     <li class="nav-item-modern">
                         <a href="news.html" class="nav-link-modern">Actualites</a>
@@ -547,7 +547,7 @@
     <div class="mobile-menu-modern" id="mobileMenu">
         <ul class="mobile-nav-list">
             <li class="mobile-nav-item">
-                <a href="index.html" class="mobile-nav-link active">Accueil</a>
+                <a href="index.html" class="mobile-nav-link ">Accueil</a>
             </li>
             <li class="mobile-nav-item">
                 <a href="about.html" class="mobile-nav-link">Qui sommes-nous</a>
@@ -591,7 +591,7 @@
                 </div>
             </li>
             <li class="mobile-nav-item">
-                <a href="blogs.html" class="mobile-nav-link">Blog</a>
+                <a href="blogs.html" class="mobile-nav-link active">Blog</a>
             </li>
             <li class="mobile-nav-item">
                 <a href="news.html" class="mobile-nav-link">Actualites</a>
@@ -1475,6 +1475,46 @@
 
         // Charger l'article au chargement de la page
         document.addEventListener('DOMContentLoaded', loadArticle);
+
+        const navbar = document.getElementById('mainNavbar');
+        const hamburger = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const servicesToggle = document.getElementById('servicesToggle');
+        const servicesSubmenu = document.getElementById('servicesSubmenu');
+
+        // Scroll effect
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        hamburger.addEventListener('click', function () {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Services submenu toggle
+        servicesToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            servicesSubmenu.classList.toggle('active');
+            this.querySelector('.arrow').style.transform =
+                servicesSubmenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+
     </script>
 
     <!-- Bouton WhatsApp flottant -->

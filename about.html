@@ -30,7 +30,104 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="canonical" href="https://www.rpam.fr/about" />
 
+    <style>
+        /* About Page Custom Styles */
+        .py-6 {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
 
+        /* Value Cards Hover Effect */
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Challenge Cards Hover Effect */
+        .challenge-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 107, 53, 0.5) !important;
+        }
+
+        /* Timeline Cards Hover Effect */
+        .timeline-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Team Cards Hover Effect */
+        .team-card-modern:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-card-modern .team-social a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Button Animations */
+        .btn-rounded {
+            border-radius: 50px !important;
+        }
+
+        /* Glass Effect Enhancement */
+        .glass-card {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Text highlight effect */
+        .text-white-50 {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .py-6 {
+                padding-top: 3.5rem;
+                padding-bottom: 3.5rem;
+            }
+
+            .display-4 {
+                font-size: 2.2rem;
+            }
+
+            .display-5 {
+                font-size: 1.8rem;
+            }
+
+            .display-6 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .floating-badge {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 
@@ -198,110 +295,247 @@
         </div>
     </header>
 
-    <!-- Start Page Title -->
-    <section class="top-space-margin page-title-big-typography cover-backgroundround-cursor bg-black-transparent-light"
-        style="background-image: url('images/about.png'); background-size: cover; background-position: center;">
-        <div class="container">
-            <div class="row align-items-center">
+    <!-- Start Page Title - Modern Hero -->
+    <section class="top-space-margin position-relative overflow-hidden"
+        style="background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%), url('images/about.png'); background-size: cover; background-position: center; min-height: 60vh;">
+        <div class="container h-100 d-flex align-items-center py-5">
+            <div class="row w-100 align-items-center">
+                <div class="col-lg-7" data-aos="fade-up" data-aos-duration="1000">
+                    <span class="text-uppercase text-white-50 fw-600 ls-2px fs-14 d-block mb-3">À propos de RPAM</span>
+                    <h1 class="text-white fw-800 display-4 mb-4" style="line-height: 1.2;">
+                        Qui sommes <span style="color: #ecab23;">nous ?</span>
+                    </h1>
+                    <p class="text-white-50 fs-18 mb-4 pe-lg-5">
+                        Votre partenaire de confiance pour transformer vos ambitions professionnelles en réussites
+                        concrètes.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#about-rpam" class="btn btn-base-color btn-rounded px-4 py-3 fw-600">
+                            Découvrir notre histoire
+                        </a>
+                        <a href="booking.html" class="btn btn-outline-light btn-rounded px-4 py-3 fw-600">
+                            Prendre rendez-vous
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="1000"
+                    data-aos-delay="200">
+                    <div class="position-relative">
+                        <div class="glass-card p-4 text-center"
+                            style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);">
+                            <div class="d-flex justify-content-around mb-4">
+                                <div>
+                                    <h2 class="text-white fw-800 mb-0">5+</h2>
+                                    <span class="text-white-50 fs-14">Années d'expérience</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-white fw-800 mb-0">500+</h2>
+                                    <span class="text-white-50 fs-14">Clients accompagnés</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <h2 class="text-white fw-800 mb-0">95%</h2>
+                                    <span class="text-white-50 fs-14">Taux de satisfaction</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-white fw-800 mb-0">3</h2>
+                                    <span class="text-white-50 fs-14">Services clés</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-5 col-sm-8 position-relative page-title-extra-small"
-                data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;opacity&quot;: [0, 1], &quot;translateX&quot;: [-30, 0], &quot;duration&quot;: 800, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                <h3 class="text-white text-shadow-medium fw-700 ls-minus-2px mb-0">Qui sommes nous ?</h3>
-            </div>
-        </div>
-        </div>
         </div>
     </section>
     <!-- End Page Title -->
 
-    <!-- About RPAM (Modern Hero) -->
-    <section id="about-rpam" class="py-5 border-bottom border-light bg-light">
+    <!-- About RPAM (Modern Section) -->
+    <section id="about-rpam" class="py-6 position-relative overflow-hidden"
+        style="background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
         <div class="container">
-            <div class="row align-items-center flex-column-reverse flex-lg-row text-lg-start">
-                <!-- Text block -->
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <h5 class="fw-bold text-dark">RPAM, votre <span class="text-base-color">partenaire
-                            stratégique</span>
-                    </h5>
-                    <p class="mt-3 text-dark">
-                        Nous sommes un levier clé pour accélérer votre insertion professionnelle et booster votre
-                        carrière.
-                    </p>
-                </div> <br>
+            <div class="row align-items-center g-5">
                 <!-- Image block -->
-                <div class="col-lg-6" data-aos="fade-left">
-                    <img src="images/logo-rpam.png" alt="Mission RPAM" class="img-fluid ">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Notre Histoire -->
-    <section class="py-5 position-relative bg-white border-bottom">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Texte -->
-                <div class="col-lg-6" data-aos="fade-up">
-                    <h5 class="fw-bold text-base-color">Notre Histoire</h5>
-                    <p class="text-dark mt-3">
-                        Depuis plus de 5 ans, nous analysons les défis liés à l'insertion et à l'évolution
-                        professionnelle :
-                    </p>
-                    <ul class="list-unstyled mt-4">
-                        <li class="d-flex align-items-start mb-2">
-                            <span class="me-2 text-primary fs-5"><i
-                                    class="bi bi-check-circle-fill text-success me-2"></i></span>
-                            <span>Jeunes diplômés en quête d'une première expérience alignée à leurs aspirations.</span>
-                        </li>
-                        <li class="d-flex align-items-start">
-                            <span class="me-2 text-primary fs-5"><i
-                                    class="bi bi-check-circle-fill text-success me-2"></i></span>
-                            <span>Salariés en recherche de sens ou de progression dans leur carrière.</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Image -->
-                <div class="col-lg-6 d-none d-lg-block" data-aos="fade-left">
-                    <img src="images/font-texture.png" alt="Notre histoire" class="img-fluid ">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Challenges -->
-    <section class="py-5 bg-light position-relative">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Texte -->
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h5 class="fw-bold text-base-color">Les défis que nous résolvons</h5>
-                    <p class="text-dark mt-3">
-                        Nous vous aidons à dépasser les freins majeurs rencontrés dans les parcours professionnels :
-                    </p>
-                    <ul class="list-unstyled mt-4">
-                        <li class="d-flex align-items-start mb-2">
-                            <i class="bi bi-check-circle-fill text-success me-2"></i> Manque de clarté sur le projet
-                            professionnel.
-                        </li>
-                        <li class="d-flex align-items-start mb-2">
-                            <i class="bi bi-check-circle-fill text-success me-2"></i> Difficultés à décrocher un premier
-                            emploi.
-                        </li>
-                        <li class="d-flex align-items-start mb-2">
-                            <i class="bi bi-check-circle-fill text-success me-2"></i> Compétences inadaptées au marché.
-                        </li>
-                        <li class="d-flex align-items-start">
-                            <i class="bi bi-check-circle-fill text-success me-2"></i> Stagnation ou isolement dans la
-                            carrière.
-                        </li>
-                    </ul>
-                </div>
-                <!-- Image double -->
-                <div class="col-lg-6 position-relative d-none d-lg-block" data-aos="zoom-in">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="800">
                     <div class="position-relative">
-                        <img src="images/chall2.png" alt="Défis RPAM" class="img-fluid ">
-                        <img src="images/chall1.webp" alt="Superposition" class="position-absolute top-0 start-0 w-75"
-                            style="transform: translate(20%, 20%); z-index: -1;">
+                        <div class="about-image-wrapper" style="position: relative;">
+                            <img src="images/logo-rpam.png" alt="Mission RPAM" class="img-fluid"
+                                style="max-width: 300px;">
+                            <div class="floating-badge position-absolute"
+                                style="bottom: -20px; right: -20px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); padding: 20px 30px; border-radius: 15px; box-shadow: 0 15px 40px rgba(255,107,53,0.3);">
+                                <span class="text-white fw-700 fs-24">+5 ans</span>
+                                <span class="text-white d-block fs-13">d'expertise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text block -->
+                <div class="col-lg-7" data-aos="fade-left" data-aos-duration="800">
+                    <span class="text-uppercase fw-600 ls-2px fs-13 d-inline-block mb-3" style="color: #ecab23;">Qui
+                        sommes-nous</span>
+                    <h2 class="fw-800 text-dark mb-4" style="line-height: 1.3;">
+                        RPAM, votre <span style="color: #ecab23;">partenaire stratégique</span> pour réussir
+                    </h2>
+                    <p class="fs-17 text-dark-gray mb-4" style="line-height: 1.8;">
+                        Nous sommes un levier clé pour accélérer votre insertion professionnelle et booster votre
+                        carrière. Notre équipe d'experts vous accompagne à chaque étape de votre parcours professionnel.
+                    </p>
+                    <div class="row g-4 mt-2">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start">
+                                <div class="flex-shrink-0 me-3">
+                                    <div
+                                        style="width: 50px; height: 50px; background: rgba(255,107,53,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-check" style="color: #ecab23; font-size: 18px;"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h6 class="fw-700 text-dark mb-1">Accompagnement personnalisé</h6>
+                                    <p class="fs-14 text-medium-gray mb-0">Un suivi adapté à vos besoins</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start">
+                                <div class="flex-shrink-0 me-3">
+                                    <div
+                                        style="width: 50px; height: 50px; background: rgba(255,107,53,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-check" style="color: #ecab23; font-size: 18px;"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h6 class="fw-700 text-dark mb-1">Expertise reconnue</h6>
+                                    <p class="fs-14 text-medium-gray mb-0">Une équipe de professionnels</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Histoire - Modern Timeline -->
+    <section class="py-6 position-relative" style="background: #ffffff;">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <span class="text-uppercase fw-600 ls-2px fs-13 d-inline-block mb-3" style="color: #ecab23;">Notre
+                        parcours</span>
+                    <h2 class="fw-800 text-dark mb-4">Notre <span style="color: #ecab23;">Histoire</span></h2>
+                    <p class="fs-17 text-medium-gray">
+                        Depuis plus de 5 ans, nous analysons les défis liés à l'insertion et à l'évolution
+                        professionnelle pour mieux vous accompagner.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Timeline Item 1 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-card h-100 p-4"
+                        style="background: #f8f9fa; border-radius: 20px; border-left: 4px solid #ecab23; transition: all 0.3s ease;">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                <i class="fas fa-graduation-cap text-white fs-20"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-700 text-dark mb-0">Jeunes diplômés</h5>
+                                <span class="fs-13 text-medium-gray">Notre public cible</span>
+                            </div>
+                        </div>
+                        <p class="text-dark-gray mb-0" style="line-height: 1.7;">
+                            En quête d'une première expérience alignée à leurs aspirations, nous les guidons vers les
+                            opportunités qui correspondent à leur profil et leurs ambitions.
+                        </p>
+                    </div>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-card h-100 p-4"
+                        style="background: #f8f9fa; border-radius: 20px; border-left: 4px solid #ecab23; transition: all 0.3s ease;">
+                        <div class="d-flex align-items-center mb-3">
+                            <div
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                <i class="fas fa-briefcase text-white fs-20"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-700 text-dark mb-0">Salariés en transition</h5>
+                                <span class="fs-13 text-medium-gray">Notre expertise</span>
+                            </div>
+                        </div>
+                        <p class="text-dark-gray mb-0" style="line-height: 1.7;">
+                            En recherche de sens ou de progression dans leur carrière, nous les accompagnons dans leur
+                            évolution professionnelle avec des outils adaptés.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges - Modern Grid -->
+    <section class="py-6 position-relative" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <span class="text-uppercase fw-600 ls-2px fs-13 d-inline-block mb-3" style="color: #ecab23;">Nos
+                        solutions</span>
+                    <h2 class="fw-800 text-white mb-4">Les défis que nous <span style="color: #ecab23;">résolvons</span>
+                    </h2>
+                    <p class="fs-17 text-white-50">
+                        Nous vous aidons à dépasser les freins majeurs rencontrés dans les parcours professionnels.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Challenge 1 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="challenge-card h-100 p-4 text-center"
+                        style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                        <div class="mb-4"
+                            style="width: 70px; height: 70px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <i class="fas fa-compass text-white fs-24"></i>
+                        </div>
+                        <h5 class="fw-700 text-white mb-3">Manque de clarté</h5>
+                        <p class="text-white-50 fs-15 mb-0">Sur le projet professionnel et les objectifs de carrière</p>
+                    </div>
+                </div>
+                <!-- Challenge 2 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="challenge-card h-100 p-4 text-center"
+                        style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                        <div class="mb-4"
+                            style="width: 70px; height: 70px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <i class="fas fa-door-open text-white fs-24"></i>
+                        </div>
+                        <h5 class="fw-700 text-white mb-3">Premier emploi</h5>
+                        <p class="text-white-50 fs-15 mb-0">Difficultés à décrocher une première opportunité</p>
+                    </div>
+                </div>
+                <!-- Challenge 3 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="challenge-card h-100 p-4 text-center"
+                        style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                        <div class="mb-4"
+                            style="width: 70px; height: 70px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <i class="fas fa-cogs text-white fs-24"></i>
+                        </div>
+                        <h5 class="fw-700 text-white mb-3">Compétences</h5>
+                        <p class="text-white-50 fs-15 mb-0">Inadaptées aux exigences actuelles du marché</p>
+                    </div>
+                </div>
+                <!-- Challenge 4 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="challenge-card h-100 p-4 text-center"
+                        style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                        <div class="mb-4"
+                            style="width: 70px; height: 70px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <i class="fas fa-chart-line text-white fs-24"></i>
+                        </div>
+                        <h5 class="fw-700 text-white mb-3">Stagnation</h5>
+                        <p class="text-white-50 fs-15 mb-0">Ou isolement dans l'évolution de carrière</p>
                     </div>
                 </div>
             </div>
@@ -309,75 +543,103 @@
     </section>
 
 
-    <!-- Mission Section -->
-    <section class="container py-5">
-        <div class="">
-            <h4 class="fw-700 text-base-color mb-3">Notre Mission</h4>
-            <p class="fs-20 fw-500 text-dark max-width-700 m-auto">
-                Aider chacun de nos bénéficiaires à <span class="text-highlight">s'adapter et à évoluer avec
-                    confiance</span> sur le
-                marché de l'emploi.
-            </p>
+    <!-- Mission Section - Modern Banner -->
+    <section class="py-6 position-relative overflow-hidden"
+        style="background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%);">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <span class="text-uppercase fw-600 ls-2px fs-13 d-inline-block mb-3 text-white-50">Ce qui nous
+                        anime</span>
+                    <h2 class="fw-800 text-white mb-4 display-5">Notre Mission</h2>
+                    <p class="fs-20 fw-400 text-white mb-4" style="line-height: 1.8; opacity: 0.95;">
+                        Aider chacun de nos bénéficiaires à <strong>s'adapter et à évoluer avec confiance</strong> sur
+                        le marché de l'emploi, en leur fournissant les outils et l'accompagnement nécessaires pour
+                        atteindre leurs objectifs professionnels.
+                    </p>
+                    <a href="booking.html" class="btn btn-light btn-rounded px-5 py-3 fw-600 mt-3"
+                        style="color: #ecab23;">
+                        Commencer votre transformation
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative shapes -->
+        <div class="position-absolute"
+            style="top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;">
+        </div>
+        <div class="position-absolute"
+            style="bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%;">
         </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="py-5" style="background-color: #f8f9fa;">
+    <!-- Values Section - Modern Cards -->
+    <section class="py-6" style="background: #ffffff;">
         <div class="container">
-            <div class="text-center mb-4">
-                <h4 class="fw-700 text-base-color">Nos Valeurs</h4>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <span class="text-uppercase fw-600 ls-2px fs-13 d-inline-block mb-3" style="color: #ecab23;">Ce qui
+                        nous définit</span>
+                    <h2 class="fw-800 text-dark mb-4">Nos <span style="color: #ecab23;">Valeurs</span></h2>
+                </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row g-4">
                 <!-- Valeur 1 -->
-                <div class="col-md-6 col-lg-3 text-center mb-4">
-                    <div class="value-item">
-                        <div class="icon-circle">
-                            <i class="fas fa-users"></i>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card h-100 p-4 text-center"
+                        style="background: #f8f9fa; border-radius: 20px; transition: all 0.4s ease; cursor: pointer;">
+                        <div class="value-icon mb-4"
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto; transition: all 0.4s ease;">
+                            <i class="fas fa-users text-white fs-28"></i>
                         </div>
-                        <h4 class="fw-600 text-dark">Esprit d’équipe</h4>
-                        <p class="fs-30 fw-500 text-dark max-width-700 m-auto">Nous <span
-                                class="text-highlight">travaillons en synergie</span> pour vous offrir un service de
-                            qualité.</p>
+                        <h5 class="fw-700 text-dark mb-3">Esprit d'équipe</h5>
+                        <p class="text-medium-gray fs-15 mb-0" style="line-height: 1.7;">
+                            Nous travaillons en synergie pour vous offrir un service de qualité optimale.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Valeur 2 -->
-                <div class="col-md-6 col-lg-3 text-center mb-4">
-                    <div class="value-item">
-                        <div class="icon-circle">
-                            <i class="fas fa-ear-listen"></i>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card h-100 p-4 text-center"
+                        style="background: #f8f9fa; border-radius: 20px; transition: all 0.4s ease; cursor: pointer;">
+                        <div class="value-icon mb-4"
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto; transition: all 0.4s ease;">
+                            <i class="fas fa-ear-listen text-white fs-28"></i>
                         </div>
-                        <h4 class="fw-600 text-dark">Écoute</h4>
-                        <p class=" fs-30 fw-500 text-dark max-width-700 m-auto">Nous collectons chaque <span
-                                class="text-highlight">besoin avec attention</span> et professionnalisme.
+                        <h5 class="fw-700 text-dark mb-3">Écoute</h5>
+                        <p class="text-medium-gray fs-15 mb-0" style="line-height: 1.7;">
+                            Nous collectons chaque besoin avec attention et professionnalisme.
                         </p>
                     </div>
                 </div>
 
                 <!-- Valeur 3 -->
-                <div class="col-md-6 col-lg-3 text-center mb-4">
-                    <div class="value-item">
-                        <div class="icon-circle">
-                            <i class="fas fa-user-friends"></i>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card h-100 p-4 text-center"
+                        style="background: #f8f9fa; border-radius: 20px; transition: all 0.4s ease; cursor: pointer;">
+                        <div class="value-icon mb-4"
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto; transition: all 0.4s ease;">
+                            <i class="fas fa-user-friends text-white fs-28"></i>
                         </div>
-                        <h4 class="fw-600 text-dark">Proximité</h4>
-                        <p class="fs-30 fw-500 text-dark max-width-700 m-auto">Nous vous <span
-                                class="text-highlight">accompagnons à chaque étape</span> de
-                            votre objectif professionnel</p>
+                        <h5 class="fw-700 text-dark mb-3">Proximité</h5>
+                        <p class="text-medium-gray fs-15 mb-0" style="line-height: 1.7;">
+                            Nous vous accompagnons à chaque étape de votre parcours professionnel.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Valeur 4 -->
-                <div class="col-md-6 col-lg-3 text-center mb-4">
-                    <div class="value-item">
-                        <div class="icon-circle">
-                            <i class="fas fa-handshake"></i>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-card h-100 p-4 text-center"
+                        style="background: #f8f9fa; border-radius: 20px; transition: all 0.4s ease; cursor: pointer;">
+                        <div class="value-icon mb-4"
+                            style="width: 80px; height: 80px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto; transition: all 0.4s ease;">
+                            <i class="fas fa-handshake text-white fs-28"></i>
                         </div>
-                        <h4 class="fw-600 text-dark">Professionnalisme</h4>
-                        <p class="fs-30 fw-500 text-dark max-width-700 m-auto">Nous agissons avec <span
-                                class="text-highlight">intégrité et
-                                responsabilité</span> pour fournir un résultat qui correspond aux attentes de nos
-                            clients.
+                        <h5 class="fw-700 text-dark mb-3">Professionnalisme</h5>
+                        <p class="text-medium-gray fs-15 mb-0" style="line-height: 1.7;">
+                            Nous agissons avec intégrité pour des résultats à la hauteur de vos attentes.
                         </p>
                     </div>
                 </div>
@@ -385,51 +647,63 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team section-padding">
+    <!-- Team Section - Modern Design -->
+    <section class="py-6" style="background: #f8f9fa;">
         <div class="container">
-            <header class="text-center mb-5">
-                <h3 class="text-base-color fw-700 m-0">Notre équipe</h3>
-            </header>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <span class="text-uppercase fw-600 ls-2px fs-13 d-inline-block mb-3" style="color: #ecab23;">Les
+                        visages de RPAM</span>
+                    <h2 class="fw-800 text-dark mb-4">Notre <span style="color: #ecab23;">Équipe</span></h2>
+                    <p class="text-medium-gray fs-17">
+                        Une équipe passionnée et expérimentée, dédiée à votre réussite professionnelle.
+                    </p>
+                </div>
+            </div>
 
-            <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="row g-4 justify-content-center">
                 <!-- Vianney -->
-                <div class="col">
-                    <article class="team-card h-100">
-                        <div class="team-photo">
-                            <img src="images/vianney.jpg" alt="Vianney NZOCHE" loading="lazy">
+                <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <article class="team-card-modern h-100"
+                        style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease;">
+                        <div class="team-header position-relative"
+                            style="background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); padding: 30px; text-align: center;">
+                            <div class="team-photo-wrapper"
+                                style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 5px solid rgba(255,255,255,0.3); margin: 0 auto;">
+                                <img src="images/vianney.jpg" alt="Vianney NZOCHE" loading="lazy"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 class="fw-700 text-white mt-3 mb-1">Vianney NZOCHE</h4>
+                            <p class="text-white-50 mb-0 fs-14">CEO, Consultant IT & Coach professionnel</p>
                         </div>
-                        <div class="team-body">
-                            <h4 class="team-name text-dark-gray">Vianney NZOCHE</h4>
-                            <p class="team-role text-medium-gray">CEO, Consultant IT & Coach professionnel</p>
-
-                            <p class="team-desc text-dark-gray">
+                        <div class="team-body p-4">
+                            <p class="text-dark-gray fs-15 mb-3" style="line-height: 1.7;">
                                 Fondateur et CEO de RPAM, il pilote la vision stratégique et accompagne nos
-                                bénéficiaires
-                                via des sessions de coaching en développement professionnel. Plus de 5 ans d’expérience
-                                dans les technologies de l’information.
+                                bénéficiaires via des sessions de coaching en développement professionnel.
                             </p>
-
-                            <p class="team-skills text-dark-gray">
-                                <strong>Compétences clés :</strong> leadership, gestion de projets IT, coaching
-                                carrière,
-                                stratégie de développement personnel.
-                            </p>
-
-                            <blockquote class="team-quote text-dark-gray">
-                                « Je crois que chacun peut devenir maître de son avenir professionnel avec la bonne
-                                stratégie et les bons outils. »
+                            <div class="skills-tags mb-3">
+                                <span class="badge me-1 mb-1"
+                                    style="background: rgba(255,107,53,0.1); color: #ecab23; padding: 6px 12px; border-radius: 20px; font-weight: 500;">Leadership</span>
+                                <span class="badge me-1 mb-1"
+                                    style="background: rgba(255,107,53,0.1); color: #ecab23; padding: 6px 12px; border-radius: 20px; font-weight: 500;">Coaching</span>
+                                <span class="badge me-1 mb-1"
+                                    style="background: rgba(255,107,53,0.1); color: #ecab23; padding: 6px 12px; border-radius: 20px; font-weight: 500;">Gestion
+                                    IT</span>
+                            </div>
+                            <blockquote class="mb-4 ps-3"
+                                style="border-left: 3px solid #ecab23; font-style: italic; color: #666;">
+                                « Je crois que chacun peut devenir maître de son avenir professionnel. »
                             </blockquote>
-
-                            <!-- Lien LinkedIn -->
-                            <div class="team-social mt-3">
+                            <div class="team-social d-flex gap-2">
                                 <a href="https://www.linkedin.com/in/arnaud-vianney-pombou-nzoche/" target="_blank"
-                                    rel="noopener" aria-label="LinkedIn de Vianney">
-                                    <i class="bi bi-linkedin"></i>
+                                    rel="noopener" aria-label="LinkedIn de Vianney"
+                                    style="width: 40px; height: 40px; background: #0077b5; border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                                    <i class="bi bi-linkedin text-white"></i>
                                 </a>
                                 <a href="https://www.facebook.com/nzoche.vianney?locale=fr_FR" target="_blank"
-                                    rel="noopener" aria-label="Facebook de Vianney">
-                                    <i class="bi bi-facebook"></i>
+                                    rel="noopener" aria-label="Facebook de Vianney"
+                                    style="width: 40px; height: 40px; background: #1877f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                                    <i class="bi bi-facebook text-white"></i>
                                 </a>
                             </div>
                         </div>
@@ -437,40 +711,44 @@
                 </div>
 
                 <!-- Elhadj -->
-                <div class="col">
-                    <article class="team-card h-100">
-                        <div class="team-photo">
-                            <img src="images/elhadj.png" alt="Elhadj BA" loading="lazy">
+                <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <article class="team-card-modern h-100"
+                        style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease;">
+                        <div class="team-header position-relative"
+                            style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 30px; text-align: center;">
+                            <div class="team-photo-wrapper"
+                                style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 5px solid rgba(255,255,255,0.3); margin: 0 auto;">
+                                <img src="images/elhadj.png" alt="Elhadj BA" loading="lazy"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 class="fw-700 text-white mt-3 mb-1">Elhadj BA</h4>
+                            <p class="text-white-50 mb-0 fs-14">CTO, Consultant IT & Expert SI</p>
                         </div>
-                        <div class="team-body">
-                            <h4 class="team-name text-dark-gray">Elhadj BA</h4>
-                            <p class="team-role text-medium-gray">CTO, Consultant IT & Expert SI</p>
-
-                            <p class="team-desc text-dark-gray">
+                        <div class="team-body p-4">
+                            <p class="text-dark-gray fs-15 mb-3" style="line-height: 1.7;">
                                 CTO et moteur technologique de RPAM. Supervise la conception et le développement des
-                                solutions
-                                numériques. Expertise en développement logiciel et gestion de produits pour une
-                                expérience
-                                utilisateur fluide et adaptée.
+                                solutions numériques pour une expérience utilisateur optimale.
                             </p>
-
-                            <p class="team-skills text-dark-gray">
-                                <strong>Compétences clés :</strong> développement logiciel, gestion de projets
-                                technologiques,
-                                UX/UI design, veille technologique.
-                            </p>
-
-                            <blockquote class="team-quote text-dark-gray">
+                            <div class="skills-tags mb-3">
+                                <span class="badge me-1 mb-1"
+                                    style="background: rgba(22,33,62,0.1); color: #16213e; padding: 6px 12px; border-radius: 20px; font-weight: 500;">Dev
+                                    logiciel</span>
+                                <span class="badge me-1 mb-1"
+                                    style="background: rgba(22,33,62,0.1); color: #16213e; padding: 6px 12px; border-radius: 20px; font-weight: 500;">UX/UI</span>
+                                <span class="badge me-1 mb-1"
+                                    style="background: rgba(22,33,62,0.1); color: #16213e; padding: 6px 12px; border-radius: 20px; font-weight: 500;">Gestion
+                                    tech</span>
+                            </div>
+                            <blockquote class="mb-4 ps-3"
+                                style="border-left: 3px solid #16213e; font-style: italic; color: #666;">
                                 « La technologie catalyse le passage des ambitions aux réussites tangibles. »
                             </blockquote>
-
-                            <!-- Lien LinkedIn -->
-                            <div class="team-social mt-3">
+                            <div class="team-social d-flex gap-2">
                                 <a href="https://www.linkedin.com/in/elhadjbirahimba/" target="_blank" rel="noopener"
-                                    aria-label="LinkedIn de Elhadj">
-                                    <i class="bi bi-linkedin"></i>
+                                    aria-label="LinkedIn de Elhadj"
+                                    style="width: 40px; height: 40px; background: #0077b5; border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                                    <i class="bi bi-linkedin text-white"></i>
                                 </a>
-
                             </div>
                         </div>
                     </article>
@@ -483,6 +761,38 @@
 
 
 
+
+    <!-- CTA Section - Before Footer -->
+    <section class="py-6 position-relative overflow-hidden"
+        style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="fw-800 text-white mb-4 display-6">Prêt à transformer votre carrière ?</h2>
+                    <p class="fs-18 text-white-50 mb-5" style="max-width: 600px; margin: 0 auto;">
+                        Rejoignez les centaines de professionnels qui ont déjà fait confiance à RPAM pour atteindre
+                        leurs objectifs.
+                    </p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="booking.html" class="btn btn-rounded px-5 py-3 fw-600"
+                            style="background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); color: white; border: none;">
+                            <i class="fas fa-calendar-alt me-2"></i>Prendre rendez-vous
+                        </a>
+                        <a href="guidance.html" class="btn btn-outline-light btn-rounded px-5 py-3 fw-600">
+                            <i class="fas fa-arrow-right me-2"></i>Découvrir nos services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="position-absolute"
+            style="top: 20%; left: 5%; width: 100px; height: 100px; background: rgba(255,107,53,0.1); border-radius: 50%; filter: blur(40px);">
+        </div>
+        <div class="position-absolute"
+            style="bottom: 20%; right: 10%; width: 150px; height: 150px; background: rgba(255,107,53,0.15); border-radius: 50%; filter: blur(50px);">
+        </div>
+    </section>
 
     <footer class="footer-dark bg-dark-gray pt-2 pb-2 lg-pb-35px">
 

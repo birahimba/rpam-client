@@ -319,8 +319,7 @@ a {
   color: var(--base-color);
 }
 
-.navbar-nav .nav-link.active::after,
-.navbar-nav .nav-link:hover::after {
+.navbar-nav .nav-link.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -1457,4 +1456,56 @@ footer ul li {
 
 .team-social a:hover {
   color: var(--yellow);
+}
+
+.consent-check {
+  display: flex;
+  align-items: flex-start; /* alignement sur le haut du texte */
+  gap: 10px; /* espace entre checkbox et texte */
+}
+
+.consent-check .form-check-input {
+  margin-top: 4px; /* ajuste l’alignement vertical du carré */
+  flex: 0 0 auto;
+}
+
+.consent-check .form-check-label {
+  margin: 0; /* évite les marges parasites */
+  line-height: 1.4;
+}
+
+/* ================================================================
+   WhatsApp Floating Button
+   Bouton flottant WhatsApp en bas à droite de chaque page
+================================================================= */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+  color: #FFF;
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
 }

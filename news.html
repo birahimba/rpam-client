@@ -24,174 +24,175 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="css/vendors.min.css">
     <link rel="stylesheet" href="css/icon.min.css">
+    <link rel="stylesheet" href="css/navbar-modern.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/responsive.min.css">
     <link rel="stylesheet" href="css/corporate.css">
+    <link rel="canonical" href="https://www.rpam.fr/news" />
+
 </head>
 
 
 
 <body data-mobile-nav-style="classic" class="custom-cursor">
 
-    <header class="header-with-topbar">
 
-        <!-- Top Bar -->
-        <div class="header-top-bar top-bar-dark bg-base-color">
-            <div class="container-fluid">
-                <div class="row align-items-center m-0 h-45px xs-h-auto scrolling-text xs-pt-5px xs-pb-5px">
-                    <!-- Contact Information -->
-                    <div class="col-lg-6 col-md-7 text-center text-md-start xs-px-0">
-                        <div class="fs-15 text-white fw-500">
-                            <span>Nos experts vous accompagnent!
-                                <a href="contact.html"
-                                    class="text-white text-decoration-line-bottom fw-600 alt-font">Nous
-                                    contacter</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- Phone and Location -->
-                    <div class="col-lg-6 col-md-5 text-end d-none d-md-flex">
-                        <div class="widget fs-15 fw-500 text-white me-35px lg-me-25px md-me-0">
-                        </div>
-                        <div class="widget fs-15 fw-500 text-white d-none d-lg-inline-block">
-                            <span>
-                                <i class="feather icon-feather-map-pin"></i>Paris, France
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg header-light bg-white responsive-sticky">
-            <div class="container-fluid">
+    <!-- Main Navbar -->
+    <nav class="navbar-modern " id="mainNavbar">
+        <div class="container-fluid">
+            <div class="navbar-container">
+
                 <!-- Logo -->
-                <div class="col-auto col-lg-2 me-lg-0 me-auto">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/logo-rpam.png" alt="Logo RPAM" class="default-logo">
-                        <img src="images/logo-rpam.png" alt="Alternate Logo" class="alt-logo">
-                        <img src="images/logo-rpam.png" alt="Mobile Logo" class="mobile-logo">
+                <a href="index.html" class="navbar-logo">
+                    <img src="images/logo-rpam.png" alt="RPAM">
+                </a>
+
+                <!-- Navigation Desktop -->
+                <ul class="nav-menu-desktop">
+                    <li class="nav-item-modern">
+                        <a href="index.html" class="nav-link-modern">Accueil</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="about.html" class="nav-link-modern">Qui sommes-nous</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="#" class="nav-link-modern">
+                            Nos Services
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <!-- Mega Menu -->
+                        <div class="mega-menu">
+                            <div class="mega-menu-grid">
+                                <a href="guidance.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon-04.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Orientation Professionnelle</h4>
+                                        <p>Guidance pour trouver votre voie et definir vos objectifs de carriere</p>
+                                    </div>
+                                </a>
+                                <a href="up-training.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon-05.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Developpement de Competences</h4>
+                                        <p>Up Training pour acquerir les skills demandes sur le marche</p>
+                                    </div>
+                                </a>
+                                <a href="job-getting.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon01.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Coaching Recherche d'Emploi</h4>
+                                        <p>Job Getting pour decrocher le poste de vos reves</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="blogs.html" class="nav-link-modern">Blog</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="news.html" class="nav-link-modern active">Actualites</a>
+                    </li>
+                </ul>
+
+                <!-- CTA Button Desktop -->
+                <div class="navbar-cta">
+                    <a href="booking.html" class="btn-cta-modern">
+                        <i class="fas fa-calendar-alt"></i>
+                        Reserver un rendez-vous
                     </a>
                 </div>
 
-                <!-- Toggler mobile -->
-                <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Ouvrir le menu">
-                    <span class="navbar-toggler-line"></span>
-                    <span class="navbar-toggler-line"></span><br>
-                    <span class="navbar-toggler-line"></span>
-                </button>
+                <!-- Hamburger Menu Mobile -->
+                <div class="hamburger-modern" id="hamburgerBtn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-                <!-- Menu desktop -->
-                <div class="navbar-collapse d-none d-lg-flex ms-4" id="navbarNavDesktop">
-                    <ul class="navbar-nav fw-600">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">Qui sommes nous</a>
-                        </li>
-                        <li class="nav-item dropdown dropdown-with-icon-style02">
-                            <a href="#" class="nav-link active" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Nos Services
+    <!-- Mobile Menu Fullscreen -->
+    <div class="mobile-menu-modern" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link">Accueil</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="about.html" class="mobile-nav-link">Qui sommes-nous</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" id="servicesToggle">
+                    Nos Services
+                    <i class="fas fa-chevron-down arrow"></i>
+                </a>
+                <!-- Mobile Submenu -->
+                <div class="mobile-submenu" id="servicesSubmenu">
+                    <ul class="mobile-submenu-list">
+                        <li class="mobile-submenu-item">
+                            <a href="guidance.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon-04.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Orientation Professionnelle</h5>
+                                    <span>Guidance</span>
+                                </div>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li class="service-item">
-                                    <a href="guidance.html" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon-04.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Orientation Professionnelle (Guidance)
-                                    </a>
-                                </li>
-                                <li class="service-item">
-                                    <a href="up-training.html" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon-05.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Développement de Compétences (Up Training)
-                                    </a>
-                                </li>
-                                <li class="service-item">
-                                    <a href="job-getting.html" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon01.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Coaching à la recherche d’emploi (Job Getting)
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Blog</a>
+                        <li class="mobile-submenu-item">
+                            <a href="up-training.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon-05.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Developpement de Competences</h5>
+                                    <span>Up Training</span>
+                                </div>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Actualités</a>
+                        <li class="mobile-submenu-item">
+                            <a href="job-getting.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon01.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Coaching Recherche d'Emploi</h5>
+                                    <span>Job Getting</span>
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="blogs.html" class="mobile-nav-link">Blog</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="news.html" class="mobile-nav-link active">Actualites</a>
+            </li>
+        </ul>
 
-                <!-- Call to Action desktop -->
-                <a href="booking.html"
-                    class="btn btn-base-color btn-box-shadow text-transform-none btn-rounded btn-hover-animation-switch slide-up-animation d-none d-lg-inline-flex ms-3">
-                    Réserver un rendez-vous
+        <!-- Mobile CTA -->
+        <div class="mobile-cta">
+            <a href="booking.html" class="btn-cta-modern">
+                <i class="fas fa-calendar-alt"></i>
+                Reserver un rendez-vous
+            </a>
+            <div class="mobile-contact-info">
+                <a href="mailto:contact@rpam.fr">
+                    <i class="fas fa-envelope"></i>
+                    contact@rpam.fr
                 </a>
-            </div>
-        </nav>
-
-        <!-- Offcanvas mobile -->
-        <div class="offcanvas offcanvas-end offcanvas-mobile-nav" tabindex="-1" id="mobileNav"
-            aria-labelledby="mobileNavLabel">
-            <div class="offcanvas-header">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/logo-rpam.png" alt="RPAM" class="mobile-logo">
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Paris, France
                 </a>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
-            </div>
-
-            <div class="offcanvas-body d-flex flex-column">
-                <ul class="navbar-nav fw-600 nav-mobile">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">Qui sommes nous</a></li>
-
-                    <!-- Services en accordéon -->
-                    <li class="nav-item">
-                        <button class="btn w-100 text-start nav-link-like" data-bs-toggle="collapse"
-                            data-bs-target="#mServices" aria-expanded="false">
-                            Nos Services <span class="chevron"></span>
-                        </button>
-                        <div id="mServices" class="collapse">
-                            <ul class="list-unstyled ps-3 mt-2 d-grid gap-2">
-                                <li><a href="guidance.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon-04.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Orientation Professionnelle (Guidance)
-                                    </a></li>
-                                <li><a href="up-training.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon-05.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Développement de Compétences (Up Training)
-                                    </a></li>
-                                <li><a href="job-getting.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon01.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Coaching à la recherche d’emploi (Job Getting)
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Actualités</a></li>
-                </ul>
-
-                <div class="mt-auto pt-3 border-top">
-                    <a href="booking.html" class="btn btn-base-color btn-box-shadow btn-rounded w-100">
-                        Réserver un rendez-vous
-                    </a>
-                </div>
             </div>
         </div>
-    </header>
+    </div>
     <br> <br>
 
 
@@ -214,280 +215,11 @@
     <!-- end page title -->
 
 
-    <!-- start section -->
-    <section class="pt-0 ps-2 pe-2 xs-px-0">
-        <div class="container-fluid">
-            <div class="row blog-metro">
-                <div class="col-12">
-                    <ul
-                        class="blog-metro blog-wrapper grid-loading grid grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-large">
-                        <li class="grid-sizer"></li>
-                        <!-- start blog item -->
-                        <li class="grid-item grid-item-double">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/slide2.jpg" alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption class="d-flex flex-column justify-content-end h-100 ps-7 pe-7 pt-6 pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Design</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">30 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 alt-font">It takes a real
-                                        designer
-                                        to design for women.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/self-know.jpeg" alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption
-                                    class="d-flex flex-column justify-content-end h-100 ps-14 pe-14 pt-12 pb-12 sm-ps-7 sm-pe-7 sm-pt-6 sm-pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Adventure</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">28 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 w-85 sm-w-100 alt-font">Experience
-                                        breathtaking views and perspectives.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/slide1.jpg" alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption
-                                    class="d-flex flex-column justify-content-end h-100 ps-14 pe-14 pt-12 pb-12 sm-ps-7 sm-pe-7 sm-pt-6 sm-pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Luxurious</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">26 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 w-85 sm-w-100 alt-font">Get in
-                                        over
-                                        your head as often and as joyfully.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item grid-item-double">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/slide3.jpg" alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption class="d-flex flex-column justify-content-end h-100 ps-7 pe-7 pt-6 pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Adventure</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">24 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 alt-font">Build up healthy
-                                        habits
-                                        and strong peaceful life.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/teee-400_x_336.jpeg" alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption
-                                    class="d-flex flex-column justify-content-end h-100 ps-14 pe-14 pt-12 pb-12 sm-ps-7 sm-pe-7 sm-pt-6 sm-pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Design</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">22 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 w-85 sm-w-100 alt-font">Some
-                                        people
-                                        just try to celebrate the joys of life.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/up training-400_x_400.jpeg"
-                                        alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption
-                                    class="d-flex flex-column justify-content-end h-100 ps-14 pe-14 pt-12 pb-12 sm-ps-7 sm-pe-7 sm-pt-6 sm-pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Luxurious</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">20 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 w-85 sm-w-100 alt-font">Teamwork
-                                        is
-                                        essential for small teams challenges.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/good-free-photos-YZsvNs2GCPU-unsplash.jpg"
-                                        alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption
-                                    class="d-flex flex-column justify-content-end h-100 ps-14 pe-14 pt-12 pb-12 sm-ps-7 sm-pe-7 sm-pt-6 sm-pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Design</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">18 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 w-85 sm-w-100 alt-font">It takes
-                                        a
-                                        real designer to design for real women.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/slide2.jpg" alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption
-                                    class="d-flex flex-column justify-content-end h-100 ps-14 pe-14 pt-12 pb-12 sm-ps-7 sm-pe-7 sm-pt-6 sm-pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Luxurious</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">16 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 w-85 sm-w-100 alt-font">Many
-                                        focus
-                                        on embracing what they can control.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/self-know.jpeg" alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption
-                                    class="d-flex flex-column justify-content-end h-100 ps-14 pe-14 pt-12 pb-12 sm-ps-7 sm-pe-7 sm-pt-6 sm-pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Adventure</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">14 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 w-85 sm-w-100 alt-font">A
-                                        business
-                                        needs a successful mix of design.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                        <!-- start blog item -->
-                        <li class="grid-item">
-                            <figure class="position-relative mb-0 overflow-hidden">
-                                <div class="blog-image bg-dark-slate-blue">
-                                    <img src="images/slide3.jpg" alt="Orientation professionnelle – RPAM" />
-                                    <div class="blog-overlay"></div>
-                                </div>
-                                <figcaption
-                                    class="d-flex flex-column justify-content-end h-100 ps-14 pe-14 pt-12 pb-12 sm-ps-7 sm-pe-7 sm-pt-6 sm-pb-6">
-                                    <div class="blog-categories mb-auto">
-                                        <a href="blog-masonry.html"
-                                            class="categories-btn bg-white text-dark-gray text-uppercase alt-font fw-700 ms-0 mb-auto align-self-start">Luxurious</a>
-                                    </div>
-                                    <a href="blog-masonry.html"
-                                        class="fs-13 alt-font mb-5px text-white opacity-6 text-uppercase">12 August
-                                        2023</a>
-                                    <a href="demo-web-agency-blog-single-creative.html"
-                                        class="text-white card-title fs-20 lh-30 fw-500 w-85 sm-w-100 alt-font">A dream
-                                        doesn't become reality through magic.</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <!-- end blog item -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- end section -->
 
 
-    <footer class="footer-dark bg-dark-gray pt-0 pb-2 lg-pb-35px">
-        <div
-            class="footer-top pt-50px pb-50px sm-pt-35px sm-pb-35px border-bottom border-1 border-color-transparent-white-light">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
 
-                    <div class="col-xl-6 text-center text-xl-start lg-mb-30px sm-mb-20px">
-                        <h6 class="text-white mb-5px fw-500 ls-minus-1px">Boostez votre carrière profesionnelle.</h6>
+    <footer class="footer-dark bg-dark-gray pt-2 pb-2 lg-pb-35px">
 
-                    </div>
-
-                    <div class="col-xl-6 text-center text-xl-end">
-                        <a href="booking.html"
-                            class="btn text-white btn-extra-large bg-base-color left-icon btn-box-shadow btn-rounded text-transform-none d-inline-block align-middle me-15px xs-m-10px"><i
-                                class="feather text-white icon-feather-mail"></i>Consultation gratuite</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <div class="container">
             <div class="row justify-content-center fs-17 fw-300 mt-5 mb-4 md-mt-45px md-mb-45px xs-mt-35px xs-mb-35px">
 
@@ -499,8 +231,12 @@
                         <ul class="small-icon light">
                             <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
                                         class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i
-                                        class="fa-brands fa-dribbble"></i></a></li>
+                            <li>
+                                <a class="linkedin" href="https://www.linkedin.com" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
+
                             <li><a class="twitter" href="https://www.twitter.com" target="_blank"><i
                                         class="fa-brands fa-twitter"></i></a></li>
                             <li><a class="instagram" href="https://www.instagram.com" target="_blank"><i
@@ -606,6 +342,14 @@
         </a>
     </div>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/33636415370" class="whatsapp-float" target="_blank" aria-label="Contactez-nous sur WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
+
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
@@ -654,6 +398,46 @@
                 }, 300);
             });
         });
+
+        const navbar = document.getElementById('mainNavbar');
+        const hamburger = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const servicesToggle = document.getElementById('servicesToggle');
+        const servicesSubmenu = document.getElementById('servicesSubmenu');
+
+        // Scroll effect
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        hamburger.addEventListener('click', function () {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Services submenu toggle
+        servicesToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            servicesSubmenu.classList.toggle('active');
+            this.querySelector('.arrow').style.transform =
+                servicesSubmenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+
 
 
     </script>

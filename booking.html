@@ -2,329 +2,758 @@
 <html class="no-js" lang="fr">
 
 <head>
-    <title>RPAM – Orientation professionnelle, coaching et développement de compétences- Booking</title>
+    <title>RPAM – Réservez votre rendez-vous</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
-        content="RPAM accompagne les professionnels et étudiants en France dans leur orientation professionnelle, le développement de compétences et le coaching à la recherche d’emploi. Accompagnement personnalisé et formations sur mesure.">
-    <meta property="og:title"
-        content="RPAM – Orientation professionnelle, coaching et développement de compétences à Paris">
+        content="Réservez un rendez-vous avec un conseiller RPAM pour votre orientation professionnelle, développement de compétences ou coaching emploi.">
+    <meta property="og:title" content="RPAM – Réservez votre consultation gratuite">
     <meta property="og:description"
-        content="Accompagnement personnalisé, formations sur mesure et coaching à la recherche d’emploi pour booster votre carrière.">
+        content="Prenez rendez-vous avec nos experts pour booster votre carrière. Réponse sous 24h.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.rpam.fr/">
+    <meta property="og:url" content="https://www.rpam.fr/booking">
     <meta property="og:image" content="https://www.rpam.fr/images/og-rpam.jpg">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" type="image/png" href="images/favicon-32x32.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/vendors.min.css">
     <link rel="stylesheet" href="css/icon.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/responsive.min.css">
     <link rel="stylesheet" href="css/corporate.css">
+    <link rel="stylesheet" href="css/navbar-modern.css">
+    <link rel="canonical" href="https://www.rpam.fr/booking" />
+
+    <style>
+        /* ===== BOOKING PAGE MODERN STYLES ===== */
+
+        /* Hero Section */
+        .booking-hero {
+            position: relative;
+            background: linear-gradient(135deg,
+                    #1b2e2a 0%,
+                    #243f3a 50%,
+                    #2f544e 100%);
+            padding: 140px 0 80px;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/banner.jpg') center/cover;
+            opacity: 0.1;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(185, 141, 10, 0.5);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 500px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Main Booking Section */
+        .booking-main-section {
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 80px 0 100px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .booking-container {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Sidebar Info */
+        .booking-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .info-card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-card-icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .info-card-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 0;
+        }
+
+        /* Steps */
+        .booking-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--yellow, #b98d0a) 0%, #d4a50c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Benefits Card */
+        .benefits-card {
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+        }
+
+        .benefits-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefits-card h3 i {
+            font-size: 20px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefit-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 0.9rem;
+        }
+
+        .benefit-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .benefit-list li i {
+            color: #00d4aa;
+            font-size: 16px;
+        }
+
+        /* Calendar Card */
+        .calendar-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .calendar-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            padding: 30px 35px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calendar-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 81, 83, 0.4) 0%, transparent 70%);
+        }
+
+        .calendar-header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .calendar-header h2 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .calendar-header p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .calendar-body {
+            padding: 30px;
+        }
+
+        #cal-booking-container {
+            width: 100%;
+            min-height: 650px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Contact Alternative */
+        .contact-alternative {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .contact-alternative-text h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 5px;
+        }
+
+        .contact-alternative-text p {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .contact-methods {
+            display: flex;
+            gap: 10px;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: white;
+            color: var(--base-color, #005153);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-btn:hover {
+            background: var(--base-color, #005153);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 81, 83, 0.3);
+        }
+
+        .contact-btn i {
+            font-size: 20px;
+        }
+
+        /* Testimonial Mini */
+        .testimonial-mini {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-top: 25px;
+        }
+
+        .testimonial-mini-content {
+            display: flex;
+            gap: 15px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .testimonial-avatar i {
+            font-size: 24px;
+            color: #999;
+        }
+
+        .testimonial-text p {
+            font-size: 0.9rem;
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .testimonial-author {
+            font-size: 0.8rem;
+            color: #999;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1199px) {
+            .booking-container {
+                grid-template-columns: 350px 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-sidebar {
+                position: static;
+                order: 2;
+            }
+
+            .calendar-card {
+                order: 1;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .booking-main-section {
+                padding: 60px 0 80px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .booking-hero {
+                padding: 120px 0 60px;
+            }
+
+            .info-card {
+                padding: 25px 20px;
+            }
+
+            .calendar-header {
+                padding: 25px 20px;
+            }
+
+            .calendar-body {
+                padding: 20px 15px;
+            }
+
+            .contact-alternative {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body data-mobile-nav-style="classic" class="custom-cursor">
-    <header class="header-with-topbar">
 
-        <!-- Top Bar -->
-        <div class="header-top-bar top-bar-dark bg-base-color">
-            <div class="container-fluid">
-                <div class="row align-items-center m-0 h-45px xs-h-auto scrolling-text xs-pt-5px xs-pb-5px">
-                    <!-- Contact Information -->
-                    <div class="col-lg-6 col-md-7 text-center text-md-start xs-px-0">
-                        <div class="fs-15 text-white fw-500">
-                            <span>Nos experts vous accompagnent!
-                                <a href="contact.html"
-                                    class="text-white text-decoration-line-bottom fw-600 alt-font">Nous
-                                    contacter</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- Phone and Location -->
-                    <div class="col-lg-6 col-md-5 text-end d-none d-md-flex">
-                        <div class="widget fs-15 fw-500 text-white me-35px lg-me-25px md-me-0">
+    <!-- Main Navbar -->
+    <nav class="navbar-modern" id="mainNavbar">
+        <div class="container-fluid">
+            <div class="navbar-container">
 
-                        </div>
-                        <div class="widget fs-15 fw-500 text-white d-none d-lg-inline-block">
-                            <span>
-                                <i class="feather icon-feather-map-pin"></i>Paris, France
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar -->
-
-        <nav class="navbar navbar-expand-lg header-light bg-white responsive-sticky">
-            <div class="container-fluid">
                 <!-- Logo -->
-                <div class="col-auto col-lg-2 me-lg-0 me-auto">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/logo-rpam.png" alt="Logo RPAM" class="default-logo">
-                        <img src="images/logo-rpam.png" alt="Alternate Logo" class="alt-logo">
-                        <img src="images/logo-rpam.png" alt="Mobile Logo" class="mobile-logo">
+                <a href="index.html" class="navbar-logo">
+                    <img src="images/logo-rpam.png" alt="RPAM">
+                </a>
+
+                <!-- Navigation Desktop -->
+                <ul class="nav-menu-desktop">
+                    <li class="nav-item-modern">
+                        <a href="index.html" class="nav-link-modern">Accueil</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="about.html" class="nav-link-modern">Qui sommes-nous</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="#" class="nav-link-modern">
+                            Nos Services
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <!-- Mega Menu -->
+                        <div class="mega-menu">
+                            <div class="mega-menu-grid">
+                                <a href="guidance.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon-04.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Orientation Professionnelle</h4>
+                                        <p>Guidance pour trouver votre voie et definir vos objectifs de carriere</p>
+                                    </div>
+                                </a>
+                                <a href="up-training.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon-05.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Developpement de Competences</h4>
+                                        <p>Up Training pour acquerir les skills demandes sur le marche</p>
+                                    </div>
+                                </a>
+                                <a href="job-getting.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon01.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Coaching Recherche d'Emploi</h4>
+                                        <p>Job Getting pour decrocher le poste de vos reves</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="blogs.html" class="nav-link-modern">Blog</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="news.html" class="nav-link-modern">Actualites</a>
+                    </li>
+                </ul>
+
+                <!-- CTA Button Desktop -->
+                <div class="navbar-cta">
+                    <a href="booking.html" class="btn-cta-modern">
+                        <i class="fas fa-calendar-alt"></i>
+                        Reserver un rendez-vous
                     </a>
                 </div>
 
-                <!-- Toggler mobile -->
-                <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Ouvrir le menu">
-                    <span class="navbar-toggler-line"></span>
-                    <span class="navbar-toggler-line"></span><br>
-                    <span class="navbar-toggler-line"></span>
-                </button>
+                <!-- Hamburger Menu Mobile -->
+                <div class="hamburger-modern" id="hamburgerBtn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-                <!-- Menu desktop -->
-                <div class="navbar-collapse d-none d-lg-flex ms-4" id="navbarNavDesktop">
-                    <ul class="navbar-nav fw-600">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link active">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">Qui sommes nous</a>
-                        </li>
-                        <li class="nav-item dropdown dropdown-with-icon-style02">
-                            <a href="#" class="nav-link" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Nos Services
+    <!-- Mobile Menu Fullscreen -->
+    <div class="mobile-menu-modern" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link">Accueil</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="about.html" class="mobile-nav-link">Qui sommes-nous</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" id="servicesToggle">
+                    Nos Services
+                    <i class="fas fa-chevron-down arrow"></i>
+                </a>
+                <!-- Mobile Submenu -->
+                <div class="mobile-submenu" id="servicesSubmenu">
+                    <ul class="mobile-submenu-list">
+                        <li class="mobile-submenu-item">
+                            <a href="guidance.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon-04.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Orientation Professionnelle</h5>
+                                    <span>Guidance</span>
+                                </div>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li class="service-item">
-                                    <a href="guidance.html" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon-04.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Orientation Professionnelle (Guidance)
-                                    </a>
-                                </li>
-                                <li class="service-item">
-                                    <a href="up-training.html" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon-05.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Développement de Compétences (Up Training)
-                                    </a>
-                                </li>
-                                <li class="service-item">
-                                    <a href="job-getting.html" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon01.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Coaching à la recherche d’emploi (Job Getting)
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Blog</a>
+                        <li class="mobile-submenu-item">
+                            <a href="up-training.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon-05.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Developpement de Competences</h5>
+                                    <span>Up Training</span>
+                                </div>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Actualités</a>
+                        <li class="mobile-submenu-item">
+                            <a href="job-getting.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon01.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Coaching Recherche d'Emploi</h5>
+                                    <span>Job Getting</span>
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="blogs.html" class="mobile-nav-link">Blog</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="news.html" class="mobile-nav-link">Actualites</a>
+            </li>
+        </ul>
 
-                <!-- Call to Action desktop -->
-                <a href="booking.html"
-                    class="btn btn-base-color btn-box-shadow text-transform-none btn-rounded btn-hover-animation-switch slide-up-animation d-none d-lg-inline-flex ms-3">
-                    Réserver un rendez-vous
+        <!-- Mobile CTA -->
+        <div class="mobile-cta">
+            <a href="booking.html" class="btn-cta-modern">
+                <i class="fas fa-calendar-alt"></i>
+                Reserver un rendez-vous
+            </a>
+            <div class="mobile-contact-info">
+                <a href="mailto:contact@rpam.fr">
+                    <i class="fas fa-envelope"></i>
+                    contact@rpam.fr
+                </a>
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Paris, France
                 </a>
             </div>
-        </nav>
+        </div>
+    </div>
 
-        <!-- Offcanvas mobile -->
-        <div class="offcanvas offcanvas-end offcanvas-mobile-nav" tabindex="-1" id="mobileNav"
-            aria-labelledby="mobileNavLabel">
-            <div class="offcanvas-header">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/logo-rpam.png" alt="RPAM" class="mobile-logo">
-                </a>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
-            </div>
-
-            <div class="offcanvas-body d-flex flex-column">
-                <ul class="navbar-nav fw-600 nav-mobile">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">Qui sommes nous</a></li>
-
-                    <!-- Services en accordéon -->
-                    <li class="nav-item">
-                        <button class="btn w-100 text-start nav-link-like" data-bs-toggle="collapse"
-                            data-bs-target="#mServices" aria-expanded="false">
-                            Nos Services <span class="chevron"></span>
-                        </button>
-                        <div id="mServices" class="collapse">
-                            <ul class="list-unstyled ps-3 mt-2 d-grid gap-2">
-                                <li><a href="guidance.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon-04.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Orientation Professionnelle (Guidance)
-                                    </a></li>
-                                <li><a href="up-training.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon-05.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Développement de Compétences (Up Training)
-                                    </a></li>
-                                <li><a href="job-getting.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon01.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Coaching à la recherche d’emploi (Job Getting)
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Actualités</a></li>
-                </ul>
-
-                <div class="mt-auto pt-3 border-top">
-                    <a href="booking.html" class="btn btn-base-color btn-box-shadow btn-rounded w-100">
-                        Réserver un rendez-vous
-                    </a>
+    <!-- Hero Section -->
+    <section class="booking-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <span class="hero-badge">
+                            <i class="bi bi-calendar-check"></i> Consultation gratuite
+                        </span>
+                        <h1 class="hero-title">Réservez votre rendez-vous</h1>
+                        <p class="hero-subtitle">
+                            Prenez rendez-vous avec un conseiller RPAM pour discuter de vos objectifs professionnels
+                            et découvrir comment nous pouvons vous accompagner.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-
-    </header>
-    <section class="top-space-margin page-title-big-typography cover-backgroundround-cursor bg-black-transparent-light"
-        style="background-image: url('images/about.png'); background-size: cover; background-position: center;">
-        <div class="container">
-            <div class="row align-items-center">
-            </div>
-            <div class="col-lg-5 col-sm-8 position-relative page-title-extra-small"
-                data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;opacity&quot;: [0, 1], &quot;translateX&quot;: [-30, 0], &quot;duration&quot;: 800, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                <h4 class="text-white text-shadow-medium fw-700 ls-minus-2px mb-0">Réserver un rendez vous?</h4>
-            </div>
-        </div>
-        </div>
         </div>
     </section>
 
-
-    <section id="booking" class="py-80 bg-light ">
+    <!-- Main Booking Section -->
+    <section class="booking-main-section">
         <div class="container">
-            <div class="row justify-content-center mb-4">
-                <div class="col-lg-8 text-center">
-                    <h4 class="alt-font fw-700 ls-minus-1px text-base-color mb-3">Prenez rendez-vous avec un conseiller
-                    </h4>
-                    <p class="fs-18 text-dark">
-                        Réservez un créneau pour exprimer votre besoin.
-                        Réponse sous 24h ouvrées.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-9">
-                    <form id="appointment-form" action="your-backend-endpoint.php" method="post"
-                        class="card border-0 shadow-sm p-4 p-md-5">
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <label for="name" class="form-label">Nom complet</label>
-                                <input class="form-control border-radius-4px" type="text" id="name" name="name"
-                                    placeholder="Votre nom et prénom" required>
+            <div class="booking-container">
+                <!-- Sidebar -->
+                <div class="booking-sidebar">
+                    <!-- How it works -->
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <div class="info-card-icon">
+                                <i class="bi bi-list-check"></i>
                             </div>
-
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input class="form-control border-radius-4px" type="email" id="email" name="email"
-                                    placeholder="vous@exemple.com" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="phone" class="form-label">Téléphone</label>
-                                <input class="form-control border-radius-4px" type="tel" id="phone" name="phone"
-                                    placeholder="+33 6 12 34 56 78" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="datetime" class="form-label">Date et heure souhaitées</label>
-                                <input class="form-control border-radius-4px" type="text" id="datetime" name="datetime"
-                                    placeholder="Choisir un créneau" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="subject" class="form-label">Sujet</label>
-                                <select class="form-select border-radius-4px" id="subject" name="subject" required>
-                                    <option value="">Choisir un thème</option>
-                                    <option value="orientation">Orientation professionnelle</option>
-                                    <option value="competences">Développement de compétences</option>
-                                    <option value="coaching">Coaching à la recherche d’emploi</option>
-                                    <option value="autre">Autre</option>
-                                </select>
-                            </div>
-
-                            <div class="col-12 d-none" id="other-subject-wrap">
-                                <label for="other-subject" class="form-label">Précisez le thème</label>
-                                <input class="form-control border-radius-4px" type="text" id="other-subject"
-                                    name="other_subject" placeholder="Votre thème">
-                            </div>
-
-                            <div class="col-12">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control border-radius-4px" id="message" name="message" rows="5"
-                                    placeholder="Quelques mots sur votre besoin" required></textarea>
-                            </div>
-
-                            <input type="hidden" name="locale" value="fr-FR">
-                            <input type="hidden" name="source" value="booking-page">
-
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="consent" required>
-                                    <label class="form-check-label" for="consent">
-                                        J’accepte que RPAM me contacte. Voir la
-                                        <a href="/docs/Politique_de_confidentialite_RPAM_v2.pdf" target="_blank"
-                                            rel="noopener">politique de confidentialité</a>.
-                                    </label>
+                            <h3>Comment ca marche ?</h3>
+                        </div>
+                        <div class="booking-steps">
+                            <div class="step-item">
+                                <span class="step-number">1</span>
+                                <div class="step-content">
+                                    <h4>Choisissez un creneau</h4>
+                                    <p>Selectionnez la date et l'heure qui vous conviennent dans le calendrier.</p>
                                 </div>
                             </div>
-
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-base-color btn-box-shadow btn-rounded w-100">
-                                    Valider la réservation
-                                </button>
+                            <div class="step-item">
+                                <span class="step-number">2</span>
+                                <div class="step-content">
+                                    <h4>Remplissez vos informations</h4>
+                                    <p>Indiquez vos coordonnees et decrivez brievement votre besoin.</p>
+                                </div>
                             </div>
-
-                            <div class="col-12">
-                                <div id="form-status" class="alert d-none mt-3 mb-0" role="alert"></div>
+                            <div class="step-item">
+                                <span class="step-number">3</span>
+                                <div class="step-content">
+                                    <h4>Recevez la confirmation</h4>
+                                    <p>Un email de confirmation avec le lien de la visio vous sera envoye.</p>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div class="benefits-card">
+                        <h3><i class="bi bi-star-fill"></i> Ce que vous obtenez</h3>
+                        <ul class="benefit-list">
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Consultation 100% gratuite
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Echange personnalise de 30 min
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Conseils adaptes a votre situation
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Sans engagement
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Reponse sous 24h
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Testimonial -->
+                    <div class="testimonial-mini">
+                        <div class="testimonial-mini-content">
+                            <div class="testimonial-avatar">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>"Le premier rendez-vous m'a permis de clarifier mes objectifs. L'equipe est tres a l'ecoute !"</p>
+                                <span class="testimonial-author">— Marie L., Paris</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar -->
+                <div class="calendar-card">
+                    <div class="calendar-header">
+                        <div class="calendar-header-content">
+                            <h2><i class="bi bi-calendar3 me-2"></i>Selectionnez votre creneau</h2>
+                            <p>Choisissez la date et l'heure qui vous conviennent le mieux</p>
+                        </div>
+                    </div>
+                    <div class="calendar-body">
+                        <!-- Cal.com Inline Embed -->
+                        <div id="cal-booking-container"></div>
+                    </div>
+
+                    <!-- Contact Alternative -->
+                    <div class="contact-alternative">
+                        <div class="contact-alternative-text">
+                            <h4>Vous preferez nous contacter directement ?</h4>
+                            <p>Notre equipe est disponible pour repondre a vos questions.</p>
+                        </div>
+                        <div class="contact-methods">
+                            <a href="mailto:contact@rpam.fr" class="contact-btn" title="Email">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
+                            <a href="https://wa.me/33636415370" class="contact-btn" target="_blank" title="WhatsApp">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer-dark bg-dark-gray pt-0 pb-2 lg-pb-35px">
-        <div
-            class="footer-top pt-50px pb-50px sm-pt-35px sm-pb-35px border-bottom border-1 border-color-transparent-white-light">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
-
-                    <div class="col-xl-6 text-center text-xl-start lg-mb-30px sm-mb-20px">
-                        <h6 class="text-white mb-5px fw-500 ls-minus-1px">Boostez votre carrière profesionnelle.</h6>
-
-                    </div>
-
-                    <div class="col-xl-6 text-center text-xl-end">
-                        <a href="booking.html"
-                            class="btn text-white btn-extra-large bg-base-color left-icon btn-box-shadow btn-rounded text-transform-none d-inline-block align-middle me-15px xs-m-10px"><i
-                                class="feather text-white icon-feather-mail"></i>Consultation gratuite</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+    <footer class="footer-dark bg-dark-gray pt-2 pb-2 lg-pb-35px">
         <div class="container">
             <div class="row justify-content-center fs-17 fw-300 mt-5 mb-4 md-mt-45px md-mb-45px xs-mt-35px xs-mb-35px">
 
@@ -336,8 +765,12 @@
                         <ul class="small-icon light">
                             <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
                                         class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i
-                                        class="fa-brands fa-dribbble"></i></a></li>
+                            <li>
+                                <a class="linkedin" href="https://www.linkedin.com" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
+
                             <li><a class="twitter" href="https://www.twitter.com" target="_blank"><i
                                         class="fa-brands fa-twitter"></i></a></li>
                             <li><a class="instagram" href="https://www.instagram.com" target="_blank"><i
@@ -347,13 +780,12 @@
                 </div>
 
                 <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
-                    <span class="fs-18 fw-400 d-block text-white mb-5px">À propos</span>
+                    <span class="fs-18 fw-400 d-block text-white mb-5px">A propos</span>
                     <ul>
                         <li><a href="about.html">Qui sommes-nous</a></li>
                         <li><a href="guidance.html">Services</a></li>
                         <li><a href="blogs.html">Blog</a></li>
-                        <li><a href="news.html">Actualités</a></li>
-
+                        <li><a href="news.html">Actualites</a></li>
                     </ul>
                 </div>
 
@@ -361,8 +793,8 @@
                     <span class="fs-18 fw-400 d-block text-white mb-5px">Services</span>
                     <ul>
                         <li><a href="guidance.html">Orientation Professionnelle</a></li>
-                        <li><a href="up-training.html">Développement de Compétences</a></li>
-                        <li><a href="job-getting.html">Coaching à la recherche d’emploi</a></li>
+                        <li><a href="up-training.html">Developpement de Competences</a></li>
+                        <li><a href="job-getting.html">Coaching a la recherche d'emploi</a></li>
                         <li><a href="#">Consulting</a></li>
                     </ul>
                 </div>
@@ -375,9 +807,8 @@
                     </a>
                 </div>
 
-
                 <div class="col-lg-3 col-sm-6 md-mb-40px xs-mb-0 order-sm-2 order-lg-5">
-                    <span class="fs-18 fw-400 d-block text-white mb-5px">Abonnez-vous à la newsletter</span>
+                    <span class="fs-18 fw-400 d-block text-white mb-5px">Abonnez-vous a la newsletter</span>
                     <p class="mb-20px">Entrez votre email et nous vous contacterons !</p>
                     <div class="d-inline-block w-100 newsletter-style-02 position-relative">
                         <form action="email-templates/subscribe-newsletter.php" method="post"
@@ -385,13 +816,10 @@
                             <input
                                 class="border-color-transparent-white-light bg-transparent border-radius-4px w-100 form-control lg-ps-15px required fs-16"
                                 type="email" name="email" placeholder="Entrez votre email" required />
-
-                            <!-- Bouton discret -->
                             <button class="btn btn-sm bg-white text-dark ms-2 border-radius-4px" type="submit"
                                 aria-label="S'abonner">
                                 OK
                             </button>
-
                             <input type="hidden" name="redirect" value>
                             <div
                                 class="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none">
@@ -399,7 +827,6 @@
                         </form>
                     </div>
                 </div>
-
 
             </div>
             <div class="row align-items-center fs-16 fw-300">
@@ -413,8 +840,8 @@
                     <ul class="footer-navbar sm-lh-normal">
                         <li>
                             <a href="/docs/Politique_de_confidentialite_RPAM_v2.pdf" class="nav-link" target="_blank"
-                                rel="noopener" aria-label="Ouvrir la Politique de confidentialité (PDF)">
-                                Politique de confidentialité
+                                rel="noopener" aria-label="Ouvrir la Politique de confidentialite (PDF)">
+                                Politique de confidentialite
                             </a>
                         </li>
                         <li>
@@ -425,7 +852,7 @@
                         </li>
                         <li>
                             <a href="/docs/Droits_d_auteur_RPAM.pdf" class="nav-link" target="_blank" rel="noopener"
-                                aria-label="Ouvrir Droits d’auteur (PDF)">
+                                aria-label="Ouvrir Droits d'auteur (PDF)">
                                 Droits d'auteur
                             </a>
                         </li>
@@ -441,6 +868,14 @@
         </a>
     </div>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/33636415370" class="whatsapp-float" target="_blank" aria-label="Contactez-nous sur WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
+
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
@@ -449,62 +884,96 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
+    <!-- Cal.com Embed Script -->
     <script>
-        // Flatpickr datetime
-        flatpickr('#datetime', {
-            enableTime: true,
-            dateFormat: 'Y-m-d H:i',
-            minDate: 'today',
-            time_24hr: true
+        (function (C, A, L) {
+            let p = function (a, ar) {
+                a.q.push(ar);
+            };
+            let d = C.document;
+            C.Cal = C.Cal || function () {
+                let cal = C.Cal;
+                let ar = arguments;
+                if (!cal.loaded) {
+                    cal.ns = {};
+                    cal.q = cal.q || [];
+                    d.head.appendChild(d.createElement("script")).src = A;
+                    cal.loaded = true;
+                }
+                if (ar[0] === L) {
+                    const api = function () {
+                        p(api, arguments);
+                    };
+                    const namespace = ar[1];
+                    api.q = api.q || [];
+                    typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+                    return;
+                }
+                p(cal, ar);
+            };
+        })(window, "https://app.cal.eu/embed/embed.js", "init");
+
+        Cal("init", { origin: "https://app.cal.eu" });
+
+        Cal("inline", {
+            elementOrSelector: "#cal-booking-container",
+            calLink: "rpamcontact",
+            config: {
+                layout: "month_view",
+                theme: "light"
+            }
         });
 
-        // Affichage du champ "Autre"
-        (function () {
-            const subject = document.getElementById('subject');
-            const wrap = document.getElementById('other-subject-wrap');
-            const other = document.getElementById('other-subject');
-            function toggle() {
-                const isOther = subject.value === 'autre';
-                wrap.classList.toggle('d-none', !isOther);
-                other.required = isOther;
-                if (!isOther) other.value = '';
-            }
-            subject.addEventListener('change', toggle);
-            toggle();
-        })();
-
-        // Soumission avec fetch + retour inline
-        (function () {
-            const form = document.getElementById('appointment-form');
-            const statusEl = document.getElementById('form-status');
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                statusEl.className = 'alert alert-info';
-                statusEl.textContent = 'Envoi en cours...';
-                statusEl.classList.remove('d-none');
-
-                try {
-                    const data = new FormData(form);
-                    const res = await fetch(form.action, { method: 'POST', body: data });
-                    if (!res.ok) throw new Error('HTTP ' + res.status);
-
-                    statusEl.className = 'alert alert-success';
-                    statusEl.textContent = 'Votre réservation a été enregistrée. Nous revenons vers vous rapidement.';
-                    form.reset();
-                    // Réinitialiser l’état "Autre"
-                    const event = new Event('change');
-                    document.getElementById('subject').dispatchEvent(event);
-                } catch (err) {
-                    statusEl.className = 'alert alert-danger';
-                    statusEl.textContent = "Échec de l'envoi. Réessayez plus tard ou contactez contact@rpam.fr.";
-                    console.error(err);
+        Cal("ui", {
+            theme: "light",
+            styles: {
+                branding: {
+                    brandColor: "#005153"
                 }
-            });
-        })();
+            },
+            hideEventTypeDetails: false,
+            layout: "month_view"
+        });
+
+        // Navbar Scripts
+        const navbar = document.getElementById('mainNavbar');
+        const hamburger = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const servicesToggle = document.getElementById('servicesToggle');
+        const servicesSubmenu = document.getElementById('servicesSubmenu');
+
+        // Scroll effect
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        hamburger.addEventListener('click', function () {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Services submenu toggle
+        servicesToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            servicesSubmenu.classList.toggle('active');
+            this.querySelector('.arrow').style.transform =
+                servicesSubmenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
     </script>
 
 </body>

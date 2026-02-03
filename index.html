@@ -25,598 +25,1822 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
+    <link rel="canonical" href="https://www.rpam.fr/" />
 
     <link rel="stylesheet" href="css/vendors.min.css">
     <link rel="stylesheet" href="css/icon.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/responsive.min.css">
     <link rel="stylesheet" href="css/corporate.css">
+    <link rel="stylesheet" href="css/navbar-modern.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Modern Section Hover Effects */
+        .objectives-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(236, 171, 35, 0.5) !important;
+        }
+
+        .text-white-50 {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+    </style>
 </head>
 
 <body data-mobile-nav-style="classic" class="custom-cursor">
-    <header class="header-with-topbar">
 
-        <!-- Top Bar -->
-        <div class="header-top-bar top-bar-dark bg-base-color">
-            <div class="container-fluid">
-                <div class="row align-items-center m-0 h-45px xs-h-auto scrolling-text xs-pt-5px xs-pb-5px">
-                    <!-- Contact Information -->
-                    <div class="col-lg-6 col-md-7 text-center text-md-start xs-px-0">
-                        <div class="fs-15 text-white fw-500">
-                            <span>Nos experts vous accompagnent!
-                                <a href="contact.html"
-                                    class="text-white text-decoration-line-bottom fw-600 alt-font">Nous
-                                    contacter</a>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- Phone and Location -->
-                    <div class="col-lg-6 col-md-5 text-end d-none d-md-flex">
-                        <div class="widget fs-15 fw-500 text-white me-35px lg-me-25px md-me-0">
 
-                        </div>
-                        <div class="widget fs-15 fw-500 text-white d-none d-lg-inline-block">
-                            <span>
-                                <i class="feather icon-feather-map-pin"></i>Paris, France
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar -->
 
-        <nav class="navbar navbar-expand-lg header-light bg-white responsive-sticky">
-            <div class="container-fluid">
+    <!-- Main Navbar -->
+    <nav class="navbar-modern" id="mainNavbar">
+        <div class="container-fluid">
+            <div class="navbar-container">
                 <!-- Logo -->
-                <div class="col-auto col-lg-2 me-lg-0 me-auto">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/logo-rpam.png" alt="Logo RPAM" class="default-logo">
-                        <img src="images/logo-rpam.png" alt="Alternate Logo" class="alt-logo">
-                        <img src="images/logo-rpam.png" alt="Mobile Logo" class="mobile-logo">
-                    </a>
-                </div>
-
-                <!-- Toggler mobile -->
-                <button class="navbar-toggler d-lg-none ms-auto" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Ouvrir le menu">
-                    <span class="navbar-toggler-line"></span>
-                    <span class="navbar-toggler-line"></span><br>
-                    <span class="navbar-toggler-line"></span>
-                </button>
-
-                <!-- Menu desktop -->
-                <div class="navbar-collapse d-none d-lg-flex ms-4" id="navbarNavDesktop">
-                    <ul class="navbar-nav fw-600">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link active">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">Qui sommes nous</a>
-                        </li>
-                        <li class="nav-item dropdown dropdown-with-icon-style02">
-                            <a href="#" class="nav-link" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Nos Services
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li class="service-item">
-                                    <a href="guidance.html" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon-04.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Orientation Professionnelle (Guidance)
-                                    </a>
-                                </li>
-                                <li class="service-item">
-                                    <a href="up-training.html" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon-05.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Développement de Compétences (Up Training)
-                                    </a>
-                                </li>
-                                <li class="service-item">
-                                    <a href="job-getting.html" class="tooltip">
-                                        <img src="images/demo-accounting-company-icon01.svg"
-                                            alt="Orientation professionnelle – RPAM">
-                                        Coaching à la recherche d’emploi (Job Getting)
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Actualités</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Call to Action desktop -->
-                <a href="booking.html"
-                    class="btn btn-base-color btn-box-shadow text-transform-none btn-rounded btn-hover-animation-switch slide-up-animation d-none d-lg-inline-flex ms-3">
-                    Réserver un rendez-vous
+                <a href="index.html" class="navbar-logo">
+                    <img src="images/logo-rpam.png" alt="RPAM">
                 </a>
-
-            </div>
-        </nav>
-
-        <!-- Offcanvas mobile -->
-        <div class="offcanvas offcanvas-end offcanvas-mobile-nav" tabindex="-1" id="mobileNav"
-            aria-labelledby="mobileNavLabel">
-            <div class="offcanvas-header">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/logo-rpam.png" alt="RPAM" class="mobile-logo">
-                </a>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
-            </div>
-
-            <div class="offcanvas-body d-flex flex-column">
-                <ul class="navbar-nav fw-600 nav-mobile">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">Qui sommes nous</a></li>
-
-                    <!-- Services en accordéon -->
-                    <li class="nav-item">
-                        <button class="btn w-100 text-start nav-link-like" data-bs-toggle="collapse"
-                            data-bs-target="#mServices" aria-expanded="false">
-                            Nos Services <span class="chevron"></span>
-                        </button>
-                        <div id="mServices" class="collapse">
-                            <ul class="list-unstyled ps-3 mt-2 d-grid gap-2">
-                                <li><a href="guidance.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon-04.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Orientation Professionnelle (Guidance)
-                                    </a></li>
-                                <li><a href="up-training.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon-05.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Développement de Compétences (Up Training)
-                                    </a></li>
-                                <li><a href="job-getting.html" class="nav-sub-link d-flex align-items-center gap-2">
-                                        <img src="images/demo-accounting-company-icon01.svg"
-                                            alt="Orientation professionnelle – RPAM" width="22" height="22">
-                                        Coaching à la recherche d’emploi (Job Getting)
-                                    </a></li>
-                            </ul>
+                <!-- Navigation Desktop -->
+                <ul class="nav-menu-desktop">
+                    <li class="nav-item-modern">
+                        <a href="index.html" class="nav-link-modern active">Accueil</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="about.html" class="nav-link-modern">Qui sommes-nous</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="#" class="nav-link-modern">
+                            Nos Services
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <!-- Mega Menu -->
+                        <div class="mega-menu">
+                            <div class="mega-menu-grid">
+                                <a href="guidance.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon-04.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Orientation Professionnelle</h4>
+                                        <p>Guidance pour trouver votre voie et definir vos objectifs de carriere</p>
+                                    </div>
+                                </a>
+                                <a href="up-training.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon-05.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Developpement de Competences</h4>
+                                        <p>Up Training pour acquerir les skills demandes sur le marche</p>
+                                    </div>
+                                </a>
+                                <a href="job-getting.html" class="mega-menu-item">
+                                    <div class="mega-menu-icon">
+                                        <img src="images/demo-accounting-company-icon01.svg" alt="">
+                                    </div>
+                                    <div class="mega-menu-content">
+                                        <h4>Coaching Recherche d'Emploi</h4>
+                                        <p>Job Getting pour decrocher le poste de vos reves</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </li>
-
-                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Actualités</a></li>
+                    <li class="nav-item-modern">
+                        <a href="blogs.html" class="nav-link-modern">Blog</a>
+                    </li>
+                    <li class="nav-item-modern">
+                        <a href="news.html" class="nav-link-modern">Actualites</a>
+                    </li>
                 </ul>
 
-                <div class="mt-auto pt-3 border-top">
-                    <a href="booking.html" class="btn btn-base-color btn-box-shadow btn-rounded w-100">
-                        Réserver un rendez-vous
+                <!-- CTA Button Desktop -->
+                <div class="navbar-cta">
+                    <a href="booking.html" class="btn-cta-modern">
+                        <i class="fas fa-calendar-alt"></i>
+                        Reserver un rendez-vous
                     </a>
                 </div>
-            </div>
-        </div>
 
-
-    </header>
-
-    <!-- start slider -->
-    <section id="slider" class="p-0 top-space-margin ">
-        <div class="demo-corporate-slider_wrapper fullscreen-container" data-alias="portfolio-viewer"
-            data-source="gallery" style="background-color:transparent;padding:0px;">
-
-            <div class="swiper">
-                <div class="swiper-wrapper">
-
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide" style="background-image: url('images/slide1.jpg');">
-                        <div class="slide-overlay"></div>
-                        <div class="slide-content">
-                            <h2>Transformez vos objectifs professionnels en réussites concrètes.</h2>
-                            <p class="fw-600">Un accompagnement personnalisé pour passer de la vision à l’action.</p>
-                            <a href="booking.html" class="cta-btn">Prendre rendez-vous <span class="arrow">→</span></a>
-
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide" style="background-image: url('images/slide2.jpg');">
-                        <div class="slide-overlay"></div>
-                        <div class="slide-content">
-                            <h2>Développez et renforcez les compétences clés pour rester compétitif.</h2>
-                            <p class="fw-600">Des formations adaptées aux exigeances et à l'évolution du marché.</p>
-                            <a href="booking.html" class="cta-btn">Prendre rendez-vous <span class="arrow">→</span></a>
-
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide" style="background-image: url('images/slide3.jpg');">
-                        <div class="slide-overlay"></div>
-                        <div class="slide-content">
-                            <h2>Trouvez rapidement l’emploi qui vous correspond.</h2>
-                            <p class="fw-600">Des outils performants pour optimiser votre recherche d'emploi.</p>
-                            <a href="booking.html" class="cta-btn">Prendre rendez-vous <span class="arrow">→</span></a>
-                        </div>
-                    </div>
+                <!-- Hamburger Menu Mobile -->
+                <div class="hamburger-modern" id="hamburgerBtn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </div>
-
             </div>
-
-
         </div>
+    </nav>
 
-        </div>
-    </section>
-    <!-- end slider -->
-
-    <section class="pt-0 pb-0 bg-base-color shadow-lg">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-8 col-md-11 md-mb-60px sm-mb-40px">
-                    <div class="row mt-10 align-items-center">
-                        <!-- Content -->
-                        <div class="col-xl-12 col-lg-12 col-sm-12 ps-45px lg-ps-15px text-center text-sm-start last-paragraph-no-margin"
-                            data-anime='{
-                                "opacity": [0, 1],
-                                "delay": 100,
-                                "staggervalue": 250,
-                                "easing": "easeOutQuad"
-                             }'>
-                            <h5 class="fw-600 text-white text-center ls-minus-1px mb-15px">Réalisez vos objectifs
-                                professionnels ici et maintenant
-                            </h5>
-                            <p class="text-white text-center">
-                                Découvrez un <strong>accompagnement personnalisé</strong>, des <strong>formations sur
-                                    mesure</strong>, des <strong>outils
-                                    pratiques et innovants</strong> conçus pour vous aider à atteindre efficacement vos
-                                objectifs
-                                professionnels.
-                            </p>
-                            <a href="blogs.html"
-                                class="btn btn-link btn-hover-animation-switch btn-extra-large text-base-color text-transform-none fw-600 mt-15px">
-                                <span>
-                                    <span class="btn-text">Découvrir</span>
-                                    <span class="btn-icon">
-                                        <i class="feather icon-feather-arrow-right"></i>
-                                    </span>
-                                    <span class="btn-icon">
-                                        <i class="feather icon-feather-arrow-right"></i>
-                                    </span>
-                                </span>
+    <!-- Mobile Menu Fullscreen -->
+    <div class="mobile-menu-modern" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link active">Accueil</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="about.html" class="mobile-nav-link">Qui sommes-nous</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" id="servicesToggle">
+                    Nos Services
+                    <i class="fas fa-chevron-down arrow"></i>
+                </a>
+                <!-- Mobile Submenu -->
+                <div class="mobile-submenu" id="servicesSubmenu">
+                    <ul class="mobile-submenu-list">
+                        <li class="mobile-submenu-item">
+                            <a href="guidance.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon-04.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Orientation Professionnelle</h5>
+                                    <span>Guidance</span>
+                                </div>
                             </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="bg-very-light-gray overflow-hidden">
-        <div class="container">
-            <div class="row align-items-center py-5  rounded-3">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h6 class="fw-bold text-base-color display-7 mb-3">
-                        Orientation professionnelle<br>
-                        Développement de compétences<br>
-                        Coaching à la recherche d’emploi
-                    </h6>
-                    <div class="border-top border-3 border-color-base-color w-25 mb-3"></div>
-                </div>
-                <div class="col-lg-6">
-                    <p class=" text-dark">
-                        Trois leviers puissants pour donner un nouvel élan à votre carrière.<br>
-                        Découvrez comment nous pouvons vous aider à clarifier votre projet,
-                        renforcer vos atouts et décrocher les opportunités qui vous correspondent.
-                    </p>
-
-                </div>
-            </div>
-
-
-
-
-            <div class="row g-4">
-                <!-- Bloc 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="interactive-banner-style-08">
-                        <figure class="m-0 hover-box overflow-hidden position-relative border-radius-6px">
-                            <img src="images/self-know.png" alt="Guidance – Orientation professionnelle" />
-                            <figcaption>
-
-                                <div class="mt-auto w-100">
-                                    <div class="title">Guidance</div>
-                                    <div class="subtitle">Orientation professionnelle</div>
+                        </li>
+                        <li class="mobile-submenu-item">
+                            <a href="up-training.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon-05.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Developpement de Competences</h5>
+                                    <span>Up Training</span>
                                 </div>
-                                <a href="guidance.html" class="stretched-link"
-                                    aria-label="Guidance — Orientation professionnelle"></a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-                <!-- Bloc 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="interactive-banner-style-08">
-                        <figure class="m-0 hover-box overflow-hidden position-relative border-radius-6px">
-                            <img src="images/up-training.png" alt="UP Training – Développement de compétences" />
-                            <figcaption>
-
-                                <div class="mt-auto w-100">
-                                    <div class="title">UP Training</div>
-                                    <div class="subtitle">Développement de compétences</div>
-                                </div>
-                                <a href="up-training.html" class="stretched-link"
-                                    aria-label="UP Training — Développement de compétences"></a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-                <!-- Bloc 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="interactive-banner-style-08">
-                        <figure class="m-0 hover-box overflow-hidden position-relative border-radius-6px">
-                            <img src="images/job-getting.png" alt="Job Getting – Coaching à la recherche d’emploi" />
-                            <figcaption>
-                                <div class="mt-auto w-100">
-                                    <div class="title">Job Getting</div>
-                                    <div class="subtitle">Coaching à la recherche d’emploi</div>
-                                </div>
-                                <a href="job-getting.html" class="stretched-link"
-                                    aria-label="Job Getting — Coaching à la recherche d’emploi"></a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-    </section>
-
-
-
-    <section class="p-0 bg-base-color ">
-        <div class="container">
-            <div class="row align-items-center justify-content-center g-0">
-                <div class="col-auto d-flex align-items-center"
-                    data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <div class="fs-19 lh-28 last-paragraph-no-margin text-white pt-15px pb-15px">
-                        <p>Ne remettez pas vos défis professionnels à demain. <a href="booking.html"
-                                class="text-decoration-line-bottom fw-500 text-white">Contactez-nous maintenant. </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-very-light-gray pb-0" id="services">
-
-        <div class="container">
-            <div class="row mb-8 sm-mb-10">
-                <div class="col-12">
-
-                    <!-- Bloc 1 -->
-                    <div class="row align-items-center g-4 mb-5">
-                        <div class="col-md-6 mb-4 mb-md-0">
-                            <img src="images/self-know.png" alt class="w-100 rounded-2">
-                        </div>
-                        <div class="col-md-6 text-center text-md-start ps-md-4">
-                            <h6 class="fw-700 text-dark-gray ls-minus-1px md-mb-20px">Orientation professionnelle
-                                <span class="text-base-color"> - Guidance</span>
-                            </h6>
-                            <p class="text-black mb-4">Nous vous guidons pour révéler vos atouts, clarifier vos
-                                objectifs
-                                professionnels et bâtir ensemble un plan d’action personnalisé pour booster votre
-                                employabilité.
-                            </p>
-                            <a href="guidance.html"
-                                class="btn btn-large btn-rounded with-rounded btn-white btn-box-shadow fw-600">
-                                En savoir plus
-                                <span class="bg-base-color text-white"><i
-                                        class="bi bi-arrow-right-short icon-extra-medium"></i></span>
                             </a>
-                        </div>
-                    </div>
-
-                    <!-- Bloc 2 -->
-                    <div class="row align-items-center g-4 mb-5">
-                        <div class="col-md-6 order-2 order-md-1 text-center text-md-start ps-md-4 mt-4 mt-md-0">
-                            <h6 class="fw-700 text-dark-gray ls-minus-1px md-mb-20px">Développement de Compétences <span
-                                    class="text-base-color">- Up
-                                    Training</span>
-                            </h6>
-                            <p class="text-black mb-4">Nous vous accompagnons dans l’acquisition des savoir-faire qui
-                                vous
-                                démarquent grâce à des formations sur mesure, ciblées et collaboratives.</p>
-                            <a href="up-training.html"
-                                class="btn btn-large btn-rounded with-rounded btn-white btn-box-shadow fw-600">
-                                En savoir plus
-                                <span class="bg-base-color text-white"><i
-                                        class="bi bi-arrow-right-short icon-extra-medium"></i></span>
+                        </li>
+                        <li class="mobile-submenu-item">
+                            <a href="job-getting.html" class="mobile-submenu-link">
+                                <img src="images/demo-accounting-company-icon01.svg" alt="">
+                                <div class="submenu-text">
+                                    <h5>Coaching Recherche d'Emploi</h5>
+                                    <span>Job Getting</span>
+                                </div>
                             </a>
-                        </div>
-                        <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
-                            <img src="images/up-training.png" alt class="w-100 rounded-2">
-                        </div>
-                    </div>
-
-                    <!-- Bloc 3 -->
-                    <div class="row align-items-center g-4 mb-5">
-                        <div class="col-md-6 mb-4 mb-md-0">
-                            <img src="images/job-getting.png" alt class="w-100 rounded-2">
-                        </div>
-                        <div class="col-md-6 text-center text-md-start ps-md-4">
-                            <h6 class="fw-700 text-dark-gray ls-minus-1px md-mb-20px">Coaching à la recherche d'emploi
-                                <span class="text-base-color"> - Job
-                                    Getting</span>
-                            </h6>
-                            <p class="text-black mb-4">À vos côtés à chaque étape de votre recherche d’emploi, nous
-                                optimisons
-                                votre CV, vous préparons aux entretiens et vous aidons à décrocher le poste qui
-                                correspond à vos
-                                aspirations.</p>
-                            <a href="job-getting.html"
-                                class="btn btn-large btn-rounded with-rounded btn-white btn-box-shadow fw-600">
-                                En savoir plus
-                                <span class="bg-base-color text-white"><i
-                                        class="bi bi-arrow-right-short icon-extra-medium"></i></span>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-    </section>
-
-    <section class="bg-white pt-5 pb-5">
-        <div class="container">
-            <div class="row text-start text-md-center mb-4">
-                <div class="col-12">
-                    <h3 class="fw-bold text-base-color mb-2">Pourquoi nous choisir&nbsp;?</h3>
-                    <p class="text-muted fw-600 m-0">
-                        Nous vous offrons un accompagnement sur-mesure pour maximiser votre réussite.
-                    </p>
-                </div>
-            </div>
-            <div class="objectives-container">
-                <div class="objective-card">
-                    <i class="bi bi-person-check objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Accompagnement personnalisé</span> pour définir
-                        et clarifier votre projet
-                        professionnel.</span>
-                </div>
-                <div class="objective-card">
-                    <i class="bi bi-mortarboard objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Formations sur-mesure</span> pour développer vos
-                        compétences techniques et
-                        comportementales.</span>
-                </div>
-                <div class="objective-card">
-                    <i class="bi bi-people objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Un réseau dynamique</span> pour accéder à des
-                        mentors et experts du
-                        secteur.</span>
-                </div>
-                <div class="objective-card">
-                    <i class="bi bi-tools objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Outils pratiques</span>: test d’employabilité,
-                        simulations d’entretiens et plus encore</span>
-                </div>
-                <div class="objective-card">
-                    <i class="bi bi-globe objective-icon"></i>
-                    <span class="objective-text"><span class="fw-bold">Évolution professionnelle</span> en France avec
-                        une approche adaptée au marché
-                        local.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="pt-3 pb-0">
-        <div class="container">
-            <div class="row justify-content-center mb-1">
-                <div class="col-xxl-4 col-lg-8 col-md-8 text-center"
-                    data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <h3 class="text-base-color fw-700 pt-20px ls-minus-1px">Nos valeurs
-
-                    </h3>
-                    <p class="text-black">Nous nous engageons à offrir un service de qualité en mettant l’humain et
-                        l’excellence au cœur de
-                        notre mission.</p>
-
-                </div>
-            </div>
-            <div class="row g-4"> <!-- g-4 crée un espacement de 1.5rem -->
-                <div class="col-12">
-                    <ul class="blog-classic blog-wrapper grid-loading grid grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large"
-                        data-anime='{"el":"childs","translateY":[50,0],"opacity":[0,1],"duration":1200,"delay":0,"staggervalue":150,"easing":"easeOutQuad"}'>
-
-                        <li class="grid-sizer"></li>
-
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
-                                    <a href="demo-accounting-blog-single-creative.html"
-                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Esprit
-                                        d'équipe</a>
-                                    <p class="text-black">Notre équipe se mobilise dans un esprit de cohésion et de
-                                        confiance afin
-                                        de vous offrir un service de qualité.</p>
-                                </div>
-                            </div>
                         </li>
-
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
-                                    <a href="demo-accounting-blog-single-creative.html"
-                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Écoute</a>
-                                    <p class="text-black">Nous adoptons une posture de service et collectons avec
-                                        attention et
-                                        professionnalisme chacun de vos besoins.</p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
-                                    <a href="demo-accounting-blog-single-creative.html"
-                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Proximité</a>
-                                    <p class="text-black">Nous favorisons une approche agile. Durant toutes les phases
-                                        de l’objectif
-                                        à atteindre, nous sommes à vos côtés.</p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="grid-item">
-                            <div class="card bg-transparent border-0 h-100">
-                                <div class="card-body pt-30px pb-30px px-3 last-paragraph-no-margin">
-                                    <a href="demo-accounting-blog-single-creative.html"
-                                        class="card-title mb-5px fw-800 text-base-color fs-30 d-block">Professionnalisme</a>
-                                    <p class="text-black">Nous agissons avec intégrité, responsabilité, respect et
-                                        compétence dans
-                                        tous les aspects de votre projet.</p>
-                                </div>
-                            </div>
-                        </li>
-
                     </ul>
                 </div>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="blogs.html" class="mobile-nav-link">Blog</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="news.html" class="mobile-nav-link">Actualites</a>
+            </li>
+        </ul>
+
+        <!-- Mobile CTA -->
+        <div class="mobile-cta">
+            <a href="booking.html" class="btn-cta-modern">
+                <i class="fas fa-calendar-alt"></i>
+                Reserver un rendez-vous
+            </a>
+            <div class="mobile-contact-info">
+                <a href="mailto:contact@rpam.fr">
+                    <i class="fas fa-envelope"></i>
+                    contact@rpam.fr
+                </a>
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Paris, France
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- start slider -->
+    <section id="slider" class="hero-slider-section">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('images/slide1.jpg');"></div>
+                    <div class="slide-overlay-dark"></div>
+                    <div class="container">
+                        <div class="hero-content">
+
+                            <h1 class="hero-title">Transformez vos objectifs professionnels en réussites concrètes.</h1>
+                            <p class="hero-subtitle">Un accompagnement personnalisé pour passer de la vision à l'action.
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="booking.html" class="hero-btn-primary">
+                                    Prendre rendez-vous
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                                <a href="about.html" class="hero-btn-secondary">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('images/slide2.jpg');"></div>
+                    <div class="slide-overlay-dark"></div>
+                    <div class="container">
+                        <div class="hero-content">
+
+                            <h1 class="hero-title">Développez les compétences clés pour rester compétitif.</h1>
+                            <p class="hero-subtitle">Des formations adaptées aux exigences et à l'évolution du marché.
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="booking.html" class="hero-btn-primary">
+                                    Prendre rendez-vous
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                                <a href="up-training.html" class="hero-btn-secondary">Nos formations</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('images/slide3.jpg');"></div>
+                    <div class="slide-overlay-dark"></div>
+                    <div class="container">
+                        <div class="hero-content">
+
+                            <h1 class="hero-title">Trouvez rapidement l'emploi qui vous correspond.</h1>
+                            <p class="hero-subtitle">Des outils performants pour optimiser votre recherche d'emploi.</p>
+                            <div class="hero-buttons">
+                                <a href="booking.html" class="hero-btn-primary">
+                                    Prendre rendez-vous
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                                <a href="job-getting.html" class="hero-btn-secondary">Job Getting</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-        </div>
-    </section>
-
-    <footer class="footer-dark bg-dark-gray pt-0 pb-2 lg-pb-35px">
-        <div
-            class="footer-top pt-50px pb-50px sm-pt-35px sm-pb-35px border-bottom border-1 border-color-transparent-white-light">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
-
-                    <div class="col-xl-6 text-center text-xl-start lg-mb-30px sm-mb-20px">
-                        <h6 class="text-white mb-5px fw-500 ls-minus-1px">Boostez votre carrière profesionnelle.</h6>
-
-                    </div>
-
-                    <div class="col-xl-6 text-center text-xl-end">
-                        <a href="booking.html"
-                            class="btn text-white btn-extra-large bg-base-color left-icon btn-box-shadow btn-rounded text-transform-none d-inline-block align-middle me-15px xs-m-10px"><i
-                                class="feather text-white icon-feather-mail"></i>Consultation gratuite</a>
-                    </div>
-
+            <!-- Navigation -->
+            <div class="hero-navigation">
+                <div class="swiper-pagination hero-pagination"></div>
+                <div class="hero-nav-buttons">
+                    <button class="hero-nav-btn hero-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button class="hero-nav-btn hero-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
+    </section>
+
+    <style>
+        /* Hero Slider Styles */
+        .hero-slider-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            max-height: 900px;
+            overflow: hidden;
+        }
+
+        .hero-swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-swiper .swiper-slide {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1);
+            transition: transform 8s ease-out;
+        }
+
+        .swiper-slide-active .slide-bg {
+            transform: scale(1.1);
+        }
+
+        .slide-overlay-dark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 30, 30, 0.9) 0%, rgba(0, 50, 50, 0.7) 50%, rgba(0, 81, 83, 0.5) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 700px;
+            padding: 120px 0 80px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(236, 171, 35, 0.2);
+            border: 1px solid rgba(236, 171, 35, 0.4);
+            border-radius: 30px;
+            color: #ecab23;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 35px;
+            max-width: 550px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .hero-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(236, 171, 35, 0.4);
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(236, 171, 35, 0.5);
+            color: #fff;
+        }
+
+        .hero-btn-primary svg {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-btn-primary:hover svg {
+            transform: translateX(5px);
+        }
+
+        .hero-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            background: transparent;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+            color: #fff;
+        }
+
+        /* Navigation */
+        .hero-navigation {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+
+        .hero-pagination {
+            position: relative !important;
+            bottom: auto !important;
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero-pagination .swiper-pagination-bullet {
+            width: 40px;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .hero-pagination .swiper-pagination-bullet-active {
+            width: 60px;
+            background: #ecab23;
+        }
+
+        .hero-nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero-nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .hero-nav-btn:hover {
+            background: #ecab23;
+            border-color: #ecab23;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero-slider-section {
+                height: 85vh;
+                min-height: 550px;
+            }
+
+            .hero-content {
+                padding: 100px 0 60px;
+            }
+
+            .hero-navigation {
+                bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider-section {
+                height: 100vh;
+                min-height: 500px;
+                max-height: none;
+            }
+
+            .hero-content {
+                padding: 100px 15px 80px;
+            }
+
+            .hero-tag {
+                font-size: 0.75rem;
+                padding: 6px 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-btn-primary,
+            .hero-btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 28px;
+            }
+
+            .hero-navigation {
+                bottom: 20px;
+                padding: 0 20px;
+            }
+
+            .hero-nav-buttons {
+                display: none;
+            }
+
+            .hero-pagination .swiper-pagination-bullet {
+                width: 30px;
+            }
+
+            .hero-pagination .swiper-pagination-bullet-active {
+                width: 45px;
+            }
+        }
+    </style>
+    <!-- end slider -->
+
+    <!-- Section Objectifs - Modern Design -->
+    <section class="position-relative overflow-hidden"
+        style="background: linear-gradient(135deg, #005153 0%, #005153 100%); padding: 80px 0;">
+        <!-- Decorative Elements -->
+        <div class="position-absolute"
+            style="top: -100px; right: -100px; width: 300px; height: 300px; background: rgba(236,171,35,0.1); border-radius: 50%; filter: blur(60px);">
+        </div>
+        <div class="position-absolute"
+            style="bottom: -50px; left: -50px; width: 200px; height: 200px; background: rgba(236,171,35,0.08); border-radius: 50%; filter: blur(40px);">
+        </div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-10" data-aos="fade-up" data-aos-duration="800">
+                    <div class="text-center mb-5">
+                        <span class="d-inline-block px-4 py-2 mb-4"
+                            style="background: rgba(236,171,35,0.15); border-radius: 30px; color: #ecab23; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;">
+                            Votre réussite commence ici
+                        </span>
+                        <h2 class="text-white fw-800 mb-4"
+                            style="font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2;">
+                            Réalisez vos objectifs professionnels <br>
+                            <span style="color: #ecab23;">ici et maintenant</span>
+                        </h2>
+                        <p class="text-white-50 fs-18 mb-0 mx-auto" style="max-width: 700px; line-height: 1.8;">
+                            Découvrez un accompagnement personnalisé, des formations sur mesure et des outils innovants
+                            conçus pour vous aider à atteindre efficacement vos objectifs.
+                        </p>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="text-center p-4"
+                                style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                                <div class="mb-3"
+                                    style="width: 60px; height: 60px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                    <i class="fas fa-user-tie text-white fs-22"></i>
+                                </div>
+                                <h6 class="text-white fw-700 mb-2">Accompagnement personnalisé</h6>
+                                <p class="text-white-50 fs-14 mb-0">Un suivi adapté à votre profil et vos ambitions</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="text-center p-4"
+                                style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                                <div class="mb-3"
+                                    style="width: 60px; height: 60px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                    <i class="fas fa-graduation-cap text-white fs-22"></i>
+                                </div>
+                                <h6 class="text-white fw-700 mb-2">Formations sur mesure</h6>
+                                <p class="text-white-50 fs-14 mb-0">Des programmes adaptés à vos besoins</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="text-center p-4"
+                                style="background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                                <div class="mb-3"
+                                    style="width: 60px; height: 60px; background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                    <i class="fas fa-tools text-white fs-22"></i>
+                                </div>
+                                <h6 class="text-white fw-700 mb-2">Outils innovants</h6>
+                                <p class="text-white-50 fs-14 mb-0">Des ressources pratiques et modernes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                        <a href="about.html" class="btn px-5 py-3 fw-600"
+                            style="background: linear-gradient(135deg, #ecab23 0%, #f7931e 100%); color: white; border-radius: 50px; border: none; transition: all 0.3s ease;">
+                            <i class="fas fa-arrow-right me-2"></i>Découvrir notre approche
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Section Services Moderne -->
+    <section class="services-showcase-section" id="services">
+        <div class="container">
+            <!-- Header -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <span class="services-badge">Nos expertises</span>
+                    <h2 class="services-main-title">Trois leviers pour booster votre carriere</h2>
+                    <p class="services-subtitle">
+                        Decouvrez comment nous pouvons vous aider a clarifier votre projet,
+                        renforcer vos atouts et decrocher les opportunites qui vous correspondent.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Services Cards -->
+            <div class="services-grid">
+                <!-- Service 1 - Guidance -->
+                <div class="service-card-modern" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-image">
+                        <img src="images/self-know.jpg" alt="Guidance - Orientation professionnelle" loading="lazy">
+                        <div class="service-card-overlay"></div>
+                        <span class="service-number">01</span>
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-icon-badge">
+                            <i class="bi bi-compass"></i>
+                        </div>
+                        <h3 class="service-card-title">Guidance</h3>
+                        <h4 class="service-card-subtitle">Orientation professionnelle</h4>
+                        <p class="service-card-description">
+                            Nous vous guidons pour reveler vos atouts, clarifier vos objectifs professionnels
+                            et batir ensemble un plan d'action personnalise pour booster votre employabilite.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="bi bi-check2"></i> Bilan de competences</li>
+                            <li><i class="bi bi-check2"></i> Definition du projet professionnel</li>
+                            <li><i class="bi bi-check2"></i> Plan d'action personnalise</li>
+                        </ul>
+                        <a href="guidance.html" class="service-card-btn">
+                            Decouvrir ce service <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 - Up Training -->
+                <div class="service-card-modern featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="featured-badge-corner">Populaire</div>
+                    <div class="service-card-image">
+                        <img src="images/up-training.jpg" alt="Up Training - Developpement de competences"
+                            loading="lazy">
+                        <div class="service-card-overlay"></div>
+                        <span class="service-number">02</span>
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-icon-badge">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h3 class="service-card-title">Up Training</h3>
+                        <h4 class="service-card-subtitle">Developpement de competences</h4>
+                        <p class="service-card-description">
+                            Nous vous accompagnons dans l'acquisition des savoir-faire qui vous
+                            demarquent grace a des formations sur mesure, ciblees et collaboratives.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="bi bi-check2"></i> Formations techniques</li>
+                            <li><i class="bi bi-check2"></i> Developpement des soft skills</li>
+                            <li><i class="bi bi-check2"></i> Coaching personnalise</li>
+                        </ul>
+                        <a href="up-training.html" class="service-card-btn">
+                            Decouvrir ce service <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 - Job Getting -->
+                <div class="service-card-modern" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-image">
+                        <img src="images/job-getting.jpg" alt="Job Getting - Coaching recherche d'emploi"
+                            loading="lazy">
+                        <div class="service-card-overlay"></div>
+                        <span class="service-number">03</span>
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-icon-badge">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <h3 class="service-card-title">Job Getting</h3>
+                        <h4 class="service-card-subtitle">Coaching recherche d'emploi</h4>
+                        <p class="service-card-description">
+                            A vos cotes a chaque etape de votre recherche d'emploi, nous optimisons
+                            votre CV, vous preparons aux entretiens et vous aidons a decrocher le poste ideal.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="bi bi-check2"></i> Optimisation CV et LinkedIn</li>
+                            <li><i class="bi bi-check2"></i> Preparation aux entretiens</li>
+                            <li><i class="bi bi-check2"></i> Strategie de recherche</li>
+                        </ul>
+                        <a href="job-getting.html" class="service-card-btn">
+                            Decouvrir ce service <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="services-cta-banner" data-aos="fade-up" data-aos-delay="400">
+                <div class="cta-banner-content">
+                    <div class="cta-banner-icon">
+                        <i class="bi bi-rocket-takeoff"></i>
+                    </div>
+                    <div class="cta-banner-text">
+                        <h4>Pret a donner un nouvel elan a votre carriere ?</h4>
+                        <p>Reservez une consultation gratuite avec nos experts</p>
+                    </div>
+                </div>
+                <a href="booking.html" class="cta-banner-btn">
+                    <i class="bi bi-calendar-check"></i> Prendre rendez-vous
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Services Showcase Section */
+        .services-showcase-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-showcase-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 81, 83, 0.2), transparent);
+        }
+
+        .services-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .services-main-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .services-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Service Card Modern */
+        .service-card-modern {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .service-card-modern:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 81, 83, 0.15);
+        }
+
+        .service-card-modern.featured {
+            border: 2px solid var(--yellow, #ecab23);
+        }
+
+        .featured-badge-corner {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: linear-gradient(135deg, var(--yellow, #ecab23) 0%, #f7931e 100%);
+            color: white;
+            padding: 8px 40px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transform: rotate(45deg);
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(236, 171, 35, 0.4);
+        }
+
+        .service-card-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card-modern:hover .service-card-image img {
+            transform: scale(1.1);
+        }
+
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 81, 83, 0.7) 100%);
+        }
+
+        .service-number {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 1;
+        }
+
+        .service-card-content {
+            padding: 30px;
+        }
+
+        .service-icon-badge {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--base-color, #005153) 0%, #007a7c 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 5;
+            box-shadow: 0 10px 30px rgba(0, 81, 83, 0.3);
+        }
+
+        .service-icon-badge i {
+            font-size: 28px;
+            color: white;
+        }
+
+        .service-card-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 5px;
+        }
+
+        .service-card-subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--base-color, #005153);
+            margin-bottom: 15px;
+        }
+
+        .service-card-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li i {
+            color: var(--yellow, #ecab23);
+            font-size: 16px;
+        }
+
+        .service-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--base-color, #005153);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 0;
+            transition: all 0.3s ease;
+        }
+
+        .service-card-btn:hover {
+            color: var(--yellow, #ecab23);
+            gap: 12px;
+        }
+
+        .service-card-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* CTA Banner */
+        .services-cta-banner {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            border-radius: 20px;
+            padding: 40px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 81, 83, 0.4) 0%, transparent 70%);
+        }
+
+        .cta-banner-content {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-banner-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--yellow, #ecab23) 0%, #f7931e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cta-banner-icon i {
+            font-size: 32px;
+            color: white;
+        }
+
+        .cta-banner-text h4 {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .cta-banner-text p {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .cta-banner-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--base-color, #005153);
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        .cta-banner-btn:hover {
+            background: var(--yellow, #ecab23);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(236, 171, 35, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 1199px) {
+            .services-grid {
+                gap: 25px;
+            }
+
+            .service-card-content {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .services-showcase-section {
+                padding: 80px 0;
+            }
+
+            .services-main-title {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto 50px;
+            }
+
+            .services-cta-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 35px 30px;
+                gap: 25px;
+            }
+
+            .cta-banner-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .services-showcase-section {
+                padding: 60px 0;
+            }
+
+            .services-main-title {
+                font-size: 1.8rem;
+            }
+
+            .service-card-content {
+                padding: 20px;
+            }
+
+            .service-icon-badge {
+                width: 50px;
+                height: 50px;
+                margin-top: -40px;
+            }
+
+            .service-icon-badge i {
+                font-size: 22px;
+            }
+
+            .cta-banner-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <section class="why-choose-section pt-5 pb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Colonne gauche : Titre -->
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="why-choose-header">
+                        <span class="section-badge">Nos atouts</span>
+                        <h3 class="fw-bold text-dark mb-3">Pourquoi nous choisir ?</h3>
+                        <p class="text-muted">Nous vous offrons un accompagnement sur-mesure pour maximiser votre
+                            réussite.</p>
+                        <a href="about.html" class="why-choose-link">
+                            En savoir plus <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Colonne droite : Liste des avantages -->
+                <div class="col-lg-8">
+                    <div class="why-choose-list">
+                        <div class="why-choose-item">
+                            <span class="item-number">01</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-person-check"></i></div>
+                                <div class="item-text">
+                                    <h6>Accompagnement personnalisé</h6>
+                                    <p>Pour définir et clarifier votre projet professionnel.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item">
+                            <span class="item-number">02</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-mortarboard"></i></div>
+                                <div class="item-text">
+                                    <h6>Formations sur-mesure</h6>
+                                    <p>Pour développer vos compétences techniques et comportementales.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item">
+                            <span class="item-number">03</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-people"></i></div>
+                                <div class="item-text">
+                                    <h6>Un réseau dynamique</h6>
+                                    <p>Pour accéder à des mentors et experts du secteur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item">
+                            <span class="item-number">04</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-tools"></i></div>
+                                <div class="item-text">
+                                    <h6>Outils pratiques</h6>
+                                    <p>Test d'employabilité, simulations d'entretiens et plus encore.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-item">
+                            <span class="item-number">05</span>
+                            <div class="item-content">
+                                <div class="item-icon"><i class="bi bi-globe"></i></div>
+                                <div class="item-text">
+                                    <h6>Évolution professionnelle</h6>
+                                    <p>En France avec une approche adaptée au marché local.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Styles pour la section Pourquoi nous choisir */
+        .why-choose-section {
+            background: #fff;
+        }
+
+        .why-choose-header {
+            padding-right: 30px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--yellow) 0%, #007a7c 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .why-choose-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--base-color, #005153);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-link:hover {
+            gap: 12px;
+            color: #007a7c;
+        }
+
+        .why-choose-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .why-choose-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-item:hover {
+            background: white;
+            border-left-color: var(--yellow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .item-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: rgba(0, 81, 83, 0.15);
+            min-width: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-item:hover .item-number {
+            color: var(--base-color, #005153);
+        }
+
+        .item-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .item-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-item:hover .item-icon {
+            background: var(--base-color, #005153);
+        }
+
+        .item-icon i {
+            font-size: 22px;
+            color: var(--base-color, #005153);
+            transition: all 0.3s ease;
+        }
+
+        .why-choose-item:hover .item-icon i {
+            color: white;
+        }
+
+        .item-text h6 {
+            margin: 0 0 5px 0;
+            font-weight: 700;
+            color: #1a1a2e;
+            font-size: 1.5rem;
+        }
+
+        .item-text p {
+            margin: 0;
+            color: black;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 991px) {
+            .why-choose-header {
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .why-choose-item {
+                padding: 15px 20px;
+            }
+
+            .item-number {
+                font-size: 1.4rem;
+                min-width: 40px;
+            }
+
+            .item-icon {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .item-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .why-choose-item {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+    <section class="values-section pt-5 pb-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h3 class="text-base-color fw-700 ls-minus-1px mb-3">Nos valeurs</h3>
+                    <p class="text-muted fs-18">Nous nous engageons à offrir un service de qualité en mettant l'humain
+                        et
+                        l'excellence au cœur de notre mission.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Valeur 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h5 class="value-title">Esprit d'équipe</h5>
+                        <p class="value-description">Notre équipe se mobilise dans un esprit de cohésion et de confiance
+                            afin de vous offrir un service de qualité.</p>
+                        <div class="value-decoration"></div>
+                    </div>
+                </div>
+                <!-- Valeur 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-ear-fill"></i>
+                        </div>
+                        <h5 class="value-title">Écoute</h5>
+                        <p class="value-description">Nous adoptons une posture de service et collectons avec attention
+                            et professionnalisme chacun de vos besoins.</p>
+                        <div class="value-decoration"></div>
+                    </div>
+                </div>
+                <!-- Valeur 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+                        <h5 class="value-title">Proximité</h5>
+                        <p class="value-description">Nous favorisons une approche agile. Durant toutes les phases de
+                            l'objectif à atteindre, nous sommes à vos côtés.</p>
+                        <div class="value-decoration"></div>
+                    </div>
+                </div>
+                <!-- Valeur 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <h5 class="value-title">Professionnalisme</h5>
+                        <p class="value-description">Nous agissons avec intégrité, responsabilité, respect et compétence
+                            dans tous les aspects de votre projet.</p>
+                        <div class="value-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Styles pour la section Nos valeurs */
+        .values-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px 25px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 81, 83, 0.15);
+        }
+
+        .value-card:hover .value-icon {
+            background: var(--yellow);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .value-card:hover .value-decoration {
+            transform: scale(1.5);
+            opacity: 0.1;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(0, 81, 83, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: all 0.4s ease;
+        }
+
+        .value-icon i {
+            font-size: 32px;
+            color: var(--yellow);
+            transition: all 0.4s ease;
+        }
+
+        .value-card:hover .value-icon i {
+            color: white;
+        }
+
+        .value-title {
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .value-description {
+            color: black;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .value-decoration {
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: var(--base-color, #005153);
+            border-radius: 50%;
+            opacity: 0.05;
+            transition: all 0.5s ease;
+        }
+
+        @media (max-width: 991px) {
+            .value-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+    <!-- Section Article à la une -->
+    <section class="bg-very-light-gray pt-5 pb-5">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                    <h3 class="text-base-color fw-700 ls-minus-1px">Article à la une</h3>
+                    <p class="text-black">Découvrez nos dernières inspirations pour booster votre carrière</p>
+                </div>
+            </div>
+            <div id="featured-article-home" class="featured-article-container">
+                <!-- L'article mis en avant sera injecté ici -->
+                <div class="text-center py-5">
+                    <div class="spinner-border text-base-color" role="status">
+                        <span class="visually-hidden">Chargement...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="blogs.html" class="btn btn-base-color btn-rounded btn-box-shadow text-transform-none fw-600">
+                    Voir tous les articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Featured Article Styles for Homepage */
+        .featured-article-container {
+            margin-bottom: 20px;
+        }
+
+        .featured-article {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 400px;
+        }
+
+        .featured-article .featured-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: transform 0.5s ease, opacity 0.3s ease;
+        }
+
+        .featured-article:hover .featured-image {
+            transform: scale(1.05);
+            opacity: 0.5;
+        }
+
+        .featured-article .featured-content {
+            position: relative;
+            z-index: 2;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 400px;
+            color: white;
+        }
+
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--base-color, #005153);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: fit-content;
+            margin-bottom: 20px;
+        }
+
+        .featured-article .featured-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .featured-article .featured-title a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .featured-article .featured-title a:hover {
+            opacity: 0.85;
+        }
+
+        .featured-article .featured-excerpt {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        .featured-article .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .featured-article .featured-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .featured-article .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--base-color, #005153);
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: fit-content;
+            margin-top: 20px;
+        }
+
+        .featured-article .read-more-btn:hover {
+            background: var(--base-color, #005153);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .featured-article {
+                min-height: 350px;
+            }
+
+            .featured-article .featured-content {
+                padding: 25px;
+                min-height: 350px;
+            }
+
+            .featured-article .featured-title {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+
+            .featured-article .featured-excerpt {
+                font-size: 1.05rem;
+                line-height: 1.6;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .featured-article .featured-meta {
+                font-size: 0.95rem;
+            }
+        }
+
+        .spinner-border {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-width: 3px;
+        }
+    </style>
+
+    <script>
+        // Script pour charger l'article à la une sur la page d'accueil
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fonction de sécurité pour échapper le HTML
+            function escapeHtml(text) {
+                if (!text) return '';
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            // Fonction pour valider les URLs d'images
+            function isValidImageUrl(url) {
+                if (!url) return false;
+                try {
+                    const urlObj = new URL(url);
+                    if (urlObj.protocol !== 'https:') return false;
+                    const allowedDomains = ['cdn.hashnode.com', 'hashnode.com', window.location.hostname];
+                    return allowedDomains.some(domain => urlObj.hostname.endsWith(domain));
+                } catch {
+                    return false;
+                }
+            }
+
+            async function loadFeaturedArticle() {
+                const container = document.getElementById('featured-article-home');
+
+                try {
+                    const query = `
+                        query Publication {
+                            publication(host: "rpam.hashnode.dev") {
+                                posts(first: 1) {
+                                    edges {
+                                        node {
+                                            title
+                                            brief
+                                            slug
+                                            coverImage {
+                                                url
+                                            }
+                                            publishedAt
+                                            readTimeInMinutes
+                                            reactionCount
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    `;
+
+                    const response = await fetch('https://gql.hashnode.com', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ query })
+                    });
+
+                    const data = await response.json();
+                    const post = data.data?.publication?.posts?.edges?.[0]?.node;
+
+                    if (!post) {
+                        container.innerHTML = `
+                            <div class="text-center py-4">
+                                <p class="text-muted mb-0">Aucun article disponible pour le moment.</p>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    const date = new Date(post.publishedAt).toLocaleDateString('fr-FR', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    const rawCoverImage = post.coverImage?.url || 'images/default-blog-cover.jpg';
+                    const coverImage = isValidImageUrl(rawCoverImage) ? rawCoverImage : 'images/default-blog-cover.jpg';
+
+                    container.innerHTML = `
+                        <article class="featured-article">
+                            <img src="${escapeHtml(coverImage)}" alt="${escapeHtml(post.title)}" class="featured-image" onerror="this.src='images/default-blog-cover.jpg'">
+                            <div class="featured-content">
+                                <span class="featured-badge">
+                                    <i class="feather icon-feather-star"></i> Article à la une
+                                </span>
+                                <h2 class="featured-title">
+                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
+                                </h2>
+                                <p class="featured-excerpt">${escapeHtml(post.brief)}</p>
+                                <div class="featured-meta">
+                                    <span><i class="feather icon-feather-calendar"></i> ${escapeHtml(date)}</span>
+                                    ${post.readTimeInMinutes ? `<span><i class="feather icon-feather-clock"></i> ${post.readTimeInMinutes} min de lecture</span>` : ''}
+                                    ${post.reactionCount ? `<span><i class="feather icon-feather-heart"></i> ${post.reactionCount} likes</span>` : ''}
+                                </div>
+                                <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="read-more-btn">
+                                    Lire l'article <i class="feather icon-feather-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    `;
+                } catch (error) {
+                    console.error('Erreur lors du chargement de l\'article:', error);
+                    container.innerHTML = `
+                        <div class="text-center py-4">
+                            <p class="text-muted mb-0">Impossible de charger l'article pour le moment.</p>
+                            <a href="blogs.html" class="btn btn-sm btn-outline-secondary mt-3">Voir le blog</a>
+                        </div>
+                    `;
+                }
+            }
+
+            loadFeaturedArticle();
+        });
+    </script>
+
+    <footer class="footer-dark bg-dark-gray pt-2 pb-2 lg-pb-35px">
+
         <div class="container">
             <div class="row justify-content-center fs-17 fw-300 mt-5 mb-4 md-mt-45px md-mb-45px xs-mt-35px xs-mb-35px">
 
@@ -628,8 +1852,12 @@
                         <ul class="small-icon light">
                             <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
                                         class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a class="dribbble" href="http://www.dribbble.com" target="_blank"><i
-                                        class="fa-brands fa-dribbble"></i></a></li>
+                            <li>
+                                <a class="linkedin" href="https://www.linkedin.com" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
+
                             <li><a class="twitter" href="https://www.twitter.com" target="_blank"><i
                                         class="fa-brands fa-twitter"></i></a></li>
                             <li><a class="instagram" href="https://www.instagram.com" target="_blank"><i
@@ -733,26 +1961,88 @@
         </a>
     </div>
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/vendors.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/33636415370" class="whatsapp-float" target="_blank" aria-label="Contactez-nous sur WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
+
+    <script type="text/javascript" src="js/jquery.js" defer></script>
+    <script type="text/javascript" src="js/vendors.min.js" defer></script>
+    <script type="text/javascript" src="js/main.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+        defer></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            effect: 'fade',
-            fadeEffect: { crossFade: true },
-            autoplay: { delay: 10000 }, // temps d'affichage de chaque slide
-            speed: 1500,               // durée de l'effet fondu
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiper = new Swiper('.hero-swiper', {
+                loop: true,
+                effect: 'fade',
+                fadeEffect: { crossFade: true },
+                autoplay: { delay: 8000, disableOnInteraction: false },
+                speed: 1200,
+                pagination: {
+                    el: '.hero-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.hero-next',
+                    prevEl: '.hero-prev',
+                },
+            });
+
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true
+            });
+
+            // Modern Navbar Scripts
+            const navbar = document.getElementById('mainNavbar');
+            const hamburger = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const servicesToggle = document.getElementById('servicesToggle');
+            const servicesSubmenu = document.getElementById('servicesSubmenu');
+
+            // Scroll effect
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            hamburger.addEventListener('click', function () {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+
+            // Services submenu toggle
+            servicesToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                servicesSubmenu.classList.toggle('active');
+                this.querySelector('.arrow').style.transform =
+                    servicesSubmenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
         });
     </script>
 

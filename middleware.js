@@ -1,5 +1,3 @@
-import { next, rewrite } from '@vercel/edge';
-
 // Bot user agents that don't execute JavaScript
 const BOT_AGENTS = [
     'facebookexternalhit',
@@ -27,7 +25,7 @@ export default function middleware(request) {
 
     // Only intercept /blog-post pages with a slug
     if (!url.pathname.match(/^\/blog-post(\.html)?$/) || !url.searchParams.get('slug')) {
-        return next();
+        return;
     }
 
     const userAgent = request.headers.get('user-agent') || '';
@@ -38,14 +36,14 @@ export default function middleware(request) {
     );
 
     if (!isBot) {
-        return next();
+        return;
     }
 
     // Rewrite bot requests to the prerender API
     const prerenderUrl = new URL('/api/blog-prerender', request.url);
     prerenderUrl.searchParams.set('slug', url.searchParams.get('slug'));
 
-    return rewrite(prerenderUrl);
+    return fetch(prerenderUrl);
 }
 
 export const config = {

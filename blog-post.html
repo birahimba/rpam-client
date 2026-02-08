@@ -8,11 +8,25 @@
     <title id="article-title">Article - Blog RPAM</title>
     <meta name="description" id="article-description"
         content="Blog RPAM - Orientation professionnelle, coaching et développement de compétences">
+    <meta name="robots" content="index, follow">
 
+    <!-- Open Graph -->
     <meta property="og:title" id="og-title" content="Article - Blog RPAM">
-    <meta property="og:description" id="og-description" content="Blog RPAM">
+    <meta property="og:description" id="og-description" content="Blog RPAM - Orientation professionnelle, coaching et développement de compétences">
     <meta property="og:type" content="article">
+    <meta property="og:url" id="og-url" content="">
     <meta property="og:image" id="og-image" content="">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="RPAM">
+    <meta property="article:published_time" id="article-published-time" content="">
+    <meta property="article:author" content="RPAM">
+    <meta property="article:section" content="Blog">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitter-title" content="Article - Blog RPAM">
+    <meta name="twitter:description" id="twitter-description" content="Blog RPAM">
+    <meta name="twitter:image" id="twitter-image" content="">
 
     <link rel="icon" type="image/png" href="images/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
@@ -26,7 +40,62 @@
     <link rel="canonical" id="canonical-url" href="">
 
     <!-- DOMPurify pour la sanitisation XSS -->
-    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>    <link rel="stylesheet" href="css/pages.css">
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    <link rel="stylesheet" href="css/pages.css">
+
+    <!-- Schema.org JSON-LD Structured Data (updated dynamically) -->
+    <script type="application/ld+json" id="structured-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "description": "",
+        "url": "",
+        "image": "",
+        "datePublished": "",
+        "author": {
+            "@type": "Organization",
+            "name": "RPAM",
+            "url": "https://www.rpam.fr"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "RPAM",
+            "url": "https://www.rpam.fr",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.rpam.fr/images/logo-rpam.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": ""
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Accueil",
+                    "item": "https://www.rpam.fr"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Blog",
+                    "item": "https://www.rpam.fr/blogs"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "",
+                    "item": ""
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 
 <body data-mobile-nav-style="classic" class="custom-cursor">
@@ -498,14 +567,82 @@
         }
 
         function displayArticle(post) {
+            const articleUrl = 'https://www.rpam.fr/blog-post?slug=' + encodeURIComponent(post.slug);
+            const briefText = post.brief ? post.brief.substring(0, 160) : '';
+
             // Mettre à jour les meta tags
             document.getElementById('article-title').textContent = post.title + ' - Blog RPAM';
-            document.getElementById('article-description').content = post.brief;
+            document.getElementById('article-description').content = briefText;
+
+            // Open Graph
             document.getElementById('og-title').content = post.title;
-            document.getElementById('og-description').content = post.brief;
+            document.getElementById('og-description').content = briefText;
+            document.getElementById('og-url').content = articleUrl;
             if (post.coverImage?.url) {
                 document.getElementById('og-image').content = post.coverImage.url;
             }
+
+            // Article meta
+            if (post.publishedAt) {
+                document.getElementById('article-published-time').content = post.publishedAt;
+            }
+
+            // Twitter Card
+            document.getElementById('twitter-title').content = post.title;
+            document.getElementById('twitter-description').content = briefText;
+            if (post.coverImage?.url) {
+                document.getElementById('twitter-image').content = post.coverImage.url;
+            }
+
+            // Canonical URL
+            document.getElementById('canonical-url').href = articleUrl;
+
+            // Update JSON-LD structured data
+            const structuredData = {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": post.title,
+                "description": briefText,
+                "url": articleUrl,
+                "image": post.coverImage?.url || '',
+                "datePublished": post.publishedAt || '',
+                "author": {
+                    "@type": "Organization",
+                    "name": post.author?.name || "RPAM",
+                    "url": "https://www.rpam.fr"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "RPAM",
+                    "url": "https://www.rpam.fr",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.rpam.fr/images/logo-rpam.png"
+                    }
+                },
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": articleUrl
+                },
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.rpam.fr" },
+                        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rpam.fr/blogs" },
+                        { "@type": "ListItem", "position": 3, "name": post.title, "item": articleUrl }
+                    ]
+                }
+            };
+
+            // Add tags as keywords if available
+            if (post.tags && post.tags.length > 0) {
+                structuredData.keywords = post.tags.map(t => t.name).join(', ');
+            }
+            if (post.readTimeInMinutes) {
+                structuredData.timeRequired = 'PT' + post.readTimeInMinutes + 'M';
+            }
+
+            document.getElementById('structured-data').textContent = JSON.stringify(structuredData);
 
             // Afficher l'image de couverture - Validée pour sécurité
             if (post.coverImage?.url && isValidImageUrl(post.coverImage.url)) {
@@ -587,15 +724,15 @@
             };
 
             // Boutons de partage
-            const articleUrl = encodeURIComponent(window.location.href);
+            const shareUrl = encodeURIComponent(articleUrl);
             const articleTitle = encodeURIComponent(post.title);
 
             document.getElementById('share-twitter').href =
-                `https://twitter.com/intent/tweet?text=${articleTitle}&url=${articleUrl}`;
+                `https://twitter.com/intent/tweet?text=${articleTitle}&url=${shareUrl}`;
             document.getElementById('share-linkedin').href =
-                `https://www.linkedin.com/sharing/share-offsite/?url=${articleUrl}`;
+                `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
             document.getElementById('share-facebook').href =
-                `https://www.facebook.com/sharer/sharer.php?u=${articleUrl}`;
+                `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
 
             // Masquer le loader et afficher le contenu
             document.getElementById('article-loading').style.display = 'none';

@@ -44,10 +44,17 @@
     <!-- Blog (liste) -->
     <url>
         <loc>https://www.rpam.fr/blogs</loc>
-        <lastmod>2026-01-24</lastmod>
+        <lastmod>2026-02-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!--
+        Note : Les articles de blog individuels sont chargés dynamiquement depuis Hashnode.
+        Pour un SEO optimal, envisagez de générer ce sitemap automatiquement via un script
+        qui récupère les slugs depuis l'API Hashnode GraphQL et ajoute chaque URL :
+        https://www.rpam.fr/blog-post?slug={article-slug}
+    -->
 
     <!-- Actualités -->
     <url>

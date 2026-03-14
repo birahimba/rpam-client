@@ -2869,7 +2869,7 @@ html {
 .guidance-hero,
 .uptraining-hero {
   position: relative;
-  background: linear-gradient(135deg, #1b2e2a 0%, #243f3a 50%, #2f544e 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e2d4a 60%, #162038 100%);
   min-height: 320px;
   display: flex;
   align-items: center;
@@ -2878,12 +2878,12 @@ html {
 
 .guidance-hero .hero-overlay {
   background: url("images/self-know.jpg") center/cover;
-  opacity: 0.15;
+  opacity: 0.25;
 }
 
 .uptraining-hero .hero-overlay {
   background: url("images/banner.jpg") center/cover;
-  opacity: 0.15;
+  opacity: 0.25;
 }
 
 .guidance-hero .hero-overlay,

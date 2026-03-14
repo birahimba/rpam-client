@@ -295,6 +295,11 @@
 
 /* Connect Button - Secondary CTA */
 .btn-connect-modern {
+    display: none !important;
+}
+
+/* TEMP DISABLED - remove the rule above to re-enable */
+.btn-connect-modern-active {
     display: inline-flex;
     align-items: center;
     gap: 8px;

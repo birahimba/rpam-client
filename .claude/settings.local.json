@@ -10,7 +10,8 @@
       "Bash(npm run dev:*)",
       "Bash(perl -i -0777 -pe:*)",
       "Bash(/usr/bin/perl:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(grep -n \"AIzaSyCA56KqSJ11nQUw_tXgXyNMiPmQeM7EaSA\" /Users/user/Desktop/RPAM-PROJECT/rpam-client/*.html)"
     ]
   }
 }

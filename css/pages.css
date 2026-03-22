@@ -71,6 +71,17 @@
   );
 }
 
+@media (max-width: 575px) {
+  .slide-overlay-dark {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+}
+
 .hero-content {
   position: relative;
   z-index: 10;
@@ -110,7 +121,7 @@
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
   margin-bottom: 35px;
@@ -3711,5 +3722,312 @@ html {
 
   .final-cta {
     padding: 35px 25px;
+  }
+}
+
+/* ============================================
+   HERO IDENTITY BADGE
+   ============================================ */
+.hero-identity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(236, 171, 35, 0.2);
+  border: 1px solid rgba(236, 171, 35, 0.5);
+  color: #ecab23;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.hero-identity-badge i {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 575px) {
+  .hero-identity-badge {
+    display: none;
+  }
+}
+
+/* ============================================
+   SECTION POUR QUI
+   ============================================ */
+.for-who-strip {
+  background: #f4f7f9;
+  border-top: 1px solid #e5eaef;
+  border-bottom: 1px solid #e5eaef;
+  padding: 22px 0;
+}
+
+.for-who-strip .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.for-who-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #005153;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.for-who-items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  flex: 1;
+}
+
+.for-who-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #1e3238;
+}
+
+.for-who-item i {
+  color: #ecab23;
+  font-size: 0.9rem;
+}
+
+.for-who-separator {
+  width: 1px;
+  height: 20px;
+  background: #cdd5da;
+}
+
+@media (max-width: 768px) {
+  .for-who-strip .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .for-who-items {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .for-who-separator {
+    display: none;
+  }
+
+  .for-who-item {
+    padding: 0;
+  }
+}
+
+/* ============================================
+   MOBILE READABILITY — corrections globales
+   Cible : smartphones (≤ 575px)
+   Standard : corps ≥ 16px, secondaire ≥ 14px,
+              line-height 1.6–1.7
+   ============================================ */
+@media (max-width: 575px) {
+
+  /* Corps général */
+  body {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Hero — alignement et respiration */
+  .hero-content {
+    text-align: left;
+    padding: 100px 12px 60px 0;
+    max-width: 100%;
+  }
+
+  .hero-swiper .container,
+  .hero-swiper .swiper-slide .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  /* Section "Pour qui" */
+  .for-who-label {
+    font-size: 0.88rem;
+  }
+  .for-who-item {
+    font-size: 0.95rem;
+  }
+
+  /* Badges / étiquettes */
+  .services-badge,
+  .section-badge,
+  .hero-tag {
+    font-size: 0.8rem;
+  }
+
+  /* Titres de section */
+  .services-main-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .services-subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  /* Cartes services */
+  .service-card-description {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .service-features li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Section "Pourquoi nous choisir" */
+  .item-text h6 {
+    font-size: 1rem;
+  }
+
+  .item-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Cartes valeurs */
+  .value-card h5,
+  .value-card h6 {
+    font-size: 1rem;
+  }
+
+  .value-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* Section article à la une */
+  .featured-article .featured-title {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .featured-article .featured-excerpt {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .featured-article .featured-meta {
+    font-size: 0.88rem;
+  }
+
+  /* Blog — cartes */
+  .blog-card-title {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  .blog-card-excerpt {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .blog-card-meta {
+    font-size: 0.85rem;
+  }
+
+  /* Article — contenu */
+  .article-content {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .article-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .article-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .article-content h2 {
+    font-size: 1.35rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.15rem;
+  }
+
+  /* Booking */
+  .booking-hero .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .booking-hero .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  /* Pages services (guidance, up-training, job-getting) */
+  .guidance-hero .hero-title,
+  .uptraining-hero .hero-title {
+    font-size: 2rem;
+  }
+
+  .guidance-hero .hero-subtitle,
+  .uptraining-hero .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  /* Boutons — lisibilité */
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    font-size: 1rem;
   }
 }

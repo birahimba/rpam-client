@@ -1389,6 +1389,13 @@
   overflow: hidden;
 }
 
+@media (max-width: 575px) {
+  #cal-booking-container {
+    min-height: 500px;
+    border-radius: 8px;
+  }
+}
+
 /* Contact Alternative */
 .contact-alternative {
   background: #f8f9fa;
@@ -3830,6 +3837,29 @@ html {
 
   .for-who-item {
     padding: 0;
+  }
+}
+
+/* ============================================
+   NEWSLETTER BUTTON — touch target
+   ============================================ */
+.newsletter-style-02 .btn-sm {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+@media (max-width: 575px) {
+  .newsletter-style-02 .form-control {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .newsletter-style-02 .btn-sm {
+    min-height: 44px;
+    padding: 10px 14px;
   }
 }
 

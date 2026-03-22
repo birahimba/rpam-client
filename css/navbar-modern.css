@@ -101,6 +101,12 @@
     transition: var(--transition-smooth);
 }
 
+@media (max-width: 575px) {
+    .navbar-logo img {
+        height: 40px;
+    }
+}
+
 .navbar-modern.scrolled .navbar-logo img {
     height: 45px;
 }
@@ -332,33 +338,34 @@
    ============================================ */
 .hamburger-modern {
     display: none;
-    width: 32px;
-    height: 24px;
+    width: 44px;
+    height: 44px;
     position: relative;
     cursor: pointer;
     z-index: 1002;
+    border-radius: 8px;
 }
 
 .hamburger-line {
     position: absolute;
-    width: 100%;
-    height: 3px;
+    width: 26px;
+    left: 9px;
+    height: 2px;
     background: #333;
     border-radius: 3px;
     transition: var(--transition-smooth);
 }
 
 .hamburger-line:nth-child(1) {
-    top: 0;
+    top: 13px;
 }
 
 .hamburger-line:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
+    top: 21px;
 }
 
 .hamburger-line:nth-child(3) {
-    bottom: 0;
+    top: 29px;
 }
 
 /* Hamburger Active State */
@@ -430,13 +437,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 18px 12px;
     font-size: 24px;
     font-weight: 700;
     color: #333;
     text-decoration: none;
     border-bottom: 1px solid #eee;
     transition: var(--transition-smooth);
+    min-height: 60px;
 }
 
 .mobile-nav-link:hover,
@@ -471,14 +479,14 @@
 }
 
 .mobile-submenu-item {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .mobile-submenu-link {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 15px;
+    padding: 18px;
     background: var(--white);
     border-radius: 10px;
     text-decoration: none;
@@ -551,7 +559,7 @@
 .mobile-contact-info {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #eee;
@@ -563,7 +571,8 @@
     gap: 10px;
     color: #666;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
+    min-height: 44px;
 }
 
 .mobile-contact-info a i {
@@ -620,7 +629,8 @@
 @media (max-width: 576px) {
     .mobile-nav-link {
         font-size: 20px;
-        padding: 16px 0;
+        padding: 16px 12px;
+        min-height: 56px;
     }
 
     .mobile-menu-modern {

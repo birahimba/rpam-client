@@ -1,0 +1,48 @@
+# RPAM
+
+> RPAM est un cabinet français spécialisé en coaching professionnel, orientation de carrière et développement des compétences. Le cabinet accompagne professionnels et étudiants en France dans leurs projets de reconversion, de montée en compétences et de recherche d'emploi.
+
+## À propos
+
+RPAM est un cabinet de coaching professionnel basé en France, proposant un accompagnement personnalisé pour les personnes souhaitant évoluer dans leur carrière, se reconvertir, ou décrocher un emploi. Le cabinet opère en présentiel et à distance.
+
+- Site web : https://www.rpam.fr
+- Email : contact@rpam.fr
+- LinkedIn : https://www.linkedin.com/company/rpam
+- Langue : Français
+- Pays desservis : France (et francophonie à distance)
+
+## Services
+
+### Guidance – Bilan de compétences & orientation professionnelle
+Accompagnement pour clarifier son projet professionnel : bilan de compétences, définition d'objectifs de carrière, plan d'action personnalisé, orientation professionnelle, accompagnement à la reconversion.
+URL : https://www.rpam.fr/guidance
+
+### Up Training – Formation professionnelle sur mesure
+Développement des compétences techniques et comportementales : formations sur mesure, coaching personnalisé, développement des soft skills, préparation aux défis du marché de l'emploi.
+URL : https://www.rpam.fr/up-training
+
+### Job Getting – Coaching emploi
+Accompagnement à la recherche d'emploi : optimisation de CV et profil LinkedIn, préparation aux entretiens d'embauche, stratégie de recherche d'emploi personnalisée, coaching entretien.
+URL : https://www.rpam.fr/job-getting
+
+## Pages principales
+
+- [Accueil](https://www.rpam.fr/) : Présentation générale du cabinet et de ses services
+- [Services](https://www.rpam.fr/services) : Vue d'ensemble des 3 offres RPAM
+- [À propos](https://www.rpam.fr/about) : L'équipe, la mission et les valeurs du cabinet
+- [Blog](https://www.rpam.fr/blogs) : Articles conseils sur l'orientation, le coaching et l'emploi
+- [Actualités](https://www.rpam.fr/news) : Tendances du marché de l'emploi et conseils pratiques
+- [Réserver](https://www.rpam.fr/booking) : Réservation d'une consultation gratuite
+
+## Thématiques couvertes
+
+- Bilan de compétences
+- Reconversion professionnelle
+- Orientation professionnelle adulte
+- Coaching emploi et recherche d'emploi
+- Optimisation de CV et profil LinkedIn
+- Préparation aux entretiens d'embauche
+- Formation professionnelle continue
+- Développement des soft skills
+- Accompagnement à la mobilité professionnelle

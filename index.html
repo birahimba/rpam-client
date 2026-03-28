@@ -19,21 +19,46 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": ["Organization", "ProfessionalService"],
       "name": "RPAM",
       "url": "https://www.rpam.fr",
       "logo": "https://www.rpam.fr/images/logo-rpam.png",
-      "description": "Cabinet de coaching et orientation professionnelle en France",
+      "description": "Cabinet de coaching professionnel en France spécialisé en bilan de compétences, reconversion professionnelle, formation sur mesure et coaching emploi.",
       "email": "contact@rpam.fr",
       "address": { "@type": "PostalAddress", "addressCountry": "FR" },
+      "areaServed": [
+        { "@type": "Country", "name": "France" }
+      ],
+      "availableLanguage": "French",
       "sameAs": ["https://www.linkedin.com/company/rpam"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@rpam.fr",
+        "availableLanguage": "French"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Services RPAM",
         "itemListElement": [
-          { "@type": "Offer", "name": "Guidance – Orientation professionnelle", "url": "https://www.rpam.fr/guidance" },
-          { "@type": "Offer", "name": "Up Training – Développement de compétences", "url": "https://www.rpam.fr/up-training" },
-          { "@type": "Offer", "name": "Job Getting – Coaching emploi", "url": "https://www.rpam.fr/job-getting" }
+          {
+            "@type": "Offer",
+            "name": "Guidance – Bilan de compétences & orientation professionnelle",
+            "url": "https://www.rpam.fr/guidance",
+            "description": "Bilan de compétences, définition de projet professionnel et plan d'action pour votre reconversion."
+          },
+          {
+            "@type": "Offer",
+            "name": "Up Training – Formation professionnelle sur mesure",
+            "url": "https://www.rpam.fr/up-training",
+            "description": "Formations sur mesure, développement des compétences techniques et soft skills."
+          },
+          {
+            "@type": "Offer",
+            "name": "Job Getting – Coaching emploi & entretiens",
+            "url": "https://www.rpam.fr/job-getting",
+            "description": "Optimisation CV et LinkedIn, préparation aux entretiens d'embauche, stratégie de recherche d'emploi."
+          }
         ]
       }
     }

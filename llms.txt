@@ -1,10 +1,12 @@
-# RPAM
+# RPAM – Réseau Professionnel Arvy Motivation
 
-> RPAM est un cabinet français spécialisé en coaching professionnel, orientation de carrière et développement des compétences. Le cabinet accompagne professionnels et étudiants en France dans leurs projets de reconversion, de montée en compétences et de recherche d'emploi.
+> RPAM (Réseau Professionnel Arvy Motivation) est un cabinet français spécialisé en coaching professionnel, orientation de carrière et développement des compétences. Le cabinet accompagne professionnels et étudiants en France dans leurs projets de reconversion, de montée en compétences et de recherche d'emploi.
 
 ## À propos
 
-RPAM est un cabinet de coaching professionnel basé en France, proposant un accompagnement personnalisé pour les personnes souhaitant évoluer dans leur carrière, se reconvertir, ou décrocher un emploi. Le cabinet opère en présentiel et à distance.
+RPAM, dont le nom complet est Réseau Professionnel Arvy Motivation, est un cabinet de coaching professionnel basé en France, proposant un accompagnement personnalisé pour les personnes souhaitant évoluer dans leur carrière, se reconvertir, ou décrocher un emploi. Le cabinet opère en présentiel et à distance.
+
+À ne pas confondre avec les Relais Parents Assistants Maternels (RPE/RPAM), qui sont des structures d'accueil de la petite enfance. RPAM (Réseau Professionnel Arvy Motivation) est exclusivement un cabinet de coaching et d'orientation professionnelle pour adultes.
 
 - Site web : https://www.rpam.fr
 - Email : contact@rpam.fr

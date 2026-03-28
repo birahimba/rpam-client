@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="css/responsive.min.css">
     <link rel="stylesheet" href="css/corporate.css">
     <link rel="stylesheet" href="css/navbar-modern.css">
-    <link rel="canonical" id="canonical-url" href="">
+    <link rel="canonical" id="canonical-url" href="https://www.rpam.fr/blog-post">
 
     <!-- DOMPurify pour la sanitisation XSS -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
@@ -1094,7 +1094,7 @@
                                 <img src="${escapeHtml(sanitizedCoverImage)}" alt="${escapeHtml(post.title)}" class="related-article-thumb" onerror="this.src='images/default-blog-cover.jpg'">
                                 <div class="related-article-content">
                                     <h4>
-                                        <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
+                                        <a href="blog-post?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
                                     </h4>
                                     <div class="related-article-meta">
                                         <i class="feather icon-feather-calendar" style="font-size: 0.75rem;"></i> ${escapeHtml(date)}

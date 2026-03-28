@@ -631,7 +631,7 @@
                             <i class="feather icon-feather-star"></i> Article à la une
                         </span>
                         <h2 class="featured-title">
-                            <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
+                            <a href="blog-post?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
                         </h2>
                         <p class="featured-excerpt">${escapeHtml(post.brief)}</p>
                         <div class="featured-meta">
@@ -639,7 +639,7 @@
                             ${post.readTimeInMinutes ? `<span><i class="feather icon-feather-clock"></i> ${post.readTimeInMinutes} min de lecture</span>` : ''}
                             ${post.reactionCount ? `<span><i class="feather icon-feather-heart"></i> ${post.reactionCount} likes</span>` : ''}
                         </div>
-                        <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="read-more-btn">
+                        <a href="blog-post?slug=${encodeURIComponent(post.slug)}" class="read-more-btn">
                             Lire l'article <i class="feather icon-feather-arrow-right"></i>
                         </a>
                     </div>
@@ -700,7 +700,7 @@
                     <article class="${cardClass}" data-aos="fade-up" data-aos-duration="600" data-aos-delay="${aosDelay}">
                         <div class="blog-card-inner">
                             <div class="blog-card-image">
-                                <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">
+                                <a href="blog-post?slug=${encodeURIComponent(post.slug)}">
                                     <img src="${escapeHtml(coverImage)}" alt="${escapeHtml(post.title)}" onerror="this.src='images/default-blog-cover.jpg'" loading="lazy">
                                 </a>
                                 ${post.tags && post.tags[0] ? `<span class="blog-card-category">${escapeHtml(post.tags[0].name)}</span>` : ''}
@@ -712,14 +712,14 @@
                                     ${post.reactionCount ? `<span><i class="feather icon-feather-heart"></i> ${post.reactionCount}</span>` : ''}
                                 </div>
                                 <h3 class="blog-card-title">
-                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
+                                    <a href="blog-post?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
                                 </h3>
                                 <p class="blog-card-excerpt">${escapeHtml(post.brief)}</p>
                                 <div class="blog-card-footer">
                                     <div class="blog-card-tags">
                                         ${tagsHTML}
                                     </div>
-                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="blog-card-link">
+                                    <a href="blog-post?slug=${encodeURIComponent(post.slug)}" class="blog-card-link">
                                         Lire <i class="feather icon-feather-arrow-right"></i>
                                     </a>
                                 </div>
@@ -761,7 +761,7 @@
                     <div class="popular-article-item">
                         <span class="popular-article-number">0${index + 1}</span>
                         <div class="popular-article-content">
-                            <h6><a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title.length > 50 ? post.title.substring(0, 50) + '...' : post.title)}</a></h6>
+                            <h6><a href="blog-post?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title.length > 50 ? post.title.substring(0, 50) + '...' : post.title)}</a></h6>
                             <small><i class="feather icon-feather-calendar"></i> ${escapeHtml(date)} ${post.reactionCount ? `· <i class="feather icon-feather-heart"></i> ${post.reactionCount}` : ''}</small>
                         </div>
                     </div>

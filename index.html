@@ -835,7 +835,7 @@
                                     <i class="feather icon-feather-star"></i> Article à la une
                                 </span>
                                 <h2 class="featured-title">
-                                    <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
+                                    <a href="blog-post?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
                                 </h2>
                                 <p class="featured-excerpt">${escapeHtml(post.brief)}</p>
                                 <div class="featured-meta">
@@ -843,7 +843,7 @@
                                     ${post.readTimeInMinutes ? `<span><i class="feather icon-feather-clock"></i> ${post.readTimeInMinutes} min de lecture</span>` : ''}
                                     ${post.reactionCount ? `<span><i class="feather icon-feather-heart"></i> ${post.reactionCount} likes</span>` : ''}
                                 </div>
-                                <a href="blog-post.html?slug=${encodeURIComponent(post.slug)}" class="read-more-btn">
+                                <a href="blog-post?slug=${encodeURIComponent(post.slug)}" class="read-more-btn">
                                     Lire l'article <i class="feather icon-feather-arrow-right"></i>
                                 </a>
                             </div>

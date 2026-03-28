@@ -890,6 +890,102 @@
         });
     </script>
 
+    <!-- Section liste d'attente RPAM Connect -->
+    <section id="rpam-connect" style="background: linear-gradient(135deg, #0d2535 0%, #003d3f 50%, #0d2535 100%); padding: 90px 0;">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8 col-md-10">
+                    <!-- Badge -->
+                    <div class="mb-4">
+                        <span style="display: inline-block; background: rgba(236,171,35,0.15); color: #ecab23; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 18px; border-radius: 50px; border: 1px solid rgba(236,171,35,0.35);">
+                            Bientôt disponible
+                        </span>
+                    </div>
+
+                    <!-- Titre -->
+                    <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: #ffffff; margin-bottom: 8px; line-height: 1.1;">
+                        RPAM <span style="color: #ecab23;">Connect</span>
+                    </h2>
+                    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;">
+                        <span style="background: rgba(0,81,83,0.5); color: #7ecece; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(0,81,83,0.8);">HRTech</span>
+                        <span style="background: rgba(0,81,83,0.5); color: #7ecece; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(0,81,83,0.8);">IA + Coaching humain</span>
+                        <span style="background: rgba(0,81,83,0.5); color: #7ecece; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(0,81,83,0.8);">France & Afrique francophone</span>
+                    </div>
+
+                    <!-- Description -->
+                    <p style="font-size: 1.15rem; color: rgba(255,255,255,0.8); margin-bottom: 12px; line-height: 1.7;">
+                        La première plateforme combinant <strong style="color: #fff;">intelligence artificielle et coaching humain</strong> pour accompagner chaque actif dans son évolution professionnelle.
+                    </p>
+                    <p style="font-size: 0.95rem; color: rgba(236,171,35,0.85); margin-bottom: 40px; font-style: italic;">
+                        "L'IA ne remplace pas le coach humain — elle le rend 4 fois plus efficace."
+                    </p>
+
+                    <!-- Formulaire liste d'attente -->
+                    <form id="waitlist-form" style="max-width: 500px; margin: 0 auto 20px;">
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                            <input
+                                type="email"
+                                id="waitlist-email"
+                                name="email"
+                                placeholder="Votre adresse email"
+                                required
+                                style="flex: 1; min-width: 220px; padding: 14px 20px; border-radius: 50px; border: none; font-size: 15px; outline: none; background: rgba(255,255,255,0.95); color: #0d2535; font-weight: 500;"
+                            >
+                            <button
+                                type="submit"
+                                style="padding: 14px 28px; border-radius: 50px; border: none; background: #005153; color: #fff; font-weight: 700; font-size: 15px; cursor: pointer; white-space: nowrap; transition: background 0.2s;"
+                                onmouseover="this.style.background='#ecab23'; this.style.color='#0d2535';"
+                                onmouseout="this.style.background='#005153'; this.style.color='#fff';"
+                            >
+                                Rejoindre la liste d'attente
+                            </button>
+                        </div>
+                        <div id="waitlist-success" style="display:none; margin-top: 16px; color: #6ee7b7; font-weight: 600; font-size: 15px;">
+                            ✓ Vous êtes inscrit(e) ! Nous vous contacterons en priorité lors du lancement.
+                        </div>
+                        <div id="waitlist-error" style="display:none; margin-top: 16px; color: #fca5a5; font-size: 14px;">
+                            Une erreur s'est produite. Contactez-nous à contact@rpam.fr
+                        </div>
+                    </form>
+
+                    <p style="color: rgba(255,255,255,0.35); font-size: 12px;">
+                        Aucun spam. Nous vous notifions uniquement lors du lancement.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('waitlist-email').value;
+            const btn = this.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Inscription...';
+
+            fetch('https://formspree.io/f/mojpjpwq', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ email: email, source: 'RPAM Connect waitlist' })
+            })
+            .then(r => {
+                if (r.ok) {
+                    document.getElementById('waitlist-success').style.display = 'block';
+                    document.getElementById('waitlist-email').value = '';
+                } else {
+                    document.getElementById('waitlist-error').style.display = 'block';
+                }
+            })
+            .catch(() => {
+                document.getElementById('waitlist-error').style.display = 'block';
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.textContent = 'Rejoindre la liste d\'attente';
+            });
+        });
+        </script>
+    </section>
+
     <footer class="footer-dark bg-dark-gray pt-2 pb-2 lg-pb-35px">
 
         <div class="container">

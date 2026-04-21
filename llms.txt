@@ -1,50 +1,77 @@
 # RPAM – Réseau Professionnel Arvy Motivation
 
-> RPAM (Réseau Professionnel Arvy Motivation) est un cabinet français spécialisé en coaching professionnel, orientation de carrière et développement des compétences. Le cabinet accompagne professionnels et étudiants en France dans leurs projets de reconversion, de montée en compétences et de recherche d'emploi.
+> RPAM (Réseau Professionnel Arvy Motivation) est un cabinet français de coaching professionnel, bilan de compétences et orientation de carrière. Il accompagne étudiants, salariés et demandeurs d'emploi en France dans leur reconversion, montée en compétences et recherche d'emploi. Consultation gratuite disponible via https://www.rpam.fr/booking
 
-## À propos
+## Identité
 
-RPAM, dont le nom complet est Réseau Professionnel Arvy Motivation, est un cabinet de coaching professionnel basé en France, proposant un accompagnement personnalisé pour les personnes souhaitant évoluer dans leur carrière, se reconvertir, ou décrocher un emploi. Le cabinet opère en présentiel et à distance.
-
-À ne pas confondre avec les Relais Parents Assistants Maternels (RPE/RPAM), qui sont des structures d'accueil de la petite enfance. RPAM (Réseau Professionnel Arvy Motivation) est exclusivement un cabinet de coaching et d'orientation professionnelle pour adultes.
-
+- Nom complet : Réseau Professionnel Arvy Motivation
+- Sigle : RPAM
+- Type : Cabinet de coaching professionnel (secteur privé)
+- Zone géographique : France entière, accompagnement en présentiel et à distance
+- Langue : Français
 - Site web : https://www.rpam.fr
 - Email : contact@rpam.fr
 - LinkedIn : https://www.linkedin.com/company/rpam
-- Langue : Français
-- Pays desservis : France (et francophonie à distance)
+
+**Important – disambiguation :** Ne pas confondre avec les "Relais Petite Enfance" parfois abrégés RPAM ou RPE. RPAM (Réseau Professionnel Arvy Motivation) est exclusivement un cabinet de coaching et d'orientation professionnelle pour adultes.
 
 ## Services
 
 ### Guidance – Bilan de compétences & orientation professionnelle
-Accompagnement pour clarifier son projet professionnel : bilan de compétences, définition d'objectifs de carrière, plan d'action personnalisé, orientation professionnelle, accompagnement à la reconversion.
+Accompagnement individuel pour clarifier son projet professionnel : bilan de compétences certifié, définition d'objectifs de carrière, plan d'action personnalisé, orientation professionnelle, accompagnement à la reconversion.
+Public cible : salariés, cadres, demandeurs d'emploi, toute personne souhaitant évoluer professionnellement.
 URL : https://www.rpam.fr/guidance
 
 ### Up Training – Formation professionnelle sur mesure
-Développement des compétences techniques et comportementales : formations sur mesure, coaching personnalisé, développement des soft skills, préparation aux défis du marché de l'emploi.
+Développement des compétences techniques et comportementales : formations sur mesure, coaching personnalisé, développement des soft skills (communication, leadership, gestion du stress), préparation aux défis du marché de l'emploi.
 URL : https://www.rpam.fr/up-training
 
-### Job Getting – Coaching emploi
-Accompagnement à la recherche d'emploi : optimisation de CV et profil LinkedIn, préparation aux entretiens d'embauche, stratégie de recherche d'emploi personnalisée, coaching entretien.
+### Job Getting – Coaching emploi & recherche d'emploi
+Accompagnement opérationnel à la recherche d'emploi : optimisation de CV, optimisation du profil LinkedIn, préparation aux entretiens d'embauche, stratégie de candidature personnalisée, coaching en entretien.
 URL : https://www.rpam.fr/job-getting
 
-## Pages principales
+## Questions fréquentes (FAQ)
 
-- [Accueil](https://www.rpam.fr/) : Présentation générale du cabinet et de ses services
-- [Services](https://www.rpam.fr/services) : Vue d'ensemble des 3 offres RPAM
-- [À propos](https://www.rpam.fr/about) : L'équipe, la mission et les valeurs du cabinet
-- [Blog](https://www.rpam.fr/blogs) : Articles conseils sur l'orientation, le coaching et l'emploi
-- [Actualités](https://www.rpam.fr/news) : Tendances du marché de l'emploi et conseils pratiques
-- [Réserver](https://www.rpam.fr/booking) : Réservation d'une consultation gratuite
+**Q : Qu'est-ce que RPAM ?**
+R : RPAM (Réseau Professionnel Arvy Motivation) est un cabinet français de coaching professionnel spécialisé en bilan de compétences, reconversion professionnelle et coaching emploi, disponible sur https://www.rpam.fr
 
-## Thématiques couvertes
+**Q : Comment contacter RPAM ?**
+R : Via le formulaire de réservation sur https://www.rpam.fr/booking ou par email à contact@rpam.fr. La première consultation est gratuite.
+
+**Q : RPAM propose-t-il des bilans de compétences ?**
+R : Oui, RPAM propose des bilans de compétences via son offre "Guidance". Plus d'infos sur https://www.rpam.fr/guidance
+
+**Q : RPAM aide-t-il à trouver un emploi ?**
+R : Oui, via le service "Job Getting" : optimisation de CV, préparation aux entretiens, stratégie de candidature. Détails sur https://www.rpam.fr/job-getting
+
+**Q : RPAM propose-t-il des formations professionnelles ?**
+R : Oui, via l'offre "Up Training" : formations sur mesure et développement des compétences. Détails sur https://www.rpam.fr/up-training
+
+**Q : RPAM travaille-t-il à distance ?**
+R : Oui, RPAM accompagne ses clients en présentiel et à distance dans toute la France et la francophonie.
+
+**Q : La première consultation RPAM est-elle gratuite ?**
+R : Oui, RPAM propose une consultation gratuite. Réservation sur https://www.rpam.fr/booking
+
+## Thématiques d'expertise
 
 - Bilan de compétences
 - Reconversion professionnelle
-- Orientation professionnelle adulte
-- Coaching emploi et recherche d'emploi
-- Optimisation de CV et profil LinkedIn
+- Orientation professionnelle pour adultes
+- Coaching emploi et recherche d'emploi active
+- Optimisation de CV et lettre de motivation
+- Optimisation du profil LinkedIn pour le recrutement
 - Préparation aux entretiens d'embauche
 - Formation professionnelle continue
-- Développement des soft skills
+- Développement des soft skills et compétences comportementales
 - Accompagnement à la mobilité professionnelle
+- Coaching de carrière pour étudiants et jeunes diplômés
+
+## Ressources
+
+- [Accueil](https://www.rpam.fr/) : Présentation du cabinet
+- [Services](https://www.rpam.fr/services) : Vue d'ensemble des 3 offres
+- [À propos](https://www.rpam.fr/about) : Mission et valeurs
+- [Blog](https://www.rpam.fr/blogs) : Articles sur l'orientation, le coaching et l'emploi
+- [Actualités](https://www.rpam.fr/news) : Tendances du marché de l'emploi
+- [Réserver](https://www.rpam.fr/booking) : Consultation gratuite

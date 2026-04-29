@@ -66,21 +66,21 @@
 
     <!-- Articles de blog (3 articles) -->
     <url>
-        <loc>https://www.rpam.fr/blog-post?slug=du-premier-jour-a-limpact-reel-transformer-son-apprentissage-en-valeur-en-entreprise</loc>
+        <loc>https://www.rpam.fr/blog/du-premier-jour-a-limpact-reel-transformer-son-apprentissage-en-valeur-en-entreprise</loc>
         <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
 
     <url>
-        <loc>https://www.rpam.fr/blog-post?slug=le-grand-saut-du-savoir-a-laction-en-entreprise</loc>
+        <loc>https://www.rpam.fr/blog/le-grand-saut-du-savoir-a-laction-en-entreprise</loc>
         <lastmod>2026-01-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
 
     <url>
-        <loc>https://www.rpam.fr/blog-post?slug=lintegration-en-entreprise-pour-debutants-reussir-ses-premiers-pas-professionnels</loc>
+        <loc>https://www.rpam.fr/blog/lintegration-en-entreprise-pour-debutants-reussir-ses-premiers-pas-professionnels</loc>
         <lastmod>2026-01-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>

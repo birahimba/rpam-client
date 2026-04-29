@@ -23,8 +23,16 @@ const BOT_AGENTS = [
 export default function middleware(request) {
     const url = new URL(request.url);
 
-    // Only intercept /blog-post pages with a slug
-    if (!url.pathname.match(/^\/blog-post(\.html)?$/) || !url.searchParams.get('slug')) {
+    // Extract slug from /blog/:slug path or ?slug= query param
+    let slug = null;
+    const cleanPathMatch = url.pathname.match(/^\/blog\/([a-zA-Z0-9-_]+)$/);
+    if (cleanPathMatch) {
+        slug = cleanPathMatch[1];
+    } else if (url.pathname.match(/^\/blog-post(\.html)?$/)) {
+        slug = url.searchParams.get('slug');
+    }
+
+    if (!slug) {
         return;
     }
 
@@ -41,11 +49,11 @@ export default function middleware(request) {
 
     // Rewrite bot requests to the prerender API
     const prerenderUrl = new URL('/api/blog-prerender', request.url);
-    prerenderUrl.searchParams.set('slug', url.searchParams.get('slug'));
+    prerenderUrl.searchParams.set('slug', slug);
 
     return fetch(prerenderUrl);
 }
 
 export const config = {
-    matcher: ['/blog-post', '/blog-post.html']
+    matcher: ['/blog/:slug*', '/blog-post', '/blog-post.html']
 };

@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="css/responsive.min.css">
     <link rel="stylesheet" href="css/corporate.css">
     <link rel="stylesheet" href="css/navbar-modern.css">
-    <link rel="canonical" id="canonical-url" href="https://www.rpam.fr/blog-post">
+    <link rel="canonical" id="canonical-url" href="">
 
     <!-- DOMPurify pour la sanitisation XSS -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
@@ -484,8 +484,11 @@
         };
 
         async function loadArticle() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const slug = urlParams.get('slug');
+            // Support clean URL /blog/:slug and legacy ?slug= query param
+            const cleanPathMatch = window.location.pathname.match(/^\/blog\/([a-zA-Z0-9-_]+)$/);
+            const slug = cleanPathMatch
+                ? cleanPathMatch[1]
+                : new URLSearchParams(window.location.search).get('slug');
 
             // Valider le slug (seulement alphanumérique, tirets et underscores)
             if (!slug || !/^[a-zA-Z0-9-_]+$/.test(slug) || slug.length > 200) {
@@ -578,7 +581,7 @@
         }
 
         function displayArticle(post) {
-            const articleUrl = 'https://www.rpam.fr/blog-post?slug=' + encodeURIComponent(post.slug);
+            const articleUrl = 'https://www.rpam.fr/blog/' + encodeURIComponent(post.slug);
             const briefText = post.brief ? post.brief.substring(0, 160) : '';
 
             // Mettre à jour les meta tags

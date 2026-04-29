@@ -63,7 +63,7 @@ async function generateSitemap() {
     const blogEntries = posts.map(({ node: post }) => {
         const lastmod = post.publishedAt.split('T')[0];
         return urlEntry({
-            loc: `/blog-post?slug=${post.slug}`,
+            loc: `/blog/${post.slug}`,
             lastmod,
             changefreq: 'monthly',
             priority: '0.75'

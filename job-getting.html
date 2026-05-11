@@ -13,9 +13,11 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.rpam.fr/job-getting">
     <meta property="og:image" content="https://www.rpam.fr/images/og-rpam.jpg">
+    <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Job Getting – Coaching emploi, CV & entretiens | RPAM">
     <meta name="twitter:description" content="Coaching emploi RPAM : optimisation CV et LinkedIn, préparation aux entretiens et stratégie de recherche d'emploi personnalisée.">
+    <meta name="twitter:image" content="https://www.rpam.fr/images/og-rpam.jpg">
     <script type="application/ld+json">
     [
       {
@@ -65,6 +67,17 @@
       }
     ]
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.rpam.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.rpam.fr/services" },
+        { "@type": "ListItem", "position": 3, "name": "Job Getting – Coaching Emploi", "item": "https://www.rpam.fr/job-getting" }
+      ]
+    }
+    </script>
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -97,27 +110,27 @@
             <div class="navbar-container">
 
                 <!-- Logo -->
-                <a href="index.html" class="navbar-logo">
+                <a href="/" class="navbar-logo">
                     <img src="images/logo-rpam.png" alt="RPAM">
                 </a>
 
                 <!-- Navigation Desktop -->
                 <ul class="nav-menu-desktop">
                     <li class="nav-item-modern">
-                        <a href="index.html" class="nav-link-modern ">Accueil</a>
+                        <a href="/" class="nav-link-modern ">Accueil</a>
                     </li>
                     <li class="nav-item-modern">
-                        <a href="about.html" class="nav-link-modern">Qui sommes-nous</a>
+                        <a href="/about" class="nav-link-modern">Qui sommes-nous</a>
                     </li>
                     <li class="nav-item-modern">
-                        <a href="services.html" class="nav-link-modern active">
+                        <a href="/services" class="nav-link-modern active">
                             Nos Services
                             <i class="fas fa-chevron-down dropdown-arrow"></i>
                         </a>
                         <!-- Mega Menu -->
                         <div class="mega-menu">
                             <div class="mega-menu-grid">
-                                <a href="guidance.html" class="mega-menu-item">
+                                <a href="/guidance" class="mega-menu-item">
                                     <div class="mega-menu-icon">
                                         <i class="fas fa-compass text-white" style="font-size:20px;"></i>
                                     </div>
@@ -126,7 +139,7 @@
                                         <p>Guidance pour trouver votre voie et définir vos objectifs de carrière</p>
                                     </div>
                                 </a>
-                                <a href="up-training.html" class="mega-menu-item">
+                                <a href="/up-training" class="mega-menu-item">
                                     <div class="mega-menu-icon">
                                         <i class="fas fa-chart-line text-white" style="font-size:20px;"></i>
                                     </div>
@@ -135,7 +148,7 @@
                                         <p>Up Training pour acquérir les skills demandés sur le marché</p>
                                     </div>
                                 </a>
-                                <a href="job-getting.html" class="mega-menu-item">
+                                <a href="/job-getting" class="mega-menu-item">
                                     <div class="mega-menu-icon">
                                         <i class="fas fa-briefcase text-white" style="font-size:20px;"></i>
                                     </div>
@@ -148,10 +161,10 @@
                         </div>
                     </li>
                     <li class="nav-item-modern">
-                        <a href="blogs.html" class="nav-link-modern">Blog</a>
+                        <a href="/blogs" class="nav-link-modern">Blog</a>
                     </li>
                     <li class="nav-item-modern">
-                        <a href="news.html" class="nav-link-modern">Actualités</a>
+                        <a href="/news" class="nav-link-modern">Actualités</a>
                     </li>
                 </ul>
 
@@ -161,7 +174,7 @@
                         <i class="fas fa-sign-in-alt"></i>
                         Se connecter
                     </a>
-                    <a href="booking.html" class="btn-cta-modern">
+                    <a href="/booking" class="btn-cta-modern">
                         <i class="fas fa-calendar-alt"></i>
                         Réserver un rendez-vous
                     </a>
@@ -181,13 +194,13 @@
     <div class="mobile-menu-modern" id="mobileMenu">
         <ul class="mobile-nav-list">
             <li class="mobile-nav-item">
-                <a href="index.html" class="mobile-nav-link">Accueil</a>
+                <a href="/" class="mobile-nav-link">Accueil</a>
             </li>
             <li class="mobile-nav-item">
-                <a href="about.html" class="mobile-nav-link">Qui sommes-nous</a>
+                <a href="/about" class="mobile-nav-link">Qui sommes-nous</a>
             </li>
             <li class="mobile-nav-item">
-                <a href="services.html" class="mobile-nav-link active" id="servicesToggle">
+                <a href="/services" class="mobile-nav-link active" id="servicesToggle">
                     Nos Services
                     <i class="fas fa-chevron-down arrow"></i>
                 </a>
@@ -195,7 +208,7 @@
                 <div class="mobile-submenu" id="servicesSubmenu">
                     <ul class="mobile-submenu-list">
                         <li class="mobile-submenu-item">
-                            <a href="guidance.html" class="mobile-submenu-link">
+                            <a href="/guidance" class="mobile-submenu-link">
                                 <i class="fas fa-compass text-white" style="font-size:20px;"></i>
                                 <div class="submenu-text">
                                     <h5>Orientation Professionnelle</h5>
@@ -204,7 +217,7 @@
                             </a>
                         </li>
                         <li class="mobile-submenu-item">
-                            <a href="up-training.html" class="mobile-submenu-link">
+                            <a href="/up-training" class="mobile-submenu-link">
                                 <i class="fas fa-chart-line text-white" style="font-size:20px;"></i>
                                 <div class="submenu-text">
                                     <h5>Développement de Compétences</h5>
@@ -213,7 +226,7 @@
                             </a>
                         </li>
                         <li class="mobile-submenu-item">
-                            <a href="job-getting.html" class="mobile-submenu-link">
+                            <a href="/job-getting" class="mobile-submenu-link">
                                 <i class="fas fa-briefcase text-white" style="font-size:20px;"></i>
                                 <div class="submenu-text">
                                     <h5>Coaching Recherche d'Emploi</h5>
@@ -225,10 +238,10 @@
                 </div>
             </li>
             <li class="mobile-nav-item">
-                <a href="blogs.html" class="mobile-nav-link">Blog</a>
+                <a href="/blogs" class="mobile-nav-link">Blog</a>
             </li>
             <li class="mobile-nav-item">
-                <a href="news.html" class="mobile-nav-link">Actualités</a>
+                <a href="/news" class="mobile-nav-link">Actualités</a>
             </li>
         </ul>
 
@@ -238,7 +251,7 @@
                 <i class="fas fa-sign-in-alt"></i>
                 Se connecter
             </a>
-            <a href="booking.html" class="btn-cta-modern">
+            <a href="/booking" class="btn-cta-modern">
                 <i class="fas fa-calendar-alt"></i>
                 Réserver un rendez-vous
             </a>
@@ -266,14 +279,14 @@
                         <span class="hero-badge">
                             <i class="bi bi-briefcase"></i> Nos Services
                         </span>
-                        <h1 class="hero-title">JOB GETTING</h1>
-                        <p class="hero-subtitle">Coaching à la Recherche d'Emploi</p>
+                        <h1 class="hero-title">Job Getting – Coaching Emploi, CV &amp; Entretiens</h1>
+                        <p class="hero-subtitle">Optimisez votre candidature et décrochez le poste idéal</p>
                         <p class="hero-description">
                             Boostez votre candidature et décrochez des opportunités adaptées à votre projet
                             professionnel.
                         </p>
                         <div class="hero-actions">
-                            <a href="booking.html" class="btn-hero-primary">
+                            <a href="/booking" class="btn-hero-primary">
                                 <i class="bi bi-calendar-check"></i> Prendre rendez-vous
                             </a>
                             <a href="#content-start" class="btn-hero-secondary">
@@ -356,7 +369,7 @@
                             </div>
                             <h6>Besoin d'accompagnement ?</h6>
                             <p>Réservez une consultation gratuite avec nos experts.</p>
-                            <a href="booking.html" class="sidebar-cta-btn">
+                            <a href="/booking" class="sidebar-cta-btn">
                                 Prendre rendez-vous <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -364,11 +377,11 @@
                         <!-- Services liés -->
                         <div class="sidebar-related">
                             <h6>Autres services</h6>
-                            <a href="guidance.html" class="related-link">
+                            <a href="/guidance" class="related-link">
                                 <i class="bi bi-compass"></i>
                                 Guidance
                             </a>
-                            <a href="up-training.html" class="related-link">
+                            <a href="/up-training" class="related-link">
                                 <i class="bi bi-mortarboard"></i>
                                 Up Training
                             </a>
@@ -688,7 +701,7 @@
                             <h4>Ne laissez plus votre recherche d'emploi au hasard !</h4>
                             <p>Avec RPAM, maximisez vos chances de décrocher le job qui vous correspond !</p>
                             <p class="cta-highlight">Réservez votre consultation gratuite dès maintenant !</p>
-                            <a href="booking.html" class="cta-button">
+                            <a href="/booking" class="cta-button">
                                 <i class="bi bi-calendar-check"></i>
                                 Réservez maintenant
                             </a>
@@ -708,7 +721,7 @@
             <div class="row justify-content-center fs-17 fw-300 mt-5 mb-4 md-mt-45px md-mb-45px xs-mt-35px xs-mb-35px">
 
                 <div class="col-6 col-lg-3 order-sm-1 md-mb-40px xs-mb-30px last-paragraph-no-margin">
-                    <a href="index.html" class="footer-logo mb-15px d-inline-block"><img src="images/w-logo-rpam.png"
+                    <a href="/" class="footer-logo mb-15px d-inline-block"><img src="images/w-logo-rpam.png"
                             data-at2x="images/w-logo-rpam.png" alt="RPAM"></a>
                     <p class="w-85 xl-w-95 sm-w-100"></p>
                     <div class="elements-social social-icon-style-02 mt-20px lg-mt-20px">
@@ -732,10 +745,10 @@
                 <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
                     <span class="fs-18 fw-400 d-block text-white mb-5px">À propos</span>
                     <ul>
-                        <li><a href="about.html">Qui sommes-nous</a></li>
-                        <li><a href="guidance.html">Services</a></li>
-                        <li><a href="blogs.html">Blog</a></li>
-                        <li><a href="news.html">Actualités</a></li>
+                        <li><a href="/about">Qui sommes-nous</a></li>
+                        <li><a href="/guidance">Services</a></li>
+                        <li><a href="/blogs">Blog</a></li>
+                        <li><a href="/news">Actualités</a></li>
 
                     </ul>
                 </div>
@@ -743,9 +756,9 @@
                 <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-4 order-lg-3">
                     <span class="fs-18 fw-400 d-block text-white mb-5px">Services</span>
                     <ul>
-                        <li><a href="guidance.html">Orientation Professionnelle</a></li>
-                        <li><a href="up-training.html">Développement de Compétences</a></li>
-                        <li><a href="job-getting.html">Coaching à la recherche d'emploi</a></li>
+                        <li><a href="/guidance">Orientation Professionnelle</a></li>
+                        <li><a href="/up-training">Développement de Compétences</a></li>
+                        <li><a href="/job-getting">Coaching à la recherche d'emploi</a></li>
                         <li><a href="#">Consulting</a></li>
                     </ul>
                 </div>
@@ -788,7 +801,7 @@
             <div class="row align-items-center fs-16 fw-300">
 
                 <div class="col-md-4 last-paragraph-no-margin order-2 order-md-1 text-center text-md-start">
-                    <p>&COPY; Copyright 2025 <a href="index.html" target="_blank"
+                    <p>&COPY; Copyright 2025 <a href="/" target="_blank"
                             class="text-decoration-line-bottom text-white">RPAM</a></p>
                 </div>
 

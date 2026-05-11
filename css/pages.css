@@ -820,9 +820,10 @@
 
 .item-text p {
   margin: 0;
-  color: black;
+  color: #333;
   font-size: 1rem;
-  line-height: 1.5;
+  font-weight: 500;
+  line-height: 1.6;
 }
 
 @media (max-width: 991px) {
@@ -3957,33 +3958,42 @@ html {
 
   /* Section "Pourquoi nous choisir" */
   .item-text h6 {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
   }
 
   .item-text p {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
     line-height: 1.6;
   }
 
   /* Cartes valeurs */
   .value-card h5,
   .value-card h6 {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
   }
 
   .value-card p {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
     line-height: 1.65;
   }
 
   /* Section article à la une */
   .featured-article .featured-title {
     font-size: 1.35rem;
+    font-weight: 700;
     line-height: 1.3;
   }
 
   .featured-article .featured-excerpt {
     font-size: 1rem;
+    font-weight: 500;
+    color: #333;
     line-height: 1.65;
   }
 

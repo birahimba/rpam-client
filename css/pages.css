@@ -499,7 +499,8 @@
 
 .service-card-description {
   font-size: 1.1rem;
-  color: #666;
+  font-weight: 500;
+  color: #444;
   line-height: 1.7;
   margin-bottom: 20px;
 }
@@ -516,7 +517,8 @@
   gap: 10px;
   padding: 8px 0;
   font-size: 1rem;
-  color: #555;
+  font-weight: 500;
+  color: #333;
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -3941,11 +3943,15 @@ html {
   /* Cartes services */
   .service-card-description {
     font-size: 1rem;
+    font-weight: 500;
+    color: #444;
     line-height: 1.65;
   }
 
   .service-features li {
     font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
     line-height: 1.6;
   }
 

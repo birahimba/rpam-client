@@ -876,8 +876,9 @@ footer ul li {
 
 .service-card p {
   margin: 10px 0 0;
-  color: #555;
+  color: #444;
   font-size: 16px;
+  font-weight: 500;
 }
 
 /* Highlighted list */
@@ -1161,7 +1162,8 @@ footer ul li {
 
 .value-item p {
   font-size: 14px;
-  color: #666;
+  color: #444;
+  font-weight: 500;
 }
 
 .value-item:hover .icon-circle {

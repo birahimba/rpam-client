@@ -37,7 +37,7 @@ export default async function handler(req) {
             return new Response('Not found', { status: 404 });
         }
 
-        const articleUrl = `https://www.rpam.fr/blog-post?slug=${encodeURIComponent(post.slug)}`;
+        const articleUrl = `https://www.rpam.fr/blog/${post.slug}`;
         const description = (post.brief || '').substring(0, 160);
         const image = post.coverImage?.url || 'https://www.rpam.fr/images/og-rpam.jpg';
         const author = post.author?.name || 'RPAM';
@@ -92,13 +92,11 @@ export default async function handler(req) {
     })}
     </script>
 
-    <!-- Redirect browsers to the real page -->
-    <meta http-equiv="refresh" content="0;url=${escapeAttr(articleUrl)}">
 </head>
 <body>
     <h1>${escapeHtml(post.title)}</h1>
     <p>${escapeHtml(description)}</p>
-    <p><a href="${escapeAttr(articleUrl)}">Lire l'article</a></p>
+    <p><a href="${escapeAttr(articleUrl)}">Lire l'article complet sur RPAM</a></p>
 </body>
 </html>`;
 

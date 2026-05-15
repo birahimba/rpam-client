@@ -8,14 +8,15 @@ const HASHNODE_HOST = 'rpam.hashnode.dev';
 const SITE_URL = 'https://www.rpam.fr';
 
 const STATIC_PAGES = [
-    { loc: '/',           lastmod: '2026-01-24', changefreq: 'weekly',  priority: '1.0' },
-    { loc: '/about',      lastmod: '2026-01-24', changefreq: 'monthly', priority: '0.9' },
-    { loc: '/guidance',   lastmod: '2026-01-24', changefreq: 'monthly', priority: '0.85' },
-    { loc: '/up-training',lastmod: '2026-01-24', changefreq: 'monthly', priority: '0.85' },
-    { loc: '/job-getting',lastmod: '2026-01-24', changefreq: 'monthly', priority: '0.85' },
-    { loc: '/blogs',      lastmod: '2026-02-08', changefreq: 'weekly',  priority: '0.8' },
-    { loc: '/news',       lastmod: '2026-01-24', changefreq: 'weekly',  priority: '0.8' },
-    { loc: '/booking',    lastmod: '2026-01-24', changefreq: 'monthly', priority: '0.7' },
+    { loc: '/',            lastmod: '2026-05-11', changefreq: 'weekly',  priority: '1.0' },
+    { loc: '/about',       lastmod: '2026-05-11', changefreq: 'monthly', priority: '0.9' },
+    { loc: '/services',    lastmod: '2026-05-11', changefreq: 'monthly', priority: '0.85' },
+    { loc: '/guidance',    lastmod: '2026-05-11', changefreq: 'monthly', priority: '0.85' },
+    { loc: '/up-training', lastmod: '2026-05-11', changefreq: 'monthly', priority: '0.85' },
+    { loc: '/job-getting', lastmod: '2026-05-11', changefreq: 'monthly', priority: '0.85' },
+    { loc: '/blogs',       lastmod: '2026-05-11', changefreq: 'weekly',  priority: '0.8' },
+    { loc: '/news',        lastmod: '2026-05-11', changefreq: 'weekly',  priority: '0.8' },
+    { loc: '/booking',     lastmod: '2026-05-11', changefreq: 'monthly', priority: '0.7' },
 ];
 
 async function fetchAllPosts() {

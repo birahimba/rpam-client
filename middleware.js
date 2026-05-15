@@ -1,5 +1,22 @@
-// Bot user agents that don't execute JavaScript
+// Bot user agents that don't execute JavaScript (or that benefit from prerendering)
 const BOT_AGENTS = [
+    // Moteurs de recherche — priorité indexation
+    'Googlebot',
+    'Googlebot-Image',
+    'Googlebot-Video',
+    'Google-InspectionTool',
+    'APIs-Google',
+    'AdsBot-Google',
+    'Bingbot',
+    'msnbot',
+    'DuckDuckBot',
+    'YandexBot',
+    'Baiduspider',
+    'Sogou',
+    'Exabot',
+    'ia_archiver',
+    'Slurp',
+    // Réseaux sociaux
     'facebookexternalhit',
     'Facebot',
     'Twitterbot',

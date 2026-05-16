@@ -21,6 +21,7 @@ export default function Document() {
         <link rel="stylesheet" href="/css/navbar-modern.css" />
         <link rel="stylesheet" href="/css/pages.css" />
         <link rel="stylesheet" href="/css/services-page.css" />
+        <link rel="stylesheet" href="/css/typography.css" />
 
         {/* CDN CSS */}
         <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />

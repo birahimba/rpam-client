@@ -43,13 +43,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Ressources */}
+          {/* Guides piliers */}
           <div className="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-4 order-lg-3">
-            <span className="fs-18 fw-400 d-block text-white mb-5px">Ressources</span>
+            <span className="fs-18 fw-400 d-block text-white mb-5px">Nos guides</span>
             <ul>
+              <li><Link href="/reconversion-professionnelle">Reconversion professionnelle</Link></li>
+              <li><Link href="/cv-ats">Optimiser son CV (ATS)</Link></li>
+              <li><Link href="/formation-ia">Se former à l&apos;IA</Link></li>
+              <li><Link href="/linkedin-recruteurs">LinkedIn &amp; recruteurs</Link></li>
               <li><Link href="/blogs">Blog RPAM</Link></li>
-              <li><Link href="/news">Actualités</Link></li>
-              <li><Link href="/blog/reconversion-professionnelle-30-40-50-ans">Reconversion professionnelle</Link></li>
             </ul>
           </div>
 

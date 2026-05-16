@@ -554,9 +554,15 @@ export default function JobGetting() {
                   </Link>
                 </div>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 d-flex flex-wrap gap-3 align-items-center">
                 <Link href="/blogs" className="svc-all-articles-link">
                   Voir tous les articles du blog <i className="fas fa-arrow-right ms-1"></i>
+                </Link>
+                <Link href="/cv-ats" className="svc-all-articles-link" style={{ color: '#ecab23' }}>
+                  <i className="fas fa-book-open me-1"></i> Guide CV &amp; ATS <i className="fas fa-arrow-right ms-1"></i>
+                </Link>
+                <Link href="/linkedin-recruteurs" className="svc-all-articles-link" style={{ color: '#ecab23' }}>
+                  <i className="fab fa-linkedin me-1"></i> Guide LinkedIn recruteurs <i className="fas fa-arrow-right ms-1"></i>
                 </Link>
               </div>
             </div>

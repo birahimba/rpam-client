@@ -564,9 +564,12 @@ export default function UpTraining() {
                   </Link>
                 </div>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 d-flex flex-wrap gap-3 align-items-center">
                 <Link href="/blogs" className="svc-all-articles-link">
                   Voir tous les articles du blog <i className="fas fa-arrow-right ms-1"></i>
+                </Link>
+                <Link href="/formation-ia" className="svc-all-articles-link" style={{ color: '#ecab23' }}>
+                  <i className="fas fa-book-open me-1"></i> Guide complet formation IA <i className="fas fa-arrow-right ms-1"></i>
                 </Link>
               </div>
             </div>

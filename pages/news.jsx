@@ -141,10 +141,10 @@ export default function News() {
                 Explorez nos actualités pour rester connecté, inspiré et prêt à saisir de nouvelles opportunités professionnelles.
               </p>
               <div className="news-hero-pills" data-aos="fade-up" data-aos-delay="200">
-                <span className="news-pill"><i className="fas fa-chart-line"></i> Marché de l&apos;emploi</span>
-                <span className="news-pill"><i className="fas fa-robot"></i> Intelligence artificielle</span>
-                <span className="news-pill"><i className="fas fa-leaf"></i> Green tech</span>
-                <span className="news-pill"><i className="fas fa-graduation-cap"></i> Formation &amp; CPF</span>
+                <Link href="/reconversion-professionnelle" className="news-pill"><i className="fas fa-chart-line"></i> Reconversion professionnelle</Link>
+                <Link href="/formation-ia" className="news-pill"><i className="fas fa-robot"></i> Formation à l&apos;IA</Link>
+                <Link href="/cv-ats" className="news-pill"><i className="fas fa-file-alt"></i> CV &amp; ATS</Link>
+                <Link href="/linkedin-recruteurs" className="news-pill"><i className="fab fa-linkedin"></i> LinkedIn recruteurs</Link>
               </div>
             </div>
           </div>

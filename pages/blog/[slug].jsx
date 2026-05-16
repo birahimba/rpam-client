@@ -26,6 +26,13 @@ export async function getStaticProps({ params }) {
   return { props: { frontmatter, content, slug: params.slug } }
 }
 
+const PILLAR_MAP = {
+  'reconversion-professionnelle-30-40-50-ans':            { href: '/reconversion-professionnelle', label: 'Guide complet : Reconversion professionnelle' },
+  'cv-ats-2025':                                          { href: '/cv-ats',                        label: 'Guide complet : CV & ATS' },
+  'se-former-intelligence-artificielle-travail-2025':     { href: '/formation-ia',                  label: 'Guide complet : Se former à l\'IA' },
+  'optimiser-profil-linkedin-recruteurs-2025':            { href: '/linkedin-recruteurs',            label: 'Guide complet : LinkedIn pour les recruteurs' },
+}
+
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 }
@@ -130,6 +137,18 @@ export default function BlogPost({ frontmatter, content, slug }) {
             {/* Sidebar */}
             <aside className="col-lg-4 top-space-margin">
               <div className="sidebar-sticky" style={{ position: 'sticky', top: '100px' }}>
+
+                {PILLAR_MAP[slug] && (
+                  <div className="sidebar-widget mb-4" style={{ background: 'linear-gradient(135deg,#005153,#007a7d)', borderRadius: '12px', padding: '24px', boxShadow: '0 4px 20px rgba(0,81,83,.2)' }}>
+                    <span style={{ fontSize: '.72rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#ecab23', display: 'block', marginBottom: '10px' }}>Guide associé</span>
+                    <p style={{ fontSize: '.92rem', color: 'rgba(255,255,255,.85)', lineHeight: 1.6, margin: '0 0 16px' }}>Approfondissez ce sujet avec notre guide complet.</p>
+                    <Link href={PILLAR_MAP[slug].href} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#ecab23', color: '#1e3238', padding: '12px 16px', borderRadius: '8px', fontWeight: 700, textDecoration: 'none', fontSize: '.9rem' }}>
+                      <i className="fas fa-book-open"></i>
+                      {PILLAR_MAP[slug].label}
+                      <i className="fas fa-arrow-right" style={{ marginLeft: 'auto' }}></i>
+                    </Link>
+                  </div>
+                )}
 
                 <div className="sidebar-widget mb-4" style={{ background: '#fff', borderRadius: '12px', padding: '24px', boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}>
                   <h3 className="sidebar-title" style={{ fontSize: '1rem', fontWeight: 700, color: '#333', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid #005153' }}>À propos de RPAM</h3>

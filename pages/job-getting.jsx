@@ -514,60 +514,80 @@ export default function JobGetting() {
         </div>
       </section>
 
-      {/* Maillage interne : Articles recommandés + Services liés */}
-      <section className="pt-5 pb-5 bg-very-light-gray">
+      {/* ── Pour aller plus loin ─────────────────────────────── */}
+      <section className="svc-resources-section">
         <div className="container">
-          <div className="row justify-content-center mb-4">
-            <div className="col-12 text-center">
-              <h2 className="fw-700 text-dark-gray ls-minus-1px mb-2">Pour aller plus loin</h2>
-              <p className="text-medium-gray fs-17">Ressources et services complémentaires à votre recherche d&apos;emploi.</p>
-            </div>
+          <div className="svc-resources-header" data-aos="fade-up">
+            <span className="svc-resources-label">Ressources</span>
+            <h2 className="svc-resources-title">Pour aller plus loin</h2>
+            <p className="svc-resources-sub">Conseils pratiques pour optimiser vos candidatures et décrocher le poste qui vous correspond.</p>
           </div>
           <div className="row g-4">
             <div className="col-12 col-lg-8">
-              <h3 className="fw-600 fs-18 text-dark-gray mb-3">Articles recommandés</h3>
               <div className="row g-3">
-                <div className="col-12 col-md-6">
-                  <Link href="/blog/reconversion-professionnelle-30-40-50-ans" className="d-block text-decoration-none">
-                    <div className="p-3 bg-white border-radius-8px shadow-extra-small h-100">
-                      <span className="d-inline-block bg-base-color text-white fs-11 fw-600 px-2 py-1 border-radius-20px mb-2">Reconversion</span>
-                      <h4 className="fw-600 fs-16 text-dark-gray mb-1">Reconversion professionnelle à 30, 40 ou 50 ans</h4>
-                      <p className="text-medium-gray fs-14 mb-2">Guide complet pour réussir son changement de carrière en 2025 et décrocher le bon poste.</p>
-                      <span className="text-base-color fw-600 fs-13">Lire l&apos;article <i className="fas fa-arrow-right ms-1"></i></span>
+                {/* Article 1 — CV & ATS */}
+                <div className="col-12 col-md-6" data-aos="fade-up">
+                  <Link href="/blog/cv-ats-2025" className="svc-article-card">
+                    <div className="svc-article-banner" style={{ background: 'linear-gradient(135deg,#005153,#007a7d)' }}>
+                      <i className="fas fa-file-alt"></i>
+                    </div>
+                    <div className="svc-article-body">
+                      <span className="svc-article-tag">CV &amp; Candidature</span>
+                      <h3 className="svc-article-title">Comment rédiger un CV qui passe les filtres ATS en 2025 ?</h3>
+                      <p className="svc-article-excerpt">Mots-clés, structure, format : optimisez votre CV pour les logiciels de recrutement et décrochez plus d&apos;entretiens.</p>
+                      <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>
                     </div>
                   </Link>
                 </div>
-                <div className="col-12 col-md-6">
-                  <Link href="/blogs" className="d-block text-decoration-none">
-                    <div className="p-3 bg-white border-radius-8px shadow-extra-small h-100 d-flex flex-column align-items-center justify-content-center text-center">
-                      <i className="feather icon-feather-book-open" style={{ fontSize: '2rem', color: '#005153', marginBottom: '10px' }}></i>
-                      <h4 className="fw-600 fs-16 text-dark-gray mb-1">D&apos;autres articles arrivent</h4>
-                      <p className="text-medium-gray fs-14 mb-2">Conseils pratiques pour décrocher votre prochain poste sur le blog RPAM.</p>
-                      <span className="text-base-color fw-600 fs-13">Voir le blog <i className="fas fa-arrow-right ms-1"></i></span>
+                {/* Article 2 — IA & Recrutement */}
+                <div className="col-12 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                  <Link href="/blog/se-former-intelligence-artificielle-travail-2025" className="svc-article-card">
+                    <div className="svc-article-banner" style={{ background: 'linear-gradient(135deg,#c78f00,#ecab23)' }}>
+                      <i className="fas fa-robot"></i>
+                    </div>
+                    <div className="svc-article-body">
+                      <span className="svc-article-tag svc-article-tag--gold">IA &amp; Recrutement</span>
+                      <h3 className="svc-article-title">IA et marché de l&apos;emploi : les compétences qui font la différence</h3>
+                      <p className="svc-article-excerpt">Comprendre les outils IA pour mieux valoriser votre profil et répondre aux attentes des recruteurs en 2025.</p>
+                      <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>
                     </div>
                   </Link>
                 </div>
               </div>
-              <div className="mt-3">
-                <Link href="/blogs" className="text-base-color fw-600 fs-14">Voir tous les articles du blog <i className="fas fa-arrow-right ms-1"></i></Link>
+              <div className="mt-4">
+                <Link href="/blogs" className="svc-all-articles-link">
+                  Voir tous les articles du blog <i className="fas fa-arrow-right ms-1"></i>
+                </Link>
               </div>
             </div>
-            <div className="col-12 col-lg-4">
-              <h3 className="fw-600 fs-18 text-dark-gray mb-3">Nos autres services</h3>
-              <Link href="/guidance" className="d-flex align-items-start p-3 bg-white border-radius-8px shadow-extra-small text-decoration-none mb-3">
-                <i className="fas fa-compass text-base-color fs-20 me-3 mt-1"></i>
-                <div>
-                  <h4 className="fw-600 fs-16 text-dark-gray mb-1">Guidance</h4>
-                  <p className="text-medium-gray fs-14 mb-0">Bilan de compétences et orientation professionnelle personnalisée.</p>
-                </div>
-              </Link>
-              <Link href="/up-training" className="d-flex align-items-start p-3 bg-white border-radius-8px shadow-extra-small text-decoration-none">
-                <i className="fas fa-chart-line text-base-color fs-20 me-3 mt-1"></i>
-                <div>
-                  <h4 className="fw-600 fs-16 text-dark-gray mb-1">Up Training</h4>
-                  <p className="text-medium-gray fs-14 mb-0">Formation sur mesure pour développer vos compétences clés.</p>
-                </div>
-              </Link>
+            <div className="col-12 col-lg-4" data-aos="fade-left">
+              <div className="svc-sidebar">
+                <h3 className="svc-sidebar-title">Nos autres services</h3>
+                <Link href="/guidance" className="svc-related-card">
+                  <div className="svc-related-icon"><i className="fas fa-compass"></i></div>
+                  <div>
+                    <strong>Guidance</strong>
+                    <p>Bilan de compétences et orientation professionnelle personnalisée.</p>
+                  </div>
+                  <i className="fas fa-chevron-right svc-related-arrow"></i>
+                </Link>
+                <Link href="/up-training" className="svc-related-card">
+                  <div className="svc-related-icon"><i className="fas fa-chart-line"></i></div>
+                  <div>
+                    <strong>Up Training</strong>
+                    <p>Formation sur mesure pour développer vos compétences clés.</p>
+                  </div>
+                  <i className="fas fa-chevron-right svc-related-arrow"></i>
+                </Link>
+                <Link href="/booking" className="svc-related-card svc-related-card--cta">
+                  <div className="svc-related-icon svc-related-icon--cta"><i className="fas fa-calendar-alt"></i></div>
+                  <div>
+                    <strong>Consultation gratuite</strong>
+                    <p>Préparez votre stratégie de recherche d&apos;emploi avec un expert.</p>
+                  </div>
+                  <i className="fas fa-chevron-right svc-related-arrow"></i>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

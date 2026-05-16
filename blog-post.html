@@ -29,20 +29,20 @@
     <meta name="twitter:description" id="twitter-description" content="Blog RPAM">
     <meta name="twitter:image" id="twitter-image" content="">
 
-    <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/vendors.min.css">
-    <link rel="stylesheet" href="css/icon.min.css">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/responsive.min.css">
-    <link rel="stylesheet" href="css/corporate.css">
-    <link rel="stylesheet" href="css/navbar-modern.css">
+    <link rel="stylesheet" href="/css/vendors.min.css">
+    <link rel="stylesheet" href="/css/icon.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/responsive.min.css">
+    <link rel="stylesheet" href="/css/corporate.css">
+    <link rel="stylesheet" href="/css/navbar-modern.css">
     <link rel="canonical" id="canonical-url" href="https://www.rpam.fr/blogs">
 
     <!-- DOMPurify pour la sanitisation XSS -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
-    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="/css/pages.css">
 
     <!-- Schema.org JSON-LD Structured Data (updated dynamically) -->
     <script type="application/ld+json" id="structured-data">
@@ -109,7 +109,7 @@
 
                 <!-- Logo -->
                 <a href="/" class="navbar-logo">
-                    <img src="images/logo-rpam.png" alt="RPAM">
+                    <img src="/images/logo-rpam.png" alt="RPAM">
                 </a>
 
                 <!-- Navigation Desktop -->
@@ -407,7 +407,7 @@
             <div class="row justify-content-center fs-17 fw-300 mt-5 mb-4">
                 <div class="col-6 col-lg-3 order-sm-1">
                     <a href="/" class="footer-logo mb-15px d-inline-block">
-                        <img src="images/w-logo-rpam.png" alt="RPAM">
+                        <img src="/images/w-logo-rpam.png" alt="RPAM">
                     </a>
                     <div class="elements-social social-icon-style-02 mt-20px">
                         <ul class="small-icon light">
@@ -449,9 +449,9 @@
         </div>
     </footer>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/vendors.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/vendors.min.js"></script>
+    <script src="/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Article Loading Script -->
@@ -1088,13 +1088,13 @@
                             year: 'numeric'
                         });
 
-                        const coverImage = post.coverImage?.url || 'images/default-blog-cover.jpg';
+                        const coverImage = post.coverImage?.url || '/images/default-blog-cover.jpg';
 
-                        const sanitizedCoverImage = (coverImage && isValidImageUrl(coverImage)) ? coverImage : 'images/default-blog-cover.jpg';
+                        const sanitizedCoverImage = (coverImage && isValidImageUrl(coverImage)) ? coverImage : '/images/default-blog-cover.jpg';
 
                         return `
                             <div class="related-article-item">
-                                <img src="${escapeHtml(sanitizedCoverImage)}" alt="${escapeHtml(post.title)}" class="related-article-thumb" onerror="this.src='images/default-blog-cover.jpg'">
+                                <img src="${escapeHtml(sanitizedCoverImage)}" alt="${escapeHtml(post.title)}" class="related-article-thumb" onerror="this.src='/images/default-blog-cover.jpg'">
                                 <div class="related-article-content">
                                     <h4>
                                         <a href="blog-post?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>

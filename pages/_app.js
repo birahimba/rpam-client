@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 
 function loadScript(src, attrs = {}) {
   return new Promise((resolve) => {
@@ -24,12 +25,6 @@ function rerunScript(src) {
     el.onerror = resolve
     document.body.appendChild(el)
   })
-}
-
-function initAOS() {
-  if (window.AOS) {
-    window.AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 50 })
-  }
 }
 
 function initAOS() {

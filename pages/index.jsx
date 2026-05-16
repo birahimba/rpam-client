@@ -82,6 +82,17 @@ function WaitlistForm() {
   )
 }
 
+function replayHeroAnim(slideEl) {
+  const targets = slideEl.querySelectorAll(
+    '.hero-identity-badge, .hero-title, .hero-subtitle, .hero-buttons'
+  )
+  targets.forEach(el => {
+    el.style.animation = 'none'
+    void el.offsetHeight
+    el.style.animation = ''
+  })
+}
+
 function initHeroSwiper() {
   if (typeof window === 'undefined' || !window.Swiper) return
   new window.Swiper('.hero-swiper', {
@@ -92,6 +103,11 @@ function initHeroSwiper() {
     speed: 1200,
     pagination: { el: '.hero-pagination', clickable: true },
     navigation: { nextEl: '.hero-next', prevEl: '.hero-prev' },
+    on: {
+      slideChangeTransitionStart() {
+        replayHeroAnim(this.slides[this.activeIndex])
+      },
+    },
   })
 }
 
@@ -215,13 +231,13 @@ export default function Home() {
         <div className="container">
           <p className="for-who-label">RPAM s&apos;adresse à vous si vous êtes :</p>
           <div className="for-who-items">
-            <div className="for-who-item"><i className="fas fa-user-graduate"></i><span>Étudiant en fin de cursus</span></div>
+            <div className="for-who-item" data-aos="fade-up" data-aos-delay="100"><i className="fas fa-user-graduate"></i><span>Étudiant en fin de cursus</span></div>
             <div className="for-who-separator"></div>
-            <div className="for-who-item"><i className="fas fa-sync-alt"></i><span>En reconversion professionnelle</span></div>
+            <div className="for-who-item" data-aos="fade-up" data-aos-delay="200"><i className="fas fa-sync-alt"></i><span>En reconversion professionnelle</span></div>
             <div className="for-who-separator"></div>
-            <div className="for-who-item"><i className="fas fa-search"></i><span>En recherche active d&apos;emploi</span></div>
+            <div className="for-who-item" data-aos="fade-up" data-aos-delay="300"><i className="fas fa-search"></i><span>En recherche active d&apos;emploi</span></div>
             <div className="for-who-separator"></div>
-            <div className="for-who-item"><i className="fas fa-chart-line"></i><span>Salarié souhaitant évoluer</span></div>
+            <div className="for-who-item" data-aos="fade-up" data-aos-delay="400"><i className="fas fa-chart-line"></i><span>Salarié souhaitant évoluer</span></div>
           </div>
         </div>
       </section>
@@ -252,7 +268,7 @@ export default function Home() {
                   { icon: 'fa-file-alt', title: '« Je postule sans réponses »', desc: "Optimisation CV & LinkedIn, préparation entretiens et stratégie de recherche d'emploi", delay: '300' },
                 ].map(({ icon, title, desc, delay }) => (
                   <div key={title} className="col-md-4 d-flex" data-aos="fade-up" data-aos-delay={delay}>
-                    <div className="text-center p-4 w-100" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)' }}>
+                    <div className="objectives-card text-center p-4 w-100" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)' }}>
                       <div className="mb-3" style={{ width: '60px', height: '60px', background: 'linear-gradient(135deg, #ecab23 0%, #f7931e 100%)', borderRadius: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto' }}>
                         <i className={`fas ${icon} text-white fs-22`}></i>
                       </div>

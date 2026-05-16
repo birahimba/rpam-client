@@ -64,7 +64,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Component {...pageProps} />
+      <div key={router.asPath} className="page-transition">
+        <Component {...pageProps} />
+      </div>
 
       {/* Scripts locaux — ordre impératif : jquery → vendors → main */}
       <Script src="/js/jquery.js" strategy="afterInteractive" />

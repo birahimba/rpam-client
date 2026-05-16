@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import SEOHead from '../../components/SEOHead'
+import { buildArticleSchema } from '../../lib/seo'
 
 const BLOG_DIR = path.join(process.cwd(), 'content/blog')
 
@@ -28,21 +29,16 @@ function formatDate(dateStr) {
 }
 
 export default function BlogPost({ frontmatter, content, slug }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": frontmatter.title,
-    "description": frontmatter.excerpt,
-    "url": `https://www.rpam.fr/blog/${slug}`,
-    "image": frontmatter.coverImage ? `https://www.rpam.fr${frontmatter.coverImage}` : undefined,
-    "datePublished": frontmatter.date,
-    "author": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "RPAM",
-      "logo": { "@type": "ImageObject", "url": "https://www.rpam.fr/images/logo-rpam.png" }
-    }
-  }
+  const schema = buildArticleSchema({
+    slug,
+    title: frontmatter.title,
+    description: frontmatter.excerpt,
+    coverImage: frontmatter.coverImage,
+    datePublished: frontmatter.date,
+    dateModified: frontmatter.dateModified,
+    keywords: frontmatter.keywords || [],
+    faqs: frontmatter.faqs || [],
+  })
 
   return (
     <Layout activePage="blogs">

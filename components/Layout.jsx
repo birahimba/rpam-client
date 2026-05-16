@@ -1,13 +1,7 @@
-import { useEffect } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
 export default function Layout({ children, activePage }) {
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.AOS) {
-      window.AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 50 })
-    }
-  }, [])
 
   return (
     <>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useState, useEffect, useRef } from 'react'
 
 const NAV_LINKS = [
   { href: '/', label: 'Accueil', key: 'home' },
@@ -16,11 +17,30 @@ const SERVICE_LINKS = [
 export default function Navbar({ activePage }) {
   const isActive = (key) => activePage === key ? ' active' : ''
   const isServices = ['services', 'guidance', 'up-training', 'job-getting'].includes(activePage)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [submenuOpen, setSubmenuOpen] = useState(false)
+  const menuRef = useRef(null)
+
+  const toggleMenu = () => setMenuOpen(prev => !prev)
+  const closeMenu = () => { setMenuOpen(false); setSubmenuOpen(false) }
+
+  useEffect(() => {
+    document.body.classList.toggle('menu-open', menuOpen)
+    return () => document.body.classList.remove('menu-open')
+  }, [menuOpen])
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) closeMenu()
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   return (
     <>
       {/* Main Navbar */}
-      <nav className="navbar-modern" id="mainNavbar">
+      <nav className="navbar-modern" id="mainNavbar" ref={menuRef}>
         <div className="container-fluid">
           <div className="navbar-container">
 
@@ -80,7 +100,7 @@ export default function Navbar({ activePage }) {
             </div>
 
             {/* Hamburger */}
-            <div className="hamburger-modern" id="hamburgerBtn">
+            <div className={`hamburger-modern${menuOpen ? ' active' : ''}`} id="hamburgerBtn" onClick={toggleMenu} aria-label="Menu" role="button">
               <span className="hamburger-line"></span>
               <span className="hamburger-line"></span>
               <span className="hamburger-line"></span>
@@ -90,24 +110,24 @@ export default function Navbar({ activePage }) {
       </nav>
 
       {/* Mobile Menu */}
-      <div className="mobile-menu-modern" id="mobileMenu">
+      <div className={`mobile-menu-modern${menuOpen ? ' active' : ''}`} id="mobileMenu">
         <ul className="mobile-nav-list">
           <li className="mobile-nav-item">
-            <Link href="/" className={`mobile-nav-link${isActive('home')}`}>Accueil</Link>
+            <Link href="/" className={`mobile-nav-link${isActive('home')}`} onClick={closeMenu}>Accueil</Link>
           </li>
           <li className="mobile-nav-item">
-            <Link href="/about" className={`mobile-nav-link${isActive('about')}`}>Qui sommes-nous</Link>
+            <Link href="/about" className={`mobile-nav-link${isActive('about')}`} onClick={closeMenu}>Qui sommes-nous</Link>
           </li>
           <li className="mobile-nav-item">
-            <Link href="/services" className={`mobile-nav-link${isServices ? ' active' : ''}`} id="servicesToggle">
+            <span className={`mobile-nav-link${isServices ? ' active' : ''}`} id="servicesToggle" onClick={() => setSubmenuOpen(prev => !prev)} style={{ cursor: 'pointer' }}>
               Nos Services
-              <i className="fas fa-chevron-down arrow"></i>
-            </Link>
-            <div className="mobile-submenu" id="servicesSubmenu">
+              <i className={`fas fa-chevron-down arrow${submenuOpen ? ' rotated' : ''}`}></i>
+            </span>
+            <div className={`mobile-submenu${submenuOpen ? ' active' : ''}`} id="servicesSubmenu">
               <ul className="mobile-submenu-list">
                 {SERVICE_LINKS.map((s) => (
                   <li key={s.href} className="mobile-submenu-item">
-                    <Link href={s.href} className="mobile-submenu-link">
+                    <Link href={s.href} className="mobile-submenu-link" onClick={closeMenu}>
                       <i className={`fas ${s.icon} text-white`} style={{ fontSize: '20px' }}></i>
                       <div className="submenu-text">
                         <h5>{s.title}</h5>
@@ -120,10 +140,10 @@ export default function Navbar({ activePage }) {
             </div>
           </li>
           <li className="mobile-nav-item">
-            <Link href="/blogs" className={`mobile-nav-link${isActive('blogs')}`}>Blog</Link>
+            <Link href="/blogs" className={`mobile-nav-link${isActive('blogs')}`} onClick={closeMenu}>Blog</Link>
           </li>
           <li className="mobile-nav-item">
-            <Link href="/news" className={`mobile-nav-link${isActive('news')}`}>Actualités</Link>
+            <Link href="/news" className={`mobile-nav-link${isActive('news')}`} onClick={closeMenu}>Actualités</Link>
           </li>
         </ul>
 

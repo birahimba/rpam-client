@@ -288,7 +288,7 @@ body {
   }
 
   .hero-content {
-    padding: 100px 15px 80px;
+    padding: 100px 20px 80px 20px;
   }
 
   .hero-tag {
@@ -3902,14 +3902,14 @@ html {
   /* Hero — alignement et respiration */
   .hero-content {
     text-align: left;
-    padding: 100px 12px 60px 0;
+    padding: 90px 20px 60px 20px;
     max-width: 100%;
   }
 
   .hero-swiper .container,
   .hero-swiper .swiper-slide .container {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .hero-title {

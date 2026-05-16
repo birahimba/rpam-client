@@ -1123,7 +1123,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("images/banner.jpg") center/cover;
+  background: url("/images/banner.jpg") center/cover;
   opacity: 0.1;
 }
 
@@ -2898,12 +2898,12 @@ html {
 }
 
 .guidance-hero .hero-overlay {
-  background: url("images/self-know.jpg") center/cover;
+  background: url("/images/self-know.jpg") center/cover;
   opacity: 0.25;
 }
 
 .uptraining-hero .hero-overlay {
-  background: url("images/banner.jpg") center/cover;
+  background: url("/images/banner.jpg") center/cover;
   opacity: 0.25;
 }
 

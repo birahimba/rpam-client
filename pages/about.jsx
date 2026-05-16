@@ -33,7 +33,7 @@ export default function About() {
 
       {/* Start Page Title - Modern Hero */}
       <section className="top-space-margin position-relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%), url('images/about.png')", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '60vh' }}>
+        style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%), url('/images/about.png')", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '60vh' }}>
         <div className="container h-100 d-flex align-items-center py-5">
           <div className="row w-100 align-items-center">
             <div className="col-lg-7" data-aos="fade-up" data-aos-duration="1000">
@@ -96,7 +96,7 @@ export default function About() {
             <div className="col-lg-5" data-aos="fade-right" data-aos-duration="800">
               <div className="position-relative">
                 <div className="about-image-wrapper" style={{ position: 'relative' }}>
-                  <img src="images/logo-rpam.png" alt="Mission RPAM" className="img-fluid"
+                  <img src="/images/logo-rpam.png" alt="Mission RPAM" className="img-fluid"
                     style={{ maxWidth: '300px' }} />
                   <div className="floating-badge position-absolute"
                     style={{ bottom: '-20px', right: '-20px', background: 'linear-gradient(135deg, #ecab23 0%, #f7931e 100%)', padding: '20px 30px', borderRadius: '15px', boxShadow: '0 15px 40px rgba(255,107,53,0.3)' }}>
@@ -403,7 +403,7 @@ export default function About() {
                   style={{ background: 'linear-gradient(135deg, #ecab23 0%, #f7931e 100%)', padding: '30px', textAlign: 'center' }}>
                   <div className="team-photo-wrapper"
                     style={{ width: '140px', height: '140px', borderRadius: '50%', overflow: 'hidden', border: '5px solid rgba(255,255,255,0.3)', margin: '0 auto' }}>
-                    <img src="images/df82eca3-e1db-4cfe-9941-5a2300618155.jpeg" alt="Vianney NZOCHE" loading="lazy"
+                    <img src="/images/df82eca3-e1db-4cfe-9941-5a2300618155.jpeg" alt="Vianney NZOCHE" loading="lazy"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <h4 className="fw-700 text-white mt-3 mb-1">Vianney NZOCHE</h4>
@@ -451,7 +451,7 @@ export default function About() {
                   style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)', padding: '30px', textAlign: 'center' }}>
                   <div className="team-photo-wrapper"
                     style={{ width: '140px', height: '140px', borderRadius: '50%', overflow: 'hidden', border: '5px solid rgba(255,255,255,0.3)', margin: '0 auto' }}>
-                    <img src="images/elhadj.png" alt="Elhadj BA" loading="lazy"
+                    <img src="/images/elhadj.png" alt="Elhadj BA" loading="lazy"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <h4 className="fw-700 text-white mt-3 mb-1">Elhadj BA</h4>

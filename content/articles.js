@@ -1,5 +1,16 @@
 export const articles = [
   {
+    slug: 'se-former-intelligence-artificielle-travail-2025',
+    title: "Se former à l'intelligence artificielle au travail : guide pratique pour débuter en 2025",
+    excerpt: "L'IA transforme le monde du travail. Découvrez comment vous former à l'intelligence artificielle sans être développeur, quels outils maîtriser et comment l'intégrer dans votre quotidien professionnel.",
+    date: '2026-05-16',
+    dateModified: '2026-05-16',
+    readTime: 7,
+    coverImage: '/images/default-blog-cover.jpg',
+    tags: ['Intelligence Artificielle', 'Formation', 'Compétences'],
+    keywords: ['formation intelligence artificielle', 'IA au travail', 'apprendre IA sans coder', 'outils IA professionnels', 'compétences IA 2025'],
+  },
+  {
     slug: 'cv-ats-2025',
     title: 'Comment rédiger un CV qui passe les filtres ATS en 2025 ?',
     excerpt: 'Découvrez comment optimiser votre CV pour les logiciels ATS et décrocher plus d\'entretiens en 2025. Mots-clés, structure, format : le guide complet RPAM.',

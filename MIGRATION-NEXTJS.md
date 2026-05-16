@@ -19,22 +19,22 @@
 | 4c | Composant `Layout.jsx` (Navbar + Footer + WhatsApp + AOS init) | ✅ Fait | 2026-05-16 |
 | 4d | Composant `SEOHead.jsx` (meta, OG, Twitter, JSON-LD) | ✅ Fait | 2026-05-16 |
 | 4e | `content/articles.js` (liste statique des articles) | ✅ Fait | 2026-05-16 |
-| 5 | `pages/index.jsx` — page d'accueil (squelette validé, contenu à migrer) | 🔄 En cours | 2026-05-16 |
-| 5b | `pages/about.jsx` | ⏳ À faire | — |
-| 5c | `pages/services.jsx` | ⏳ À faire | — |
-| 5d | `pages/guidance.jsx` | ⏳ À faire | — |
-| 5e | `pages/up-training.jsx` | ⏳ À faire | — |
-| 5f | `pages/job-getting.jsx` | ⏳ À faire | — |
-| 5g | `pages/news.jsx` | ⏳ À faire | — |
-| 6 | `pages/index.jsx` — contenu complet (Swiper hero, sections, scripts) | ⏳ À faire | — |
-| 6b | `pages/booking.jsx` (Flatpickr + Formspree) | ⏳ À faire | — |
-| 7 | `pages/blogs.jsx` (liste articles dynamique depuis articles.js) | ⏳ À faire | — |
-| 7b | `pages/blog/[slug].jsx` (articles statiques depuis public/blog/) | ⏳ À faire | — |
-| 8 | Vérification animations (AOS, Swiper, curseur, navbar scroll) | ⏳ À faire | — |
-| 9 | SEO : vérification canonical + JSON-LD sur toutes les pages | ⏳ À faire | — |
-| 10 | Tests finaux + déploiement sur URL preview Vercel | ⏳ À faire | — |
+| 5 | `pages/index.jsx` — page d'accueil complète (Swiper, sections, waitlist) | ✅ Fait | 2026-05-16 |
+| 5b | `pages/about.jsx` | ✅ Fait | 2026-05-16 |
+| 5c | `pages/services.jsx` | ✅ Fait | 2026-05-16 |
+| 5d | `pages/guidance.jsx` | ✅ Fait | 2026-05-16 |
+| 5e | `pages/up-training.jsx` | ✅ Fait | 2026-05-16 |
+| 5f | `pages/job-getting.jsx` | ✅ Fait | 2026-05-16 |
+| 5g | `pages/news.jsx` | ✅ Fait | 2026-05-16 |
+| 6 | `pages/booking.jsx` (Cal.com embed + Formspree) | ✅ Fait | 2026-05-16 |
+| 7 | `pages/blogs.jsx` (liste articles statique) | ✅ Fait | 2026-05-16 |
+| 7b | `pages/blog/reconversion-professionnelle-30-40-50-ans.jsx` | ✅ Fait | 2026-05-16 |
+| 8 | `npx next build` — 12 pages, 0 erreur, toutes statiques | ✅ Fait | 2026-05-16 |
+| 9 | SEO : canonical + JSON-LD sur toutes les pages | ✅ Fait | 2026-05-16 |
+| 10 | Vérification animations (AOS, Swiper, curseur, navbar) | ⏳ À faire (preview Vercel) | — |
+| 11 | Tests finaux + déploiement sur URL preview Vercel | ⏳ À faire | — |
 
-> **Build Next.js :** ✅ Validé le 2026-05-16 — 0 erreur, pages statiques générées correctement
+> **Build Next.js :** ✅ Validé le 2026-05-16 — 12 pages générées, 0 erreur de compilation
 
 ---
 

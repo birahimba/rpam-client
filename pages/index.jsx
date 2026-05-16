@@ -2,6 +2,11 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { articles } from '../content/articles'
+
+function formatDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+}
 
 const schema = {
   "@context": "https://schema.org",
@@ -430,34 +435,34 @@ export default function Home() {
             </div>
           </div>
           <div className="featured-article-container">
-            <article className="featured-article">
-              <Link href="/blog/reconversion-professionnelle-30-40-50-ans">
-                <img
-                  src="/images/blog/reconversion-professionnelle-cover.jpg"
-                  alt="Reconversion professionnelle à 30, 40 ou 50 ans"
-                  className="featured-image"
-                  onError={(e) => { e.target.src = '/images/default-blog-cover.jpg' }}
-                />
-              </Link>
-              <div className="featured-content">
-                <span className="featured-badge">
-                  <i className="feather icon-feather-star"></i> Article à la une
-                </span>
-                <h2 className="featured-title">
-                  <Link href="/blog/reconversion-professionnelle-30-40-50-ans">
-                    Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2025 ?
-                  </Link>
-                </h2>
-                <p className="featured-excerpt">Guide complet pour réussir votre reconversion professionnelle à tout âge. Étapes clés, financements CPF, secteurs porteurs et conseils pour changer de métier avec succès.</p>
-                <div className="featured-meta">
-                  <span><i className="feather icon-feather-calendar"></i> 11 mai 2025</span>
-                  <span><i className="feather icon-feather-clock"></i> 10 min de lecture</span>
-                </div>
-                <Link href="/blog/reconversion-professionnelle-30-40-50-ans" className="read-more-btn">
-                  Lire l&apos;article <i className="feather icon-feather-arrow-right"></i>
+            {articles[0] && (
+              <article className="featured-article">
+                <Link href={`/blog/${articles[0].slug}`}>
+                  <img
+                    src={articles[0].coverImage || '/images/default-blog-cover.jpg'}
+                    alt={articles[0].title}
+                    className="featured-image"
+                    onError={(e) => { e.target.src = '/images/default-blog-cover.jpg' }}
+                  />
                 </Link>
-              </div>
-            </article>
+                <div className="featured-content">
+                  <span className="featured-badge">
+                    <i className="feather icon-feather-star"></i> Article à la une
+                  </span>
+                  <h2 className="featured-title">
+                    <Link href={`/blog/${articles[0].slug}`}>{articles[0].title}</Link>
+                  </h2>
+                  <p className="featured-excerpt">{articles[0].excerpt}</p>
+                  <div className="featured-meta">
+                    <span><i className="feather icon-feather-calendar"></i> {formatDate(articles[0].date)}</span>
+                    {articles[0].readTime && <span><i className="feather icon-feather-clock"></i> {articles[0].readTime} min de lecture</span>}
+                  </div>
+                  <Link href={`/blog/${articles[0].slug}`} className="read-more-btn">
+                    Lire l&apos;article <i className="feather icon-feather-arrow-right"></i>
+                  </Link>
+                </div>
+              </article>
+            )}
           </div>
           <div className="text-center mt-4">
             <Link href="/blogs" className="btn btn-base-color btn-rounded btn-box-shadow text-transform-none fw-600">
@@ -511,26 +516,20 @@ export default function Home() {
             </div>
           </div>
           <div className="row g-4">
-            <div className="col-12 col-md-6">
-              <Link href="/blog/reconversion-professionnelle-30-40-50-ans" className="d-block text-decoration-none h-100">
-                <div className="p-4 bg-white border-radius-12px h-100 shadow-extra-small">
-                  <span className="d-inline-block bg-base-color text-white fs-12 fw-600 px-3 py-1 border-radius-20px mb-3">Reconversion</span>
-                  <h3 className="fw-600 fs-18 text-dark-gray mb-2">Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2025 ?</h3>
-                  <p className="text-medium-gray fs-15 mb-3">Guide complet pour réussir votre reconversion professionnelle à tout âge. Étapes clés, financements CPF et conseils pratiques.</p>
-                  <span className="text-base-color fw-600 fs-14">Lire l&apos;article <i className="fas fa-arrow-right ms-1"></i></span>
-                </div>
-              </Link>
-            </div>
-            <div className="col-12 col-md-6">
-              <Link href="/blogs" className="d-block text-decoration-none h-100">
-                <div className="p-4 bg-white border-radius-12px h-100 shadow-extra-small d-flex flex-column align-items-center justify-content-center text-center" style={{ minHeight: '180px' }}>
-                  <i className="feather icon-feather-book-open" style={{ fontSize: '2.5rem', color: '#005153', marginBottom: '16px' }}></i>
-                  <h3 className="fw-600 fs-18 text-dark-gray mb-2">D&apos;autres articles arrivent bientôt</h3>
-                  <p className="text-medium-gray fs-15 mb-3">Nos conseillers partagent régulièrement leurs conseils et expertises sur le blog RPAM.</p>
-                  <span className="text-base-color fw-600 fs-14">Voir le blog <i className="fas fa-arrow-right ms-1"></i></span>
-                </div>
-              </Link>
-            </div>
+            {articles.slice(0, 2).map((article) => (
+              <div key={article.slug} className="col-12 col-md-6">
+                <Link href={`/blog/${article.slug}`} className="d-block text-decoration-none h-100">
+                  <div className="p-4 bg-white border-radius-12px h-100 shadow-extra-small">
+                    {article.tags?.[0] && (
+                      <span className="d-inline-block bg-base-color text-white fs-12 fw-600 px-3 py-1 border-radius-20px mb-3">{article.tags[0]}</span>
+                    )}
+                    <h3 className="fw-600 fs-18 text-dark-gray mb-2">{article.title}</h3>
+                    <p className="text-medium-gray fs-15 mb-3">{article.excerpt}</p>
+                    <span className="text-base-color fw-600 fs-14">Lire l&apos;article <i className="fas fa-arrow-right ms-1"></i></span>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
           <div className="row mt-4">
             <div className="col-12 text-center">

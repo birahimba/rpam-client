@@ -21,6 +21,7 @@ const STATIC_PAGES = [
 // Ajouter ici chaque nouvel article publié
 // { loc: '/blog/slug-de-larticle', lastmod: 'YYYY-MM-DD', priority: '0.75' }
 const BLOG_ARTICLES = [
+    { loc: '/blog/se-former-intelligence-artificielle-travail-2025', lastmod: '2026-05-16', priority: '0.8' },
     { loc: '/blog/cv-ats-2025', lastmod: '2026-05-16', priority: '0.8' },
     { loc: '/blog/reconversion-professionnelle-30-40-50-ans', lastmod: '2025-05-11', priority: '0.8' },
 ];

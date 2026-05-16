@@ -657,4 +657,407 @@ module.exports = nextConfig
 
 ---
 
+## 10. Prompts Claude à exécuter pendant la migration
+
+> Ces prompts sont conçus pour être copiés-collés directement dans Claude Code.  
+> Ouvrir le dossier `rpam-client-next/` dans Claude Code avant de commencer.  
+> Exécuter les prompts **dans l'ordre**, phase par phase.
+
+---
+
+### PHASE 1 — Initialisation du projet
+
+**Prompt 1.1 — Créer le projet Next.js**
+
+```
+Crée un nouveau projet Next.js dans le dossier rpam-client-next/ en utilisant le Pages Router (pas l'App Router), sans TypeScript, sans Tailwind, sans ESLint, sans le dossier src/. 
+
+Installe ensuite les dépendances : next-mdx-remote et gray-matter.
+
+Crée aussi un next.config.js minimal avec :
+- trailingSlash: false
+- Un redirect permanent de rpam.fr vers www.rpam.fr pour tous les chemins
+
+Ne crée aucune page ni composant pour l'instant.
+```
+
+---
+
+### PHASE 2 — Copie des assets
+
+**Prompt 2.1 — Copier CSS, JS, images**
+
+```
+Dans le projet rpam-client-next/, copie les dossiers suivants depuis ../rpam-client/ vers public/ en conservant exactement la même structure :
+- css/ → public/css/
+- js/ → public/js/
+- images/ → public/images/
+- fonts/ → public/fonts/
+
+Copie aussi ces fichiers à la racine de public/ :
+- sitemap.xml
+- robots.txt
+- llms.txt
+
+Ne modifie aucun fichier copié. Vérifie que tous les fichiers sont bien présents après la copie.
+```
+
+---
+
+### PHASE 3 — Structure HTML globale
+
+**Prompt 3.1 — Créer _document.js**
+
+```
+Dans rpam-client-next/pages/_document.js, crée le document Next.js en te basant sur le <head> de ../rpam-client/index.html.
+
+Le _document.js doit :
+1. Mettre lang="fr" sur <Html>
+2. Charger dans <Head> tous les CSS dans cet ordre exact :
+   - Google Fonts Montserrat (preconnect + stylesheet)
+   - /css/vendors.min.css
+   - /css/icon.min.css
+   - /css/style.min.css
+   - /css/responsive.min.css
+   - /css/corporate.css
+   - /css/navbar-modern.css
+   - /css/pages.css
+   - CDN AOS 2.3.1 CSS
+   - CDN Bootstrap Icons 1.11.1 CSS
+   - CDN Swiper 11 CSS
+   - CDN Flatpickr CSS
+   - Favicon /images/favicon-32x32.png
+3. Mettre sur <body> : className="custom-cursor" et data-mobile-nav-style="classic"
+
+N'ajoute aucun CSS de Next.js par défaut. Supprime globals.css si Next.js l'a créé.
+```
+
+**Prompt 3.2 — Créer _app.js**
+
+```
+Dans rpam-client-next/pages/_app.js, crée le fichier App qui :
+1. Charge les scripts JS avec next/script strategy="afterInteractive" dans cet ordre impératif :
+   /js/jquery.js → /js/vendors.min.js → /js/main.js → Bootstrap 5.3.3 CDN → Swiper 11 CDN → AOS 2.3.1 CDN → Flatpickr CDN
+2. Ajoute un useEffect (sans dépendances, qui s'exécute à chaque navigation) qui appelle AOS.refresh() si AOS est défini
+3. Supprime tout import CSS — les CSS sont déjà dans _document.js
+
+L'ordre des scripts est critique : ne pas les réorganiser.
+```
+
+---
+
+### PHASE 4 — Composants réutilisables
+
+**Prompt 4.1 — Créer le composant Navbar**
+
+```
+Lis le fichier ../rpam-client/index.html et extrait exactement le bloc <nav class="navbar-modern"> et le bloc <div class="mobile-menu-modern"> dans un composant rpam-client-next/components/Navbar.jsx.
+
+Règles de conversion HTML → JSX :
+- class= devient className=
+- Les balises auto-fermantes sans contenu (img, br, input, hr) prennent un /
+- Les attributs data-* et aria-* restent identiques
+- Les commentaires HTML <!-- --> deviennent {/* */}
+- Ne change rien d'autre
+
+Le composant reçoit une prop activePage (string). Ajoute la classe "active" sur le <a> correspondant à la page active (utilise une condition activePage === 'home' pour le lien /, activePage === 'about' pour /about, etc.).
+
+Ne déplace aucun script inline dans ce composant — ils restent dans main.js.
+```
+
+**Prompt 4.2 — Créer le composant Footer**
+
+```
+Lis ../rpam-client/index.html et extrait le bloc <footer class="footer-dark"> dans rpam-client-next/components/Footer.jsx.
+
+Mêmes règles de conversion HTML → JSX que pour Navbar. Aucune logique dynamique, c'est du JSX pur.
+```
+
+**Prompt 4.3 — Créer le composant Layout**
+
+```
+Crée rpam-client-next/components/Layout.jsx qui :
+1. Importe et affiche Navbar (avec la prop activePage) et Footer
+2. Affiche {children} entre les deux
+3. Ajoute après Footer le bouton WhatsApp flottant (copie le HTML depuis ../rpam-client/index.html, converti en JSX)
+4. Contient un useEffect qui initialise AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 50 }) si AOS est défini dans window
+
+Le composant accepte les props : children et activePage.
+```
+
+**Prompt 4.4 — Créer le composant SEOHead**
+
+```
+Crée rpam-client-next/components/SEOHead.jsx avec next/head qui accepte ces props :
+- title (string)
+- description (string)  
+- canonical (string, URL complète)
+- ogImage (string, optionnel, URL complète)
+- ogType (string, défaut "website")
+- schema (object ou array, optionnel — injecté en JSON-LD via dangerouslySetInnerHTML)
+
+Il doit générer toutes les balises meta Open Graph, Twitter Card, et canonical présentes dans les fichiers HTML actuels (consulte ../rpam-client/index.html pour voir le pattern complet).
+```
+
+---
+
+### PHASE 5 — Conversion des pages simples
+
+> Pour chaque page simple, utiliser ce prompt en remplaçant le nom de la page.
+
+**Prompt 5.x — Template de conversion d'une page**
+
+```
+Lis ../rpam-client/about.html dans son intégralité.
+
+Crée rpam-client-next/pages/about.jsx qui :
+1. Utilise le composant Layout avec activePage="about"
+2. Utilise SEOHead avec exactement les mêmes valeurs que les balises <title>, <meta name="description">, <link rel="canonical">, og:*, twitter:* et les JSON-LD du fichier HTML
+3. Contient dans le JSX le contenu du <body> de about.html, SAUF la Navbar, le Footer et le bouton WhatsApp (déjà dans Layout)
+4. Respecte les règles de conversion HTML → JSX (class→className, balises self-closing, commentaires)
+5. Si le fichier HTML a des scripts inline <script>, déplace-les dans un useEffect. Si ces scripts utilisent jQuery ($), entoure-les de if (typeof window !== 'undefined' && window.$) { ... }
+
+Ne modifie pas le contenu textuel, ne réorganise pas les sections, ne renomme pas les classes CSS.
+```
+
+**Répéter ce prompt pour chaque page en changeant le nom :**
+- `about.html` → `pages/about.jsx` (activePage="about")
+- `services.html` → `pages/services.jsx` (activePage="services")
+- `guidance.html` → `pages/guidance.jsx` (activePage="services")
+- `up-training.html` → `pages/up-training.jsx` (activePage="services")
+- `job-getting.html` → `pages/job-getting.jsx` (activePage="services")
+- `news.html` → `pages/news.jsx` (activePage="news")
+
+---
+
+### PHASE 6 — Pages complexes
+
+**Prompt 6.1 — Page d'accueil (index.jsx)**
+
+```
+Lis ../rpam-client/index.html dans son intégralité.
+
+Crée rpam-client-next/pages/index.jsx en suivant les mêmes règles que les pages simples, avec ces spécificités supplémentaires :
+
+1. Le Swiper hero slider : dans le useEffect, initialise Swiper après avoir vérifié que window.Swiper est défini. Utilise les mêmes options que dans le script inline actuel du HTML.
+
+2. Les compteurs (CountTo) et autres effets numériques : s'ils sont initialisés dans un script inline, place-les aussi dans le useEffect avec vérification window.$.
+
+3. N'initialise PAS AOS ici — il est déjà initialisé dans Layout.jsx.
+
+4. Conserve les attributs data-aos, data-swiper-*, data-parallax-* sur tous les éléments JSX — ils sont lus par main.js et les librairies CDN.
+```
+
+**Prompt 6.2 — Page booking**
+
+```
+Lis ../rpam-client/booking.html dans son intégralité.
+
+Crée rpam-client-next/pages/booking.jsx en suivant les règles standard, avec ces spécificités :
+
+1. Flatpickr (date picker) : dans le useEffect, initialise flatpickr sur les inputs de date après vérification window.flatpickr. Utilise les mêmes options que dans le script inline actuel.
+
+2. Le formulaire utilise Formspree (fetch vers formspree.io). Conserve exactement la même logique de soumission dans le useEffect ou dans un handler onSubmit React (au choix, mais ne pas changer l'endpoint ni les champs).
+
+3. Conserve tous les attributs de validation HTML natifs (required, type, pattern) sur les inputs.
+```
+
+---
+
+### PHASE 7 — Blog
+
+**Prompt 7.1 — Page liste des articles (/blogs)**
+
+```
+Lis ../rpam-client/blogs.html dans son intégralité.
+
+Crée rpam-client-next/pages/blogs.jsx en suivant les règles standard.
+
+En plus, crée rpam-client-next/content/articles.js avec un tableau d'objets exporté. Pour l'instant, il contient un seul article :
+{
+  slug: 'reconversion-professionnelle-30-40-50-ans',
+  title: 'Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2025 ?',
+  excerpt: 'Guide complet pour réussir votre reconversion professionnelle à tout âge...',
+  date: '2025-05-11',
+  readTime: 10,
+  coverImage: '/images/blog/reconversion-professionnelle-cover.jpg',
+  tags: ['Reconversion', 'Bilan de compétences', 'CPF'],
+}
+
+Dans blogs.jsx, importe ce tableau et génère les cartes d'articles dynamiquement à partir du tableau plutôt qu'en dur dans le HTML.
+```
+
+**Prompt 7.2 — Articles de blog statiques**
+
+```
+Copie le dossier ../rpam-client/blog/ dans rpam-client-next/public/blog/.
+
+Ensuite, dans rpam-client-next/pages/blog/[slug].jsx, crée une page qui :
+1. Utilise getStaticPaths pour retourner les slugs disponibles (pour l'instant juste 'reconversion-professionnelle-30-40-50-ans')
+2. Utilise getStaticProps pour passer le slug à la page
+3. Dans le rendu, affiche un lien vers le fichier HTML statique dans public/blog/ via une redirection côté client (window.location) ou un composant qui charge le contenu
+
+Note : pour l'instant, l'approche la plus simple est que /blog/[slug] redirige simplement vers le fichier HTML statique dans public/. On migrera vers MDX plus tard quand on aura plus d'articles.
+
+Alternative plus propre : laisse les fichiers HTML dans public/blog/ et supprime la page [slug].jsx — Vercel servira les fichiers HTML directement depuis public/ avec les bonnes URLs.
+```
+
+---
+
+### PHASE 8 — Vérification des animations
+
+**Prompt 8.1 — Diagnostic animations**
+
+```
+Le projet Next.js est maintenant en place. Lance le serveur de développement et vérifie les points suivants en lisant le code des composants et pages :
+
+1. Dans _app.js, vérifie que l'ordre des scripts est : jquery.js → vendors.min.js → main.js → Bootstrap → Swiper → AOS → Flatpickr. Si l'ordre est différent, corrige-le.
+
+2. Dans Layout.jsx, vérifie que AOS.init() est dans un useEffect avec tableau de dépendances vide [].
+
+3. Dans chaque page qui avait un <script> inline avec $(document).ready() ou document.addEventListener('DOMContentLoaded'), vérifie que le code est maintenant dans un useEffect avec if (typeof window !== 'undefined' && window.$) { ... }.
+
+4. Vérifie que tous les attributs data-aos="fade-up", data-aos-delay="...", data-aos-duration="..." sont bien présents dans le JSX des pages converties (ils ne doivent pas avoir été supprimés lors de la conversion).
+
+5. Vérifie que <body> dans _document.js a bien className="custom-cursor" et data-mobile-nav-style="classic".
+
+Signale tout ce qui est manquant ou mal placé.
+```
+
+**Prompt 8.2 — Correction navigation SPA**
+
+```
+En Next.js, quand l'utilisateur navigue entre les pages sans rechargement complet, main.js ne se ré-exécute pas. Cela peut causer des animations manquantes sur les nouvelles pages visitées.
+
+Dans _app.js, utilise router.events de next/router pour écouter l'événement routeChangeComplete et appeler :
+- AOS.refresh() si window.AOS est défini
+- Si window.$ est défini et que main.js expose une fonction d'init globale, l'appeler aussi
+
+Assure-toi que l'écoute de l'événement est nettoyée dans le return du useEffect pour éviter les fuites mémoire.
+```
+
+---
+
+### PHASE 9 — SEO et sitemap
+
+**Prompt 9.1 — Vérification des métadonnées SEO**
+
+```
+Parcours toutes les pages dans rpam-client-next/pages/ et vérifie pour chacune que :
+1. Le composant SEOHead est présent avec title, description et canonical corrects
+2. Le canonical correspond exactement à l'URL de production (https://www.rpam.fr/...) et non à une URL relative
+3. Les schémas JSON-LD (Organization, Service, FAQPage, BreadcrumbList, BlogPosting) sont passés en prop schema et sont identiques à ceux des fichiers HTML originaux dans ../rpam-client/
+4. Les balises og:image pointent vers des URLs absolues avec le domaine complet
+
+Pour chaque écart trouvé, corrige-le directement.
+```
+
+**Prompt 9.2 — Sitemap**
+
+```
+Dans rpam-client-next/, adapte le fichier ../rpam-client/generate-sitemap.js pour qu'il génère le sitemap.xml dans public/sitemap.xml au lieu de la racine.
+
+Ajoute aussi un script npm "sitemap" dans package.json qui exécute ce fichier.
+
+Ensuite, vérifie que public/robots.txt pointe vers https://www.rpam.fr/sitemap.xml.
+```
+
+---
+
+### PHASE 10 — Tests finaux avant déploiement
+
+**Prompt 10.1 — Checklist pré-déploiement**
+
+```
+Effectue une vérification complète du projet rpam-client-next/ avant déploiement :
+
+Structure :
+- [ ] pages/_document.js existe et contient tous les CSS dans le bon ordre
+- [ ] pages/_app.js charge les scripts JS dans le bon ordre (jquery → vendors → main)
+- [ ] Tous les fichiers CSS sont dans public/css/ et non modifiés
+- [ ] Tous les fichiers JS sont dans public/js/ et non modifiés
+- [ ] public/images/ contient toutes les images du site original
+- [ ] public/sitemap.xml est à jour
+- [ ] public/robots.txt est présent
+
+Pages :
+- [ ] pages/index.jsx existe
+- [ ] pages/about.jsx existe
+- [ ] pages/services.jsx existe
+- [ ] pages/guidance.jsx existe
+- [ ] pages/up-training.jsx existe
+- [ ] pages/job-getting.jsx existe
+- [ ] pages/booking.jsx existe
+- [ ] pages/blogs.jsx existe
+- [ ] pages/news.jsx existe
+
+SEO :
+- [ ] Chaque page a un composant SEOHead avec title, description et canonical
+- [ ] Les schémas JSON-LD sont présents dans chaque page concernée
+
+Animations :
+- [ ] _document.js : body a className="custom-cursor" et data-mobile-nav-style="classic"
+- [ ] Layout.jsx : useEffect avec AOS.init()
+- [ ] _app.js : useEffect avec AOS.refresh() sur routeChangeComplete
+
+Signale tout ce qui manque et propose une correction.
+```
+
+**Prompt 10.2 — Déploiement Vercel**
+
+```
+Le projet est prêt pour le déploiement. 
+
+Dans vercel.json à la racine de rpam-client-next/, crée un fichier minimal avec :
+- Le redirect permanent de rpam.fr vers www.rpam.fr (même règle qu'actuellement)
+
+Crée aussi un commit git avec le message "Initial Next.js migration — static site preserved" et pousse sur la branche main.
+
+Note : le redirect /:path*.html → /:path* et cleanUrls ne sont plus nécessaires car Next.js gère nativement les URLs sans extension.
+```
+
+---
+
+### Prompts utilitaires (à utiliser à tout moment)
+
+**Pour déboguer une animation manquante**
+
+```
+Sur la page [NOM DE LA PAGE], l'animation [DESCRIPTION] ne fonctionne plus en Next.js.
+
+Dans ../rpam-client/[PAGE].html, retrouve le script inline qui initialisait cet effet. Vérifie dans pages/[PAGE].jsx si ce code a bien été déplacé dans un useEffect. Si ce n'est pas le cas, ajoute-le avec une vérification typeof window !== 'undefined'.
+```
+
+**Pour ajouter un nouvel article de blog**
+
+```
+Ajoute un nouvel article de blog avec les informations suivantes :
+- Slug : [SLUG]
+- Titre : [TITRE]
+- Date : [DATE]
+- Temps de lecture : [X] min
+- Image de couverture : /images/blog/[NOM-IMAGE].jpg
+- Tags : [TAG1, TAG2]
+- Extrait : [DESCRIPTION COURTE]
+
+1. Ajoute l'entrée dans content/articles.js
+2. Crée le fichier HTML statique public/blog/[SLUG].html en suivant exactement la structure de public/blog/reconversion-professionnelle-30-40-50-ans.html, mais avec le nouveau contenu
+3. Mets à jour generate-sitemap.js avec le nouvel article
+4. Régénère public/sitemap.xml
+```
+
+**Pour convertir un article HTML existant en MDX**
+
+```
+Convertis l'article public/blog/[SLUG].html en fichier MDX content/blog/[SLUG].mdx.
+
+Le frontmatter doit contenir : title, description, date, coverImage, tags, readTime, canonical.
+
+Le contenu HTML de l'article doit être converti en Markdown propre. Les balises <h2>, <h3>, <ul>, <ol>, <p>, <strong>, <em> sont converties en Markdown standard. Les <div class="alert"> et les boîtes CTA sont conservées en HTML dans le fichier MDX (MDX accepte le HTML inline).
+
+Ensuite, adapte pages/blog/[slug].jsx pour lire depuis content/blog/ avec next-mdx-remote et getStaticProps.
+```
+
+---
+
 *Document rédigé le 16 mai 2026 — à réviser avant le début effectif de la migration.*

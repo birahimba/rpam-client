@@ -16,3 +16,7 @@ package-lock.json
 css/backup/
 css/optimized/
 images/originals/
+
+# Next.js
+.next/
+.env.local

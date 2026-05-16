@@ -2,7 +2,39 @@
 
 > **Objectif :** Migrer le site vitrine statique (HTML/CSS/JS) vers Next.js  
 > **Contrainte principale :** Conserver 100 % du design, des CSS et des animations JavaScript existants  
-> **Horizon :** Quelques semaines après la rédaction de ce document  
+> **Branche de travail :** `nextjs-migration`  
+
+---
+
+## Suivi d'avancement
+
+| Phase | Description | Statut | Date |
+|---|---|---|---|
+| 1 | Initialisation Next.js (package.json, next.config.js, npm install) | ✅ Fait | 2026-05-16 |
+| 2 | Copie assets → public/ (css, js, images, fonts, blog, sitemap) | ✅ Fait | 2026-05-16 |
+| 3 | `_document.js` (CSS globaux + classes body) | ✅ Fait | 2026-05-16 |
+| 3b | `_app.js` (scripts JS + AOS refresh sur navigation) | ✅ Fait | 2026-05-16 |
+| 4 | Composant `Navbar.jsx` (desktop + mobile + mega-menu) | ✅ Fait | 2026-05-16 |
+| 4b | Composant `Footer.jsx` | ✅ Fait | 2026-05-16 |
+| 4c | Composant `Layout.jsx` (Navbar + Footer + WhatsApp + AOS init) | ✅ Fait | 2026-05-16 |
+| 4d | Composant `SEOHead.jsx` (meta, OG, Twitter, JSON-LD) | ✅ Fait | 2026-05-16 |
+| 4e | `content/articles.js` (liste statique des articles) | ✅ Fait | 2026-05-16 |
+| 5 | `pages/index.jsx` — page d'accueil complète (Swiper, sections, waitlist) | ✅ Fait | 2026-05-16 |
+| 5b | `pages/about.jsx` | ✅ Fait | 2026-05-16 |
+| 5c | `pages/services.jsx` | ✅ Fait | 2026-05-16 |
+| 5d | `pages/guidance.jsx` | ✅ Fait | 2026-05-16 |
+| 5e | `pages/up-training.jsx` | ✅ Fait | 2026-05-16 |
+| 5f | `pages/job-getting.jsx` | ✅ Fait | 2026-05-16 |
+| 5g | `pages/news.jsx` | ✅ Fait | 2026-05-16 |
+| 6 | `pages/booking.jsx` (Cal.com embed + Formspree) | ✅ Fait | 2026-05-16 |
+| 7 | `pages/blogs.jsx` (liste articles statique) | ✅ Fait | 2026-05-16 |
+| 7b | `pages/blog/reconversion-professionnelle-30-40-50-ans.jsx` | ✅ Fait | 2026-05-16 |
+| 8 | `npx next build` — 12 pages, 0 erreur, toutes statiques | ✅ Fait | 2026-05-16 |
+| 9 | SEO : canonical + JSON-LD sur toutes les pages | ✅ Fait | 2026-05-16 |
+| 10 | Vérification animations (AOS, Swiper, curseur, navbar) | ⏳ À faire (preview Vercel) | — |
+| 11 | Tests finaux + déploiement sur URL preview Vercel | ⏳ À faire | — |
+
+> **Build Next.js :** ✅ Validé le 2026-05-16 — 12 pages générées, 0 erreur de compilation
 
 ---
 

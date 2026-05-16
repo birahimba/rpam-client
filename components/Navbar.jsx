@@ -38,9 +38,9 @@ export default function Navbar({ activePage }) {
   }, [])
 
   return (
-    <>
+    <div ref={menuRef}>
       {/* Main Navbar */}
-      <nav className="navbar-modern" id="mainNavbar" ref={menuRef}>
+      <nav className="navbar-modern" id="mainNavbar">
         <div className="container-fluid">
           <div className="navbar-container">
 
@@ -171,6 +171,6 @@ export default function Navbar({ activePage }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

@@ -66,6 +66,13 @@
 
     <!-- Articles de blog -->
     <url>
+        <loc>https://www.rpam.fr/blog/optimiser-profil-linkedin-recruteurs-2025</loc>
+        <lastmod>2026-05-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
         <loc>https://www.rpam.fr/blog/se-former-intelligence-artificielle-travail-2025</loc>
         <lastmod>2026-05-16</lastmod>
         <changefreq>monthly</changefreq>

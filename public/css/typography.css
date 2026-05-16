@@ -178,6 +178,16 @@ small, .small {
   letter-spacing: var(--ls-body);
 }
 
+/* ── Échelle mobile — réduit les minimums des clamp sur petit écran ── */
+@media (max-width: 575px) {
+  :root {
+    --type-h1:   clamp(1.75rem, 6.5vw, 2.2rem);   /* hero title : ~28–35px */
+    --type-h2:   clamp(1.35rem, 5vw,   1.7rem);    /* titres de section : ~22–27px */
+    --type-h3:   clamp(1.15rem, 4vw,   1.4rem);    /* titres de carte : ~18–22px */
+    --type-lead: clamp(1rem,    3.5vw, 1.15rem);   /* sous-titres : ~16–18px */
+  }
+}
+
 /* ── Utilitaires poids normalisés ───────────────────────────── */
 .fw-300 { font-weight: 300; }
 .fw-400 { font-weight: 400; }

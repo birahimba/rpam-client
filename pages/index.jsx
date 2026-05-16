@@ -77,15 +77,27 @@ function WaitlistForm() {
   )
 }
 
+function initHeroSwiper() {
+  if (typeof window === 'undefined' || !window.Swiper) return
+  new window.Swiper('.hero-swiper', {
+    loop: true,
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    autoplay: { delay: 8000, disableOnInteraction: false },
+    speed: 1200,
+    pagination: { el: '.hero-pagination', clickable: true },
+    navigation: { nextEl: '.hero-next', prevEl: '.hero-prev' },
+  })
+}
+
 export default function Home() {
   useEffect(() => {
-    if (typeof window === 'undefined' || !window.Swiper) return
-    new window.Swiper('.hero-swiper', {
-      loop: true,
-      autoplay: { delay: 5000, disableOnInteraction: false },
-      pagination: { el: '.hero-pagination', clickable: true },
-      navigation: { nextEl: '.hero-next', prevEl: '.hero-prev' },
-    })
+    if (typeof window !== 'undefined' && window.Swiper) {
+      initHeroSwiper()
+    } else {
+      window.addEventListener('swiper-ready', initHeroSwiper, { once: true })
+    }
+    return () => window.removeEventListener('swiper-ready', initHeroSwiper)
   }, [])
 
   return (

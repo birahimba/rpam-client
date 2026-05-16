@@ -1,5 +1,16 @@
 export const articles = [
   {
+    slug: 'optimiser-profil-linkedin-recruteurs-2025',
+    title: "Optimiser son profil LinkedIn pour être contacté par les recruteurs en 2025",
+    excerpt: "Avoir un profil LinkedIn ne suffit plus. Découvrez comment construire un profil visible, crédible et optimisé pour attirer les recruteurs et créer de nouvelles opportunités professionnelles.",
+    date: '2026-05-16',
+    dateModified: '2026-05-16',
+    readTime: 8,
+    coverImage: '/images/default-blog-cover.jpg',
+    tags: ['LinkedIn', 'Emploi', 'Recrutement'],
+    keywords: ['optimiser profil LinkedIn', 'recruteurs LinkedIn', 'visibilité LinkedIn 2025', 'LinkedIn emploi', 'profil LinkedIn recrutement'],
+  },
+  {
     slug: 'se-former-intelligence-artificielle-travail-2025',
     title: "Se former à l'intelligence artificielle au travail : guide pratique pour débuter en 2025",
     excerpt: "L'IA transforme le monde du travail. Découvrez comment vous former à l'intelligence artificielle sans être développeur, quels outils maîtriser et comment l'intégrer dans votre quotidien professionnel.",

@@ -1,6 +1,11 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { articles } from '../content/articles'
+
+function formatDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+}
 
 export default function Blogs() {
   return (
@@ -31,7 +36,7 @@ export default function Blogs() {
               <div className="blog-hero-stats" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div className="stat-item">
                   <i className="feather icon-feather-file-text"></i>
-                  <span>Articles</span>
+                  <span>{articles.length}</span>
                   <small>Orientation &amp; Coaching</small>
                 </div>
                 <div className="stat-divider"></div>
@@ -61,41 +66,43 @@ export default function Blogs() {
             {/* Articles */}
             <div className="col-12 col-lg-8">
               <div className="blog-grid-modern">
-
-                <article className="blog-card-modern" data-aos="fade-up" data-aos-duration="600">
-                  <div className="blog-card-inner">
-                    <div className="blog-card-image">
-                      <Link href="/blog/reconversion-professionnelle-30-40-50-ans">
-                        <img
-                          src="/images/blog/reconversion-professionnelle-cover.jpg"
-                          alt="Reconversion professionnelle à 30, 40 ou 50 ans"
-                          onError={(e) => { e.target.style.display = 'none' }}
-                        />
-                      </Link>
-                      <span className="blog-card-category">Reconversion</span>
-                    </div>
-                    <div className="blog-card-content">
-                      <div className="blog-card-meta">
-                        <span><i className="feather icon-feather-calendar"></i> 11 mai 2025</span>
-                        <span><i className="feather icon-feather-clock"></i> 10 min de lecture</span>
-                      </div>
-                      <h2 className="blog-card-title">
-                        <Link href="/blog/reconversion-professionnelle-30-40-50-ans">
-                          Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2025 ?
+                {articles.map((article, i) => (
+                  <article
+                    key={article.slug}
+                    className="blog-card-modern"
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay={String(i * 100)}
+                  >
+                    <div className="blog-card-inner">
+                      <div className="blog-card-image">
+                        <Link href={`/blog/${article.slug}`}>
+                          <img
+                            src={article.coverImage}
+                            alt={article.title}
+                            onError={(e) => { e.target.style.display = 'none' }}
+                          />
                         </Link>
-                      </h2>
-                      <p className="blog-card-excerpt">
-                        Guide complet pour réussir votre reconversion professionnelle à tout âge. Étapes clés, financement CPF, secteurs porteurs et conseils pour changer de métier avec succès.
-                      </p>
-                      <div className="blog-card-footer">
-                        <Link href="/blog/reconversion-professionnelle-30-40-50-ans" className="read-more-btn">
-                          Lire l&apos;article <i className="feather icon-feather-arrow-right"></i>
-                        </Link>
+                        <span className="blog-card-category">{article.tags[0]}</span>
+                      </div>
+                      <div className="blog-card-content">
+                        <div className="blog-card-meta">
+                          <span><i className="feather icon-feather-calendar"></i> {formatDate(article.date)}</span>
+                          <span><i className="feather icon-feather-clock"></i> {article.readTime} min de lecture</span>
+                        </div>
+                        <h2 className="blog-card-title">
+                          <Link href={`/blog/${article.slug}`}>{article.title}</Link>
+                        </h2>
+                        <p className="blog-card-excerpt">{article.excerpt}</p>
+                        <div className="blog-card-footer">
+                          <Link href={`/blog/${article.slug}`} className="read-more-btn">
+                            Lire l&apos;article <i className="feather icon-feather-arrow-right"></i>
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-
+                  </article>
+                ))}
               </div>
             </div>
 
@@ -123,12 +130,9 @@ export default function Blogs() {
                     <i className="feather icon-feather-hash"></i> Thématiques
                   </h3>
                   <div className="tags-cloud-modern">
-                    <Link href="/blogs" className="tag-cloud-item">#Reconversion</Link>
-                    <Link href="/blogs" className="tag-cloud-item">#BilanDeCompétences</Link>
-                    <Link href="/blogs" className="tag-cloud-item">#CoachingEmploi</Link>
-                    <Link href="/blogs" className="tag-cloud-item">#CPF</Link>
-                    <Link href="/blogs" className="tag-cloud-item">#Formation</Link>
-                    <Link href="/blogs" className="tag-cloud-item">#Carrière</Link>
+                    {[...new Set(articles.flatMap(a => a.tags))].map(tag => (
+                      <Link key={tag} href="/blogs" className="tag-cloud-item">#{tag}</Link>
+                    ))}
                   </div>
                 </div>
 

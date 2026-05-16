@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { marked } from 'marked'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import SEOHead from '../../components/SEOHead'
@@ -12,7 +13,7 @@ export async function getStaticPaths() {
   if (!fs.existsSync(BLOG_DIR)) return { paths: [], fallback: false }
   const slugs = fs
     .readdirSync(BLOG_DIR)
-    .filter(f => f.endsWith('.md'))
+    .filter(f => f.endsWith('.md') && !f.startsWith('_'))
     .map(f => ({ params: { slug: f.replace('.md', '') } }))
   return { paths: slugs, fallback: false }
 }
@@ -20,7 +21,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const filePath = path.join(BLOG_DIR, `${params.slug}.md`)
   if (!fs.existsSync(filePath)) return { notFound: true }
-  const { data: frontmatter, content } = matter(fs.readFileSync(filePath, 'utf-8'))
+  const { data: frontmatter, content: rawContent } = matter(fs.readFileSync(filePath, 'utf-8'))
+  const content = marked(rawContent)
   return { props: { frontmatter, content, slug: params.slug } }
 }
 

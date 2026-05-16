@@ -1,9 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { marked } from 'marked'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import SEOHead from '../../components/SEOHead'
+import { buildArticleSchema } from '../../lib/seo'
 
 const BLOG_DIR = path.join(process.cwd(), 'content/blog')
 
@@ -11,7 +13,7 @@ export async function getStaticPaths() {
   if (!fs.existsSync(BLOG_DIR)) return { paths: [], fallback: false }
   const slugs = fs
     .readdirSync(BLOG_DIR)
-    .filter(f => f.endsWith('.md'))
+    .filter(f => f.endsWith('.md') && !f.startsWith('_'))
     .map(f => ({ params: { slug: f.replace('.md', '') } }))
   return { paths: slugs, fallback: false }
 }
@@ -19,7 +21,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const filePath = path.join(BLOG_DIR, `${params.slug}.md`)
   if (!fs.existsSync(filePath)) return { notFound: true }
-  const { data: frontmatter, content } = matter(fs.readFileSync(filePath, 'utf-8'))
+  const { data: frontmatter, content: rawContent } = matter(fs.readFileSync(filePath, 'utf-8'))
+  const content = marked(rawContent)
   return { props: { frontmatter, content, slug: params.slug } }
 }
 
@@ -28,21 +31,16 @@ function formatDate(dateStr) {
 }
 
 export default function BlogPost({ frontmatter, content, slug }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": frontmatter.title,
-    "description": frontmatter.excerpt,
-    "url": `https://www.rpam.fr/blog/${slug}`,
-    "image": frontmatter.coverImage ? `https://www.rpam.fr${frontmatter.coverImage}` : undefined,
-    "datePublished": frontmatter.date,
-    "author": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "RPAM",
-      "logo": { "@type": "ImageObject", "url": "https://www.rpam.fr/images/logo-rpam.png" }
-    }
-  }
+  const schema = buildArticleSchema({
+    slug,
+    title: frontmatter.title,
+    description: frontmatter.excerpt,
+    coverImage: frontmatter.coverImage,
+    datePublished: frontmatter.date,
+    dateModified: frontmatter.dateModified,
+    keywords: frontmatter.keywords || [],
+    faqs: frontmatter.faqs || [],
+  })
 
   return (
     <Layout activePage="blogs">

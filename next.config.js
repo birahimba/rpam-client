@@ -9,6 +9,8 @@ const nextConfig = {
         destination: 'https://www.rpam.fr/:path*',
         permanent: true,
       },
+      { source: '/index.html', destination: '/', permanent: true },
+      { source: '/:path*.html', destination: '/:path*', permanent: true },
     ]
   },
 }

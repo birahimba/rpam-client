@@ -44,8 +44,8 @@ ${staticEntries}${BLOG_ARTICLES.length > 0 ? '\n\n    <!-- Articles de blog -->\
 
 </urlset>`;
 
-    fs.writeFileSync('sitemap.xml', sitemap, 'utf8');
-    console.log(`sitemap.xml mis à jour — ${STATIC_PAGES.length} pages + ${BLOG_ARTICLES.length} articles`);
+    fs.writeFileSync('public/sitemap.xml', sitemap, 'utf8');
+    console.log(`public/sitemap.xml mis à jour — ${STATIC_PAGES.length} pages + ${BLOG_ARTICLES.length} articles`);
 }
 
 generateSitemap();

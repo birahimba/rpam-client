@@ -1,10 +1,9 @@
 // Script de génération du sitemap
 // Usage: node generate-sitemap.js
-// À relancer après chaque publication d'article sur Hashnode
+// Ajouter manuellement les articles dans BLOG_ARTICLES après chaque publication
 
 const fs = require('fs');
 
-const HASHNODE_HOST = 'rpam.hashnode.dev';
 const SITE_URL = 'https://www.rpam.fr';
 
 const STATIC_PAGES = [
@@ -19,33 +18,13 @@ const STATIC_PAGES = [
     { loc: '/booking',     lastmod: '2026-05-11', changefreq: 'monthly', priority: '0.7' },
 ];
 
-async function fetchAllPosts() {
-    const query = `
-        query {
-            publication(host: "${HASHNODE_HOST}") {
-                posts(first: 50) {
-                    edges {
-                        node {
-                            slug
-                            publishedAt
-                        }
-                    }
-                }
-            }
-        }
-    `;
+// Ajouter ici chaque nouvel article publié
+// { loc: '/blog/slug-de-larticle', lastmod: 'YYYY-MM-DD', priority: '0.75' }
+const BLOG_ARTICLES = [
+    { loc: '/blog/reconversion-professionnelle-30-40-50-ans', lastmod: '2025-05-11', priority: '0.8' },
+];
 
-    const response = await fetch('https://gql.hashnode.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query })
-    });
-
-    const data = await response.json();
-    return data.data?.publication?.posts?.edges || [];
-}
-
-function urlEntry({ loc, lastmod, changefreq, priority }) {
+function urlEntry({ loc, lastmod, changefreq = 'monthly', priority = '0.75' }) {
     return `    <url>
         <loc>${SITE_URL}${loc}</loc>
         <lastmod>${lastmod}</lastmod>
@@ -54,35 +33,19 @@ function urlEntry({ loc, lastmod, changefreq, priority }) {
     </url>`;
 }
 
-async function generateSitemap() {
-    console.log('Récupération des articles Hashnode...');
-    const posts = await fetchAllPosts();
-    console.log(`${posts.length} article(s) trouvé(s)`);
-
+function generateSitemap() {
     const staticEntries = STATIC_PAGES.map(urlEntry).join('\n\n');
-
-    const blogEntries = posts.map(({ node: post }) => {
-        const lastmod = post.publishedAt.split('T')[0];
-        return urlEntry({
-            loc: `/blog/${post.slug}`,
-            lastmod,
-            changefreq: 'monthly',
-            priority: '0.75'
-        });
-    }).join('\n\n');
+    const blogEntries = BLOG_ARTICLES.map(urlEntry).join('\n\n');
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-${staticEntries}
-
-    <!-- Articles de blog (${posts.length} articles) -->
-${blogEntries}
+${staticEntries}${BLOG_ARTICLES.length > 0 ? '\n\n    <!-- Articles de blog -->\n' + blogEntries : ''}
 
 </urlset>`;
 
     fs.writeFileSync('sitemap.xml', sitemap, 'utf8');
-    console.log('sitemap.xml mis à jour avec succès');
+    console.log(`sitemap.xml mis à jour — ${STATIC_PAGES.length} pages + ${BLOG_ARTICLES.length} articles`);
 }
 
-generateSitemap().catch(console.error);
+generateSitemap();

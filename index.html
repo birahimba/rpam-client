@@ -827,13 +827,33 @@
                     <p class="text-black">Découvrez nos dernières inspirations pour booster votre carrière</p>
                 </div>
             </div>
-            <div id="featured-article-home" class="featured-article-container">
-                <!-- L'article mis en avant sera injecté ici -->
-                <div class="text-center py-5">
-                    <div class="spinner-border text-base-color" role="status">
-                        <span class="visually-hidden">Chargement...</span>
+            <div class="featured-article-container">
+                <article class="featured-article">
+                    <a href="/blog/reconversion-professionnelle-30-40-50-ans">
+                        <img src="/images/blog/reconversion-professionnelle-cover.jpg"
+                            alt="Reconversion professionnelle à 30, 40 ou 50 ans"
+                            class="featured-image"
+                            onerror="this.src='/images/default-blog-cover.jpg'">
+                    </a>
+                    <div class="featured-content">
+                        <span class="featured-badge">
+                            <i class="feather icon-feather-star"></i> Article à la une
+                        </span>
+                        <h2 class="featured-title">
+                            <a href="/blog/reconversion-professionnelle-30-40-50-ans">
+                                Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2025 ?
+                            </a>
+                        </h2>
+                        <p class="featured-excerpt">Guide complet pour réussir votre reconversion professionnelle à tout âge. Étapes clés, financements CPF, secteurs porteurs et conseils pour changer de métier avec succès.</p>
+                        <div class="featured-meta">
+                            <span><i class="feather icon-feather-calendar"></i> 11 mai 2025</span>
+                            <span><i class="feather icon-feather-clock"></i> 10 min de lecture</span>
+                        </div>
+                        <a href="/blog/reconversion-professionnelle-30-40-50-ans" class="read-more-btn">
+                            Lire l'article <i class="feather icon-feather-arrow-right"></i>
+                        </a>
                     </div>
-                </div>
+                </article>
             </div>
             <div class="text-center mt-4">
                 <a href="/blogs" class="btn btn-base-color btn-rounded btn-box-shadow text-transform-none fw-600">
@@ -842,120 +862,6 @@
             </div>
         </div>
     </section>
-
-    <script>
-        // Script pour charger l'article à la une sur la page d'accueil
-        document.addEventListener('DOMContentLoaded', function () {
-            // Fonction de sécurité pour échapper le HTML
-            function escapeHtml(text) {
-                if (!text) return '';
-                const div = document.createElement('div');
-                div.textContent = text;
-                return div.innerHTML;
-            }
-
-            // Fonction pour valider les URLs d'images
-            function isValidImageUrl(url) {
-                if (!url) return false;
-                try {
-                    const urlObj = new URL(url);
-                    if (urlObj.protocol !== 'https:') return false;
-                    const allowedDomains = ['cdn.hashnode.com', 'hashnode.com', window.location.hostname];
-                    return allowedDomains.some(domain => urlObj.hostname.endsWith(domain));
-                } catch {
-                    return false;
-                }
-            }
-
-            async function loadFeaturedArticle() {
-                const container = document.getElementById('featured-article-home');
-
-                try {
-                    const query = `
-                        query Publication {
-                            publication(host: "rpam.hashnode.dev") {
-                                posts(first: 1) {
-                                    edges {
-                                        node {
-                                            title
-                                            brief
-                                            slug
-                                            coverImage {
-                                                url
-                                            }
-                                            publishedAt
-                                            readTimeInMinutes
-                                            reactionCount
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    `;
-
-                    const response = await fetch('https://gql.hashnode.com', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ query })
-                    });
-
-                    const data = await response.json();
-                    const post = data.data?.publication?.posts?.edges?.[0]?.node;
-
-                    if (!post) {
-                        container.innerHTML = `
-                            <div class="text-center py-4">
-                                <p class="text-muted mb-0">Aucun article disponible pour le moment.</p>
-                            </div>
-                        `;
-                        return;
-                    }
-
-                    const date = new Date(post.publishedAt).toLocaleDateString('fr-FR', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
-
-                    const rawCoverImage = post.coverImage?.url || 'images/default-blog-cover.jpg';
-                    const coverImage = isValidImageUrl(rawCoverImage) ? rawCoverImage : 'images/default-blog-cover.jpg';
-
-                    container.innerHTML = `
-                        <article class="featured-article">
-                            <img src="${escapeHtml(coverImage)}" alt="${escapeHtml(post.title)}" class="featured-image" onerror="this.src='images/default-blog-cover.jpg'">
-                            <div class="featured-content">
-                                <span class="featured-badge">
-                                    <i class="feather icon-feather-star"></i> Article à la une
-                                </span>
-                                <h2 class="featured-title">
-                                    <a href="blog-post?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
-                                </h2>
-                                <p class="featured-excerpt">${escapeHtml(post.brief)}</p>
-                                <div class="featured-meta">
-                                    <span><i class="feather icon-feather-calendar"></i> ${escapeHtml(date)}</span>
-                                    ${post.readTimeInMinutes ? `<span><i class="feather icon-feather-clock"></i> ${post.readTimeInMinutes} min de lecture</span>` : ''}
-                                    ${post.reactionCount ? `<span><i class="feather icon-feather-heart"></i> ${post.reactionCount} likes</span>` : ''}
-                                </div>
-                                <a href="blog-post?slug=${encodeURIComponent(post.slug)}" class="read-more-btn">
-                                    Lire l'article <i class="feather icon-feather-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
-                    `;
-                } catch (error) {
-                    console.error('Erreur lors du chargement de l\'article:', error);
-                    container.innerHTML = `
-                        <div class="text-center py-4">
-                            <p class="text-muted mb-0">Impossible de charger l'article pour le moment.</p>
-                            <a href="/blogs" class="btn btn-sm btn-outline-secondary mt-3">Voir le blog</a>
-                        </div>
-                    `;
-                }
-            }
-
-            loadFeaturedArticle();
-        });
-    </script>
 
     <!-- Section liste d'attente RPAM Connect -->
     <section id="rpam-connect" style="background: linear-gradient(135deg, #0d2535 0%, #003d3f 50%, #0d2535 100%); padding: 90px 0;">
@@ -1064,33 +970,23 @@
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-12 col-md-4">
-                    <a href="/blog/lintegration-en-entreprise-pour-debutants-reussir-ses-premiers-pas-professionnels" class="d-block text-decoration-none h-100">
+                <div class="col-12 col-md-6">
+                    <a href="/blog/reconversion-professionnelle-30-40-50-ans" class="d-block text-decoration-none h-100">
                         <div class="p-4 bg-white border-radius-12px h-100 shadow-extra-small" style="transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
-                            <span class="d-inline-block bg-base-color text-white fs-12 fw-600 px-3 py-1 border-radius-20px mb-3">Intégration</span>
-                            <h3 class="fw-600 fs-18 text-dark-gray mb-2">L'intégration en entreprise pour débutants : réussir ses premiers pas</h3>
-                            <p class="text-medium-gray fs-15 mb-3">Guide complet pour réussir son arrivée en entreprise, créer de bonnes relations et prendre ses marques rapidement.</p>
+                            <span class="d-inline-block bg-base-color text-white fs-12 fw-600 px-3 py-1 border-radius-20px mb-3">Reconversion</span>
+                            <h3 class="fw-600 fs-18 text-dark-gray mb-2">Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2025 ?</h3>
+                            <p class="text-medium-gray fs-15 mb-3">Guide complet pour réussir votre reconversion professionnelle à tout âge. Étapes clés, financements CPF et conseils pratiques.</p>
                             <span class="text-base-color fw-600 fs-14">Lire l'article <i class="fas fa-arrow-right ms-1"></i></span>
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-4">
-                    <a href="/blog/le-grand-saut-du-savoir-a-laction-en-entreprise" class="d-block text-decoration-none h-100">
-                        <div class="p-4 bg-white border-radius-12px h-100 shadow-extra-small" style="transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
-                            <span class="d-inline-block bg-base-color text-white fs-12 fw-600 px-3 py-1 border-radius-20px mb-3">Action</span>
-                            <h3 class="fw-600 fs-18 text-dark-gray mb-2">Le grand saut : du savoir à l'action en entreprise</h3>
-                            <p class="text-medium-gray fs-15 mb-3">Comment transformer ses connaissances théoriques en compétences opérationnelles immédiatement valorisables.</p>
-                            <span class="text-base-color fw-600 fs-14">Lire l'article <i class="fas fa-arrow-right ms-1"></i></span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4">
-                    <a href="/blog/du-premier-jour-a-limpact-reel-transformer-son-apprentissage-en-valeur-en-entreprise" class="d-block text-decoration-none h-100">
-                        <div class="p-4 bg-white border-radius-12px h-100 shadow-extra-small" style="transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
-                            <span class="d-inline-block bg-base-color text-white fs-12 fw-600 px-3 py-1 border-radius-20px mb-3">Impact</span>
-                            <h3 class="fw-600 fs-18 text-dark-gray mb-2">Du premier jour à l'impact réel : transformer son apprentissage en valeur</h3>
-                            <p class="text-medium-gray fs-15 mb-3">Stratégies concrètes pour créer rapidement de la valeur dans son équipe et devenir un collaborateur indispensable.</p>
-                            <span class="text-base-color fw-600 fs-14">Lire l'article <i class="fas fa-arrow-right ms-1"></i></span>
+                <div class="col-12 col-md-6">
+                    <a href="/blogs" class="d-block text-decoration-none h-100">
+                        <div class="p-4 bg-white border-radius-12px h-100 shadow-extra-small d-flex flex-column align-items-center justify-content-center text-center" style="transition:box-shadow .2s;min-height:180px;" onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
+                            <i class="feather icon-feather-book-open" style="font-size:2.5rem;color:#005153;margin-bottom:16px;"></i>
+                            <h3 class="fw-600 fs-18 text-dark-gray mb-2">D'autres articles arrivent bientôt</h3>
+                            <p class="text-medium-gray fs-15 mb-3">Nos conseillers partagent régulièrement leurs conseils et expertises sur le blog RPAM.</p>
+                            <span class="text-base-color fw-600 fs-14">Voir le blog <i class="fas fa-arrow-right ms-1"></i></span>
                         </div>
                     </a>
                 </div>
@@ -1154,9 +1050,7 @@
                     <ul>
                         <li><a href="/blogs">Blog RPAM</a></li>
                         <li><a href="/news">Actualités</a></li>
-                        <li><a href="/blog/lintegration-en-entreprise-pour-debutants-reussir-ses-premiers-pas-professionnels">Intégration en entreprise</a></li>
-                        <li><a href="/blog/le-grand-saut-du-savoir-a-laction-en-entreprise">Du savoir à l’action</a></li>
-                        <li><a href="/blog/du-premier-jour-a-limpact-reel-transformer-son-apprentissage-en-valeur-en-entreprise">Impact en entreprise</a></li>
+                        <li><a href="/blog/reconversion-professionnelle-30-40-50-ans">Reconversion professionnelle</a></li>
                     </ul>
                 </div>
 

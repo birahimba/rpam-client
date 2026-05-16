@@ -1,76 +1,11 @@
-// Bot user agents that don't execute JavaScript (or that benefit from prerendering)
-const BOT_AGENTS = [
-    // Moteurs de recherche — priorité indexation
-    'Googlebot',
-    'Googlebot-Image',
-    'Googlebot-Video',
-    'Google-InspectionTool',
-    'APIs-Google',
-    'AdsBot-Google',
-    'Bingbot',
-    'msnbot',
-    'DuckDuckBot',
-    'YandexBot',
-    'Baiduspider',
-    'Sogou',
-    'Exabot',
-    'ia_archiver',
-    'Slurp',
-    // Réseaux sociaux
-    'facebookexternalhit',
-    'Facebot',
-    'Twitterbot',
-    'LinkedInBot',
-    'WhatsApp',
-    'Slackbot',
-    'TelegramBot',
-    'Pinterest',
-    'Discordbot',
-    'Embedly',
-    'Quora Link Preview',
-    'Showyoubot',
-    'outbrain',
-    'vkShare',
-    'W3C_Validator',
-    'redditbot',
-    'Applebot',
-    'SkypeUriPreview'
-];
+// Middleware Vercel Edge — simplifié après migration vers articles statiques
+// Le prérendu Hashnode a été supprimé : les articles sont désormais des fichiers HTML statiques
 
 export default function middleware(request) {
-    const url = new URL(request.url);
-
-    // Extract slug from /blog/:slug path or ?slug= query param
-    let slug = null;
-    const cleanPathMatch = url.pathname.match(/^\/blog\/([a-zA-Z0-9-_]+)$/);
-    if (cleanPathMatch) {
-        slug = cleanPathMatch[1];
-    } else if (url.pathname.match(/^\/blog-post(\.html)?$/)) {
-        slug = url.searchParams.get('slug');
-    }
-
-    if (!slug) {
-        return;
-    }
-
-    const userAgent = request.headers.get('user-agent') || '';
-
-    // Check if the request comes from a bot
-    const isBot = BOT_AGENTS.some(bot =>
-        userAgent.toLowerCase().includes(bot.toLowerCase())
-    );
-
-    if (!isBot) {
-        return;
-    }
-
-    // Rewrite bot requests to the prerender API
-    const prerenderUrl = new URL('/api/blog-prerender', request.url);
-    prerenderUrl.searchParams.set('slug', slug);
-
-    return fetch(prerenderUrl);
+    // Aucun traitement spécial requis
+    return;
 }
 
 export const config = {
-    matcher: ['/blog/:slug*', '/blog-post', '/blog-post.html']
+    matcher: []
 };

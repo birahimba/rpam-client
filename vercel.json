@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "rpam.fr" }],
+      "destination": "https://www.rpam.fr/:path*",
+      "permanent": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Development files
+node_modules/
+package-lock.json
+*.log
+*.tmp
+*.bak
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Optimization backups (not needed in production)
+css/backup/
+css/optimized/
+images/originals/
+
+# Next.js
+.next/
+.env.local

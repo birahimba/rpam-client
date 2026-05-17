@@ -485,15 +485,15 @@ footer .elements-social.social-icon-style-02 li:first-child {
 ================================================================= */
 h1,
 .h1 {
-  font-size: 4.688rem;
-  line-height: 4.688rem;
+  font-size: 2.5rem;
+  line-height: 1.2;
   margin-bottom: 25px;
 }
 
 h2,
 .h2 {
-  font-size: 3.125rem;
-  line-height: 3.125rem;
+  font-size: 1.875rem;
+  line-height: 1.25;
   margin-bottom: 25px;
 }
 
@@ -507,6 +507,16 @@ h6,
 .h6 {
   margin-bottom: 25px;
 }
+
+/* ── Reset heading sizes — Override template's oversized defaults ─
+   style.min.css ships h3=45px, h4=38px, h5=32px which are far too
+   large for content. These values are further refined by typography.css
+   (loaded after corporate.css), but this provides a reliable baseline.
+─────────────────────────────────────────────────────────────────── */
+h3, .h3 { font-size: 1.5rem;   line-height: 1.4; }
+h4, .h4 { font-size: 1.25rem;  line-height: 1.4; }
+h5, .h5 { font-size: 1.05rem;  line-height: 1.4; }
+h6, .h6 { font-size: 0.9375rem; line-height: 1.4; }
 
 .card-title {
   white-space: nowrap; /* ou */

@@ -46,7 +46,7 @@ export default function Navbar({ activePage }) {
 
             {/* Logo */}
             <Link href="/" className="navbar-logo">
-              <img src="/images/logo-rpam.png" alt="RPAM" width="160" height="50" fetchPriority="high" decoding="async" />
+              <img src="/images/logo-rpam.png" alt="RPAM" width="217" height="50" fetchPriority="high" decoding="async" />
             </Link>
 
             {/* Navigation Desktop */}

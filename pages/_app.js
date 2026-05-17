@@ -39,6 +39,9 @@ export default function App({ Component, pageProps }) {
     ;(async () => {
       await loadScript('/js/jquery.js')
       await loadScript('/js/vendors.min.js')
+      // Stubs for Crafto template functions not used in this project
+      if (typeof window.initAtropos === 'undefined') window.initAtropos = function() {}
+      if (typeof window.destroyAtropos === 'undefined') window.destroyAtropos = function() {}
       await loadScript('/js/main.js')
       await loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
       await loadScript('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js')

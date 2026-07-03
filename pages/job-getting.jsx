@@ -533,7 +533,7 @@ export default function JobGetting() {
                     </div>
                     <div className="svc-article-body">
                       <span className="svc-article-tag">CV &amp; Candidature</span>
-                      <h3 className="svc-article-title">Comment rédiger un CV qui passe les filtres ATS en 2025 ?</h3>
+                      <h3 className="svc-article-title">Comment rédiger un CV qui passe les filtres ATS en 2026 ?</h3>
                       <p className="svc-article-excerpt">Mots-clés, structure, format : optimisez votre CV pour les logiciels de recrutement et décrochez plus d&apos;entretiens.</p>
                       <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>
                     </div>
@@ -548,7 +548,7 @@ export default function JobGetting() {
                     <div className="svc-article-body">
                       <span className="svc-article-tag svc-article-tag--gold">IA &amp; Recrutement</span>
                       <h3 className="svc-article-title">IA et marché de l&apos;emploi : les compétences qui font la différence</h3>
-                      <p className="svc-article-excerpt">Comprendre les outils IA pour mieux valoriser votre profil et répondre aux attentes des recruteurs en 2025.</p>
+                      <p className="svc-article-excerpt">Comprendre les outils IA pour mieux valoriser votre profil et répondre aux attentes des recruteurs en 2026.</p>
                       <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>
                     </div>
                   </Link>

@@ -1,11 +1,11 @@
 ---
-title: "Comment rédiger un CV qui passe les filtres ATS en 2025 ?"
-excerpt: "Découvrez comment optimiser votre CV pour les logiciels ATS et décrocher plus d'entretiens en 2025. Mots-clés, structure, format : le guide complet RPAM."
+title: "Comment rédiger un CV qui passe les filtres ATS en 2026 ?"
+excerpt: "Découvrez comment optimiser votre CV pour les logiciels ATS et décrocher plus d'entretiens en 2026. Mots-clés, structure, format : le guide complet RPAM."
 date: "2026-05-16"
-dateModified: "2026-05-16"
+dateModified: "2026-07-03"
 coverImage: "/images/default-blog-cover.jpg"
 tags: ["CV", "ATS", "Recherche d'emploi", "Recrutement"]
-keywords: ["CV ATS", "optimiser CV", "logiciel recrutement ATS", "mots-clés CV", "recherche emploi 2025", "cv compatible ATS"]
+keywords: ["CV ATS", "optimiser CV", "logiciel recrutement ATS", "mots-clés CV", "recherche emploi 2026", "cv compatible ATS"]
 faqs:
   - question: "Les ATS lisent-ils les PDF ?"
     answer: "Oui, si le PDF est bien structuré et non scanné. Un PDF exporté depuis Word ou un traitement de texte standard est généralement bien lu par les ATS."
@@ -108,7 +108,7 @@ Les recruteurs apprécient les données concrètes. Exemples :
 
 ---
 
-## Les compétences les plus recherchées en 2025
+## Les compétences les plus recherchées en 2026
 
 ### Hard skills
 - Intelligence artificielle et IA générative
@@ -141,9 +141,9 @@ Aujourd'hui, de nombreux recruteurs vérifient aussi votre profil LinkedIn pour 
 
 ---
 
-## Les tendances CV en 2025
+## Les tendances CV en 2026
 
-Les CV efficaces en 2025 sont simples, lisibles, ciblés, orientés résultats, optimisés ATS et compatibles mobile.
+Les CV efficaces en 2026 sont simples, lisibles, ciblés, orientés résultats, optimisés ATS et compatibles mobile.
 
 **Le but n'est plus d'impressionner visuellement**, mais de faciliter la compréhension rapide de votre profil — par le logiciel d'abord, par le recruteur ensuite.
 

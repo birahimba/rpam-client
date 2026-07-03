@@ -25,13 +25,13 @@ const schema = [
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Comment fonctionne le CPF en 2025 ?",
+        "name": "Comment fonctionne le CPF en 2026 ?",
         "acceptedAnswer": { "@type": "Answer", "text": "Le Compte Personnel de Formation (CPF) permet à chaque actif de financer des formations qualifiantes. Depuis 2023, une participation de 100 € est demandée sauf cas d'exonération. RPAM accompagne ses clients dans l'activation et l'utilisation optimale de leur CPF." }
       },
       {
         "@type": "Question",
-        "name": "Quelles sont les compétences les plus recherchées par les employeurs en France en 2025 ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "En 2025, les employeurs recherchent : compétences numériques (IA, data, cybersécurité), soft skills (communication, adaptabilité, intelligence émotionnelle), management de projet et expertises en santé, green tech et digital." }
+        "name": "Quelles sont les compétences les plus recherchées par les employeurs en France en 2026 ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "En 2026, les employeurs recherchent : compétences numériques (IA, data, cybersécurité), soft skills (communication, adaptabilité, intelligence émotionnelle), management de projet et expertises en santé, green tech et digital." }
       },
       {
         "@type": "Question",
@@ -93,12 +93,12 @@ const SOFT_SKILLS = [
 const FAQS = [
   {
     id: 'faq1',
-    q: 'Comment fonctionne le CPF en 2025 ?',
+    q: 'Comment fonctionne le CPF en 2026 ?',
     a: "Le Compte Personnel de Formation (CPF) permet à chaque actif de financer des formations qualifiantes. Depuis 2023, une participation de 100 € est demandée sauf pour les demandeurs d'emploi, les travailleurs handicapés et certains cas d'exonération. RPAM accompagne ses clients dans l'activation et l'utilisation optimale de leur CPF.",
   },
   {
     id: 'faq2',
-    q: 'Quelles compétences sont les plus recherchées par les employeurs en 2025 ?',
+    q: 'Quelles compétences sont les plus recherchées par les employeurs en 2026 ?',
     a: "Les employeurs français recherchent principalement des compétences numériques (IA, data, cybersécurité), des soft skills (communication, adaptabilité, intelligence émotionnelle), des compétences en management de projet et des expertises dans les secteurs de la santé, du green tech et du digital.",
   },
   {
@@ -108,7 +108,7 @@ const FAQS = [
   },
   {
     id: 'faq4',
-    q: 'Quels secteurs recrutent le plus en France en 2025 ?',
+    q: 'Quels secteurs recrutent le plus en France en 2026 ?',
     a: "Les secteurs en forte croissance : le numérique et la tech (développeurs, data scientists, cybersécurité), la santé et le médico-social, le BTP et la rénovation énergétique, la logistique et le transport, ainsi que le tourisme et l'hôtellerie. L'IA génère également de nombreux métiers émergents.",
   },
 ]
@@ -185,8 +185,8 @@ export default function News() {
           <div className="row align-items-center g-5">
             <div className="col-12 col-lg-6" data-aos="fade-right">
               <span className="news-section-label">Dossier</span>
-              <h2 className="news-section-title text-white">Reconversion professionnelle : ce qui change en 2025</h2>
-              <p className="news-reconversion-text">Le marché du travail français évolue à un rythme sans précédent. En 2025, la reconversion n&apos;est plus une exception — c&apos;est une stratégie de carrière adoptée par des millions d&apos;actifs.</p>
+              <h2 className="news-section-title text-white">Reconversion professionnelle : ce qui change en 2026</h2>
+              <p className="news-reconversion-text">Le marché du travail français évolue à un rythme sans précédent. En 2026, la reconversion n&apos;est plus une exception — c&apos;est une stratégie de carrière adoptée par des millions d&apos;actifs.</p>
               <div className="news-topic">
                 <div className="news-topic-dot" />
                 <div>
@@ -223,7 +223,7 @@ export default function News() {
       <section className="news-section bg-white">
         <div className="container">
           <div className="news-section-header" data-aos="fade-up">
-            <span className="news-section-label">Recrutement 2025</span>
+            <span className="news-section-label">Recrutement 2026</span>
             <h2 className="news-section-title">Ce que cherchent vraiment les employeurs</h2>
             <p className="news-section-sub">Au-delà des diplômes, les recruteurs évaluent des compétences comportementales décisives.</p>
           </div>

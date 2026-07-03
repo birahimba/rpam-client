@@ -142,17 +142,8 @@ export default function Blogs() {
                     <i className="feather icon-feather-users"></i> Suivez-nous
                   </h3>
                   <div className="social-links-grid">
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="social-link-item facebook" title="Facebook">
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link-item linkedin" title="LinkedIn">
+                    <a href="https://www.linkedin.com/company/rpam" target="_blank" rel="noopener noreferrer" className="social-link-item linkedin" title="LinkedIn">
                       <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="social-link-item twitter" title="Twitter">
-                      <i className="fa-brands fa-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-link-item instagram" title="Instagram">
-                      <i className="fa-brands fa-instagram"></i>
                     </a>
                   </div>
                 </div>

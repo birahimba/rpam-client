@@ -1,4 +1,57 @@
 import Link from 'next/link'
+import { useState } from 'react'
+
+function NewsletterForm() {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState('idle')
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus('loading')
+    try {
+      const r = await fetch('https://formspree.io/f/mojpjpwq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email, source: 'Newsletter footer' }),
+      })
+      setStatus(r.ok ? 'success' : 'error')
+      if (r.ok) setEmail('')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  return (
+    <div className="d-inline-block w-100 newsletter-style-02 position-relative">
+      <form onSubmit={handleSubmit} className="position-relative d-flex">
+        <label htmlFor="footer-newsletter-email" className="visually-hidden">Votre adresse email</label>
+        <input
+          id="footer-newsletter-email"
+          className="border-color-transparent-white-light bg-transparent border-radius-4px w-100 form-control lg-ps-15px required fs-16"
+          type="email"
+          name="email"
+          placeholder="Entrez votre email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          required
+        />
+        <button className="btn btn-sm bg-white text-dark ms-2 border-radius-4px" type="submit" disabled={status === 'loading'} aria-label="S'abonner à la newsletter">
+          {status === 'loading' ? '...' : 'OK'}
+        </button>
+      </form>
+      {status === 'success' && (
+        <p className="fs-14 mt-10px mb-0" style={{ color: '#6ee7b7' }} role="status">
+          ✓ Merci ! Votre inscription est bien enregistrée.
+        </p>
+      )}
+      {status === 'error' && (
+        <p className="fs-14 mt-10px mb-0" style={{ color: '#fca5a5' }} role="status">
+          Une erreur s&apos;est produite. Écrivez-nous à contact@rpam.fr
+        </p>
+      )}
+    </div>
+  )
+}
 
 export default function Footer() {
   return (
@@ -9,15 +62,16 @@ export default function Footer() {
           {/* Logo + Réseaux */}
           <div className="col-6 col-lg-3 order-sm-1 md-mb-40px xs-mb-30px last-paragraph-no-margin">
             <Link href="/" className="footer-logo mb-15px d-inline-block">
-              <img src="/images/w-logo-rpam.png" alt="RPAM" />
+              <img src="/images/w-logo-rpam.png" alt="RPAM" width="217" height="50" loading="lazy" style={{ height: 'auto' }} />
             </Link>
             <p className="w-85 xl-w-95 sm-w-100"></p>
             <div className="elements-social social-icon-style-02 mt-20px lg-mt-20px">
               <ul className="small-icon light">
-                <li><a className="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener"><i className="fa-brands fa-facebook-f"></i></a></li>
-                <li><a className="linkedin" href="https://www.linkedin.com" target="_blank" rel="noopener"><i className="fa-brands fa-linkedin"></i></a></li>
-                <li><a className="twitter" href="https://www.twitter.com" target="_blank" rel="noopener"><i className="fa-brands fa-twitter"></i></a></li>
-                <li><a className="instagram" href="https://www.instagram.com" target="_blank" rel="noopener"><i className="fa-brands fa-instagram"></i></a></li>
+                <li>
+                  <a className="linkedin" href="https://www.linkedin.com/company/rpam" target="_blank" rel="noopener" aria-label="RPAM sur LinkedIn">
+                    <i className="fa-brands fa-linkedin"></i>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -27,7 +81,7 @@ export default function Footer() {
             <span className="fs-18 fw-400 d-block text-white mb-5px">À propos</span>
             <ul>
               <li><Link href="/about">Qui sommes-nous</Link></li>
-              <li><Link href="/guidance">Services</Link></li>
+              <li><Link href="/services">Services</Link></li>
               <li><Link href="/blogs">Blog</Link></li>
               <li><Link href="/news">Actualités</Link></li>
             </ul>
@@ -67,30 +121,15 @@ export default function Footer() {
           {/* Newsletter */}
           <div className="col-lg-3 col-sm-6 md-mb-40px xs-mb-0 order-sm-2 order-lg-5">
             <span className="fs-18 fw-400 d-block text-white mb-5px">Abonnez-vous à la newsletter</span>
-            <p className="mb-20px">Entrez votre email et nous vous contacterons !</p>
-            <div className="d-inline-block w-100 newsletter-style-02 position-relative">
-              <form action="email-templates/subscribe-newsletter.php" method="post" className="position-relative d-flex">
-                <input
-                  className="border-color-transparent-white-light bg-transparent border-radius-4px w-100 form-control lg-ps-15px required fs-16"
-                  type="email"
-                  name="email"
-                  placeholder="Entrez votre email"
-                  required
-                />
-                <button className="btn btn-sm bg-white text-dark ms-2 border-radius-4px" type="submit" aria-label="S'abonner">
-                  OK
-                </button>
-                <input type="hidden" name="redirect" value="" />
-                <div className="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none"></div>
-              </form>
-            </div>
+            <p className="mb-20px">Conseils carrière et actualités RPAM, une fois par mois.</p>
+            <NewsletterForm />
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="row align-items-center fs-16 fw-300">
           <div className="col-md-4 last-paragraph-no-margin order-2 order-md-1 text-center text-md-start">
-            <p>&copy; Copyright 2025 <Link href="/" className="text-decoration-line-bottom text-white">RPAM</Link></p>
+            <p>&copy; Copyright {new Date().getFullYear()} <Link href="/" className="text-decoration-line-bottom text-white">RPAM</Link></p>
           </div>
           <div className="col-md-8 text-md-end order-1 order-md-2 text-center text-md-end sm-mb-10px">
             <ul className="footer-navbar sm-lh-normal">

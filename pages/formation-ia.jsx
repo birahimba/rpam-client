@@ -7,7 +7,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Se former à l'intelligence artificielle au travail en 2025 | RPAM",
+    "name": "Se former à l'intelligence artificielle au travail en 2026 | RPAM",
     "description": "Guide complet pour se former à l'IA sans être développeur. Outils, compétences, formations : RPAM vous accompagne dans votre montée en compétences sur l'intelligence artificielle.",
     "url": "https://www.rpam.fr/formation-ia",
     "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
@@ -103,7 +103,7 @@ export default function FormationIa() {
   return (
     <Layout activePage="up-training">
       <SEOHead
-        title="Se former à l'intelligence artificielle au travail en 2025 | RPAM"
+        title="Se former à l'intelligence artificielle au travail en 2026 | RPAM"
         description="Guide complet pour se former à l'IA sans être développeur. Outils, compétences, formations : RPAM vous accompagne dans votre montée en compétences sur l'intelligence artificielle."
         canonical="https://www.rpam.fr/formation-ia"
         schema={schema}
@@ -118,7 +118,7 @@ export default function FormationIa() {
                 <i className="fas fa-robot"></i> Intelligence artificielle
               </span>
               <h1 className="pillar-hero-title" data-aos="fade-up">
-                Se former à l&apos;intelligence artificielle au travail en 2025
+                Se former à l&apos;intelligence artificielle au travail en 2026
               </h1>
               <p className="pillar-hero-sub" data-aos="fade-up" data-aos-delay="100">
                 Aucune compétence technique requise. Découvrez les outils, les compétences et la méthode pour intégrer l&apos;IA dans votre quotidien professionnel et prendre une longueur d&apos;avance.
@@ -207,7 +207,7 @@ export default function FormationIa() {
         <div className="container">
           <div className="row justify-content-center mb-5">
             <div className="col-lg-8 text-center" data-aos="fade-up">
-              <span className="pillar-section-label">Outils 2025</span>
+              <span className="pillar-section-label">Outils 2026</span>
               <h2 className="pillar-section-title">Quels outils IA maîtriser en priorité ?</h2>
               <p className="pillar-section-sub">Quatre catégories d&apos;outils IA couvrent l&apos;essentiel des besoins professionnels, quel que soit votre secteur.</p>
             </div>

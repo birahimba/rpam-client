@@ -537,7 +537,7 @@ export default function Guidance() {
                     </div>
                     <div className="svc-article-body">
                       <span className="svc-article-tag svc-article-tag--gold">IA &amp; Marché du travail</span>
-                      <h3 className="svc-article-title">Se former à l&apos;IA au travail : guide pratique 2025</h3>
+                      <h3 className="svc-article-title">Se former à l&apos;IA au travail : guide pratique 2026</h3>
                       <p className="svc-article-excerpt">Comprendre les évolutions du marché et les nouvelles compétences attendues pour orienter votre projet professionnel.</p>
                       <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>
                     </div>

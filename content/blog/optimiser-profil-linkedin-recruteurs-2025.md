@@ -1,11 +1,11 @@
 ---
-title: "Optimiser son profil LinkedIn pour être contacté par les recruteurs en 2025"
-excerpt: "Avoir un profil LinkedIn ne suffit plus. Découvrez comment construire un profil visible, crédible et optimisé pour attirer les recruteurs et créer de nouvelles opportunités professionnelles en 2025."
+title: "Optimiser son profil LinkedIn pour être contacté par les recruteurs en 2026"
+excerpt: "Avoir un profil LinkedIn ne suffit plus. Découvrez comment construire un profil visible, crédible et optimisé pour attirer les recruteurs et créer de nouvelles opportunités professionnelles en 2026."
 date: "2026-05-16"
-dateModified: "2026-05-16"
+dateModified: "2026-07-03"
 coverImage: "/images/default-blog-cover.jpg"
 tags: ["LinkedIn", "Emploi", "Recrutement", "Visibilité professionnelle"]
-keywords: ["optimiser profil LinkedIn", "recruteurs LinkedIn", "visibilité LinkedIn 2025", "LinkedIn emploi", "profil LinkedIn recrutement", "personal branding LinkedIn"]
+keywords: ["optimiser profil LinkedIn", "recruteurs LinkedIn", "visibilité LinkedIn 2026", "LinkedIn emploi", "profil LinkedIn recrutement", "personal branding LinkedIn"]
 faqs:
   - question: "Faut-il publier souvent sur LinkedIn ?"
     answer: "La régularité est plus importante que la quantité. Même 1 publication par semaine peut améliorer significativement votre visibilité auprès des recruteurs et de votre réseau."
@@ -19,7 +19,7 @@ faqs:
 
 Aujourd'hui, avoir un profil LinkedIn ne suffit plus. Pour attirer l'attention des recruteurs, il faut désormais construire un profil **visible, crédible et optimisé**.
 
-En 2025, LinkedIn est devenu un véritable moteur de recherche professionnel. Les recruteurs utilisent la plateforme pour :
+En 2026, LinkedIn est devenu un véritable moteur de recherche professionnel. Les recruteurs utilisent la plateforme pour :
 - rechercher des candidats,
 - vérifier des parcours,
 - identifier des compétences,
@@ -116,11 +116,11 @@ Commenter intelligemment des publications améliore votre visibilité, renforce 
 
 ---
 
-## Les contenus qui fonctionnent bien en 2025
+## Les contenus qui fonctionnent bien en 2026
 
 Les publications les plus engageantes sont souvent authentiques, utiles, concrètes et orientées expérience terrain.
 
-Les sujets populaires en 2025 :
+Les sujets populaires en 2026 :
 - reconversion professionnelle,
 - intelligence artificielle au travail,
 - compétences et formation,

@@ -17,19 +17,19 @@ const STATIC_PAGES = [
     { loc: '/news',                          lastmod: '2026-05-11', changefreq: 'weekly',  priority: '0.8' },
     { loc: '/booking',                       lastmod: '2026-05-11', changefreq: 'monthly', priority: '0.7' },
     // Pages piliers SEO
-    { loc: '/reconversion-professionnelle',  lastmod: '2026-05-16', changefreq: 'monthly', priority: '0.9' },
-    { loc: '/cv-ats',                        lastmod: '2026-05-16', changefreq: 'monthly', priority: '0.9' },
-    { loc: '/formation-ia',                  lastmod: '2026-05-16', changefreq: 'monthly', priority: '0.9' },
-    { loc: '/linkedin-recruteurs',           lastmod: '2026-05-16', changefreq: 'monthly', priority: '0.9' },
+    { loc: '/reconversion-professionnelle',  lastmod: '2026-07-03', changefreq: 'monthly', priority: '0.9' },
+    { loc: '/cv-ats',                        lastmod: '2026-07-03', changefreq: 'monthly', priority: '0.9' },
+    { loc: '/formation-ia',                  lastmod: '2026-07-03', changefreq: 'monthly', priority: '0.9' },
+    { loc: '/linkedin-recruteurs',           lastmod: '2026-07-03', changefreq: 'monthly', priority: '0.9' },
 ];
 
 // Ajouter ici chaque nouvel article publié
 // { loc: '/blog/slug-de-larticle', lastmod: 'YYYY-MM-DD', priority: '0.75' }
 const BLOG_ARTICLES = [
-    { loc: '/blog/optimiser-profil-linkedin-recruteurs-2025', lastmod: '2026-05-16', priority: '0.8' },
-    { loc: '/blog/se-former-intelligence-artificielle-travail-2025', lastmod: '2026-05-16', priority: '0.8' },
-    { loc: '/blog/cv-ats-2025', lastmod: '2026-05-16', priority: '0.8' },
-    { loc: '/blog/reconversion-professionnelle-30-40-50-ans', lastmod: '2025-05-11', priority: '0.8' },
+    { loc: '/blog/optimiser-profil-linkedin-recruteurs-2025', lastmod: '2026-07-03', priority: '0.8' },
+    { loc: '/blog/se-former-intelligence-artificielle-travail-2025', lastmod: '2026-07-03', priority: '0.8' },
+    { loc: '/blog/cv-ats-2025', lastmod: '2026-07-03', priority: '0.8' },
+    { loc: '/blog/reconversion-professionnelle-30-40-50-ans', lastmod: '2026-07-03', priority: '0.8' },
 ];
 
 function urlEntry({ loc, lastmod, changefreq = 'monthly', priority = '0.75' }) {

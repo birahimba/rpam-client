@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { Analytics } from '@vercel/analytics/react'
 
 function loadScript(src, attrs = {}) {
   return new Promise((resolve) => {
@@ -48,7 +49,6 @@ export default function App({ Component, pageProps }) {
       window.dispatchEvent(new Event('swiper-ready'))
       await loadScript('https://unpkg.com/aos@2.3.1/dist/aos.js')
       initAOS()
-      await loadScript('https://cdn.jsdelivr.net/npm/flatpickr')
     })()
   }, [])
 
@@ -69,7 +69,7 @@ export default function App({ Component, pageProps }) {
       <div key={router.asPath} className="page-transition">
         <Component {...pageProps} />
       </div>
-
+      <Analytics />
     </>
   )
 }

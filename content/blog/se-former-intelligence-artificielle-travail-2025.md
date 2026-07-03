@@ -1,11 +1,11 @@
 ---
-title: "Se former à l'intelligence artificielle au travail : guide pratique pour débuter en 2025"
+title: "Se former à l'intelligence artificielle au travail : guide pratique pour débuter en 2026"
 excerpt: "L'IA transforme le monde du travail. Découvrez comment vous former à l'intelligence artificielle sans être développeur, quels outils maîtriser et comment l'intégrer dans votre quotidien professionnel."
 date: "2026-05-16"
-dateModified: "2026-05-16"
+dateModified: "2026-07-03"
 coverImage: "/images/default-blog-cover.jpg"
 tags: ["Intelligence Artificielle", "Formation", "Compétences", "Avenir du travail"]
-keywords: ["formation intelligence artificielle", "IA au travail", "apprendre IA sans coder", "outils IA professionnels", "compétences IA 2025", "prompt engineering"]
+keywords: ["formation intelligence artificielle", "IA au travail", "apprendre IA sans coder", "outils IA professionnels", "compétences IA 2026", "prompt engineering"]
 faqs:
   - question: "Peut-on apprendre l'IA sans être développeur ?"
     answer: "Oui. De nombreux outils IA sont accessibles aux débutants. La majorité des usages professionnels ne nécessitent pas de compétences en programmation."
@@ -73,7 +73,7 @@ Automatisation de tâches répétitives, reporting, analyse documentaire.
 
 ---
 
-## Les compétences IA les plus utiles en 2025
+## Les compétences IA les plus utiles en 2026
 
 ### 1. Savoir utiliser les assistants IA
 

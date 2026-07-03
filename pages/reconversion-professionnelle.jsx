@@ -7,7 +7,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Reconversion professionnelle en 2025 – Guide complet | RPAM",
+    "name": "Reconversion professionnelle en 2026 – Guide complet | RPAM",
     "description": "Tout savoir sur la reconversion professionnelle : étapes, financement CPF, secteurs porteurs, bilan de compétences. RPAM vous accompagne à 30, 40 ou 50 ans.",
     "url": "https://www.rpam.fr/reconversion-professionnelle",
     "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
@@ -103,7 +103,7 @@ export default function ReconversionProfessionnelle() {
   return (
     <Layout activePage="guidance">
       <SEOHead
-        title="Reconversion professionnelle en 2025 : guide complet | RPAM"
+        title="Reconversion professionnelle en 2026 : guide complet | RPAM"
         description="Tout savoir sur la reconversion professionnelle : étapes, financement CPF, secteurs porteurs, bilan de compétences. RPAM vous accompagne à 30, 40 ou 50 ans."
         canonical="https://www.rpam.fr/reconversion-professionnelle"
         schema={schema}
@@ -118,7 +118,7 @@ export default function ReconversionProfessionnelle() {
                 <i className="fas fa-arrows-rotate"></i> Reconversion professionnelle
               </span>
               <h1 className="pillar-hero-title" data-aos="fade-up">
-                Réussir sa reconversion professionnelle en 2025
+                Réussir sa reconversion professionnelle en 2026
               </h1>
               <p className="pillar-hero-sub" data-aos="fade-up" data-aos-delay="100">
                 Bilan de compétences, financement CPF, secteurs porteurs et accompagnement personnalisé : tout ce qu&apos;il faut savoir pour changer de cap à 30, 40 ou 50 ans.
@@ -207,8 +207,8 @@ export default function ReconversionProfessionnelle() {
         <div className="container">
           <div className="row justify-content-center mb-5">
             <div className="col-lg-8 text-center" data-aos="fade-up">
-              <span className="pillar-section-label">Opportunités 2025</span>
-              <h2 className="pillar-section-title">Secteurs porteurs en 2025</h2>
+              <span className="pillar-section-label">Opportunités 2026</span>
+              <h2 className="pillar-section-title">Secteurs porteurs en 2026</h2>
               <p className="pillar-section-sub">Certains secteurs recrutent massivement et offrent de réelles perspectives pour les candidats à la reconversion.</p>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function ReconversionProfessionnelle() {
                       <i className="fas fa-robot"></i>
                     </div>
                     <div className="svc-article-body">
-                      <span className="svc-article-tag svc-article-tag--gold">Compétences 2025</span>
+                      <span className="svc-article-tag svc-article-tag--gold">Compétences 2026</span>
                       <h3 className="svc-article-title">Se former à l&apos;intelligence artificielle au travail</h3>
                       <p className="svc-article-excerpt">Les nouvelles compétences IA indispensables pour rester compétitif et orienter votre reconversion vers les métiers de demain.</p>
                       <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>

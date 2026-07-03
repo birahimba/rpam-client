@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
@@ -23,9 +24,7 @@ const schema = {
     "availableLanguage": "French"
   },
   "sameAs": [
-    "https://www.facebook.com/",
-    "https://www.linkedin.com",
-    "https://www.instagram.com"
+    "https://www.linkedin.com/company/rpam"
   ]
 }
 
@@ -129,6 +128,10 @@ export default function Home() {
         canonical="https://www.rpam.fr"
         schema={schema}
       />
+      <Head>
+        {/* Image du premier slide = élément LCP : préchargement prioritaire */}
+        <link rel="preload" as="image" href="/images/slide1.jpg" fetchPriority="high" />
+      </Head>
 
       {/* Hero Slider */}
       <section id="slider" className="hero-slider-section">

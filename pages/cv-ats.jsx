@@ -7,7 +7,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "CV et ATS en 2025 – comment être sélectionné par les recruteurs | RPAM",
+    "name": "CV et ATS en 2026 – comment être sélectionné par les recruteurs | RPAM",
     "description": "Comprendre les logiciels ATS et optimiser votre CV pour passer les filtres automatiques. Mots-clés, format, structure : le guide complet RPAM pour décrocher plus d'entretiens.",
     "url": "https://www.rpam.fr/cv-ats",
     "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
@@ -104,7 +104,7 @@ export default function CvAts() {
   return (
     <Layout activePage="job-getting">
       <SEOHead
-        title="CV et ATS en 2025 : comment être sélectionné par les recruteurs | RPAM"
+        title="CV et ATS en 2026 : comment être sélectionné par les recruteurs | RPAM"
         description="Comprendre les logiciels ATS et optimiser votre CV pour passer les filtres automatiques. Mots-clés, format, structure : le guide complet RPAM pour décrocher plus d'entretiens."
         canonical="https://www.rpam.fr/cv-ats"
         schema={schema}
@@ -119,7 +119,7 @@ export default function CvAts() {
                 <i className="fas fa-file-alt"></i> CV &amp; ATS
               </span>
               <h1 className="pillar-hero-title" data-aos="fade-up">
-                CV et ATS en 2025 : être sélectionné par les recruteurs
+                CV et ATS en 2026 : être sélectionné par les recruteurs
               </h1>
               <p className="pillar-hero-sub" data-aos="fade-up" data-aos-delay="100">
                 75&nbsp;% des CV ne sont jamais lus par un humain. Apprenez à optimiser votre candidature pour passer les filtres automatiques et décrocher plus d&apos;entretiens.
@@ -248,7 +248,7 @@ export default function CvAts() {
                     </div>
                     <div className="svc-article-body">
                       <span className="svc-article-tag">Guide ATS</span>
-                      <h3 className="svc-article-title">CV ATS en 2025 : le guide complet</h3>
+                      <h3 className="svc-article-title">CV ATS en 2026 : le guide complet</h3>
                       <p className="svc-article-excerpt">Tout ce qu&apos;il faut savoir pour créer un CV qui passe les filtres automatiques et convainc les recruteurs.</p>
                       <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>
                     </div>

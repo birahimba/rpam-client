@@ -100,11 +100,20 @@ export default function Navbar({ activePage }) {
             </div>
 
             {/* Hamburger */}
-            <div className={`hamburger-modern${menuOpen ? ' active' : ''}`} id="hamburgerBtn" onClick={toggleMenu} aria-label="Menu" role="button">
+            <button
+              type="button"
+              className={`hamburger-modern${menuOpen ? ' active' : ''}`}
+              id="hamburgerBtn"
+              onClick={toggleMenu}
+              aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={menuOpen}
+              aria-controls="mobileMenu"
+              style={{ background: 'none', border: 'none', padding: 0 }}
+            >
               <span className="hamburger-line"></span>
               <span className="hamburger-line"></span>
               <span className="hamburger-line"></span>
-            </div>
+            </button>
           </div>
         </div>
       </nav>
@@ -119,10 +128,18 @@ export default function Navbar({ activePage }) {
             <Link href="/about" className={`mobile-nav-link${isActive('about')}`} onClick={closeMenu}>Qui sommes-nous</Link>
           </li>
           <li className="mobile-nav-item">
-            <span className={`mobile-nav-link${isServices ? ' active' : ''}`} id="servicesToggle" onClick={() => setSubmenuOpen(prev => !prev)} style={{ cursor: 'pointer' }}>
+            <button
+              type="button"
+              className={`mobile-nav-link${isServices ? ' active' : ''}`}
+              id="servicesToggle"
+              onClick={() => setSubmenuOpen(prev => !prev)}
+              aria-expanded={submenuOpen}
+              aria-controls="servicesSubmenu"
+              style={{ cursor: 'pointer', background: 'none', border: 'none', width: '100%', textAlign: 'left' }}
+            >
               Nos Services
               <i className={`fas fa-chevron-down arrow${submenuOpen ? ' rotated' : ''}`}></i>
-            </span>
+            </button>
             <div className={`mobile-submenu${submenuOpen ? ' active' : ''}`} id="servicesSubmenu">
               <ul className="mobile-submenu-list">
                 {SERVICE_LINKS.map((s) => (

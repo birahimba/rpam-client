@@ -7,8 +7,8 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Être contacté par les recruteurs sur LinkedIn en 2025 | RPAM",
-    "description": "Comment optimiser votre profil LinkedIn pour attirer les recruteurs en 2025. Titre, résumé, mots-clés, compétences, publication : le guide complet RPAM pour votre visibilité professionnelle.",
+    "name": "Être contacté par les recruteurs sur LinkedIn en 2026 | RPAM",
+    "description": "Comment optimiser votre profil LinkedIn pour attirer les recruteurs en 2026. Titre, résumé, mots-clés, compétences, publication : le guide complet RPAM pour votre visibilité professionnelle.",
     "url": "https://www.rpam.fr/linkedin-recruteurs",
     "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
     "breadcrumb": {
@@ -105,8 +105,8 @@ export default function LinkedinRecruteurs() {
   return (
     <Layout activePage="job-getting">
       <SEOHead
-        title="Être contacté par les recruteurs sur LinkedIn en 2025 | RPAM"
-        description="Comment optimiser votre profil LinkedIn pour attirer les recruteurs en 2025. Titre, résumé, mots-clés, compétences, publication : le guide complet RPAM pour votre visibilité professionnelle."
+        title="Être contacté par les recruteurs sur LinkedIn en 2026 | RPAM"
+        description="Comment optimiser votre profil LinkedIn pour attirer les recruteurs en 2026. Titre, résumé, mots-clés, compétences, publication : le guide complet RPAM pour votre visibilité professionnelle."
         canonical="https://www.rpam.fr/linkedin-recruteurs"
         schema={schema}
       />
@@ -120,7 +120,7 @@ export default function LinkedinRecruteurs() {
                 <i className="fab fa-linkedin"></i> LinkedIn &amp; Recruteurs
               </span>
               <h1 className="pillar-hero-title" data-aos="fade-up">
-                Être contacté par les recruteurs sur LinkedIn en 2025
+                Être contacté par les recruteurs sur LinkedIn en 2026
               </h1>
               <p className="pillar-hero-sub" data-aos="fade-up" data-aos-delay="100">
                 87&nbsp;% des recruteurs utilisent LinkedIn pour trouver leurs candidats. Optimisez votre profil, développez votre visibilité et laissez les opportunités venir à vous.
@@ -158,7 +158,7 @@ export default function LinkedinRecruteurs() {
           <div className="row justify-content-center mb-5">
             <div className="col-lg-8 text-center" data-aos="fade-up">
               <span className="pillar-section-label">Comprendre</span>
-              <h2 className="pillar-section-title">Pourquoi LinkedIn est incontournable en 2025</h2>
+              <h2 className="pillar-section-title">Pourquoi LinkedIn est incontournable en 2026</h2>
               <p className="pillar-section-sub">LinkedIn est devenu la plateforme de référence pour les recruteurs. Ne pas y être optimisé, c&apos;est manquer des opportunités chaque jour.</p>
             </div>
           </div>
@@ -249,7 +249,7 @@ export default function LinkedinRecruteurs() {
                     </div>
                     <div className="svc-article-body">
                       <span className="svc-article-tag">Guide LinkedIn</span>
-                      <h3 className="svc-article-title">Optimiser son profil LinkedIn pour les recruteurs en 2025</h3>
+                      <h3 className="svc-article-title">Optimiser son profil LinkedIn pour les recruteurs en 2026</h3>
                       <p className="svc-article-excerpt">Titre, résumé, compétences et activité : toutes les clés pour attirer les recruteurs et décrocher des opportunités.</p>
                       <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>
                     </div>
@@ -262,7 +262,7 @@ export default function LinkedinRecruteurs() {
                     </div>
                     <div className="svc-article-body">
                       <span className="svc-article-tag svc-article-tag--gold">CV &amp; Candidature</span>
-                      <h3 className="svc-article-title">CV ATS en 2025 : passer les filtres automatiques</h3>
+                      <h3 className="svc-article-title">CV ATS en 2026 : passer les filtres automatiques</h3>
                       <p className="svc-article-excerpt">Complémentaire à votre profil LinkedIn, un CV ATS-optimisé maximise vos chances d&apos;être sélectionné pour un entretien.</p>
                       <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>
                     </div>

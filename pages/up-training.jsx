@@ -557,7 +557,7 @@ export default function UpTraining() {
                     </div>
                     <div className="svc-article-body">
                       <span className="svc-article-tag svc-article-tag--gold">Compétences &amp; CPF</span>
-                      <h3 className="svc-article-title">Reconversion professionnelle : formations et stratégies 2025</h3>
+                      <h3 className="svc-article-title">Reconversion professionnelle : formations et stratégies 2026</h3>
                       <p className="svc-article-excerpt">CPF, formations qualifiantes, secteurs porteurs : toutes les ressources pour financer et réussir votre montée en compétences.</p>
                       <span className="svc-article-cta">Lire l&apos;article <i className="fas fa-arrow-right"></i></span>
                     </div>

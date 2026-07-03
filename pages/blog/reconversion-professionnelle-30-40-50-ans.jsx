@@ -9,12 +9,12 @@ const schema = {
     {
       "@type": "BlogPosting",
       "@id": "https://www.rpam.fr/blog/reconversion-professionnelle-30-40-50-ans#article",
-      "headline": "Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2025 ?",
-      "description": "Reconversion professionnelle à 30, 40 ou 50 ans : découvrez les étapes concrètes pour réussir votre changement de carrière en 2025, les aides disponibles et les erreurs à éviter.",
+      "headline": "Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2026 ?",
+      "description": "Reconversion professionnelle à 30, 40 ou 50 ans : découvrez les étapes concrètes pour réussir votre changement de carrière en 2026, les aides disponibles et les erreurs à éviter.",
       "url": "https://www.rpam.fr/blog/reconversion-professionnelle-30-40-50-ans",
       "image": "https://www.rpam.fr/images/blog/reconversion-professionnelle-cover.jpg",
       "datePublished": "2025-05-11T08:00:00+02:00",
-      "dateModified": "2025-05-11T08:00:00+02:00",
+      "dateModified": "2026-07-03T08:00:00+02:00",
       "author": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
       "publisher": {
         "@type": "Organization",
@@ -106,8 +106,8 @@ export default function ReconversionArticle() {
   return (
     <Layout activePage="blogs">
       <SEOHead
-        title="Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2025 ? | RPAM"
-        description="Reconversion professionnelle à 30, 40 ou 50 ans : découvrez les étapes concrètes pour réussir votre changement de carrière en 2025, les aides disponibles et les erreurs à éviter."
+        title="Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2026 ? | RPAM"
+        description="Reconversion professionnelle à 30, 40 ou 50 ans : découvrez les étapes concrètes pour réussir votre changement de carrière en 2026, les aides disponibles et les erreurs à éviter."
         canonical="https://www.rpam.fr/blog/reconversion-professionnelle-30-40-50-ans"
         ogImage="https://www.rpam.fr/images/blog/reconversion-professionnelle-cover.jpg"
         ogType="article"
@@ -129,7 +129,7 @@ export default function ReconversionArticle() {
                 <div className="article-header">
                   <img
                     src="/images/blog/reconversion-professionnelle-cover.jpg"
-                    alt="Reconversion professionnelle à 30, 40 ou 50 ans : guide complet 2025"
+                    alt="Reconversion professionnelle à 30, 40 ou 50 ans : guide complet 2026"
                     className="article-cover"
                     onError={(e) => { e.target.src = '/images/default-blog-cover.jpg' }}
                   />
@@ -138,7 +138,7 @@ export default function ReconversionArticle() {
                     <span className="badge" style={badgeStyle}>Carrière</span>
                     <span className="badge" style={badgeStyle}>Bilan de compétences</span>
                   </div>
-                  <h1 className="article-title">Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2025 ?</h1>
+                  <h1 className="article-title">Reconversion professionnelle à 30, 40 ou 50 ans : par où commencer en 2026 ?</h1>
                   <div className="article-meta">
                     <span><i className="feather icon-feather-calendar"></i> 11 mai 2025</span>
                     <span><i className="feather icon-feather-clock"></i> 10 min de lecture</span>
@@ -148,17 +148,17 @@ export default function ReconversionArticle() {
 
                 <div className="article-content text-black">
 
-                  <p className="lead">Se reconvertir professionnellement, c&apos;est l&apos;une des décisions les plus importantes — et les plus courageuses — qu&apos;un actif puisse prendre. En 2025, le contexte économique, les mutations du marché du travail et la quête de sens poussent de plus en plus de Français à envisager un changement de cap. Mais par où commencer ? Quelles étapes suivre selon son âge ? Quelles aides mobiliser ? Ce guide complet vous donne toutes les clés.</p>
+                  <p className="lead">Se reconvertir professionnellement, c&apos;est l&apos;une des décisions les plus importantes — et les plus courageuses — qu&apos;un actif puisse prendre. En 2026, le contexte économique, les mutations du marché du travail et la quête de sens poussent de plus en plus de Français à envisager un changement de cap. Mais par où commencer ? Quelles étapes suivre selon son âge ? Quelles aides mobiliser ? Ce guide complet vous donne toutes les clés.</p>
 
                   <hr style={{ margin: '40px 0', borderColor: '#e5e5e5' }} />
 
-                  <h2>Pourquoi se reconvertir en 2025 ?</h2>
+                  <h2>Pourquoi se reconvertir en 2026 ?</h2>
 
                   <p>Selon les données de France Travail, <strong>plus d&apos;un actif sur deux</strong> envisage une reconversion professionnelle au cours de sa vie. Et ce phénomène s&apos;accélère : l&apos;automatisation de certains métiers, la montée en puissance du télétravail, l&apos;essor de l&apos;économie verte et la crise de sens post-pandémique ont profondément rebattu les cartes.</p>
 
                   <p>Reconversion ne rime plus avec échec ou instabilité. C&apos;est au contraire un acte stratégique : celui de reprendre le contrôle de sa trajectoire professionnelle, d&apos;aligner son travail avec ses valeurs, et d&apos;anticiper les transformations du marché plutôt que de les subir.</p>
 
-                  <p>Les secteurs qui recrutent en 2025 sont nombreux : les <strong>métiers du numérique</strong> (cybersécurité, data, développement), les <strong>métiers du soin</strong> (aide à la personne, santé mentale), les <strong>métiers verts</strong> (transition énergétique, construction durable), et les métiers de l&apos;<strong>accompagnement humain</strong> (coaching, ressources humaines, formation).</p>
+                  <p>Les secteurs qui recrutent en 2026 sont nombreux : les <strong>métiers du numérique</strong> (cybersécurité, data, développement), les <strong>métiers du soin</strong> (aide à la personne, santé mentale), les <strong>métiers verts</strong> (transition énergétique, construction durable), et les métiers de l&apos;<strong>accompagnement humain</strong> (coaching, ressources humaines, formation).</p>
 
                   <h2>Reconversion à 30 ans : capitaliser sur l&apos;élan</h2>
 
@@ -237,7 +237,7 @@ export default function ReconversionArticle() {
                   <p>Votre projet doit répondre à trois critères : ce que vous <em>aimez</em> faire, ce que vous <em>savez</em> faire, et ce que le <em>marché valorise</em>.</p>
 
                   <h3>Étape 4 — Identifier les formations et les aides</h3>
-                  <p>En 2025, les dispositifs de financement sont nombreux :</p>
+                  <p>En 2026, les dispositifs de financement sont nombreux :</p>
                   <ul>
                     <li><strong>CPF (Compte Personnel de Formation)</strong> : pour financer des formations certifiantes inscrites au RNCP.</li>
                     <li><strong>PTP (Projet de Transition Professionnelle)</strong> : vous permet de suivre une formation longue tout en maintenant votre salaire.</li>

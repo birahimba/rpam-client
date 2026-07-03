@@ -34,13 +34,10 @@ export default function Document() {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-        />
 
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/images/favicon-32x32.png" />
+        <meta name="theme-color" content="#005153" />
       </Head>
       <body className="custom-cursor" data-mobile-nav-style="classic">
         <Main />

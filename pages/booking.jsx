@@ -118,22 +118,22 @@ export default function Booking() {
                   <div className="step-item">
                     <span className="step-number">1</span>
                     <div className="step-content">
-                      <h4>Choisissez un creneau</h4>
-                      <p>Selectionnez la date et l&apos;heure qui vous conviennent dans le calendrier.</p>
+                      <h4>Choisissez un créneau</h4>
+                      <p>Sélectionnez la date et l&apos;heure qui vous conviennent dans le calendrier.</p>
                     </div>
                   </div>
                   <div className="step-item">
                     <span className="step-number">2</span>
                     <div className="step-content">
                       <h4>Remplissez vos informations</h4>
-                      <p>Indiquez vos coordonnees et decrivez brievement votre besoin.</p>
+                      <p>Indiquez vos coordonnées et décrivez brièvement votre besoin.</p>
                     </div>
                   </div>
                   <div className="step-item">
                     <span className="step-number">3</span>
                     <div className="step-content">
                       <h4>Recevez la confirmation</h4>
-                      <p>Un email de confirmation avec le lien de la visio vous sera envoye.</p>
+                      <p>Un email de confirmation avec le lien de la visio vous sera envoyé.</p>
                     </div>
                   </div>
                 </div>
@@ -149,11 +149,11 @@ export default function Booking() {
                   </li>
                   <li>
                     <i className="bi bi-check-circle-fill"></i>
-                    Echange personnalise de 30 min
+                    Échange personnalisé de 30 min
                   </li>
                   <li>
                     <i className="bi bi-check-circle-fill"></i>
-                    Conseils adaptes a votre situation
+                    Conseils adaptés à votre situation
                   </li>
                   <li>
                     <i className="bi bi-check-circle-fill"></i>
@@ -161,7 +161,7 @@ export default function Booking() {
                   </li>
                   <li>
                     <i className="bi bi-check-circle-fill"></i>
-                    Reponse sous 24h
+                    Réponse sous 24h
                   </li>
                 </ul>
               </div>
@@ -173,7 +173,7 @@ export default function Booking() {
                     <i className="bi bi-person-fill"></i>
                   </div>
                   <div className="testimonial-text">
-                    <p>&quot;Le premier rendez-vous m&apos;a permis de clarifier mes objectifs. L&apos;equipe est tres a l&apos;ecoute !&quot;</p>
+                    <p>&quot;Le premier rendez-vous m&apos;a permis de clarifier mes objectifs. L&apos;équipe est très à l&apos;écoute !&quot;</p>
                     <span className="testimonial-author">— Marie L., Paris</span>
                   </div>
                 </div>
@@ -184,7 +184,7 @@ export default function Booking() {
             <div className="calendar-card">
               <div className="calendar-header">
                 <div className="calendar-header-content">
-                  <h2><i className="bi bi-calendar3 me-2"></i>Selectionnez votre creneau</h2>
+                  <h2><i className="bi bi-calendar3 me-2"></i>Sélectionnez votre créneau</h2>
                   <p>Choisissez la date et l&apos;heure qui vous conviennent le mieux</p>
                 </div>
               </div>
@@ -196,8 +196,8 @@ export default function Booking() {
               {/* Contact Alternative */}
               <div className="contact-alternative">
                 <div className="contact-alternative-text">
-                  <h4>Vous preferez nous contacter directement ?</h4>
-                  <p>Notre equipe est disponible pour repondre a vos questions.</p>
+                  <h4>Vous préférez nous contacter directement ?</h4>
+                  <p>Notre équipe est disponible pour répondre à vos questions.</p>
                 </div>
                 <div className="contact-methods">
                   <a href="mailto:contact@rpam.fr" className="contact-btn" title="Email">

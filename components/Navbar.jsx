@@ -89,7 +89,7 @@ export default function Navbar({ activePage }) {
 
             {/* CTA Desktop */}
             <div className="navbar-cta">
-              <a href="https://rpam-connect.vercel.app/" target="_blank" rel="noopener" className="btn-connect-modern">
+              <a href="https://connect.rpam.fr/" target="_blank" rel="noopener" className="btn-connect-modern">
                 <i className="fas fa-sign-in-alt"></i>
                 Se connecter
               </a>
@@ -166,7 +166,7 @@ export default function Navbar({ activePage }) {
 
         {/* Mobile CTA */}
         <div className="mobile-cta">
-          <a href="https://rpam-connect.vercel.app/" target="_blank" rel="noopener"
+          <a href="https://connect.rpam.fr/" target="_blank" rel="noopener"
             className="btn-connect-modern"
             style={{ width: '100%', justifyContent: 'center', marginBottom: '12px' }}>
             <i className="fas fa-sign-in-alt"></i>

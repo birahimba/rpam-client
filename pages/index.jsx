@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
-import { articles } from '../content/articles'
+import { fetchArticles } from '../lib/blog-api'
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
@@ -110,7 +110,14 @@ function initHeroSwiper() {
   })
 }
 
-export default function Home() {
+export async function getStaticProps() {
+  return {
+    props: { articles: await fetchArticles() },
+    revalidate: 300,
+  }
+}
+
+export default function Home({ articles }) {
   useEffect(() => {
     if (typeof window !== 'undefined' && window.Swiper) {
       initHeroSwiper()

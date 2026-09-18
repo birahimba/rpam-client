@@ -1,14 +1,19 @@
-import { useEffect } from 'react'
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
+import { useEffect, useState } from 'react'
 import { marked } from 'marked'
+import DOMPurify from 'isomorphic-dompurify'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import SEOHead from '../../components/SEOHead'
 import { buildArticleSchema } from '../../lib/seo'
+import { fetchArticles, fetchArticleBySlug } from '../../lib/blog-api'
 
-const BLOG_DIR = path.join(process.cwd(), 'content/blog')
+// Articles encore servis par une page dédiée dans pages/blog/ : leur route statique
+// a priorité sur cette route dynamique, et Next refuse un chemin en double.
+// À vider une fois ces pages migrées dans le back-office.
+const STATIC_ARTICLE_SLUGS = ['reconversion-professionnelle-30-40-50-ans']
+
+// Revalidation ISR : un article publié dans le back-office apparaît sans redéploiement.
+const REVALIDATE_SECONDS = 300
 
 function slugify(text) {
   return text
@@ -20,20 +25,22 @@ function slugify(text) {
 }
 
 export async function getStaticPaths() {
-  if (!fs.existsSync(BLOG_DIR)) return { paths: [], fallback: false }
-  const slugs = fs
-    .readdirSync(BLOG_DIR)
-    .filter(f => f.endsWith('.md') && !f.startsWith('_'))
-    .map(f => ({ params: { slug: f.replace('.md', '') } }))
-  return { paths: slugs, fallback: false }
+  const articles = await fetchArticles()
+  return {
+    paths: articles
+      .filter(article => !STATIC_ARTICLE_SLUGS.includes(article.slug))
+      .map(article => ({ params: { slug: article.slug } })),
+    fallback: 'blocking',
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const filePath = path.join(BLOG_DIR, `${params.slug}.md`)
-  if (!fs.existsSync(filePath)) return { notFound: true }
-  const { data: frontmatter, content: rawContent } = matter(fs.readFileSync(filePath, 'utf-8'))
+  const article = await fetchArticleBySlug(params.slug)
+  if (!article) return { notFound: true, revalidate: REVALIDATE_SECONDS }
 
-  // Extract h2 headings for TOC (from raw markdown, before rendering)
+  const { content: rawContent = '', faqs = [], pillarSlug = null, ...frontmatter } = article
+
+  // Extraction des h2 pour le sommaire (sur le Markdown brut, avant rendu)
   const toc = []
   rawContent.split('\n').forEach(line => {
     const m = line.match(/^## (.+)/)
@@ -43,31 +50,65 @@ export async function getStaticProps({ params }) {
     }
   })
 
-  // Render markdown → HTML
-  let content = marked(rawContent)
+  // Rendu Markdown → HTML, puis assainissement : la source est désormais une base
+  // éditable depuis un back-office et non plus un fichier versionné dans Git.
+  let content = DOMPurify.sanitize(marked(rawContent))
 
-  // Inject id attributes into h2 elements (in order, matching toc array)
+  // Injection des id sur les h2 (dans l'ordre, en miroir du tableau toc)
   let cursor = 0
   content = content.replace(/<h2>(.*?)<\/h2>/g, (match, inner) => {
     const entry = toc[cursor++]
     return entry ? `<h2 id="${entry.id}">${inner}</h2>` : match
   })
 
-  return { props: { frontmatter, content, slug: params.slug, toc } }
+  return {
+    props: { frontmatter, content, slug: params.slug, toc, faqs, pillar: buildPillar(pillarSlug) },
+    revalidate: REVALIDATE_SECONDS,
+  }
 }
 
-const PILLAR_MAP = {
-  'reconversion-professionnelle-30-40-50-ans': { href: '/reconversion-professionnelle', label: 'Guide complet : Reconversion professionnelle' },
-  'cv-ats-2025':                               { href: '/cv-ats',          label: 'Guide complet : CV & ATS' },
-  'se-former-intelligence-artificielle-travail-2025': { href: '/formation-ia', label: "Guide complet : Se former à l'IA" },
-  'optimiser-profil-linkedin-recruteurs-2025': { href: '/linkedin-recruteurs', label: 'Guide complet : LinkedIn pour les recruteurs' },
+// Libellés d'affichage des pages piliers. Le lien lui-même vient de pillarSlug
+// (API) ; seul le texte reste ici, l'API n'exposant pas de titre de pilier.
+const PILLAR_LABELS = {
+  'reconversion-professionnelle': 'Reconversion professionnelle',
+  'cv-ats': 'CV & ATS',
+  'formation-ia': "Se former à l'IA",
+  'linkedin-recruteurs': 'LinkedIn pour les recruteurs',
+}
+
+function buildPillar(pillarSlug) {
+  if (!pillarSlug) return null
+  const label = PILLAR_LABELS[pillarSlug] || pillarSlug.replace(/-/g, ' ')
+  return { href: `/${pillarSlug}`, label: `Guide complet : ${label}` }
 }
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 }
 
-export default function BlogPost({ frontmatter, content, slug, toc }) {
+function FaqItem({ question, answer }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="article-faq-item">
+      <button
+        type="button"
+        className="article-faq-question"
+        aria-expanded={open}
+        onClick={() => setOpen(!open)}
+      >
+        {question}
+        <i className={`feather icon-feather-chevron-${open ? 'up' : 'down'}`} aria-hidden="true"></i>
+      </button>
+      {open && (
+        <div className="article-faq-answer">
+          <p>{answer}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default function BlogPost({ frontmatter, content, slug, toc, faqs, pillar }) {
   const schema = buildArticleSchema({
     slug,
     title: frontmatter.title,
@@ -76,7 +117,7 @@ export default function BlogPost({ frontmatter, content, slug, toc }) {
     datePublished: frontmatter.date,
     dateModified: frontmatter.dateModified,
     keywords: frontmatter.keywords || [],
-    faqs: frontmatter.faqs || [],
+    faqs,
   })
 
   // Reading progress bar
@@ -198,6 +239,16 @@ export default function BlogPost({ frontmatter, content, slug, toc }) {
                   </div>
                 </div>
 
+                {/* FAQ */}
+                {faqs.length > 0 && (
+                  <section className="article-faq" aria-labelledby="article-faq-title">
+                    <h2 id="article-faq-title" className="article-faq-title">Questions fréquentes</h2>
+                    {faqs.map(({ question, answer }) => (
+                      <FaqItem key={question} question={question} answer={answer} />
+                    ))}
+                  </section>
+                )}
+
                 {/* CTA */}
                 <div className="article-cta-box">
                   <div className="article-cta-icon">
@@ -234,13 +285,13 @@ export default function BlogPost({ frontmatter, content, slug, toc }) {
             <aside className="col-lg-4 top-space-margin">
               <div className="sidebar-sticky" style={{ position: 'sticky', top: '100px' }}>
 
-                {PILLAR_MAP[slug] && (
+                {pillar && (
                   <div className="sidebar-pillar-widget">
                     <span className="sidebar-pillar-label">Guide associé</span>
                     <p className="sidebar-pillar-desc">Approfondissez ce sujet avec notre guide complet.</p>
-                    <Link href={PILLAR_MAP[slug].href} className="sidebar-pillar-link">
+                    <Link href={pillar.href} className="sidebar-pillar-link">
                       <i className="fas fa-book-open"></i>
-                      {PILLAR_MAP[slug].label}
+                      {pillar.label}
                       <i className="fas fa-arrow-right" style={{ marginLeft: 'auto' }}></i>
                     </Link>
                   </div>

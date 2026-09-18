@@ -11,6 +11,7 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "gray-matter": "^4.0.3",
+    "isomorphic-dompurify": "^4.2.0",
     "marked": "^18.0.3",
     "next": "14.2.29",
     "react": "^18.3.1",

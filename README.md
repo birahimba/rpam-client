@@ -30,6 +30,27 @@ sont rédigés dans un back-office.
 | --- | --- | --- | --- |
 | `RPAM_CONNECT_API_KEY` | oui | clé partagée | authentifie les appels (en-tête `x-api-key`) |
 | `RPAM_CONNECT_URL` | non | `https://connect.rpam.fr` | base de l'API ; défaut appliqué si absente |
+| `REVALIDATE_SECRET` | non | secret aléatoire | authentifie les appels de revalidation à la demande |
+
+### Revalidation à la demande
+
+Les pages de blog sont en ISR (`revalidate: 300`). Une publication ou une
+suppression met donc jusqu'à deux rechargements après cinq minutes pour se voir :
+la première requête qui suit la péremption sert encore la page en cache et ne
+fait que déclencher la régénération en arrière-plan.
+
+Pour un effet immédiat, rpam-connect appelle après chaque écriture :
+
+```bash
+curl -X POST https://www.rpam.fr/api/revalidate \
+  -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+  -H "Content-Type: application/json" \
+  -d '{"slug":"mon-article"}'
+```
+
+Le `slug` est facultatif : sans lui, seules `/` et `/blogs` sont régénérées.
+Si `REVALIDATE_SECRET` n'est pas défini, la route répond 500 et ne régénère
+rien — elle n'est jamais ouverte par défaut.
 
 Aucune des deux ne doit porter le préfixe `NEXT_PUBLIC_` : il inlinerait la clé
 dans le bundle navigateur. Elles ne sont lues que dans `lib/blog-api.js`, appelé

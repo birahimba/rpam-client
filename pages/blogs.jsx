@@ -90,7 +90,9 @@ export default function Blogs({ articles }) {
                             onError={(e) => { e.target.style.display = 'none' }}
                           />
                         </Link>
-                        <span className="blog-card-category">{article.tags[0]}</span>
+                        {article.tags?.[0] && (
+                          <span className="blog-card-category">{article.tags[0]}</span>
+                        )}
                       </div>
                       <div className="blog-card-content">
                         <div className="blog-card-meta">
@@ -137,7 +139,7 @@ export default function Blogs({ articles }) {
                     <i className="feather icon-feather-hash"></i> Thématiques
                   </h3>
                   <div className="tags-cloud-modern">
-                    {[...new Set(articles.flatMap(a => a.tags))].map(tag => (
+                    {[...new Set(articles.flatMap(a => a.tags || []))].filter(Boolean).map(tag => (
                       <Link key={tag} href="/blogs" className="tag-cloud-item">#{tag}</Link>
                     ))}
                   </div>

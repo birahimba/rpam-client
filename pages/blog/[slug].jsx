@@ -6,11 +6,7 @@ import Layout from '../../components/Layout'
 import SEOHead from '../../components/SEOHead'
 import { buildArticleSchema } from '../../lib/seo'
 import { fetchArticles, fetchArticleBySlug } from '../../lib/blog-api'
-
-// Articles encore servis par une page dédiée dans pages/blog/ : leur route statique
-// a priorité sur cette route dynamique, et Next refuse un chemin en double.
-// À vider une fois ces pages migrées dans le back-office.
-const STATIC_ARTICLE_SLUGS = ['reconversion-professionnelle-30-40-50-ans']
+import { STATIC_ARTICLE_SLUGS } from '../../lib/blog-routes'
 
 // Revalidation ISR : un article publié dans le back-office apparaît sans redéploiement.
 const REVALIDATE_SECONDS = 300

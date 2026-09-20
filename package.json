@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "sitemap": "node generate-sitemap.js"
+    "start": "next start"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

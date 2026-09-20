@@ -15,7 +15,11 @@ npm run dev
 | `npm run dev` | serveur de développement |
 | `npm run build` | build de production |
 | `npm start` | serveur de production |
-| `npm run sitemap` | régénère `public/sitemap.xml` |
+
+Le sitemap est servi dynamiquement par `pages/sitemap.xml.js` : les URLs d'articles
+sont lues depuis l'API à chaque génération (cache CDN de 5 minutes), il n'y a donc
+plus de fichier à régénérer après une publication. Les pages fixes sont listées
+dans `lib/sitemap.js`.
 
 ## Variables d'environnement
 

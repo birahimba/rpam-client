@@ -2,55 +2,54 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = [
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Up Training – Formation professionnelle sur mesure",
-      "url": "https://www.rpam.fr/up-training",
-      "serviceType": "Formation professionnelle",
-      "description": "Formations professionnelles sur mesure pour développer vos compétences techniques et comportementales (soft skills), avec un coaching personnalisé adapté à votre secteur.",
-      "areaServed": { "@type": "Country", "name": "France" },
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://www.rpam.fr/booking",
-        "serviceType": "En ligne et en présentiel"
-      },
-      "provider": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" }
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Up Training – Formation professionnelle sur mesure",
+    "url": "https://www.rpam.fr/up-training",
+    "serviceType": "Formation professionnelle",
+    "description": "Formations professionnelles sur mesure pour développer vos compétences techniques et comportementales (soft skills), avec un coaching personnalisé adapté à votre secteur.",
+    "areaServed": { "@type": "Country", "name": "France" },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://www.rpam.fr/booking",
+      "serviceType": "En ligne et en présentiel"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Qu'est-ce qu'une formation sur mesure ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Une formation sur mesure chez RPAM est un programme de développement des compétences entièrement personnalisé selon votre profil, vos objectifs et votre secteur d'activité. Contrairement aux formations standard, elle s'adapte à votre rythme et à vos besoins spécifiques."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quels sont les soft skills les plus importants en entreprise ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Les soft skills les plus valorisés sur le marché de l'emploi incluent : la communication, la gestion du stress, le leadership, l'adaptabilité, le travail en équipe et la résolution de problèmes. RPAM vous aide à identifier et développer ces compétences comportementales clés."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Comment fonctionne le coaching personnalisé Up Training ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le coaching Up Training démarre par une analyse de vos compétences actuelles et de vos objectifs professionnels. RPAM construit ensuite un programme de formation individualisé combinant apports théoriques, exercices pratiques et suivi régulier pour garantir votre progression."
-          }
+    "provider": ORGANIZATION_REF
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qu'une formation sur mesure ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une formation sur mesure chez RPAM est un programme de développement des compétences entièrement personnalisé selon votre profil, vos objectifs et votre secteur d'activité. Contrairement aux formations standard, elle s'adapte à votre rythme et à vos besoins spécifiques."
         }
-      ]
-    }
-  ],
+      },
+      {
+        "@type": "Question",
+        "name": "Quels sont les soft skills les plus importants en entreprise ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les soft skills les plus valorisés sur le marché de l'emploi incluent : la communication, la gestion du stress, le leadership, l'adaptabilité, le travail en équipe et la résolution de problèmes. RPAM vous aide à identifier et développer ces compétences comportementales clés."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment fonctionne le coaching personnalisé Up Training ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le coaching Up Training démarre par une analyse de vos compétences actuelles et de vos objectifs professionnels. RPAM construit ensuite un programme de formation individualisé combinant apports théoriques, exercices pratiques et suivi régulier pour garantir votre progression."
+        }
+      }
+    ]
+  },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

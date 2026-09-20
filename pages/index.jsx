@@ -4,28 +4,22 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
 import { fetchArticles } from '../lib/blog-api'
+import { ORGANIZATION_REF, WEBSITE_ID } from '../lib/organization'
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 }
 
+// L'entité Organization est déclarée pour tout le site dans pages/_app.js ;
+// l'accueil se contente de la désigner comme l'entité principale de la page.
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "RPAM",
-  "url": "https://www.rpam.fr",
-  "logo": "https://www.rpam.fr/images/logo-rpam.png",
-  "description": "RPAM est un cabinet de coaching professionnel en France spécialisé en bilan de compétences, reconversion professionnelle, formation sur mesure et coaching emploi.",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "contact@rpam.fr",
-    "contactType": "customer service",
-    "areaServed": "FR",
-    "availableLanguage": "French"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/rpam"
-  ]
+  "@type": "WebPage",
+  "@id": "https://www.rpam.fr/#webpage",
+  "url": "https://www.rpam.fr/",
+  "isPartOf": { "@id": WEBSITE_ID },
+  "about": ORGANIZATION_REF,
+  "mainEntity": ORGANIZATION_REF,
 }
 
 function WaitlistForm() {

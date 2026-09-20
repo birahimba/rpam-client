@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = [
   {
@@ -10,7 +11,7 @@ const schema = [
     "name": "Se former à l'intelligence artificielle au travail en 2026 | RPAM",
     "description": "Guide complet pour se former à l'IA sans être développeur. Outils, compétences, formations : RPAM vous accompagne dans votre montée en compétences sur l'intelligence artificielle.",
     "url": "https://www.rpam.fr/formation-ia",
-    "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
+    "publisher": ORGANIZATION_REF,
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = [
   {
@@ -9,7 +10,7 @@ const schema = [
     "name": "Réseau Professionnel Arvy Motivation (RPAM) – Qui sommes-nous",
     "url": "https://www.rpam.fr/about",
     "description": "Cabinet de coaching et orientation professionnelle en France",
-    "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" }
+    "publisher": ORGANIZATION_REF
   },
   {
     "@context": "https://schema.org",

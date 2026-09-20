@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = [
   {
@@ -10,7 +11,7 @@ const schema = [
     "name": "CV et ATS en 2026 – comment être sélectionné par les recruteurs | RPAM",
     "description": "Comprendre les logiciels ATS et optimiser votre CV pour passer les filtres automatiques. Mots-clés, format, structure : le guide complet RPAM pour décrocher plus d'entretiens.",
     "url": "https://www.rpam.fr/cv-ats",
-    "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
+    "publisher": ORGANIZATION_REF,
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [

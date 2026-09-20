@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Analytics } from '@vercel/analytics/react'
+import { siteSchema } from '../lib/organization'
 
 function loadScript(src, attrs = {}) {
   return new Promise((resolve) => {
@@ -66,6 +68,14 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      {/* Identité de marque portée par toutes les pages : une entité unique et
+          stable vaut mieux qu'un Organization redéclaré page par page. */}
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
+        />
+      </Head>
       <div key={router.asPath} className="page-transition">
         <Component {...pageProps} />
       </div>

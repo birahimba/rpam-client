@@ -1,55 +1,54 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = [
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Job Getting – Coaching emploi & entretiens",
-      "url": "https://www.rpam.fr/job-getting",
-      "serviceType": "Coaching emploi",
-      "description": "Accompagnement complet à la recherche d'emploi : optimisation CV et profil LinkedIn, préparation aux entretiens d'embauche, stratégie de recherche d'emploi personnalisée.",
-      "areaServed": { "@type": "Country", "name": "France" },
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://www.rpam.fr/booking",
-        "serviceType": "En ligne et en présentiel"
-      },
-      "provider": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" }
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Job Getting – Coaching emploi & entretiens",
+    "url": "https://www.rpam.fr/job-getting",
+    "serviceType": "Coaching emploi",
+    "description": "Accompagnement complet à la recherche d'emploi : optimisation CV et profil LinkedIn, préparation aux entretiens d'embauche, stratégie de recherche d'emploi personnalisée.",
+    "areaServed": { "@type": "Country", "name": "France" },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://www.rpam.fr/booking",
+      "serviceType": "En ligne et en présentiel"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Comment optimiser son CV pour trouver un emploi ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "RPAM vous accompagne dans l'optimisation de votre CV : mise en valeur de vos expériences, adaptation au poste ciblé, rédaction percutante et personnalisation selon les standards du marché de l'emploi français."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Comment se préparer à un entretien d'embauche ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le coaching entretien RPAM vous prépare à répondre aux questions types, valoriser vos compétences, gérer votre stress et adopter la bonne posture. Des simulations d'entretiens personnalisées sont réalisées pour maximiser vos chances de succès."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Comment améliorer son profil LinkedIn pour trouver un emploi ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "RPAM optimise votre profil LinkedIn pour augmenter votre visibilité auprès des recruteurs : photo professionnelle, titre accrocheur, résumé percutant, mots-clés stratégiques et développement de votre réseau professionnel."
-          }
+    "provider": ORGANIZATION_REF
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment optimiser son CV pour trouver un emploi ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RPAM vous accompagne dans l'optimisation de votre CV : mise en valeur de vos expériences, adaptation au poste ciblé, rédaction percutante et personnalisation selon les standards du marché de l'emploi français."
         }
-      ]
-    }
-  ],
+      },
+      {
+        "@type": "Question",
+        "name": "Comment se préparer à un entretien d'embauche ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le coaching entretien RPAM vous prépare à répondre aux questions types, valoriser vos compétences, gérer votre stress et adopter la bonne posture. Des simulations d'entretiens personnalisées sont réalisées pour maximiser vos chances de succès."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment améliorer son profil LinkedIn pour trouver un emploi ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RPAM optimise votre profil LinkedIn pour augmenter votre visibilité auprès des recruteurs : photo professionnelle, titre accrocheur, résumé percutant, mots-clés stratégiques et développement de votre réseau professionnel."
+        }
+      }
+    ]
+  },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

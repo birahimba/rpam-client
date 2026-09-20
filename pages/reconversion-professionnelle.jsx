@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = [
   {
@@ -10,7 +11,7 @@ const schema = [
     "name": "Reconversion professionnelle en 2026 – Guide complet | RPAM",
     "description": "Tout savoir sur la reconversion professionnelle : étapes, financement CPF, secteurs porteurs, bilan de compétences. RPAM vous accompagne à 30, 40 ou 50 ans.",
     "url": "https://www.rpam.fr/reconversion-professionnelle",
-    "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
+    "publisher": ORGANIZATION_REF,
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [

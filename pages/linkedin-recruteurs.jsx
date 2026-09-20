@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = [
   {
@@ -10,7 +11,7 @@ const schema = [
     "name": "Être contacté par les recruteurs sur LinkedIn en 2026 | RPAM",
     "description": "Comment optimiser votre profil LinkedIn pour attirer les recruteurs en 2026. Titre, résumé, mots-clés, compétences, publication : le guide complet RPAM pour votre visibilité professionnelle.",
     "url": "https://www.rpam.fr/linkedin-recruteurs",
-    "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
+    "publisher": ORGANIZATION_REF,
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = [
   {
@@ -9,7 +10,7 @@ const schema = [
     "name": "Bilan de Compétences, Formation & Coaching Emploi – RPAM",
     "url": "https://www.rpam.fr/services",
     "description": "Découvrez les 3 services RPAM : bilan de compétences et orientation professionnelle (Guidance), formation sur mesure (Up Training) et coaching emploi (Job Getting).",
-    "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" }
+    "publisher": ORGANIZATION_REF
   },
   {
     "@context": "https://schema.org",

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = {
   "@context": "https://schema.org",
@@ -8,7 +9,7 @@ const schema = {
   "name": "Réserver un rendez-vous – RPAM",
   "url": "https://www.rpam.fr/booking",
   "description": "Consultation gratuite avec un conseiller RPAM",
-  "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" }
+  "publisher": ORGANIZATION_REF
 }
 
 export default function Booking() {

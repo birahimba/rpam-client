@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import SEOHead from '../../components/SEOHead'
+import { ORGANIZATION_REF } from '../../lib/organization'
 
 const schema = {
   "@context": "https://schema.org",
@@ -15,13 +16,8 @@ const schema = {
       "image": "https://www.rpam.fr/images/blog/reconversion-professionnelle-cover.jpg",
       "datePublished": "2025-05-11T08:00:00+02:00",
       "dateModified": "2026-07-03T08:00:00+02:00",
-      "author": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
-      "publisher": {
-        "@type": "Organization",
-        "name": "RPAM",
-        "url": "https://www.rpam.fr",
-        "logo": { "@type": "ImageObject", "url": "https://www.rpam.fr/images/logo-rpam.png" }
-      },
+      "author": ORGANIZATION_REF,
+      "publisher": ORGANIZATION_REF,
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.rpam.fr/blog/reconversion-professionnelle-30-40-50-ans" },
       "articleSection": "Reconversion professionnelle",
       "keywords": "reconversion professionnelle, bilan de compétences, changement de carrière, CPF, orientation professionnelle"

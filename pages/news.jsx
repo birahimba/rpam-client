@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import SEOHead from '../components/SEOHead'
+import { ORGANIZATION_REF } from '../lib/organization'
 
 const schema = [
   {
@@ -10,7 +11,7 @@ const schema = [
     "name": "Actualités professionnelles – RPAM",
     "description": "Tendances du marché de l'emploi, reconversion professionnelle, CPF, formation et coaching carrière en France. Conseils et actualités par RPAM.",
     "url": "https://www.rpam.fr/news",
-    "publisher": { "@type": "Organization", "name": "RPAM", "url": "https://www.rpam.fr" },
+    "publisher": ORGANIZATION_REF,
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
